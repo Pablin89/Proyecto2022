@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Gerente
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class Gerentes
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()>
+    <System.Diagnostics.DebuggerNonUserCode()> _
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Gerente
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()>
+    <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -31,13 +31,12 @@ Partial Class Gerente
         Me.LSalirG = New System.Windows.Forms.Label()
         Me.LGerente = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.MenuGerente = New System.Windows.Forms.MenuStrip()
         Me.ReportesCajeros = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReporteCategoria = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ReporteProducto = New System.Windows.Forms.ToolStripMenuItem()
         Me.NumerosMes = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReporteMes = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -57,8 +56,8 @@ Partial Class Gerente
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Panel1.Size = New System.Drawing.Size(1354, 170)
-        Me.Panel1.TabIndex = 0
+        Me.Panel1.Size = New System.Drawing.Size(1362, 170)
+        Me.Panel1.TabIndex = 1
         '
         'LFecha
         '
@@ -90,7 +89,7 @@ Partial Class Gerente
         Me.Panel3.Controls.Add(Me.BCerrarSesion)
         Me.Panel3.Controls.Add(Me.LSalirG)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel3.Location = New System.Drawing.Point(1223, 0)
+        Me.Panel3.Location = New System.Drawing.Point(1231, 0)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(131, 170)
         Me.Panel3.TabIndex = 6
@@ -149,22 +148,6 @@ Partial Class Gerente
         Me.PictureBox1.TabStop = False
         Me.PictureBox1.WaitOnLoad = True
         '
-        'Timer1
-        '
-        '
-        'Panel2
-        '
-        Me.Panel2.AutoSize = True
-        Me.Panel2.BackColor = System.Drawing.Color.White
-        Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel2.Location = New System.Drawing.Point(0, 731)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Panel2.Size = New System.Drawing.Size(1354, 2)
-        Me.Panel2.TabIndex = 2
-        '
         'MenuGerente
         '
         Me.MenuGerente.AutoSize = False
@@ -174,15 +157,15 @@ Partial Class Gerente
         Me.MenuGerente.Dock = System.Windows.Forms.DockStyle.Fill
         Me.MenuGerente.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MenuGerente.GripMargin = New System.Windows.Forms.Padding(2)
-        Me.MenuGerente.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReportesCajeros, Me.ReporteCategoria, Me.ReporteProducto, Me.NumerosMes})
+        Me.MenuGerente.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReportesCajeros, Me.ReporteCategoria, Me.NumerosMes, Me.ReporteMes})
         Me.MenuGerente.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow
         Me.MenuGerente.Location = New System.Drawing.Point(0, 170)
         Me.MenuGerente.MdiWindowListItem = Me.ReportesCajeros
         Me.MenuGerente.Name = "MenuGerente"
         Me.MenuGerente.Padding = New System.Windows.Forms.Padding(6, 10, 6, 10)
         Me.MenuGerente.ShowItemToolTips = True
-        Me.MenuGerente.Size = New System.Drawing.Size(1354, 563)
-        Me.MenuGerente.TabIndex = 0
+        Me.MenuGerente.Size = New System.Drawing.Size(1362, 555)
+        Me.MenuGerente.TabIndex = 2
         Me.MenuGerente.Text = " "
         '
         'ReportesCajeros
@@ -212,18 +195,6 @@ Partial Class Gerente
         Me.ReporteCategoria.Size = New System.Drawing.Size(1360, 128)
         Me.ReporteCategoria.Text = "Reportes por Categorias"
         '
-        'ReporteProducto
-        '
-        Me.ReporteProducto.AutoSize = False
-        Me.ReporteProducto.BackColor = System.Drawing.Color.PowderBlue
-        Me.ReporteProducto.ForeColor = System.Drawing.Color.Black
-        Me.ReporteProducto.Image = Global.Principal.My.Resources.Resources.box_search_product_ean_barcode_icon_148907
-        Me.ReporteProducto.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ReporteProducto.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.ReporteProducto.Name = "ReporteProducto"
-        Me.ReporteProducto.Size = New System.Drawing.Size(1360, 128)
-        Me.ReporteProducto.Text = "Reportes por Mes"
-        '
         'NumerosMes
         '
         Me.NumerosMes.AutoSize = False
@@ -240,26 +211,26 @@ Partial Class Gerente
         Me.NumerosMes.ToolTipText = "Esta sección del menú nos permite ver el rendimiento de la sucursal" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "desde el pun" &
     "to de vista de las ventas realizadas."
         '
-        'Gerente
+        'ReporteMes
+        '
+        Me.ReporteMes.AutoSize = False
+        Me.ReporteMes.BackColor = System.Drawing.Color.PaleTurquoise
+        Me.ReporteMes.Image = Global.Principal.My.Resources.Resources.box_search_product_ean_barcode_icon_148907
+        Me.ReporteMes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.ReporteMes.Name = "ReporteMes"
+        Me.ReporteMes.Size = New System.Drawing.Size(1360, 128)
+        Me.ReporteMes.Text = "Reporte Mes"
+        Me.ReporteMes.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Gerentes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.ClientSize = New System.Drawing.Size(1354, 733)
-        Me.Controls.Add(Me.Panel2)
+        Me.ClientSize = New System.Drawing.Size(1362, 725)
         Me.Controls.Add(Me.MenuGerente)
         Me.Controls.Add(Me.Panel1)
-        Me.Cursor = System.Windows.Forms.Cursors.Default
-        Me.DoubleBuffered = True
-        Me.ForeColor = System.Drawing.Color.Transparent
-        Me.IsMdiContainer = True
-        Me.MainMenuStrip = Me.MenuGerente
-        Me.Name = "Gerente"
-        Me.Opacity = 0.97R
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Gerente"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
+        Me.Name = "Gerentes"
+        Me.Text = "Gerentes"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.Panel3.ResumeLayout(False)
@@ -268,23 +239,21 @@ Partial Class Gerente
         Me.MenuGerente.ResumeLayout(False)
         Me.MenuGerente.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents BCerrarSesion As Button
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents LSalirG As Label
-    Friend WithEvents MenuGerente As MenuStrip
-    Friend WithEvents LGerente As Label
-    Friend WithEvents ReportesCajeros As ToolStripMenuItem
-    Friend WithEvents Panel3 As Panel
-    Friend WithEvents Timer1 As Timer
-    Friend WithEvents Panel2 As Panel
     Friend WithEvents LFecha As Label
     Friend WithEvents LHora As Label
-    Friend WithEvents NumerosMes As ToolStripMenuItem
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents BCerrarSesion As Button
+    Friend WithEvents LSalirG As Label
+    Friend WithEvents LGerente As Label
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents MenuGerente As MenuStrip
+    Friend WithEvents ReportesCajeros As ToolStripMenuItem
     Friend WithEvents ReporteCategoria As ToolStripMenuItem
-    Friend WithEvents ReporteProducto As ToolStripMenuItem
+    Friend WithEvents NumerosMes As ToolStripMenuItem
+    Friend WithEvents ReporteMes As ToolStripMenuItem
+    Friend WithEvents Timer1 As Timer
 End Class

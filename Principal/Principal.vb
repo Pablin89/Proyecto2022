@@ -47,7 +47,7 @@
             Encargado.Show()
             Me.Hide()
         ElseIf isValidLogin = True And datos = 3 Then
-            Gerente.Show()
+            Gerentes.Show()
             Me.Hide()
         ElseIf isValidLogin = False And datos = 0 Then
             MsgBox("Usuario o Contraseña incorrectos!, por favor verifique.", vbOKOnly + vbCritical, "Inicio Sesion")

@@ -327,6 +327,12 @@
     <Compile Include="Presentacion\Usuario_GerenteGral\RestaurarDatos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentacion\Usuario_Gerente\Gerentes.Designer.vb">
+      <DependentUpon>Gerentes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_Gerente\Gerentes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentacion\Usuario_Gerente\GridCajero.Designer.vb">
       <DependentUpon>GridCajero.vb</DependentUpon>
     </Compile>
@@ -349,12 +355,6 @@
       <DependentUpon>ReporteCajeros.vb</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Usuario_Gerente\ReporteCajeros.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentacion\Usuario_Gerente\Gerente.Designer.vb">
-      <DependentUpon>Gerente.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\Usuario_Gerente\Gerente.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\Usuario_Gerente\NumerosDelMes.Designer.vb">
@@ -460,8 +460,8 @@
     <EmbeddedResource Include="Presentacion\Usuario_GerenteGral\RestaurarDatos.resx">
       <DependentUpon>RestaurarDatos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Usuario_Gerente\Gerente.resx">
-      <DependentUpon>Gerente.vb</DependentUpon>
+    <EmbeddedResource Include="Presentacion\Usuario_Gerente\Gerentes.resx">
+      <DependentUpon>Gerentes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Usuario_Gerente\GridCajero.resx">
       <DependentUpon>GridCajero.vb</DependentUpon>

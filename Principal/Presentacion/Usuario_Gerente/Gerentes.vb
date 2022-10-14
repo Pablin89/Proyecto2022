@@ -1,4 +1,4 @@
-﻿Public Class Gerente
+﻿Public Class Gerentes
     Dim emp = New DEmpleado
     Private Sub BSalir1_Click(sender As Object, e As EventArgs) Handles BCerrarSesion.Click
         Dim ask As MsgBoxResult
@@ -51,10 +51,8 @@
         Me.Hide()
     End Sub
 
-    Private Sub ReportesProducto_Click(sender As Object, e As EventArgs) Handles ReporteProducto.Click
+    Private Sub ReporteMes_Click(sender As Object, e As EventArgs) Handles ReporteMes.Click
         ReportesMes.Show()
         Me.Hide()
     End Sub
-
-
 End Class
