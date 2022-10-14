@@ -22,9 +22,9 @@ Partial Class ReporteSucursalIndividual
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.LDesde = New System.Windows.Forms.Label()
         Me.DateDesde = New System.Windows.Forms.DateTimePicker()
@@ -36,6 +36,8 @@ Partial Class ReporteSucursalIndividual
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Lproducto = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Desde = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Hasta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.LMayores = New System.Windows.Forms.Label()
         Me.Lfiltro = New System.Windows.Forms.Label()
         Me.BBusqueda = New System.Windows.Forms.Button()
@@ -46,24 +48,22 @@ Partial Class ReporteSucursalIndividual
         Me.TCliente = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.BDescarga = New System.Windows.Forms.Button()
-        Me.Desde = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Hasta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Chart1
         '
-        ChartArea2.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea2)
-        Legend2.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend2)
+        ChartArea1.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea1)
+        Legend1.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend1)
         Me.Chart1.Location = New System.Drawing.Point(729, 98)
         Me.Chart1.Name = "Chart1"
-        Series2.ChartArea = "ChartArea1"
-        Series2.Legend = "Legend1"
-        Series2.Name = "Series1"
-        Me.Chart1.Series.Add(Series2)
+        Series1.ChartArea = "ChartArea1"
+        Series1.Legend = "Legend1"
+        Series1.Name = "Series1"
+        Me.Chart1.Series.Add(Series1)
         Me.Chart1.Size = New System.Drawing.Size(531, 325)
         Me.Chart1.TabIndex = 9
         Me.Chart1.Text = "Chart1"
@@ -119,7 +119,7 @@ Partial Class ReporteSucursalIndividual
         Me.CBcategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CBcategoria.Enabled = False
         Me.CBcategoria.FormattingEnabled = True
-        Me.CBcategoria.Location = New System.Drawing.Point(355, 270)
+        Me.CBcategoria.Location = New System.Drawing.Point(356, 251)
         Me.CBcategoria.Name = "CBcategoria"
         Me.CBcategoria.Size = New System.Drawing.Size(270, 21)
         Me.CBcategoria.TabIndex = 22
@@ -129,7 +129,7 @@ Partial Class ReporteSucursalIndividual
         Me.Lcategoria.AutoSize = True
         Me.Lcategoria.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Lcategoria.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Lcategoria.Location = New System.Drawing.Point(174, 271)
+        Me.Lcategoria.Location = New System.Drawing.Point(175, 252)
         Me.Lcategoria.Name = "Lcategoria"
         Me.Lcategoria.Size = New System.Drawing.Size(162, 20)
         Me.Lcategoria.TabIndex = 23
@@ -152,7 +152,7 @@ Partial Class ReporteSucursalIndividual
         Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Label2.Location = New System.Drawing.Point(0, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(1272, 73)
+        Me.Label2.Size = New System.Drawing.Size(1272, 70)
         Me.Label2.TabIndex = 25
         Me.Label2.Text = "Reportes"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -162,7 +162,7 @@ Partial Class ReporteSucursalIndividual
         Me.Lproducto.AutoSize = True
         Me.Lproducto.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Lproducto.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Lproducto.Location = New System.Drawing.Point(177, 316)
+        Me.Lproducto.Location = New System.Drawing.Point(178, 297)
         Me.Lproducto.Name = "Lproducto"
         Me.Lproducto.Size = New System.Drawing.Size(159, 20)
         Me.Lproducto.TabIndex = 28
@@ -176,10 +176,20 @@ Partial Class ReporteSucursalIndividual
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Desde, Me.Hasta})
         Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.DataGridView1.Location = New System.Drawing.Point(0, 540)
+        Me.DataGridView1.Location = New System.Drawing.Point(0, 521)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(1272, 107)
+        Me.DataGridView1.Size = New System.Drawing.Size(1272, 126)
         Me.DataGridView1.TabIndex = 29
+        '
+        'Desde
+        '
+        Me.Desde.HeaderText = "Desde"
+        Me.Desde.Name = "Desde"
+        '
+        'Hasta
+        '
+        Me.Hasta.HeaderText = "Hasta"
+        Me.Hasta.Name = "Hasta"
         '
         'LMayores
         '
@@ -187,7 +197,7 @@ Partial Class ReporteSucursalIndividual
         Me.LMayores.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LMayores.ForeColor = System.Drawing.Color.White
         Me.LMayores.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.LMayores.Location = New System.Drawing.Point(0, 509)
+        Me.LMayores.Location = New System.Drawing.Point(0, 490)
         Me.LMayores.Name = "LMayores"
         Me.LMayores.Size = New System.Drawing.Size(1272, 31)
         Me.LMayores.TabIndex = 30
@@ -199,7 +209,7 @@ Partial Class ReporteSucursalIndividual
         Me.Lfiltro.AutoSize = True
         Me.Lfiltro.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Lfiltro.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Lfiltro.Location = New System.Drawing.Point(379, 221)
+        Me.Lfiltro.Location = New System.Drawing.Point(380, 202)
         Me.Lfiltro.Name = "Lfiltro"
         Me.Lfiltro.Size = New System.Drawing.Size(64, 20)
         Me.Lfiltro.TabIndex = 33
@@ -208,7 +218,7 @@ Partial Class ReporteSucursalIndividual
         'BBusqueda
         '
         Me.BBusqueda.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BBusqueda.Location = New System.Drawing.Point(326, 462)
+        Me.BBusqueda.Location = New System.Drawing.Point(327, 443)
         Me.BBusqueda.Name = "BBusqueda"
         Me.BBusqueda.Size = New System.Drawing.Size(219, 28)
         Me.BBusqueda.TabIndex = 34
@@ -231,7 +241,7 @@ Partial Class ReporteSucursalIndividual
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(197, 367)
+        Me.Label3.Location = New System.Drawing.Point(198, 348)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(139, 20)
         Me.Label3.TabIndex = 37
@@ -239,21 +249,21 @@ Partial Class ReporteSucursalIndividual
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(355, 316)
+        Me.TextBox1.Location = New System.Drawing.Point(356, 297)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(270, 20)
         Me.TextBox1.TabIndex = 38
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(355, 367)
+        Me.TextBox2.Location = New System.Drawing.Point(356, 348)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(270, 20)
         Me.TextBox2.TabIndex = 39
         '
         'TCliente
         '
-        Me.TCliente.Location = New System.Drawing.Point(355, 415)
+        Me.TCliente.Location = New System.Drawing.Point(356, 396)
         Me.TCliente.Name = "TCliente"
         Me.TCliente.Size = New System.Drawing.Size(270, 20)
         Me.TCliente.TabIndex = 41
@@ -263,7 +273,7 @@ Partial Class ReporteSucursalIndividual
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(197, 415)
+        Me.Label4.Location = New System.Drawing.Point(198, 396)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(142, 20)
         Me.Label4.TabIndex = 40
@@ -272,22 +282,12 @@ Partial Class ReporteSucursalIndividual
         'BDescarga
         '
         Me.BDescarga.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BDescarga.Location = New System.Drawing.Point(857, 462)
+        Me.BDescarga.Location = New System.Drawing.Point(870, 443)
         Me.BDescarga.Name = "BDescarga"
         Me.BDescarga.Size = New System.Drawing.Size(219, 28)
         Me.BDescarga.TabIndex = 42
         Me.BDescarga.Text = "Descargar Reporte"
         Me.BDescarga.UseVisualStyleBackColor = True
-        '
-        'Desde
-        '
-        Me.Desde.HeaderText = "Desde"
-        Me.Desde.Name = "Desde"
-        '
-        'Hasta
-        '
-        Me.Hasta.HeaderText = "Hasta"
-        Me.Hasta.Name = "Hasta"
         '
         'ReporteSucursalIndividual
         '

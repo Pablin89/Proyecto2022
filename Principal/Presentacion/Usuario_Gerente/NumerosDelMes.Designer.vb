@@ -29,7 +29,13 @@ Partial Class NumerosDelMes
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.CBMes = New System.Windows.Forms.CheckBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.CBaño = New System.Windows.Forms.CheckBox()
+        Me.BBuscar = New System.Windows.Forms.Button()
         Me.DataGridView4 = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -50,18 +56,12 @@ Partial Class NumerosDelMes
         Me.Categroría = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.LProductomas = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.CBMes = New System.Windows.Forms.CheckBox()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.BBuscar = New System.Windows.Forms.Button()
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel3.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -106,6 +106,65 @@ Partial Class NumerosDelMes
         Me.Panel3.Size = New System.Drawing.Size(1362, 651)
         Me.Panel3.TabIndex = 13
         '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.Teal
+        Me.Panel1.Controls.Add(Me.Button2)
+        Me.Panel1.Controls.Add(Me.CBMes)
+        Me.Panel1.Controls.Add(Me.TextBox1)
+        Me.Panel1.Controls.Add(Me.ComboBox1)
+        Me.Panel1.Controls.Add(Me.CBaño)
+        Me.Panel1.Controls.Add(Me.BBuscar)
+        Me.Panel1.Location = New System.Drawing.Point(1127, 24)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(234, 599)
+        Me.Panel1.TabIndex = 28
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.Gainsboro
+        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button2.Font = New System.Drawing.Font("MS Reference Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Button2.Image = Global.Principal.My.Resources.Resources.calendar_office_day_1474__2_
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button2.Location = New System.Drawing.Point(15, 200)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(208, 47)
+        Me.Button2.TabIndex = 27
+        Me.Button2.Text = "Aplicar Selección"
+        Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button2.UseVisualStyleBackColor = False
+        '
+        'CBMes
+        '
+        Me.CBMes.AutoSize = True
+        Me.CBMes.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CBMes.ForeColor = System.Drawing.SystemColors.Control
+        Me.CBMes.Location = New System.Drawing.Point(43, 114)
+        Me.CBMes.Name = "CBMes"
+        Me.CBMes.Size = New System.Drawing.Size(153, 22)
+        Me.CBMes.TabIndex = 26
+        Me.CBMes.Text = "Seleccionar mes"
+        Me.CBMes.UseVisualStyleBackColor = True
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(43, 61)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(153, 20)
+        Me.TextBox1.TabIndex = 25
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"})
+        Me.ComboBox1.Location = New System.Drawing.Point(43, 142)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(153, 21)
+        Me.ComboBox1.TabIndex = 24
+        '
         'CBaño
         '
         Me.CBaño.AutoSize = True
@@ -117,6 +176,23 @@ Partial Class NumerosDelMes
         Me.CBaño.TabIndex = 23
         Me.CBaño.Text = "Seleccionar año"
         Me.CBaño.UseVisualStyleBackColor = True
+        '
+        'BBuscar
+        '
+        Me.BBuscar.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.BBuscar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BBuscar.Font = New System.Drawing.Font("MS Reference Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BBuscar.ForeColor = System.Drawing.SystemColors.Control
+        Me.BBuscar.Image = Global.Principal.My.Resources.Resources.Print_icon_icons_com_73705
+        Me.BBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BBuscar.Location = New System.Drawing.Point(34, 515)
+        Me.BBuscar.Name = "BBuscar"
+        Me.BBuscar.Size = New System.Drawing.Size(162, 71)
+        Me.BBuscar.TabIndex = 8
+        Me.BBuscar.Text = "Imprmir Informe"
+        Me.BBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BBuscar.UseVisualStyleBackColor = False
         '
         'DataGridView4
         '
@@ -134,9 +210,9 @@ Partial Class NumerosDelMes
         Me.DataGridView4.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView4.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6})
-        Me.DataGridView4.Location = New System.Drawing.Point(594, 428)
+        Me.DataGridView4.Location = New System.Drawing.Point(596, 395)
         Me.DataGridView4.Name = "DataGridView4"
-        Me.DataGridView4.Size = New System.Drawing.Size(512, 196)
+        Me.DataGridView4.Size = New System.Drawing.Size(512, 215)
         Me.DataGridView4.TabIndex = 19
         '
         'DataGridViewTextBoxColumn4
@@ -159,7 +235,7 @@ Partial Class NumerosDelMes
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(767, 395)
+        Me.Label3.Location = New System.Drawing.Point(769, 362)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(191, 20)
         Me.Label3.TabIndex = 20
@@ -181,9 +257,9 @@ Partial Class NumerosDelMes
         Me.DataGridView3.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView3.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NombreCliente, Me.ApellidoCliente, Me.CantidadCompras})
-        Me.DataGridView3.Location = New System.Drawing.Point(46, 428)
+        Me.DataGridView3.Location = New System.Drawing.Point(46, 395)
         Me.DataGridView3.Name = "DataGridView3"
-        Me.DataGridView3.Size = New System.Drawing.Size(512, 196)
+        Me.DataGridView3.Size = New System.Drawing.Size(512, 215)
         Me.DataGridView3.TabIndex = 17
         '
         'NombreCliente
@@ -206,7 +282,7 @@ Partial Class NumerosDelMes
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(188, 395)
+        Me.Label2.Location = New System.Drawing.Point(188, 362)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(219, 20)
         Me.Label2.TabIndex = 18
@@ -230,7 +306,7 @@ Partial Class NumerosDelMes
         Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3})
         Me.DataGridView2.Location = New System.Drawing.Point(594, 57)
         Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.Size = New System.Drawing.Size(512, 304)
+        Me.DataGridView2.Size = New System.Drawing.Size(512, 282)
         Me.DataGridView2.TabIndex = 16
         '
         'DataGridViewTextBoxColumn1
@@ -277,7 +353,7 @@ Partial Class NumerosDelMes
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Producto, Me.Categroría, Me.Cantidad})
         Me.DataGridView1.Location = New System.Drawing.Point(46, 57)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(512, 304)
+        Me.DataGridView1.Size = New System.Drawing.Size(512, 282)
         Me.DataGridView1.TabIndex = 14
         '
         'Producto
@@ -306,82 +382,6 @@ Partial Class NumerosDelMes
         Me.LProductomas.TabIndex = 14
         Me.LProductomas.Text = "Productos más vendidos"
         '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"})
-        Me.ComboBox1.Location = New System.Drawing.Point(43, 142)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(153, 21)
-        Me.ComboBox1.TabIndex = 24
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(43, 61)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(153, 20)
-        Me.TextBox1.TabIndex = 25
-        '
-        'CBMes
-        '
-        Me.CBMes.AutoSize = True
-        Me.CBMes.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CBMes.ForeColor = System.Drawing.SystemColors.Control
-        Me.CBMes.Location = New System.Drawing.Point(43, 114)
-        Me.CBMes.Name = "CBMes"
-        Me.CBMes.Size = New System.Drawing.Size(153, 22)
-        Me.CBMes.TabIndex = 26
-        Me.CBMes.Text = "Seleccionar mes"
-        Me.CBMes.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.BackColor = System.Drawing.Color.Gainsboro
-        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button2.Font = New System.Drawing.Font("MS Reference Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Button2.Image = Global.Principal.My.Resources.Resources.calendar_office_day_1474__2_
-        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.Location = New System.Drawing.Point(15, 200)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(208, 47)
-        Me.Button2.TabIndex = 27
-        Me.Button2.Text = "Aplicar Selección"
-        Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button2.UseVisualStyleBackColor = False
-        '
-        'BBuscar
-        '
-        Me.BBuscar.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.BBuscar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BBuscar.Font = New System.Drawing.Font("MS Reference Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BBuscar.ForeColor = System.Drawing.SystemColors.Control
-        Me.BBuscar.Image = Global.Principal.My.Resources.Resources.Print_icon_icons_com_73705
-        Me.BBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BBuscar.Location = New System.Drawing.Point(34, 515)
-        Me.BBuscar.Name = "BBuscar"
-        Me.BBuscar.Size = New System.Drawing.Size(162, 71)
-        Me.BBuscar.TabIndex = 8
-        Me.BBuscar.Text = "Imprmir Informe"
-        Me.BBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.BBuscar.UseVisualStyleBackColor = False
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.Teal
-        Me.Panel1.Controls.Add(Me.Button2)
-        Me.Panel1.Controls.Add(Me.CBMes)
-        Me.Panel1.Controls.Add(Me.TextBox1)
-        Me.Panel1.Controls.Add(Me.ComboBox1)
-        Me.Panel1.Controls.Add(Me.CBaño)
-        Me.Panel1.Controls.Add(Me.BBuscar)
-        Me.Panel1.Location = New System.Drawing.Point(1127, 24)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(234, 599)
-        Me.Panel1.TabIndex = 28
-        '
         'NumerosDelMes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -396,12 +396,12 @@ Partial Class NumerosDelMes
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
