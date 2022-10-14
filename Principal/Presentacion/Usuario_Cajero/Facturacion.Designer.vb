@@ -24,20 +24,17 @@ Partial Class Facturacion
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Facturacion))
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Facturacion))
         Me.LCajero = New System.Windows.Forms.Label()
         Me.TCajero = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TIdcli = New System.Windows.Forms.TextBox()
-        Me.BBuscar = New System.Windows.Forms.Button()
         Me.TTelefono = New System.Windows.Forms.TextBox()
-        Me.TCliente = New System.Windows.Forms.TextBox()
         Me.TDniCli = New System.Windows.Forms.TextBox()
         Me.TApellidoCli = New System.Windows.Forms.TextBox()
         Me.TNombreCli = New System.Windows.Forms.TextBox()
         Me.LSeleccionar = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.LDa = New System.Windows.Forms.Label()
         Me.LDniC = New System.Windows.Forms.Label()
         Me.LApellidoC = New System.Windows.Forms.Label()
@@ -45,7 +42,6 @@ Partial Class Facturacion
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.TCantidad = New System.Windows.Forms.TextBox()
         Me.TProducto = New System.Windows.Forms.TextBox()
-        Me.BAgregar = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.LProducto = New System.Windows.Forms.Label()
         Me.dgvCompra = New System.Windows.Forms.DataGridView()
@@ -59,17 +55,19 @@ Partial Class Facturacion
         Me.LForna = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.TIdCajero = New System.Windows.Forms.TextBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.dgvProductos = New System.Windows.Forms.DataGridView()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.BConfirmar = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.BAgregar = New System.Windows.Forms.Button()
+        Me.BBuscar = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.dgvCompra, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LCajero
@@ -97,12 +95,10 @@ Partial Class Facturacion
         Me.Panel1.Controls.Add(Me.TIdcli)
         Me.Panel1.Controls.Add(Me.BBuscar)
         Me.Panel1.Controls.Add(Me.TTelefono)
-        Me.Panel1.Controls.Add(Me.TCliente)
         Me.Panel1.Controls.Add(Me.TDniCli)
         Me.Panel1.Controls.Add(Me.TApellidoCli)
         Me.Panel1.Controls.Add(Me.TNombreCli)
         Me.Panel1.Controls.Add(Me.LSeleccionar)
-        Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.LDa)
         Me.Panel1.Controls.Add(Me.LDniC)
         Me.Panel1.Controls.Add(Me.LApellidoC)
@@ -115,27 +111,11 @@ Partial Class Facturacion
         'TIdcli
         '
         Me.TIdcli.Enabled = False
-        Me.TIdcli.Location = New System.Drawing.Point(345, 53)
+        Me.TIdcli.Location = New System.Drawing.Point(345, 103)
         Me.TIdcli.Name = "TIdcli"
         Me.TIdcli.Size = New System.Drawing.Size(51, 20)
         Me.TIdcli.TabIndex = 39
         Me.TIdcli.Visible = False
-        '
-        'BBuscar
-        '
-        Me.BBuscar.BackColor = System.Drawing.Color.RosyBrown
-        Me.BBuscar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BBuscar.ForeColor = System.Drawing.Color.White
-        Me.BBuscar.Image = Global.Principal.My.Resources.Resources.find_102325__1_
-        Me.BBuscar.ImageAlign = System.Drawing.ContentAlignment.TopRight
-        Me.BBuscar.Location = New System.Drawing.Point(118, 85)
-        Me.BBuscar.Name = "BBuscar"
-        Me.BBuscar.Size = New System.Drawing.Size(206, 53)
-        Me.BBuscar.TabIndex = 38
-        Me.BBuscar.Text = "Buscar cliente"
-        Me.BBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.BBuscar.UseVisualStyleBackColor = False
         '
         'TTelefono
         '
@@ -144,13 +124,6 @@ Partial Class Facturacion
         Me.TTelefono.Name = "TTelefono"
         Me.TTelefono.Size = New System.Drawing.Size(237, 20)
         Me.TTelefono.TabIndex = 13
-        '
-        'TCliente
-        '
-        Me.TCliente.Location = New System.Drawing.Point(146, 53)
-        Me.TCliente.Name = "TCliente"
-        Me.TCliente.Size = New System.Drawing.Size(178, 20)
-        Me.TCliente.TabIndex = 12
         '
         'TDniCli
         '
@@ -185,16 +158,6 @@ Partial Class Facturacion
         Me.LSeleccionar.Size = New System.Drawing.Size(164, 20)
         Me.LSeleccionar.TabIndex = 6
         Me.LSeleccionar.Text = "Seleccionar Cliente"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(22, 53)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(112, 20)
-        Me.Label2.TabIndex = 5
-        Me.Label2.Text = "Ingresar DNI"
         '
         'LDa
         '
@@ -263,21 +226,6 @@ Partial Class Facturacion
         Me.TProducto.Name = "TProducto"
         Me.TProducto.Size = New System.Drawing.Size(382, 20)
         Me.TProducto.TabIndex = 28
-        '
-        'BAgregar
-        '
-        Me.BAgregar.BackColor = System.Drawing.Color.MediumSpringGreen
-        Me.BAgregar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BAgregar.ForeColor = System.Drawing.Color.Black
-        Me.BAgregar.Image = Global.Principal.My.Resources.Resources.shopping_cart_add_button_icon_icons_com_56132
-        Me.BAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BAgregar.Location = New System.Drawing.Point(636, 129)
-        Me.BAgregar.Name = "BAgregar"
-        Me.BAgregar.Size = New System.Drawing.Size(206, 46)
-        Me.BAgregar.TabIndex = 18
-        Me.BAgregar.Text = "Agregar a la compra"
-        Me.BAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.BAgregar.UseVisualStyleBackColor = False
         '
         'Label3
         '
@@ -426,17 +374,6 @@ Partial Class Facturacion
         Me.TIdCajero.TabIndex = 18
         Me.TIdCajero.Visible = False
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 5)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(152, 120)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 17
-        Me.PictureBox1.TabStop = False
-        Me.PictureBox1.WaitOnLoad = True
-        '
         'dgvProductos
         '
         Me.dgvProductos.AllowUserToAddRows = False
@@ -458,6 +395,19 @@ Partial Class Facturacion
         Me.dgvProductos.RowHeadersWidth = 50
         Me.dgvProductos.Size = New System.Drawing.Size(620, 168)
         Me.dgvProductos.TabIndex = 25
+        '
+        'Button3
+        '
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.Image = Global.Principal.My.Resources.Resources.cancelar
+        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button3.Location = New System.Drawing.Point(787, 651)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(181, 46)
+        Me.Button3.TabIndex = 26
+        Me.Button3.Text = "Eliminar Producto Seleccionado"
+        Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button3.UseVisualStyleBackColor = True
         '
         'Button2
         '
@@ -486,18 +436,47 @@ Partial Class Facturacion
         Me.BConfirmar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.BConfirmar.UseVisualStyleBackColor = False
         '
-        'Button3
+        'BAgregar
         '
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Image = Global.Principal.My.Resources.Resources.cancelar
-        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button3.Location = New System.Drawing.Point(787, 651)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(181, 46)
-        Me.Button3.TabIndex = 26
-        Me.Button3.Text = "Eliminar Producto Seleccionado"
-        Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.BAgregar.BackColor = System.Drawing.Color.MediumSpringGreen
+        Me.BAgregar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BAgregar.ForeColor = System.Drawing.Color.Black
+        Me.BAgregar.Image = Global.Principal.My.Resources.Resources.shopping_cart_add_button_icon_icons_com_56132
+        Me.BAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BAgregar.Location = New System.Drawing.Point(636, 129)
+        Me.BAgregar.Name = "BAgregar"
+        Me.BAgregar.Size = New System.Drawing.Size(206, 46)
+        Me.BAgregar.TabIndex = 18
+        Me.BAgregar.Text = "Agregar a la compra"
+        Me.BAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BAgregar.UseVisualStyleBackColor = False
+        '
+        'BBuscar
+        '
+        Me.BBuscar.BackColor = System.Drawing.Color.RosyBrown
+        Me.BBuscar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BBuscar.ForeColor = System.Drawing.Color.White
+        Me.BBuscar.Image = Global.Principal.My.Resources.Resources.find_102325__1_
+        Me.BBuscar.ImageAlign = System.Drawing.ContentAlignment.TopRight
+        Me.BBuscar.Location = New System.Drawing.Point(133, 85)
+        Me.BBuscar.Name = "BBuscar"
+        Me.BBuscar.Size = New System.Drawing.Size(206, 53)
+        Me.BBuscar.TabIndex = 38
+        Me.BBuscar.Text = "Buscar cliente"
+        Me.BBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BBuscar.UseVisualStyleBackColor = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 5)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(152, 120)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 17
+        Me.PictureBox1.TabStop = False
+        Me.PictureBox1.WaitOnLoad = True
         '
         'Facturacion
         '
@@ -531,8 +510,8 @@ Partial Class Facturacion
         CType(Me.dgvCompra, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -542,7 +521,6 @@ Partial Class Facturacion
     Friend WithEvents TCajero As TextBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents LSeleccionar As Label
-    Friend WithEvents Label2 As Label
     Friend WithEvents LDa As Label
     Friend WithEvents LDniC As Label
     Friend WithEvents LApellidoC As Label
@@ -562,7 +540,6 @@ Partial Class Facturacion
     Friend WithEvents LForna As Label
     Friend WithEvents Panel4 As Panel
     Friend WithEvents TTelefono As TextBox
-    Friend WithEvents TCliente As TextBox
     Friend WithEvents TDniCli As TextBox
     Friend WithEvents TApellidoCli As TextBox
     Friend WithEvents TNombreCli As TextBox

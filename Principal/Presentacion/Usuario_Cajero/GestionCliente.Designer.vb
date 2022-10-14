@@ -48,6 +48,10 @@ Partial Class GestionCliente
         Me.TabModificarCliente = New System.Windows.Forms.TabPage()
         Me.dgvCliente = New System.Windows.Forms.DataGridView()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.RBcorreo = New System.Windows.Forms.RadioButton()
+        Me.RBdni = New System.Windows.Forms.RadioButton()
+        Me.RBnombre = New System.Windows.Forms.RadioButton()
+        Me.RBapellido = New System.Windows.Forms.RadioButton()
         Me.BModificar = New System.Windows.Forms.Button()
         Me.TCorreo2 = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -55,10 +59,6 @@ Partial Class GestionCliente
         Me.TDni = New System.Windows.Forms.TextBox()
         Me.TNombre = New System.Windows.Forms.TextBox()
         Me.TApellido = New System.Windows.Forms.TextBox()
-        Me.CBcorreo = New System.Windows.Forms.CheckBox()
-        Me.CBdni = New System.Windows.Forms.CheckBox()
-        Me.CBnombre = New System.Windows.Forms.CheckBox()
-        Me.CBapellido = New System.Windows.Forms.CheckBox()
         Me.ErrorCorreo = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.BVentas = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
@@ -346,6 +346,10 @@ Partial Class GestionCliente
         Me.Panel3.AutoSize = True
         Me.Panel3.BackColor = System.Drawing.Color.LightSlateGray
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel3.Controls.Add(Me.RBcorreo)
+        Me.Panel3.Controls.Add(Me.RBdni)
+        Me.Panel3.Controls.Add(Me.RBnombre)
+        Me.Panel3.Controls.Add(Me.RBapellido)
         Me.Panel3.Controls.Add(Me.BModificar)
         Me.Panel3.Controls.Add(Me.TCorreo2)
         Me.Panel3.Controls.Add(Me.Label2)
@@ -353,10 +357,6 @@ Partial Class GestionCliente
         Me.Panel3.Controls.Add(Me.TDni)
         Me.Panel3.Controls.Add(Me.TNombre)
         Me.Panel3.Controls.Add(Me.TApellido)
-        Me.Panel3.Controls.Add(Me.CBcorreo)
-        Me.Panel3.Controls.Add(Me.CBdni)
-        Me.Panel3.Controls.Add(Me.CBnombre)
-        Me.Panel3.Controls.Add(Me.CBapellido)
         Me.Panel3.Cursor = System.Windows.Forms.Cursors.Default
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel3.Location = New System.Drawing.Point(3, 3)
@@ -364,6 +364,50 @@ Partial Class GestionCliente
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(1351, 228)
         Me.Panel3.TabIndex = 10
+        '
+        'RBcorreo
+        '
+        Me.RBcorreo.AutoSize = True
+        Me.RBcorreo.Location = New System.Drawing.Point(687, 94)
+        Me.RBcorreo.Name = "RBcorreo"
+        Me.RBcorreo.Size = New System.Drawing.Size(173, 24)
+        Me.RBcorreo.TabIndex = 17
+        Me.RBcorreo.TabStop = True
+        Me.RBcorreo.Text = "Buscar por Correo"
+        Me.RBcorreo.UseVisualStyleBackColor = True
+        '
+        'RBdni
+        '
+        Me.RBdni.AutoSize = True
+        Me.RBdni.Location = New System.Drawing.Point(687, 40)
+        Me.RBdni.Name = "RBdni"
+        Me.RBdni.Size = New System.Drawing.Size(150, 24)
+        Me.RBdni.TabIndex = 16
+        Me.RBdni.TabStop = True
+        Me.RBdni.Text = "Buscar por DNI"
+        Me.RBdni.UseVisualStyleBackColor = True
+        '
+        'RBnombre
+        '
+        Me.RBnombre.AutoSize = True
+        Me.RBnombre.Location = New System.Drawing.Point(124, 96)
+        Me.RBnombre.Name = "RBnombre"
+        Me.RBnombre.Size = New System.Drawing.Size(181, 24)
+        Me.RBnombre.TabIndex = 15
+        Me.RBnombre.TabStop = True
+        Me.RBnombre.Text = "Buscar por Nombre" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.RBnombre.UseVisualStyleBackColor = True
+        '
+        'RBapellido
+        '
+        Me.RBapellido.AutoSize = True
+        Me.RBapellido.Location = New System.Drawing.Point(124, 40)
+        Me.RBapellido.Name = "RBapellido"
+        Me.RBapellido.Size = New System.Drawing.Size(183, 24)
+        Me.RBapellido.TabIndex = 14
+        Me.RBapellido.TabStop = True
+        Me.RBapellido.Text = "Buscar por Apellido"
+        Me.RBapellido.UseVisualStyleBackColor = True
         '
         'BModificar
         '
@@ -440,54 +484,6 @@ Partial Class GestionCliente
         Me.TApellido.Size = New System.Drawing.Size(274, 26)
         Me.TApellido.TabIndex = 4
         '
-        'CBcorreo
-        '
-        Me.CBcorreo.AutoSize = True
-        Me.CBcorreo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CBcorreo.ForeColor = System.Drawing.Color.Black
-        Me.CBcorreo.Location = New System.Drawing.Point(701, 96)
-        Me.CBcorreo.Name = "CBcorreo"
-        Me.CBcorreo.Size = New System.Drawing.Size(154, 24)
-        Me.CBcorreo.TabIndex = 3
-        Me.CBcorreo.Text = "Buscar por correo"
-        Me.CBcorreo.UseVisualStyleBackColor = True
-        '
-        'CBdni
-        '
-        Me.CBdni.AutoSize = True
-        Me.CBdni.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CBdni.ForeColor = System.Drawing.Color.Black
-        Me.CBdni.Location = New System.Drawing.Point(701, 40)
-        Me.CBdni.Name = "CBdni"
-        Me.CBdni.Size = New System.Drawing.Size(137, 24)
-        Me.CBdni.TabIndex = 2
-        Me.CBdni.Text = "Buscar por DNI"
-        Me.CBdni.UseVisualStyleBackColor = True
-        '
-        'CBnombre
-        '
-        Me.CBnombre.AutoSize = True
-        Me.CBnombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CBnombre.ForeColor = System.Drawing.Color.Black
-        Me.CBnombre.Location = New System.Drawing.Point(136, 96)
-        Me.CBnombre.Name = "CBnombre"
-        Me.CBnombre.Size = New System.Drawing.Size(165, 24)
-        Me.CBnombre.TabIndex = 1
-        Me.CBnombre.Text = "Buscar por Nombre"
-        Me.CBnombre.UseVisualStyleBackColor = True
-        '
-        'CBapellido
-        '
-        Me.CBapellido.AutoSize = True
-        Me.CBapellido.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CBapellido.ForeColor = System.Drawing.Color.Black
-        Me.CBapellido.Location = New System.Drawing.Point(136, 40)
-        Me.CBapellido.Name = "CBapellido"
-        Me.CBapellido.Size = New System.Drawing.Size(165, 24)
-        Me.CBapellido.TabIndex = 0
-        Me.CBapellido.Text = "Buscar por Apellido"
-        Me.CBapellido.UseVisualStyleBackColor = True
-        '
         'ErrorCorreo
         '
         Me.ErrorCorreo.ContainerControl = Me
@@ -556,10 +552,6 @@ Partial Class GestionCliente
     Friend WithEvents TDni As TextBox
     Friend WithEvents TNombre As TextBox
     Friend WithEvents TApellido As TextBox
-    Friend WithEvents CBcorreo As CheckBox
-    Friend WithEvents CBdni As CheckBox
-    Friend WithEvents CBnombre As CheckBox
-    Friend WithEvents CBapellido As CheckBox
     Friend WithEvents dgvCliente As DataGridView
     Friend WithEvents BConfirmar As Button
     Friend WithEvents BCancelar As Button
@@ -567,4 +559,8 @@ Partial Class GestionCliente
     Friend WithEvents TCorreo2 As TextBox
     Friend WithEvents BVentas As Button
     Friend WithEvents BModificar As Button
+    Friend WithEvents RBcorreo As RadioButton
+    Friend WithEvents RBdni As RadioButton
+    Friend WithEvents RBnombre As RadioButton
+    Friend WithEvents RBapellido As RadioButton
 End Class

@@ -32,18 +32,27 @@
                       Select p.Id_producto, p.nombre, p.descripcion, p.codigo, p.precio, p.stock, c.desc_categoria, p.estado).ToList
         grid.DataSource = querry.ToList
     End Sub
-    Public Sub buscar_precio(ByVal prec As String, ByVal grid As DataGridView)
-        Dim querry = (From p In ctx.Producto Join c In ctx.Categoria On p.categoria_id Equals c.Id_categoria Where p.precio.ToString.Contains(prec)
-                      Select p.Id_producto, p.nombre, p.descripcion, p.codigo, p.precio, p.stock, c.desc_categoria, p.estado).ToList
-
-        grid.DataSource = querry.ToList
-    End Sub
     Public Sub buscar_categoria(ByVal cat As String, ByVal grid As DataGridView)
         Dim querry = (From p In ctx.Producto Join c In ctx.Categoria On p.categoria_id Equals c.Id_categoria Where p.categoria_id.ToString.Contains(cat)
                       Select p.Id_producto, p.nombre, p.descripcion, p.codigo, p.precio, p.stock, c.desc_categoria, p.estado).ToList
         grid.DataSource = querry.ToList
     End Sub
+    Public Sub buscar_nombreLista(ByVal nom As String, ByVal grid As DataGridView)
+        Dim querry = (From p In ctx.Producto Join c In ctx.Categoria On p.categoria_id Equals c.Id_categoria Where p.nombre.Contains(nom)
+                      Select p.Id_producto, p.nombre, p.descripcion, p.codigo, p.precio, p.stock, c.desc_categoria).ToList
+        grid.DataSource = querry.ToList
 
+    End Sub
+    Public Sub buscar_codigoLista(ByVal cod As String, ByVal grid As DataGridView)
+        Dim querry = (From p In ctx.Producto Join c In ctx.Categoria On p.categoria_id Equals c.Id_categoria Where p.codigo.Contains(cod)
+                      Select p.Id_producto, p.nombre, p.descripcion, p.codigo, p.precio, p.stock, c.desc_categoria).ToList
+        grid.DataSource = querry.ToList
+    End Sub
+    Public Sub buscar_categoriaLista(ByVal cat As String, ByVal grid As DataGridView)
+        Dim querry = (From p In ctx.Producto Join c In ctx.Categoria On p.categoria_id Equals c.Id_categoria Where p.categoria_id.ToString.Contains(cat)
+                      Select p.Id_producto, p.nombre, p.descripcion, p.codigo, p.precio, p.stock, c.desc_categoria).ToList
+        grid.DataSource = querry.ToList
+    End Sub
     Function baja_producto(estado As String, id As String) As Boolean
 
         Try

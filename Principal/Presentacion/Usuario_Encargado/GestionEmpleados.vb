@@ -17,48 +17,8 @@ Public Class GestionEmpleados
 
     End Sub
 
-    Private Sub CBapellido_CheckedChanged(sender As Object, e As EventArgs) Handles CBapellido.CheckedChanged
 
-        If CBapellido.Checked = True Then
-            CBapellido.Font = New Font(CBapellido.Font.Bold, 13)
-            TApellido.Enabled = True
-        Else
-            CBapellido.Font = New Font(CBapellido.Font.Name, 12)
-            TApellido.Enabled = False
-        End If
-    End Sub
-
-    Private Sub CBnombre_CheckedChanged(sender As Object, e As EventArgs) Handles CBnombre.CheckedChanged
-        If CBnombre.Checked = True Then
-            CBnombre.Font = New Font(CBnombre.Font.Bold, 13)
-            TNombre.Enabled = True
-        Else
-            CBnombre.Font = New Font(CBnombre.Font.Name, 12)
-            TNombre.Enabled = False
-        End If
-    End Sub
-
-    Private Sub CBdni_CheckedChanged(sender As Object, e As EventArgs) Handles CBdni.CheckedChanged
-        If CBdni.Checked = True Then
-            CBdni.Font = New Font(CBdni.Font.Bold, 13)
-            TDni.Enabled = True
-        Else
-            CBdni.Font = New Font(CBdni.Font.Name, 12)
-            TDni.Enabled = False
-        End If
-    End Sub
-
-    Private Sub CBestado_CheckedChanged(sender As Object, e As EventArgs) Handles CBestado.CheckedChanged
-        If CBestado.Checked = True Then
-            CBestado.Font = New Font(CBestado.Font.Bold, 13)
-            ComboEstado.Enabled = True
-        Else
-            CBestado.Font = New Font(CBestado.Font.Name, 12)
-            ComboEstado.Enabled = False
-        End If
-    End Sub
-
-    Private Sub SoloNumeros_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TDni.KeyPress, TDni2.KeyPress
+    Private Sub SoloNumeros_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TDni2.KeyPress
         If (Char.IsNumber(e.KeyChar)) Then
             e.Handled = False
         ElseIf (Char.IsControl(e.KeyChar)) Then
@@ -68,7 +28,7 @@ Public Class GestionEmpleados
             MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End If
     End Sub
-    Private Sub SoloLetras_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TApellido.KeyPress, TNombre.KeyPress, TApellido2.KeyPress, TNombre2.KeyPress
+    Private Sub SoloLetras_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TApellido2.KeyPress, TNombre2.KeyPress
         If (Char.IsLetter(e.KeyChar)) Then
             e.Handled = False
 
@@ -167,11 +127,11 @@ Public Class GestionEmpleados
     Private Sub BBuscar_Click(sender As Object, e As EventArgs) Handles BBuscar.Click
         Dim emp = New DEmpleado
 
-        If Not String.IsNullOrEmpty(TNombre.Text) And CBnombre.Checked = True Then
+        If Not String.IsNullOrEmpty(TNombre.Text) And RBnombre.Checked = True Then
             emp.buscar_nombre(TNombre.Text, dgEmpleados)
-        ElseIf Not String.IsNullOrEmpty(TApellido.Text) And CBapellido.Checked = True Then
+        ElseIf Not String.IsNullOrEmpty(TApellido.Text) And rbapellido.Checked = True Then
             emp.buscar_apellido(TApellido.Text, dgEmpleados)
-        ElseIf Not String.IsNullOrEmpty(TDni.Text) And CBdni.Checked = True Then
+        ElseIf Not String.IsNullOrEmpty(TDni.Text) And rbdni.Checked = True Then
             emp.buscar_dni(TDni.Text, dgEmpleados)
         Else
             emp.buscar_estado(ComboEstado.Text, dgEmpleados)
@@ -268,5 +228,37 @@ Public Class GestionEmpleados
         BEliminar.Enabled = False
         BModificar.Enabled = False
 
+    End Sub
+
+    Private Sub RBapellido_CheckedChanged(sender As Object, e As EventArgs) Handles RBapellido.CheckedChanged
+        If RBapellido.Checked = True Then
+            TApellido.Enabled = True
+        Else
+            TApellido.Enabled = False
+        End If
+    End Sub
+
+    Private Sub RBnombre_CheckedChanged(sender As Object, e As EventArgs) Handles RBnombre.CheckedChanged
+        If RBnombre.Checked = True Then
+            TNombre.Enabled = True
+        Else
+            TNombre.Enabled = False
+        End If
+    End Sub
+
+    Private Sub RBdni_CheckedChanged(sender As Object, e As EventArgs) Handles RBdni.CheckedChanged
+        If RBdni.Checked = True Then
+            TDni.Enabled = True
+        Else
+            TDni.Enabled = False
+        End If
+    End Sub
+
+    Private Sub RBestado_CheckedChanged(sender As Object, e As EventArgs) Handles RBestado.CheckedChanged
+        If RBestado.Checked = True Then
+            ComboEstado.Enabled = True
+        Else
+            ComboEstado.Enabled = False
+        End If
     End Sub
 End Class

@@ -1,4 +1,5 @@
 ﻿Imports System.ComponentModel
+Imports System.Security.Cryptography
 
 Public Class EditarEmpleado
     Dim objusuario = New NUsuario
@@ -26,9 +27,10 @@ Public Class EditarEmpleado
         Else
             op = MsgBox("¿Desea guardar los cambios?", vbYesNo + vbDefaultButton2 + vbInformation, "Confirmar")
             If op = DialogResult.Yes Then
+                TContraseña.Text = Encriptar(TContraseña.Text)
 
                 objusuario.agregar_usuario(TUsuario.Text, TContraseña.Text, CBperfil.SelectedValue, PermisosUsuario.dgvEmpleados.CurrentRow.Cells(0).Value)
-                    MsgBox("Los cambios se realizaron correctamente", vbOKOnly + vbDefaultButton1 + vbInformation, "Cambios realizados")
+                MsgBox("Los cambios se realizaron correctamente", vbOKOnly + vbDefaultButton1 + vbInformation, "Cambios realizados")
                 objusuario.cargarGrid(PermisosUsuario.dgvUsuario)
                 TUsuario.Clear()
                 TContraseña.Clear()
@@ -118,7 +120,16 @@ Public Class EditarEmpleado
         PermisosUsuario.dgvEmpleados.ClearSelection()
 
     End Sub
+    Public Function Encriptar(ByVal contra As String)
+        Dim iv() As Byte = System.Text.ASCIIEncoding.ASCII.GetBytes("qualityi")
+        Dim EncryptionKey() As Byte = Convert.FromBase64String("rpaSPvIvVLlrcmtzPU9/c67Gkj7yL1S5")
+        Dim buffer() As Byte = System.Text.Encoding.UTF8.GetBytes(contra)
+        Dim desc As TripleDESCryptoServiceProvider = New TripleDESCryptoServiceProvider
+        desc.Key = EncryptionKey
+        desc.IV = iv
 
+        Return Convert.ToBase64String(desc.CreateEncryptor().TransformFinalBlock(buffer, 0, buffer.Length()))
+    End Function
     Private Sub TContraseña_TextChanged(sender As Object, e As EventArgs) Handles TContraseña.TextChanged
 
     End Sub

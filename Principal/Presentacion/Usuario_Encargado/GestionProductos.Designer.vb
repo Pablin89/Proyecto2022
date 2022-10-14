@@ -26,19 +26,17 @@ Partial Class GestionProductos
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.dgvProductos = New System.Windows.Forms.DataGridView()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.RBcat = New System.Windows.Forms.RadioButton()
+        Me.TNombre2 = New System.Windows.Forms.TextBox()
+        Me.RBnombre = New System.Windows.Forms.RadioButton()
+        Me.RBcodigo = New System.Windows.Forms.RadioButton()
+        Me.TCodigo = New System.Windows.Forms.TextBox()
         Me.BModificar = New System.Windows.Forms.Button()
         Me.BEliminar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BBuscar = New System.Windows.Forms.Button()
         Me.ComboCat = New System.Windows.Forms.ComboBox()
-        Me.TCodigo = New System.Windows.Forms.TextBox()
-        Me.CBcodigo = New System.Windows.Forms.CheckBox()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.TPrecio = New System.Windows.Forms.TextBox()
-        Me.TNombre = New System.Windows.Forms.TextBox()
-        Me.CBcat = New System.Windows.Forms.CheckBox()
-        Me.CBprecio = New System.Windows.Forms.CheckBox()
-        Me.CBnombre = New System.Windows.Forms.CheckBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.TStockMin = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -120,23 +118,73 @@ Partial Class GestionProductos
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Panel2.Controls.Add(Me.RBcat)
+        Me.Panel2.Controls.Add(Me.TNombre2)
+        Me.Panel2.Controls.Add(Me.RBnombre)
+        Me.Panel2.Controls.Add(Me.RBcodigo)
+        Me.Panel2.Controls.Add(Me.TCodigo)
         Me.Panel2.Controls.Add(Me.BModificar)
         Me.Panel2.Controls.Add(Me.BEliminar)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.BBuscar)
         Me.Panel2.Controls.Add(Me.ComboCat)
-        Me.Panel2.Controls.Add(Me.TCodigo)
-        Me.Panel2.Controls.Add(Me.CBcodigo)
         Me.Panel2.Controls.Add(Me.Button1)
-        Me.Panel2.Controls.Add(Me.TPrecio)
-        Me.Panel2.Controls.Add(Me.TNombre)
-        Me.Panel2.Controls.Add(Me.CBcat)
-        Me.Panel2.Controls.Add(Me.CBprecio)
-        Me.Panel2.Controls.Add(Me.CBnombre)
         Me.Panel2.Location = New System.Drawing.Point(-4, 6)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1366, 266)
         Me.Panel2.TabIndex = 7
+        '
+        'RBcat
+        '
+        Me.RBcat.AutoSize = True
+        Me.RBcat.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.RBcat.Location = New System.Drawing.Point(890, 67)
+        Me.RBcat.Name = "RBcat"
+        Me.RBcat.Size = New System.Drawing.Size(197, 24)
+        Me.RBcat.TabIndex = 40
+        Me.RBcat.TabStop = True
+        Me.RBcat.Text = "Buscar por Categoria"
+        Me.RBcat.UseVisualStyleBackColor = True
+        '
+        'TNombre2
+        '
+        Me.TNombre2.Enabled = False
+        Me.TNombre2.Location = New System.Drawing.Point(632, 65)
+        Me.TNombre2.Name = "TNombre2"
+        Me.TNombre2.Size = New System.Drawing.Size(229, 26)
+        Me.TNombre2.TabIndex = 38
+        '
+        'RBnombre
+        '
+        Me.RBnombre.AutoSize = True
+        Me.RBnombre.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.RBnombre.Location = New System.Drawing.Point(445, 65)
+        Me.RBnombre.Name = "RBnombre"
+        Me.RBnombre.Size = New System.Drawing.Size(181, 24)
+        Me.RBnombre.TabIndex = 37
+        Me.RBnombre.TabStop = True
+        Me.RBnombre.Text = "Buscar por Nombre" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.RBnombre.UseVisualStyleBackColor = True
+        '
+        'RBcodigo
+        '
+        Me.RBcodigo.AutoSize = True
+        Me.RBcodigo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.RBcodigo.Location = New System.Drawing.Point(17, 65)
+        Me.RBcodigo.Name = "RBcodigo"
+        Me.RBcodigo.Size = New System.Drawing.Size(175, 24)
+        Me.RBcodigo.TabIndex = 36
+        Me.RBcodigo.TabStop = True
+        Me.RBcodigo.Text = "Buscar por Codigo"
+        Me.RBcodigo.UseVisualStyleBackColor = True
+        '
+        'TCodigo
+        '
+        Me.TCodigo.Enabled = False
+        Me.TCodigo.Location = New System.Drawing.Point(198, 64)
+        Me.TCodigo.Name = "TCodigo"
+        Me.TCodigo.Size = New System.Drawing.Size(228, 26)
+        Me.TCodigo.TabIndex = 35
         '
         'BModificar
         '
@@ -198,30 +246,10 @@ Partial Class GestionProductos
         '
         Me.ComboCat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboCat.FormattingEnabled = True
-        Me.ComboCat.Location = New System.Drawing.Point(904, 108)
+        Me.ComboCat.Location = New System.Drawing.Point(1093, 65)
         Me.ComboCat.Name = "ComboCat"
-        Me.ComboCat.Size = New System.Drawing.Size(287, 28)
+        Me.ComboCat.Size = New System.Drawing.Size(257, 28)
         Me.ComboCat.TabIndex = 27
-        '
-        'TCodigo
-        '
-        Me.TCodigo.Enabled = False
-        Me.TCodigo.Location = New System.Drawing.Point(359, 110)
-        Me.TCodigo.Name = "TCodigo"
-        Me.TCodigo.Size = New System.Drawing.Size(284, 26)
-        Me.TCodigo.TabIndex = 10
-        '
-        'CBcodigo
-        '
-        Me.CBcodigo.AutoSize = True
-        Me.CBcodigo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CBcodigo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.CBcodigo.Location = New System.Drawing.Point(147, 108)
-        Me.CBcodigo.Name = "CBcodigo"
-        Me.CBcodigo.Size = New System.Drawing.Size(159, 24)
-        Me.CBcodigo.TabIndex = 9
-        Me.CBcodigo.Text = "Buscar por Codigo"
-        Me.CBcodigo.UseVisualStyleBackColor = True
         '
         'Button1
         '
@@ -233,58 +261,6 @@ Partial Class GestionProductos
         Me.Button1.TabIndex = 8
         Me.Button1.Text = "Buscar"
         Me.Button1.UseVisualStyleBackColor = True
-        '
-        'TPrecio
-        '
-        Me.TPrecio.Enabled = False
-        Me.TPrecio.Location = New System.Drawing.Point(904, 47)
-        Me.TPrecio.Name = "TPrecio"
-        Me.TPrecio.Size = New System.Drawing.Size(287, 26)
-        Me.TPrecio.TabIndex = 6
-        '
-        'TNombre
-        '
-        Me.TNombre.Enabled = False
-        Me.TNombre.Location = New System.Drawing.Point(359, 47)
-        Me.TNombre.Name = "TNombre"
-        Me.TNombre.Size = New System.Drawing.Size(284, 26)
-        Me.TNombre.TabIndex = 5
-        '
-        'CBcat
-        '
-        Me.CBcat.AutoSize = True
-        Me.CBcat.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CBcat.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.CBcat.Location = New System.Drawing.Point(710, 110)
-        Me.CBcat.Name = "CBcat"
-        Me.CBcat.Size = New System.Drawing.Size(178, 24)
-        Me.CBcat.TabIndex = 3
-        Me.CBcat.Text = "Buscar por Categoria"
-        Me.CBcat.UseVisualStyleBackColor = True
-        '
-        'CBprecio
-        '
-        Me.CBprecio.AutoSize = True
-        Me.CBprecio.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CBprecio.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.CBprecio.Location = New System.Drawing.Point(710, 49)
-        Me.CBprecio.Name = "CBprecio"
-        Me.CBprecio.Size = New System.Drawing.Size(153, 24)
-        Me.CBprecio.TabIndex = 2
-        Me.CBprecio.Text = "Buscar por Precio"
-        Me.CBprecio.UseVisualStyleBackColor = True
-        '
-        'CBnombre
-        '
-        Me.CBnombre.AutoSize = True
-        Me.CBnombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CBnombre.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.CBnombre.Location = New System.Drawing.Point(147, 47)
-        Me.CBnombre.Name = "CBnombre"
-        Me.CBnombre.Size = New System.Drawing.Size(165, 24)
-        Me.CBnombre.TabIndex = 1
-        Me.CBnombre.Text = "Buscar por Nombre"
-        Me.CBnombre.UseVisualStyleBackColor = True
         '
         'TabPage2
         '
@@ -609,14 +585,7 @@ Partial Class GestionProductos
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents Panel2 As Panel
     Friend WithEvents ComboCat As ComboBox
-    Friend WithEvents TCodigo As TextBox
-    Friend WithEvents CBcodigo As CheckBox
     Friend WithEvents Button1 As Button
-    Friend WithEvents TPrecio As TextBox
-    Friend WithEvents TNombre As TextBox
-    Friend WithEvents CBcat As CheckBox
-    Friend WithEvents CBprecio As CheckBox
-    Friend WithEvents CBnombre As CheckBox
     Friend WithEvents BBuscar As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents dgvProductos As DataGridView
@@ -648,4 +617,9 @@ Partial Class GestionProductos
     Friend WithEvents TStockMin As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents dgvCategoria As DataGridView
+    Friend WithEvents RBcat As RadioButton
+    Friend WithEvents TNombre2 As TextBox
+    Friend WithEvents RBnombre As RadioButton
+    Friend WithEvents RBcodigo As RadioButton
+    Friend WithEvents TCodigo As TextBox
 End Class

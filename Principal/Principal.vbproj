@@ -201,6 +201,12 @@
     <Compile Include="Presentacion\Usuario_Cajero\Cajeros.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentacion\Usuario_Cajero\GridClientes.Designer.vb">
+      <DependentUpon>GridClientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_Cajero\GridClientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentacion\Usuario_Encargado\CajerosGrid.Designer.vb">
       <DependentUpon>CajerosGrid.vb</DependentUpon>
     </Compile>
@@ -333,10 +339,10 @@
     <Compile Include="Presentacion\Usuario_Gerente\ReporteCategoriasa.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Usuario_Gerente\ReporteProductos.Designer.vb">
-      <DependentUpon>ReporteProductos.vb</DependentUpon>
+    <Compile Include="Presentacion\Usuario_Gerente\ReportesMes.Designer.vb">
+      <DependentUpon>ReportesMes.vb</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Usuario_Gerente\ReporteProductos.vb">
+    <Compile Include="Presentacion\Usuario_Gerente\ReportesMes.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\Usuario_Gerente\ReporteCajeros.Designer.vb">
@@ -390,6 +396,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Presentacion\Usuario_Cajero\Cajeros.resx">
       <DependentUpon>Cajeros.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Usuario_Cajero\GridClientes.resx">
+      <DependentUpon>GridClientes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Usuario_Encargado\CajerosGrid.resx">
       <DependentUpon>CajerosGrid.vb</DependentUpon>
@@ -463,8 +472,8 @@
     <EmbeddedResource Include="Presentacion\Usuario_Gerente\ReporteCategoriasa.resx">
       <DependentUpon>ReporteCategoriasa.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Usuario_Gerente\ReporteProductos.resx">
-      <DependentUpon>ReporteProductos.vb</DependentUpon>
+    <EmbeddedResource Include="Presentacion\Usuario_Gerente\ReportesMes.resx">
+      <DependentUpon>ReportesMes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.vb</DependentUpon>

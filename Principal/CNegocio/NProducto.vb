@@ -56,7 +56,24 @@
         grid.Columns(5).HeaderText = "Stock"
         grid.Columns(6).HeaderText = "Catgoria"
     End Sub
+    Public Sub cargarGridLista(ByVal grid As DataGridView)
+        Dim ctx As ProyectoEntities9 = New ProyectoEntities9
+        Dim querry = (From p In ctx.Producto Join c In ctx.Categoria On p.categoria_id Equals c.Id_categoria Where p.estado = 1
+                      Select p.Id_producto, p.nombre, p.descripcion, p.codigo, p.precio, p.stock, p.stock_minimo, c.desc_categoria).ToList
 
+
+        grid.DataSource = querry.ToList
+        grid.Columns(0).HeaderText = ""
+        grid.Columns(1).HeaderText = "Nombre"
+        grid.Columns(2).HeaderText = "Descripcion"
+        grid.Columns(3).HeaderText = "Codigo"
+        grid.Columns(4).HeaderText = "Precio"
+        grid.Columns(5).HeaderText = "Stock"
+        grid.Columns(6).HeaderText = "Stock Minimo"
+        grid.Columns(7).HeaderText = "Categoria"
+
+
+    End Sub
 
 
 End Class

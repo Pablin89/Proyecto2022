@@ -23,10 +23,10 @@
             If CheckBox2.Checked = True Then
                 Dim cat As Integer = ComboBox2.SelectedValue
 
-                If det.existe_datosCat(ComboBox2.SelectedValue, fechaD, fechaH).Equals(True) Then
-
+                If det.existe_datos(ComboBox2.SelectedValue, fechaD, fechaH).Equals(True) Then
                     Dim q = (From d In ctx.Detalle Join f In ctx.Factura On d.nro_factura Equals f.Nro_factura Join p In ctx.Producto On d.id_producto Equals p.Id_producto
-                             Join c In ctx.Categoria On p.categoria_id Equals c.Id_categoria Where p.categoria_id = cat And f.fecha_venta >= fechaD And f.fecha_venta <= fechaH Group d By c.desc_categoria Into grupo = Group Select Cantidad = grupo.Count(), Categoria = desc_categoria)
+                             Where p.categoria_id = cat And f.fecha_venta >= fechaD And f.fecha_venta <= fechaH Group d.cantidad By p.nombre Into grupo = Group Select Total = grupo.Sum(), Producto = nombre
+                             Order By Total Descending).Take(10)
 
                     DataGridView1.DataSource = q.ToList
                     Dim datos = q.ToList(0)
@@ -35,17 +35,17 @@
                     Chart1.Series.Add("Datos")
                     Chart1.Series("Datos").ChartType = DataVisualization.Charting.SeriesChartType.Pie
 
-
                     For j = 0 To q.Count - 1
-                        Chart1.Series("Datos").Points.AddXY(q.ToList(j).Categoria, q.ToList(j).Cantidad)
+                        Chart1.Series("Datos").Points.AddXY(q.ToList(j).Producto, q.ToList(j).Total)
                         Chart1.Series("Datos").IsValueShownAsLabel = True
                     Next
 
                     Chart1.DataSource = datos
                     TTotal.Text = "$" + "" + fact.recaudado_porfechas(DateDesde.Value, DateHasta.Value).ToString
                 Else
-                    MsgBox("No existen resultado", vbOKOnly + vbExclamation, "Aplicar Criterios")
+                    MsgBox("No existen resultados", vbOKOnly + vbExclamation, "Aplicar Selección")
                 End If
+
 
             Else
                 If det.existe_fechasCat(fechaD, fechaH).Equals(True) Then

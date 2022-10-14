@@ -222,7 +222,7 @@ Partial Class Gerente
         Me.ReporteProducto.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ReporteProducto.Name = "ReporteProducto"
         Me.ReporteProducto.Size = New System.Drawing.Size(1360, 128)
-        Me.ReporteProducto.Text = "Reportes por productos"
+        Me.ReporteProducto.Text = "Reportes por Mes"
         '
         'NumerosMes
         '

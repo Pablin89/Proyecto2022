@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class ReporteProductos
+Partial Class ReportesMes
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -22,12 +22,9 @@ Partial Class ReporteProductos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.BDescarga = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BBusqueda = New System.Windows.Forms.Button()
@@ -55,41 +52,8 @@ Partial Class ReporteProductos
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(1362, 70)
         Me.Label2.TabIndex = 52
-        Me.Label2.Text = "Reportes por productos"
+        Me.Label2.Text = "Reportes ventas por mes"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(135, 309)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(162, 20)
-        Me.Label4.TabIndex = 80
-        Me.Label4.Text = "Seleccionar categoría"
-        '
-        'CheckBox2
-        '
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.CheckBox2.Location = New System.Drawing.Point(313, 271)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(155, 22)
-        Me.CheckBox2.TabIndex = 79
-        Me.CheckBox2.Text = "Filtrar por categoría"
-        Me.CheckBox2.UseVisualStyleBackColor = True
-        '
-        'ComboBox2
-        '
-        Me.ComboBox2.Enabled = False
-        Me.ComboBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(313, 309)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(271, 24)
-        Me.ComboBox2.TabIndex = 78
         '
         'BDescarga
         '
@@ -106,7 +70,7 @@ Partial Class ReporteProductos
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(253, 144)
+        Me.Label1.Location = New System.Drawing.Point(262, 194)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(252, 20)
         Me.Label1.TabIndex = 76
@@ -125,7 +89,7 @@ Partial Class ReporteProductos
         'DateHasta
         '
         Me.DateHasta.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateHasta.Location = New System.Drawing.Point(448, 191)
+        Me.DateHasta.Location = New System.Drawing.Point(457, 241)
         Me.DateHasta.MaxDate = New Date(2050, 12, 24, 0, 0, 0, 0)
         Me.DateHasta.MinDate = New Date(2015, 11, 25, 0, 0, 0, 0)
         Me.DateHasta.Name = "DateHasta"
@@ -138,7 +102,7 @@ Partial Class ReporteProductos
         Me.LHasta.AutoSize = True
         Me.LHasta.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LHasta.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LHasta.Location = New System.Drawing.Point(390, 191)
+        Me.LHasta.Location = New System.Drawing.Point(399, 241)
         Me.LHasta.Name = "LHasta"
         Me.LHasta.Size = New System.Drawing.Size(52, 20)
         Me.LHasta.TabIndex = 73
@@ -147,7 +111,7 @@ Partial Class ReporteProductos
         'DateDesde
         '
         Me.DateDesde.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateDesde.Location = New System.Drawing.Point(234, 191)
+        Me.DateDesde.Location = New System.Drawing.Point(243, 241)
         Me.DateDesde.MaxDate = New Date(2050, 12, 31, 0, 0, 0, 0)
         Me.DateDesde.MinDate = New Date(2015, 11, 24, 0, 0, 0, 0)
         Me.DateDesde.Name = "DateDesde"
@@ -160,7 +124,7 @@ Partial Class ReporteProductos
         Me.LDesde.AutoSize = True
         Me.LDesde.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LDesde.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LDesde.Location = New System.Drawing.Point(159, 191)
+        Me.LDesde.Location = New System.Drawing.Point(168, 241)
         Me.LDesde.Name = "LDesde"
         Me.LDesde.Size = New System.Drawing.Size(56, 20)
         Me.LDesde.TabIndex = 71
@@ -168,10 +132,10 @@ Partial Class ReporteProductos
         '
         'Chart1
         '
-        ChartArea1.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea1)
-        Legend1.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend1)
+        ChartArea2.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea2)
+        Legend2.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend2)
         Me.Chart1.Location = New System.Drawing.Point(671, 95)
         Me.Chart1.Name = "Chart1"
         Me.Chart1.Size = New System.Drawing.Size(531, 325)
@@ -242,9 +206,6 @@ Partial Class ReporteProductos
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.CheckBox2)
-        Me.Controls.Add(Me.ComboBox2)
         Me.Controls.Add(Me.BDescarga)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.BBusqueda)
@@ -256,7 +217,7 @@ Partial Class ReporteProductos
         Me.Controls.Add(Me.Label2)
         Me.Name = "ReporteProductos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Reporte Productos"
+        Me.Text = "Reporte Mes"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -266,9 +227,6 @@ Partial Class ReporteProductos
     End Sub
 
     Friend WithEvents Label2 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents CheckBox2 As CheckBox
-    Friend WithEvents ComboBox2 As ComboBox
     Friend WithEvents BDescarga As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents BBusqueda As Button

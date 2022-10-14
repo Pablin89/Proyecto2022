@@ -4,7 +4,7 @@
     Dim cat = New DCategoria
     Dim prod = New DProducto
 
-    Private Sub SoloNumeros_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TStock.KeyPress, TPrecioProd.KeyPress, TCodigoProd.KeyPress, TCodigo.KeyPress, TPrecio.KeyPress
+    Private Sub SoloNumeros_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TStock.KeyPress, TPrecioProd.KeyPress, TCodigoProd.KeyPress
         If (Char.IsNumber(e.KeyChar)) Then
             e.Handled = False
         ElseIf (Char.IsControl(e.KeyChar)) Then
@@ -58,46 +58,6 @@
         End If
     End Sub
 
-    Private Sub CBnombre_CheckedChanged(sender As Object, e As EventArgs) Handles CBnombre.CheckedChanged
-        If CBnombre.Checked = True Then
-            CBnombre.Font = New Font(CBnombre.Font.Bold, 13)
-            TNombre.Enabled = True
-        Else
-            CBnombre.Font = New Font(CBnombre.Font.Name, 12)
-            TNombre.Enabled = False
-        End If
-    End Sub
-
-    Private Sub CBcodigo_CheckedChanged(sender As Object, e As EventArgs) Handles CBcodigo.CheckedChanged
-        If CBcodigo.Checked = True Then
-            CBcodigo.Font = New Font(CBcodigo.Font.Bold, 13)
-            TCodigo.Enabled = True
-        Else
-            CBcodigo.Font = New Font(CBcodigo.Font.Name, 12)
-            TCodigo.Enabled = False
-        End If
-    End Sub
-
-    Private Sub CBprecio_CheckedChanged(sender As Object, e As EventArgs) Handles CBprecio.CheckedChanged
-        If CBprecio.Checked = True Then
-            CBprecio.Font = New Font(CBprecio.Font.Bold, 13)
-            TPrecio.Enabled = True
-        Else
-            CBprecio.Font = New Font(CBprecio.Font.Name, 12)
-            TPrecio.Enabled = False
-        End If
-    End Sub
-
-    Private Sub CBcat_CheckedChanged(sender As Object, e As EventArgs) Handles CBcat.CheckedChanged
-        If CBcat.Checked = True Then
-            CBcat.Font = New Font(CBcat.Font.Bold, 13)
-            ComboCat.Enabled = True
-        Else
-            CBcat.Font = New Font(CBcat.Font.Name, 12)
-            ComboCat.Enabled = False
-        End If
-    End Sub
-
 
     Private Sub BCancelar_Click(sender As Object, e As EventArgs) Handles BCancelar.Click
         Dim ask As MsgBoxResult
@@ -121,12 +81,10 @@
     Private Sub BBuscar_Click(sender As Object, e As EventArgs) Handles BBuscar.Click
         Dim prod = New DProducto
 
-        If Not String.IsNullOrEmpty(TNombre.Text) And CBnombre.Checked = True Then
-            prod.buscar_nombre(TNombre.Text, dgvProductos)
-        ElseIf Not String.IsNullOrEmpty(TCodigo.Text) And CBcodigo.Checked = True Then
+        If Not String.IsNullOrEmpty(TNombre2.Text) And RBnombre.Checked = True Then
+            prod.buscar_nombre(TNombre2.Text, dgvProductos)
+        ElseIf Not String.IsNullOrEmpty(TCodigo.Text) And rbcodigo.Checked = True Then
             prod.buscar_codigo(TCodigo.Text, dgvProductos)
-        ElseIf Not String.IsNullOrEmpty(TPrecio.Text) And CBprecio.Checked = True Then
-            prod.buscar_precio(TPrecio.Text, dgvProductos)
         Else
             prod.buscar_categoria(ComboCat.SelectedValue, dgvProductos)
         End If
@@ -235,5 +193,29 @@
         End If
         BEliminar.Enabled = False
         BModificar.Enabled = False
+    End Sub
+
+    Private Sub RBnombre_CheckedChanged(sender As Object, e As EventArgs) Handles RBnombre.CheckedChanged
+        If RBnombre.Checked = True Then
+            TNombre2.Enabled = True
+        Else
+            TNombre2.Enabled = False
+        End If
+    End Sub
+
+    Private Sub RBcodigo_CheckedChanged(sender As Object, e As EventArgs) Handles RBcodigo.CheckedChanged
+        If RBcodigo.Checked = True Then
+            TCodigo.Enabled = True
+        Else
+            TCodigo.Enabled = False
+        End If
+    End Sub
+
+    Private Sub RBcat_CheckedChanged(sender As Object, e As EventArgs) Handles RBcat.CheckedChanged
+        If RBcat.Checked = True Then
+            ComboCat.Enabled = True
+        Else
+            ComboCat.Enabled = False
+        End If
     End Sub
 End Class

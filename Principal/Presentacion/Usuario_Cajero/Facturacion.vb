@@ -93,7 +93,7 @@
                 TDniCli.Clear()
                 TTelefono.Clear()
                 TTotal.Clear()
-                TCliente.Clear()
+
 
             End If
         End If
@@ -156,33 +156,33 @@
     End Sub
 
     Private Sub BBuscar_Click(sender As Object, e As EventArgs) Handles BBuscar.Click
-        Dim lista As List(Of Cliente)
+        'Dim lista As List(Of Cliente)
 
-        If cliente.buscar_cliente(TCliente.Text).Equals(False) Then
-            Dim ask As MsgBoxResult
-            MsgBox("El cliente no esta registrado", vbOKOnly + vbCritical, "Buscar Cliente")
+        'If cliente.buscar_cliente(TCliente.Text).Equals(False) Then
+        'Dim ask As MsgBoxResult
+        'MsgBox("El cliente no esta registrado", vbOKOnly + vbCritical, "Buscar Cliente")
 
-            ask = MsgBox("Desea registrar al cliente?", vbYesNo + vbInformation, "Buscar Cliente")
-            If ask = MsgBoxResult.Yes Then
-                Me.Close()
-                GestionCliente.Show()
-            End If
+        'ask = MsgBox("Desea registrar al cliente?", vbYesNo + vbInformation, "Buscar Cliente")
+        'If ask = MsgBoxResult.Yes Then
+        'Me.Close()
+        'GestionCliente.Show()
+        'End If
 
-        Else
+        'Else
 
-            lista = cliente.datos_cliente(TCliente.Text)
-            Dim datos = lista.ToList
-            Dim u = datos(0)
+        'lista = cliente.datos_cliente(TCliente.Text)
+        'Dim datos = lista.ToList
+        'Dim u = datos(0)
 
-            TDniCli.Text = u.dni
-            TNombreCli.Text = u.nombre
-            TApellidoCli.Text = u.apellido
-            TTelefono.Text = u.telefono
-            TIdcli.Text = u.Id_cliente
-        End If
+        'TDniCli.Text = u.dni
+        'TNombreCli.Text = u.nombre
+        'TApellidoCli.Text = u.apellido
+        'TTelefono.Text = u.telefono
+        'TIdcli.Text = u.Id_cliente
+        'End If
 
 
-
+        GridClientes.Show()
 
     End Sub
 

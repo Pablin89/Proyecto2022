@@ -17,47 +17,6 @@ Public Class GestionCliente
 
     End Sub
 
-    Private Sub CBapellido_CheckedChanged(sender As Object, e As EventArgs) Handles CBapellido.CheckedChanged
-
-        If CBapellido.Checked = True Then
-            CBapellido.Font = New Font(CBapellido.Font.Bold, 13)
-            TApellido.Enabled = True
-        Else
-            CBapellido.Font = New Font(CBapellido.Font.Name, 12)
-            TApellido.Enabled = False
-        End If
-    End Sub
-
-    Private Sub CBnombre_CheckedChanged(sender As Object, e As EventArgs) Handles CBnombre.CheckedChanged
-        If CBnombre.Checked = True Then
-            CBnombre.Font = New Font(CBnombre.Font.Bold, 13)
-            TNombre.Enabled = True
-        Else
-            CBnombre.Font = New Font(CBnombre.Font.Name, 12)
-            TNombre.Enabled = False
-        End If
-    End Sub
-
-    Private Sub CBdni_CheckedChanged(sender As Object, e As EventArgs) Handles CBdni.CheckedChanged
-        If CBdni.Checked = True Then
-            CBdni.Font = New Font(CBdni.Font.Bold, 13)
-            TDni.Enabled = True
-        Else
-            CBdni.Font = New Font(CBdni.Font.Name, 12)
-            TDni.Enabled = False
-        End If
-    End Sub
-
-    Private Sub CBestado_CheckedChanged(sender As Object, e As EventArgs) Handles CBcorreo.CheckedChanged
-        If CBcorreo.Checked = True Then
-            CBcorreo.Font = New Font(CBcorreo.Font.Bold, 13)
-            TCorreo2.Enabled = True
-        Else
-            CBcorreo.Font = New Font(CBcorreo.Font.Name, 12)
-            TCorreo2.Enabled = False
-        End If
-    End Sub
-
     Private Sub SoloNumeros_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TDni.KeyPress, TDni2.KeyPress
         If (Char.IsNumber(e.KeyChar)) Then
             e.Handled = False
@@ -165,13 +124,17 @@ Public Class GestionCliente
 
     Private Sub BBuscar_Click(sender As Object, e As EventArgs) Handles BBuscar.Click
 
-        If Not String.IsNullOrEmpty(TNombre.Text) And CBnombre.Checked = True Then
+        If Not String.IsNullOrEmpty(TNombre.Text) And RBnombre.Checked = True Then
+
             cli.buscar_nombre(TNombre.Text, dgvCliente)
-        ElseIf Not String.IsNullOrEmpty(TApellido.Text) And CBapellido.Checked = True Then
+        ElseIf Not String.IsNullOrEmpty(TApellido.Text) And RBapellido.Checked = True Then
+
             cli.buscar_apellido(TApellido.Text, dgvCliente)
-        ElseIf Not String.IsNullOrEmpty(TDni.Text) And CBdni.Checked = True Then
+        ElseIf Not String.IsNullOrEmpty(TDni.Text) And RBdni.Checked = True Then
+
             cli.buscar_dni(TDni.Text, dgvCliente)
         Else
+
             cli.buscar_correo(TCorreo2.Text, dgvCliente)
         End If
 
@@ -236,4 +199,35 @@ Public Class GestionCliente
         BModificar.Enabled = False
     End Sub
 
+    Private Sub RBapellido_CheckedChanged(sender As Object, e As EventArgs) Handles RBapellido.CheckedChanged
+        If RBapellido.Checked = True Then
+            TApellido.Enabled = True
+        Else
+            TApellido.Enabled = False
+        End If
+    End Sub
+
+    Private Sub RBnombre_CheckedChanged(sender As Object, e As EventArgs) Handles RBnombre.CheckedChanged
+        If RBnombre.Checked = True Then
+            TNombre.Enabled = True
+        Else
+            TNombre.Enabled = False
+        End If
+    End Sub
+
+    Private Sub RBdni_CheckedChanged(sender As Object, e As EventArgs) Handles RBdni.CheckedChanged
+        If RBdni.Checked = True Then
+            TDni.Enabled = True
+        Else
+            TDni.Enabled = False
+        End If
+    End Sub
+
+    Private Sub RBcorreo_CheckedChanged(sender As Object, e As EventArgs) Handles RBcorreo.CheckedChanged
+        If RBcorreo.Checked = True Then
+            TCorreo2.Enabled = True
+        Else
+            TCorreo2.Enabled = False
+        End If
+    End Sub
 End Class

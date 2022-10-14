@@ -56,18 +56,18 @@ Partial Class GestionEmpleados
         Me.EditarCajeros = New System.Windows.Forms.TabPage()
         Me.dgEmpleados = New System.Windows.Forms.DataGridView()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.RBestado = New System.Windows.Forms.RadioButton()
+        Me.RBdni = New System.Windows.Forms.RadioButton()
+        Me.TDni = New System.Windows.Forms.TextBox()
+        Me.RBnombre = New System.Windows.Forms.RadioButton()
+        Me.RBapellido = New System.Windows.Forms.RadioButton()
+        Me.TNombre = New System.Windows.Forms.TextBox()
+        Me.TApellido = New System.Windows.Forms.TextBox()
         Me.BModificar = New System.Windows.Forms.Button()
         Me.BEliminar = New System.Windows.Forms.Button()
         Me.ComboEstado = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.BBuscar = New System.Windows.Forms.Button()
-        Me.TDni = New System.Windows.Forms.TextBox()
-        Me.TNombre = New System.Windows.Forms.TextBox()
-        Me.TApellido = New System.Windows.Forms.TextBox()
-        Me.CBestado = New System.Windows.Forms.CheckBox()
-        Me.CBdni = New System.Windows.Forms.CheckBox()
-        Me.CBnombre = New System.Windows.Forms.CheckBox()
-        Me.CBapellido = New System.Windows.Forms.CheckBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.LEncargado = New System.Windows.Forms.Label()
         Me.Encargados = New System.Windows.Forms.TabControl()
@@ -417,18 +417,18 @@ Partial Class GestionEmpleados
         Me.Panel3.AutoSize = True
         Me.Panel3.BackColor = System.Drawing.Color.LightSlateGray
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel3.Controls.Add(Me.RBestado)
+        Me.Panel3.Controls.Add(Me.RBdni)
+        Me.Panel3.Controls.Add(Me.TDni)
+        Me.Panel3.Controls.Add(Me.RBnombre)
+        Me.Panel3.Controls.Add(Me.RBapellido)
+        Me.Panel3.Controls.Add(Me.TNombre)
+        Me.Panel3.Controls.Add(Me.TApellido)
         Me.Panel3.Controls.Add(Me.BModificar)
         Me.Panel3.Controls.Add(Me.BEliminar)
         Me.Panel3.Controls.Add(Me.ComboEstado)
         Me.Panel3.Controls.Add(Me.Label2)
         Me.Panel3.Controls.Add(Me.BBuscar)
-        Me.Panel3.Controls.Add(Me.TDni)
-        Me.Panel3.Controls.Add(Me.TNombre)
-        Me.Panel3.Controls.Add(Me.TApellido)
-        Me.Panel3.Controls.Add(Me.CBestado)
-        Me.Panel3.Controls.Add(Me.CBdni)
-        Me.Panel3.Controls.Add(Me.CBnombre)
-        Me.Panel3.Controls.Add(Me.CBapellido)
         Me.Panel3.Cursor = System.Windows.Forms.Cursors.Default
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel3.Location = New System.Drawing.Point(3, 3)
@@ -436,6 +436,74 @@ Partial Class GestionEmpleados
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(1356, 238)
         Me.Panel3.TabIndex = 9
+        '
+        'RBestado
+        '
+        Me.RBestado.AutoSize = True
+        Me.RBestado.Location = New System.Drawing.Point(686, 94)
+        Me.RBestado.Name = "RBestado"
+        Me.RBestado.Size = New System.Drawing.Size(176, 24)
+        Me.RBestado.TabIndex = 22
+        Me.RBestado.TabStop = True
+        Me.RBestado.Text = "Buscar por Estado"
+        Me.RBestado.UseVisualStyleBackColor = True
+        '
+        'RBdni
+        '
+        Me.RBdni.AutoSize = True
+        Me.RBdni.Location = New System.Drawing.Point(686, 35)
+        Me.RBdni.Name = "RBdni"
+        Me.RBdni.Size = New System.Drawing.Size(150, 24)
+        Me.RBdni.TabIndex = 21
+        Me.RBdni.TabStop = True
+        Me.RBdni.Text = "Buscar por DNI"
+        Me.RBdni.UseVisualStyleBackColor = True
+        '
+        'TDni
+        '
+        Me.TDni.Enabled = False
+        Me.TDni.Location = New System.Drawing.Point(888, 33)
+        Me.TDni.Name = "TDni"
+        Me.TDni.Size = New System.Drawing.Size(303, 26)
+        Me.TDni.TabIndex = 20
+        '
+        'RBnombre
+        '
+        Me.RBnombre.AutoSize = True
+        Me.RBnombre.Location = New System.Drawing.Point(122, 91)
+        Me.RBnombre.Name = "RBnombre"
+        Me.RBnombre.Size = New System.Drawing.Size(181, 24)
+        Me.RBnombre.TabIndex = 19
+        Me.RBnombre.TabStop = True
+        Me.RBnombre.Text = "Buscar por Nombre" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.RBnombre.UseVisualStyleBackColor = True
+        '
+        'RBapellido
+        '
+        Me.RBapellido.AutoSize = True
+        Me.RBapellido.Location = New System.Drawing.Point(122, 35)
+        Me.RBapellido.Name = "RBapellido"
+        Me.RBapellido.Size = New System.Drawing.Size(183, 24)
+        Me.RBapellido.TabIndex = 18
+        Me.RBapellido.TabStop = True
+        Me.RBapellido.Text = "Buscar por Apellido"
+        Me.RBapellido.UseVisualStyleBackColor = True
+        '
+        'TNombre
+        '
+        Me.TNombre.Enabled = False
+        Me.TNombre.Location = New System.Drawing.Point(322, 89)
+        Me.TNombre.Name = "TNombre"
+        Me.TNombre.Size = New System.Drawing.Size(274, 26)
+        Me.TNombre.TabIndex = 17
+        '
+        'TApellido
+        '
+        Me.TApellido.Enabled = False
+        Me.TApellido.Location = New System.Drawing.Point(322, 33)
+        Me.TApellido.Name = "TApellido"
+        Me.TApellido.Size = New System.Drawing.Size(274, 26)
+        Me.TApellido.TabIndex = 16
         '
         'BModificar
         '
@@ -474,7 +542,7 @@ Partial Class GestionEmpleados
         Me.ComboEstado.Enabled = False
         Me.ComboEstado.FormattingEnabled = True
         Me.ComboEstado.Items.AddRange(New Object() {"1", "0"})
-        Me.ComboEstado.Location = New System.Drawing.Point(889, 92)
+        Me.ComboEstado.Location = New System.Drawing.Point(888, 90)
         Me.ComboEstado.Name = "ComboEstado"
         Me.ComboEstado.Size = New System.Drawing.Size(302, 28)
         Me.ComboEstado.TabIndex = 12
@@ -506,78 +574,6 @@ Partial Class GestionEmpleados
         Me.BBuscar.Text = "Buscar"
         Me.BBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.BBuscar.UseVisualStyleBackColor = True
-        '
-        'TDni
-        '
-        Me.TDni.Enabled = False
-        Me.TDni.Location = New System.Drawing.Point(889, 38)
-        Me.TDni.Name = "TDni"
-        Me.TDni.Size = New System.Drawing.Size(303, 26)
-        Me.TDni.TabIndex = 6
-        '
-        'TNombre
-        '
-        Me.TNombre.Enabled = False
-        Me.TNombre.Location = New System.Drawing.Point(324, 94)
-        Me.TNombre.Name = "TNombre"
-        Me.TNombre.Size = New System.Drawing.Size(274, 26)
-        Me.TNombre.TabIndex = 5
-        '
-        'TApellido
-        '
-        Me.TApellido.Enabled = False
-        Me.TApellido.Location = New System.Drawing.Point(324, 38)
-        Me.TApellido.Name = "TApellido"
-        Me.TApellido.Size = New System.Drawing.Size(274, 26)
-        Me.TApellido.TabIndex = 4
-        '
-        'CBestado
-        '
-        Me.CBestado.AutoSize = True
-        Me.CBestado.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CBestado.ForeColor = System.Drawing.Color.Black
-        Me.CBestado.Location = New System.Drawing.Point(701, 96)
-        Me.CBestado.Name = "CBestado"
-        Me.CBestado.Size = New System.Drawing.Size(158, 24)
-        Me.CBestado.TabIndex = 3
-        Me.CBestado.Text = "Buscar por estado"
-        Me.CBestado.UseVisualStyleBackColor = True
-        '
-        'CBdni
-        '
-        Me.CBdni.AutoSize = True
-        Me.CBdni.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CBdni.ForeColor = System.Drawing.Color.Black
-        Me.CBdni.Location = New System.Drawing.Point(701, 40)
-        Me.CBdni.Name = "CBdni"
-        Me.CBdni.Size = New System.Drawing.Size(137, 24)
-        Me.CBdni.TabIndex = 2
-        Me.CBdni.Text = "Buscar por DNI"
-        Me.CBdni.UseVisualStyleBackColor = True
-        '
-        'CBnombre
-        '
-        Me.CBnombre.AutoSize = True
-        Me.CBnombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CBnombre.ForeColor = System.Drawing.Color.Black
-        Me.CBnombre.Location = New System.Drawing.Point(136, 96)
-        Me.CBnombre.Name = "CBnombre"
-        Me.CBnombre.Size = New System.Drawing.Size(165, 24)
-        Me.CBnombre.TabIndex = 1
-        Me.CBnombre.Text = "Buscar por Nombre"
-        Me.CBnombre.UseVisualStyleBackColor = True
-        '
-        'CBapellido
-        '
-        Me.CBapellido.AutoSize = True
-        Me.CBapellido.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CBapellido.ForeColor = System.Drawing.Color.Black
-        Me.CBapellido.Location = New System.Drawing.Point(136, 40)
-        Me.CBapellido.Name = "CBapellido"
-        Me.CBapellido.Size = New System.Drawing.Size(165, 24)
-        Me.CBapellido.TabIndex = 0
-        Me.CBapellido.Text = "Buscar por Apellido"
-        Me.CBapellido.UseVisualStyleBackColor = True
         '
         'Panel2
         '
@@ -658,13 +654,6 @@ Partial Class GestionEmpleados
     Friend WithEvents ComboEstado As ComboBox
     Friend WithEvents Label2 As Label
     Friend WithEvents BBuscar As Button
-    Friend WithEvents TDni As TextBox
-    Friend WithEvents TNombre As TextBox
-    Friend WithEvents TApellido As TextBox
-    Friend WithEvents CBestado As CheckBox
-    Friend WithEvents CBdni As CheckBox
-    Friend WithEvents CBnombre As CheckBox
-    Friend WithEvents CBapellido As CheckBox
     Friend WithEvents Panel2 As Panel
     Friend WithEvents LEncargado As Label
     Friend WithEvents AgregarCajeros As TabPage
@@ -693,4 +682,11 @@ Partial Class GestionEmpleados
     Friend WithEvents LApellido As Label
     Friend WithEvents BModificar As Button
     Friend WithEvents BEliminar As Button
+    Friend WithEvents RBnombre As RadioButton
+    Friend WithEvents RBapellido As RadioButton
+    Friend WithEvents TNombre As TextBox
+    Friend WithEvents TApellido As TextBox
+    Friend WithEvents RBestado As RadioButton
+    Friend WithEvents RBdni As RadioButton
+    Friend WithEvents TDni As TextBox
 End Class

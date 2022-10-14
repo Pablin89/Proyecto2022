@@ -52,7 +52,7 @@
     End Sub
 
     Private Sub ReportesProducto_Click(sender As Object, e As EventArgs) Handles ReporteProducto.Click
-        ReporteProductos.Show()
+        ReportesMes.Show()
         Me.Hide()
     End Sub
 
