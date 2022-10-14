@@ -1,0 +1,506 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DFBD196D-1201-4DE9-AE9A-F12F68C3A7A4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Principal.My.MyApplication</StartupObject>
+    <RootNamespace>Principal</RootNamespace>
+    <AssemblyName>Principal</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Principal.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Principal.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CDatos\Categoria.vb">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\Cliente.vb">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\DCliente.vb" />
+    <Compile Include="CDatos\Empleado.vb">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\Model1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\Perfil.vb">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\Producto.vb">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\Usuario.vb">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CNegocio\NCliente.vb" />
+    <Compile Include="Presentacion\Usuario_Cajero\Cajeros.Designer.vb">
+      <DependentUpon>Cajeros.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_Cajero\Cajeros.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_GerenteGral\EditarEmpleado.Designer.vb">
+      <DependentUpon>EditarEmpleado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_GerenteGral\EditarEmpleado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_GerenteGral\GerenteGral.Designer.vb">
+      <DependentUpon>GerenteGral.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_GerenteGral\GerenteGral.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\MisDatos.Designer.vb">
+      <DependentUpon>MisDatos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\MisDatos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_Cajero\Facturacion.Designer.vb">
+      <DependentUpon>Facturacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_Cajero\Facturacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_Cajero\GestionCliente.Designer.vb">
+      <DependentUpon>GestionCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_Cajero\GestionCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_Cajero\ListarProductos.Designer.vb">
+      <DependentUpon>ListarProductos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_Cajero\ListarProductos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_Cajero\ModificarCliente.Designer.vb">
+      <DependentUpon>ModificarCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_Cajero\ModificarCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_Encargado\Encargado.Designer.vb">
+      <DependentUpon>Encargado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_Encargado\Encargado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_Encargado\GestionEmpleados.Designer.vb">
+      <DependentUpon>GestionEmpleados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_Encargado\GestionEmpleados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_Encargado\GestionProductos.Designer.vb">
+      <DependentUpon>GestionProductos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_Encargado\GestionProductos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_Encargado\GestionVentas.Designer.vb">
+      <DependentUpon>GestionVentas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_Encargado\GestionVentas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_Encargado\ModificarProducto.Designer.vb">
+      <DependentUpon>ModificarProducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_Encargado\ModificarProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_GerenteGral\PermisosUsuario.Designer.vb">
+      <DependentUpon>PermisosUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_GerenteGral\PermisosUsuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_GerenteGral\ReportesSucursal.Designer.vb">
+      <DependentUpon>ReportesSucursal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_GerenteGral\ReportesSucursal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_Encargado\ModificarEmpleado.Designer.vb">
+      <DependentUpon>ModificarEmpleado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_Encargado\ModificarEmpleado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_Gerente\ReporteSucursalIndividual.Designer.vb">
+      <DependentUpon>ReporteSucursalIndividual.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_Gerente\ReporteSucursalIndividual.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_Gerente\Gerente.Designer.vb">
+      <DependentUpon>Gerente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_Gerente\Gerente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_Gerente\NumerosDelMes.Designer.vb">
+      <DependentUpon>NumerosDelMes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_Gerente\NumerosDelMes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principal.Designer.vb">
+      <DependentUpon>Principal.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_Cajero\MisVentas.Designer.vb">
+      <DependentUpon>MisVentas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_Cajero\MisVentas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Presentacion\Usuario_Cajero\Cajeros.resx">
+      <DependentUpon>Cajeros.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Usuario_GerenteGral\EditarEmpleado.resx">
+      <DependentUpon>EditarEmpleado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Usuario_GerenteGral\GerenteGral.resx">
+      <DependentUpon>GerenteGral.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\MisDatos.resx">
+      <DependentUpon>MisDatos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Usuario_Cajero\Facturacion.resx">
+      <DependentUpon>Facturacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Usuario_Cajero\GestionCliente.resx">
+      <DependentUpon>GestionCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Usuario_Cajero\ListarProductos.resx">
+      <DependentUpon>ListarProductos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Usuario_Cajero\ModificarCliente.resx">
+      <DependentUpon>ModificarCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Usuario_Encargado\Encargado.resx">
+      <DependentUpon>Encargado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Usuario_Encargado\GestionEmpleados.resx">
+      <DependentUpon>GestionEmpleados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Usuario_Encargado\GestionProductos.resx">
+      <DependentUpon>GestionProductos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Usuario_Encargado\GestionVentas.resx">
+      <DependentUpon>GestionVentas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Usuario_Encargado\ModificarProducto.resx">
+      <DependentUpon>ModificarProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Usuario_GerenteGral\PermisosUsuario.resx">
+      <DependentUpon>PermisosUsuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Usuario_GerenteGral\ReportesSucursal.resx">
+      <DependentUpon>ReportesSucursal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Usuario_Encargado\ModificarEmpleado.resx">
+      <DependentUpon>ModificarEmpleado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Usuario_Gerente\Gerente.resx">
+      <DependentUpon>Gerente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Usuario_Gerente\NumerosDelMes.resx">
+      <DependentUpon>NumerosDelMes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principal.resx">
+      <DependentUpon>Principal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Usuario_Cajero\MisVentas.resx">
+      <DependentUpon>MisVentas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Usuario_Gerente\ReporteSucursalIndividual.resx">
+      <DependentUpon>ReporteSucursalIndividual.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="CDatos\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.vb</LastGenOutput>
+    </EntityDeploy>
+    <None Include="CDatos\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Resources\3298609-gps-local-localseo-seo_107012.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10306manofficeworkermediumdarkskintone_110615.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users_clients_group_167741.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar_office_day_14741.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\explorer_personal_icon-icons.com_719771.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\product_document_file_15121.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Messirve %281%291.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Messirve1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eliminar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icono-salir-700-59122365.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Datos.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\azulnaranja.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\office_statistics_report_business_diagram_stats_icon_226237.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketing_report_business_diagram_statistics_analytics_icon_226232.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tag_user_card_16777.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_contact_23062.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contacteditor_93970.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\manager_icon_129392.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\statistic_icon_129319.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4_icon-icons.com_73775.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logout_37127.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login_37128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login_37128 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\female_cashier_avatar_people_icon_142371 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\female_cashier_avatar_people_icon_142371 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cashier_machine_cash_register_pos_icon_225168.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shirt_online_store_ecommerce_commerce_marketplace_website_shopping_clothing_icon_225154.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_user_customer_man_male_man_boy_people_1688.png" />
+    <None Include="Resources\buscar2.png" />
+    <None Include="Resources\buscar.png" />
+    <None Include="Resources\cancelar.png" />
+    <None Include="Resources\iconoguardar %281%29.png" />
+    <None Include="Resources\iconoguardar1.png" />
+    <None Include="Resources\Factura %281%29.png" />
+    <None Include="Resources\Factura1.png" />
+    <None Include="Resources\free-store-icon-2017-thumb.png" />
+    <None Include="Resources\iconoguardar.png" />
+    <None Include="Resources\guardar.png" />
+    <None Include="Resources\Factura.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CDatos\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Content>
+    <Content Include="CDatos\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="CDatos\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Content>
+    <Content Include="CDatos\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\calendar_office_day_1474 %282%29.png" />
+    <None Include="Resources\financial_report_calculator_chart_pie_icon_205131.png" />
+    <None Include="Resources\Print_icon-icons.com_73705.png" />
+    <None Include="Resources\restaurar %281%29.png" />
+    <None Include="Resources\conectar.png" />
+    <None Include="Resources\restaurar.png" />
+    <None Include="Resources\Base.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
