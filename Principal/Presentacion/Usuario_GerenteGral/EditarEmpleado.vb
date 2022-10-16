@@ -14,7 +14,7 @@
 
     Private Sub BConfirmar_Click(sender As Object, e As EventArgs) Handles BConfirmar.Click
         Dim op As MsgBoxResult
-        If String.IsNullOrWhiteSpace(TDni.Text) Or String.IsNullOrWhiteSpace(TUsuario.Text) Or Not IsNumeric(TDni.Text) Or String.IsNullOrWhiteSpace(TRepcontra.Text) Or
+        If String.IsNullOrWhiteSpace(TUsuario.Text) Or String.IsNullOrWhiteSpace(TRepcontra.Text) Or
            String.IsNullOrWhiteSpace(TContraseña.Text) Or String.IsNullOrWhiteSpace(CBperfil.Text) = False Then
 
             MsgBox("Debe completar todos los campos", vbOKOnly + vbDefaultButton1 + vbCritical, "Completar campos")
@@ -27,7 +27,7 @@
         End If
     End Sub
 
-    Private Sub SoloNumeros_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TDni.KeyPress
+    Private Sub SoloNumeros_KeyPress(sender As Object, e As KeyPressEventArgs) 
         If (Char.IsNumber(e.KeyChar)) Then
             e.Handled = False
         ElseIf (Char.IsControl(e.KeyChar)) Then

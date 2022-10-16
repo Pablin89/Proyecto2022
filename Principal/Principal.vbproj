@@ -100,35 +100,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CDatos\Categoria.vb">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CDatos\Cliente.vb">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="CDatos\DCliente.vb" />
-    <Compile Include="CDatos\Empleado.vb">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CDatos\Model1.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="CDatos\Perfil.vb">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CDatos\Producto.vb">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CDatos\Usuario.vb">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="CNegocio\NCliente.vb" />
     <Compile Include="Presentacion\Usuario_Cajero\Cajeros.Designer.vb">
       <DependentUpon>Cajeros.vb</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Usuario_Cajero\Cajeros.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_GerenteGral\BackupDatos.Designer.vb">
+      <DependentUpon>BackupDatos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_GerenteGral\BackupDatos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\Usuario_GerenteGral\EditarEmpleado.Designer.vb">
@@ -221,6 +204,12 @@
     <Compile Include="Presentacion\Usuario_Encargado\ModificarEmpleado.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentacion\Usuario_GerenteGral\RestaurarDatos.Designer.vb">
+      <DependentUpon>RestaurarDatos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_GerenteGral\RestaurarDatos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentacion\Usuario_Gerente\ReporteSucursalIndividual.Designer.vb">
       <DependentUpon>ReporteSucursalIndividual.vb</DependentUpon>
     </Compile>
@@ -273,6 +262,9 @@
     <EmbeddedResource Include="Presentacion\Usuario_Cajero\Cajeros.resx">
       <DependentUpon>Cajeros.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Usuario_GerenteGral\BackupDatos.resx">
+      <DependentUpon>BackupDatos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Usuario_GerenteGral\EditarEmpleado.resx">
       <DependentUpon>EditarEmpleado.vb</DependentUpon>
     </EmbeddedResource>
@@ -318,6 +310,9 @@
     <EmbeddedResource Include="Presentacion\Usuario_Encargado\ModificarEmpleado.resx">
       <DependentUpon>ModificarEmpleado.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Usuario_GerenteGral\RestaurarDatos.resx">
+      <DependentUpon>RestaurarDatos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Usuario_Gerente\Gerente.resx">
       <DependentUpon>Gerente.vb</DependentUpon>
     </EmbeddedResource>
@@ -341,13 +336,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="CDatos\Model1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.vb</LastGenOutput>
-    </EntityDeploy>
-    <None Include="CDatos\Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -474,26 +462,6 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CDatos\Model1.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
-    </Content>
-    <Content Include="CDatos\Model1.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="CDatos\Model1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Content>
-    <Content Include="CDatos\Model1.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
-    </Content>
     <None Include="Resources\calendar_office_day_1474 %282%29.png" />
     <None Include="Resources\financial_report_calculator_chart_pie_icon_205131.png" />
     <None Include="Resources\Print_icon-icons.com_73705.png" />
@@ -501,6 +469,15 @@
     <None Include="Resources\conectar.png" />
     <None Include="Resources\restaurar.png" />
     <None Include="Resources\Base.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Proyecto.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Proyecto_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>Proyecto.mdf</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

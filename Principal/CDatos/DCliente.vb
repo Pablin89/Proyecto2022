@@ -1,19 +1,19 @@
 ﻿Public Class DCliente
-    'Dim ctx As ProyectoEntities3 = New ProyectoEntities3
+    Dim ctx As ProyectoEntities3 = New ProyectoEntities3
 
-    ' Function DGuardar_cliente(ByVal ocliente As Cliente) As Boolean
-    'Try
-    '        ctx.Cliente.Add(ocliente)
-    '        ctx.SaveChanges()
-    'Return True
-    'Catch ex As Exception
-    'Return False
-    '
-    ' End Try
-    ' End Function
-    ' Function getClienteAll() As List(Of Cliente)
-    'Dim listaCliente = (From c In ctx.Cliente Select c).ToList
-    ' Return listaCliente
+    Function DGuardar_cliente(ByVal ocliente As Cliente) As Boolean
+        Try
+            ctx.Cliente.Add(ocliente)
+            ctx.SaveChanges()
+            Return True
+        Catch ex As Exception
+            Return False
 
-    ' End Function
+        End Try
+    End Function
+    Function getClienteAll() As List(Of Cliente)
+        Dim listaCliente = (From c In ctx.Cliente Select c).ToList
+        Return listaCliente
+
+    End Function
 End Class

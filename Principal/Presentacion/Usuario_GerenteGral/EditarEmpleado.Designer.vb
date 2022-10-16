@@ -28,11 +28,9 @@ Partial Class EditarEmpleado
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TRepcontra = New System.Windows.Forms.TextBox()
         Me.TContraseña = New System.Windows.Forms.TextBox()
-        Me.TDni = New System.Windows.Forms.TextBox()
         Me.LCorreo = New System.Windows.Forms.Label()
         Me.LDni = New System.Windows.Forms.Label()
         Me.LNombre = New System.Windows.Forms.Label()
-        Me.LApellido = New System.Windows.Forms.Label()
         Me.BCancelar = New System.Windows.Forms.Button()
         Me.BConfirmar = New System.Windows.Forms.Button()
         Me.SuspendLayout()
@@ -40,7 +38,7 @@ Partial Class EditarEmpleado
         'TUsuario
         '
         Me.TUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TUsuario.Location = New System.Drawing.Point(428, 178)
+        Me.TUsuario.Location = New System.Drawing.Point(420, 120)
         Me.TUsuario.Name = "TUsuario"
         Me.TUsuario.Size = New System.Drawing.Size(338, 26)
         Me.TUsuario.TabIndex = 84
@@ -50,7 +48,7 @@ Partial Class EditarEmpleado
         Me.LUsuario.AutoSize = True
         Me.LUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LUsuario.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LUsuario.Location = New System.Drawing.Point(223, 184)
+        Me.LUsuario.Location = New System.Drawing.Point(215, 126)
         Me.LUsuario.Name = "LUsuario"
         Me.LUsuario.Size = New System.Drawing.Size(160, 20)
         Me.LUsuario.TabIndex = 83
@@ -61,7 +59,7 @@ Partial Class EditarEmpleado
         Me.CBperfil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CBperfil.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CBperfil.FormattingEnabled = True
-        Me.CBperfil.Location = New System.Drawing.Point(428, 388)
+        Me.CBperfil.Location = New System.Drawing.Point(420, 330)
         Me.CBperfil.Name = "CBperfil"
         Me.CBperfil.Size = New System.Drawing.Size(338, 28)
         Me.CBperfil.TabIndex = 80
@@ -81,7 +79,7 @@ Partial Class EditarEmpleado
         'TRepcontra
         '
         Me.TRepcontra.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TRepcontra.Location = New System.Drawing.Point(428, 318)
+        Me.TRepcontra.Location = New System.Drawing.Point(420, 260)
         Me.TRepcontra.Name = "TRepcontra"
         Me.TRepcontra.Size = New System.Drawing.Size(338, 26)
         Me.TRepcontra.TabIndex = 78
@@ -90,26 +88,18 @@ Partial Class EditarEmpleado
         'TContraseña
         '
         Me.TContraseña.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TContraseña.Location = New System.Drawing.Point(428, 248)
+        Me.TContraseña.Location = New System.Drawing.Point(420, 190)
         Me.TContraseña.Name = "TContraseña"
         Me.TContraseña.Size = New System.Drawing.Size(338, 26)
         Me.TContraseña.TabIndex = 77
         Me.TContraseña.UseSystemPasswordChar = True
-        '
-        'TDni
-        '
-        Me.TDni.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TDni.Location = New System.Drawing.Point(428, 108)
-        Me.TDni.Name = "TDni"
-        Me.TDni.Size = New System.Drawing.Size(338, 26)
-        Me.TDni.TabIndex = 76
         '
         'LCorreo
         '
         Me.LCorreo.AutoSize = True
         Me.LCorreo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LCorreo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LCorreo.Location = New System.Drawing.Point(234, 396)
+        Me.LCorreo.Location = New System.Drawing.Point(226, 338)
         Me.LCorreo.Name = "LCorreo"
         Me.LCorreo.Size = New System.Drawing.Size(149, 20)
         Me.LCorreo.TabIndex = 75
@@ -120,7 +110,7 @@ Partial Class EditarEmpleado
         Me.LDni.AutoSize = True
         Me.LDni.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LDni.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LDni.Location = New System.Drawing.Point(217, 325)
+        Me.LDni.Location = New System.Drawing.Point(209, 267)
         Me.LDni.Name = "LDni"
         Me.LDni.Size = New System.Drawing.Size(166, 20)
         Me.LDni.TabIndex = 74
@@ -131,29 +121,18 @@ Partial Class EditarEmpleado
         Me.LNombre.AutoSize = True
         Me.LNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LNombre.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LNombre.Location = New System.Drawing.Point(281, 254)
+        Me.LNombre.Location = New System.Drawing.Point(273, 196)
         Me.LNombre.Name = "LNombre"
         Me.LNombre.Size = New System.Drawing.Size(102, 20)
         Me.LNombre.TabIndex = 73
         Me.LNombre.Text = "Contraseña"
-        '
-        'LApellido
-        '
-        Me.LApellido.AutoSize = True
-        Me.LApellido.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LApellido.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LApellido.Location = New System.Drawing.Point(140, 111)
-        Me.LApellido.Name = "LApellido"
-        Me.LApellido.Size = New System.Drawing.Size(243, 20)
-        Me.LApellido.TabIndex = 72
-        Me.LApellido.Text = "Ingresar el DNI del empleado"
         '
         'BCancelar
         '
         Me.BCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BCancelar.Image = Global.Principal.My.Resources.Resources.cancelar
         Me.BCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BCancelar.Location = New System.Drawing.Point(428, 476)
+        Me.BCancelar.Location = New System.Drawing.Point(420, 418)
         Me.BCancelar.Name = "BCancelar"
         Me.BCancelar.Size = New System.Drawing.Size(131, 44)
         Me.BCancelar.TabIndex = 82
@@ -166,7 +145,7 @@ Partial Class EditarEmpleado
         Me.BConfirmar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BConfirmar.Image = Global.Principal.My.Resources.Resources.iconoguardar__1_
         Me.BConfirmar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BConfirmar.Location = New System.Drawing.Point(635, 475)
+        Me.BConfirmar.Location = New System.Drawing.Point(627, 417)
         Me.BConfirmar.Name = "BConfirmar"
         Me.BConfirmar.Size = New System.Drawing.Size(131, 44)
         Me.BConfirmar.TabIndex = 81
@@ -188,11 +167,9 @@ Partial Class EditarEmpleado
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.TRepcontra)
         Me.Controls.Add(Me.TContraseña)
-        Me.Controls.Add(Me.TDni)
         Me.Controls.Add(Me.LCorreo)
         Me.Controls.Add(Me.LDni)
         Me.Controls.Add(Me.LNombre)
-        Me.Controls.Add(Me.LApellido)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "EditarEmpleado"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -210,9 +187,7 @@ Partial Class EditarEmpleado
     Friend WithEvents Label4 As Label
     Friend WithEvents TRepcontra As TextBox
     Friend WithEvents TContraseña As TextBox
-    Friend WithEvents TDni As TextBox
     Friend WithEvents LCorreo As Label
     Friend WithEvents LDni As Label
     Friend WithEvents LNombre As Label
-    Friend WithEvents LApellido As Label
 End Class
