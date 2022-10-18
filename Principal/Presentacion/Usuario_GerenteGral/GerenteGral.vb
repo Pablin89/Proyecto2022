@@ -40,10 +40,13 @@
     End Sub
 
     Private Sub BackupBase_Click(sender As Object, e As EventArgs) Handles BackupBase.Click
+        BackupDatos.Show()
+        Me.Hide()
 
     End Sub
 
     Private Sub RestaurarBase_Click(sender As Object, e As EventArgs) Handles RestaurarBase.Click
-
+        RestaurarDatos.Show()
+        Me.Hide()
     End Sub
 End Class
