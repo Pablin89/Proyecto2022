@@ -139,9 +139,6 @@
   <data name="eliminar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eliminar.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="statistic_icon_129319" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\statistic_icon_129319.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="add_contact_23062" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add_contact_23062.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -154,8 +151,11 @@
   <data name="restaurar (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\restaurar (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="azulnaranja" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\azulnaranja.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="free-store-icon-2017-thumb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\free-store-icon-2017-thumb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="guardar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\guardar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconoguardar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconoguardar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,17 +163,17 @@
   <data name="139641" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\139641.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="10306manofficeworkermediumdarkskintone_110615" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\10306manofficeworkermediumdarkskintone_110615.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="financial_report_calculator_chart_pie_icon_205131" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\financial_report_calculator_chart_pie_icon_205131.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="product_document_file_1512" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\product_document_file_15121.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="users_clients_group_16774" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\users_clients_group_167741.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="person_user_customer_man_male_man_boy_people_1688" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\person_user_customer_man_male_man_boy_people_1688.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="11" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="shoppingcart_below_compra_12831" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shoppingcart_below_compra_12831.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="marketing_report_business_diagram_statistics_analytics_icon_226232" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\marketing_report_business_diagram_statistics_analytics_icon_226232.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,6 +193,9 @@
   <data name="Print_icon-icons.com_73705" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Print_icon-icons.com_73705.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="iconoguardar (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconoguardar (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="contacteditor_93970" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\contacteditor_93970.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -205,8 +208,11 @@
   <data name="Messirve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Messirve1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="product_document_file_1512" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\product_document_file_15121.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="azulnaranja" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\azulnaranja.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tag_user_card_16777" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tag_user_card_16777.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="explorer_personal_icon-icons.com_71977" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\explorer_personal_icon-icons.com_719771.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -220,8 +226,8 @@
   <data name="ubi" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ubi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Base" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Base.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="shoppingcart_accept_compra_12832" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shoppingcart_accept_compra_12832.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="female_cashier_avatar_people_icon_142371 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\female_cashier_avatar_people_icon_142371 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -238,8 +244,8 @@
   <data name="cancelar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cancelar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="free-store-icon-2017-thumb" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\free-store-icon-2017-thumb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1111111" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1111111.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -247,8 +253,8 @@
   <data name="midstos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\midstos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="tag_user_card_16777" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tag_user_card_16777.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="10306manofficeworkermediumdarkskintone_110615" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\10306manofficeworkermediumdarkskintone_110615.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Login_37128" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Login_37128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -265,20 +271,20 @@
   <data name="Factura" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Factura.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="financial_report_calculator_chart_pie_icon_205131" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\financial_report_calculator_chart_pie_icon_205131.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="person_user_customer_man_male_man_boy_people_1688" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\person_user_customer_man_male_man_boy_people_1688.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Messirve (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Messirve (1)1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconoguardar (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconoguardar (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Base" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Base.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="shirt_online_store_ecommerce_commerce_marketplace_website_shopping_clothing_icon_225154" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\shirt_online_store_ecommerce_commerce_marketplace_website_shopping_clothing_icon_225154.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="guardar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\guardar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="statistic_icon_129319" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\statistic_icon_129319.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="manager_icon_129392" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\manager_icon_129392.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -286,13 +292,13 @@
   <data name="Datos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Datos.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="shoppingcart_accept_compra_12832" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\shoppingcart_accept_compra_12832.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Factura1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Factura1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="shoppingcart_below_compra_12831" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\shoppingcart_below_compra_12831.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="find_102325" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\find_102325.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="find_102325 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\find_102325 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

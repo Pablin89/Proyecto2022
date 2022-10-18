@@ -23,11 +23,13 @@ Partial Class Facturacion
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Facturacion))
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.LCajero = New System.Windows.Forms.Label()
         Me.TFactura = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.BBuscar = New System.Windows.Forms.Button()
         Me.TTelefono = New System.Windows.Forms.TextBox()
         Me.TCliente = New System.Windows.Forms.TextBox()
         Me.TDniCli = New System.Windows.Forms.TextBox()
@@ -40,11 +42,9 @@ Partial Class Facturacion
         Me.LApellidoC = New System.Windows.Forms.Label()
         Me.LNombreC = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.BAgregar = New System.Windows.Forms.Button()
-        Me.TCantidad = New System.Windows.Forms.TextBox()
         Me.TProducto = New System.Windows.Forms.TextBox()
+        Me.BAgregar = New System.Windows.Forms.Button()
         Me.LProducto = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -59,9 +59,16 @@ Partial Class Facturacion
         Me.LHora = New System.Windows.Forms.Label()
         Me.CBForma = New System.Windows.Forms.ComboBox()
         Me.LForna = New System.Windows.Forms.Label()
-        Me.Button3 = New System.Windows.Forms.Button()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Categoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PrecioProducto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Stock = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TCantidad = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.BConfirmar = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
@@ -69,6 +76,7 @@ Partial Class Facturacion
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LCajero
@@ -93,6 +101,7 @@ Partial Class Facturacion
         '
         Me.Panel1.BackColor = System.Drawing.Color.NavajoWhite
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel1.Controls.Add(Me.BBuscar)
         Me.Panel1.Controls.Add(Me.TTelefono)
         Me.Panel1.Controls.Add(Me.TCliente)
         Me.Panel1.Controls.Add(Me.TDniCli)
@@ -106,20 +115,36 @@ Partial Class Facturacion
         Me.Panel1.Controls.Add(Me.LNombreC)
         Me.Panel1.Location = New System.Drawing.Point(12, 138)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(420, 306)
+        Me.Panel1.Size = New System.Drawing.Size(417, 387)
         Me.Panel1.TabIndex = 2
+        '
+        'BBuscar
+        '
+        Me.BBuscar.BackColor = System.Drawing.Color.RosyBrown
+        Me.BBuscar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BBuscar.Font = New System.Drawing.Font("MS Reference Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BBuscar.ForeColor = System.Drawing.Color.White
+        Me.BBuscar.Image = Global.Principal.My.Resources.Resources.find_102325__1_
+        Me.BBuscar.ImageAlign = System.Drawing.ContentAlignment.TopRight
+        Me.BBuscar.Location = New System.Drawing.Point(118, 85)
+        Me.BBuscar.Name = "BBuscar"
+        Me.BBuscar.Size = New System.Drawing.Size(206, 53)
+        Me.BBuscar.TabIndex = 38
+        Me.BBuscar.Text = "Buscar cliente"
+        Me.BBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BBuscar.UseVisualStyleBackColor = False
         '
         'TTelefono
         '
         Me.TTelefono.Enabled = False
-        Me.TTelefono.Location = New System.Drawing.Point(159, 258)
+        Me.TTelefono.Location = New System.Drawing.Point(146, 335)
         Me.TTelefono.Name = "TTelefono"
         Me.TTelefono.Size = New System.Drawing.Size(237, 20)
         Me.TTelefono.TabIndex = 13
         '
         'TCliente
         '
-        Me.TCliente.Location = New System.Drawing.Point(159, 62)
+        Me.TCliente.Location = New System.Drawing.Point(146, 53)
         Me.TCliente.Name = "TCliente"
         Me.TCliente.Size = New System.Drawing.Size(237, 20)
         Me.TCliente.TabIndex = 12
@@ -127,7 +152,7 @@ Partial Class Facturacion
         'TDniCli
         '
         Me.TDniCli.Enabled = False
-        Me.TDniCli.Location = New System.Drawing.Point(157, 211)
+        Me.TDniCli.Location = New System.Drawing.Point(144, 288)
         Me.TDniCli.Name = "TDniCli"
         Me.TDniCli.Size = New System.Drawing.Size(237, 20)
         Me.TDniCli.TabIndex = 10
@@ -135,7 +160,7 @@ Partial Class Facturacion
         'TApellidoCli
         '
         Me.TApellidoCli.Enabled = False
-        Me.TApellidoCli.Location = New System.Drawing.Point(159, 162)
+        Me.TApellidoCli.Location = New System.Drawing.Point(146, 239)
         Me.TApellidoCli.Name = "TApellidoCli"
         Me.TApellidoCli.Size = New System.Drawing.Size(237, 20)
         Me.TApellidoCli.TabIndex = 9
@@ -143,7 +168,7 @@ Partial Class Facturacion
         'TNombreCli
         '
         Me.TNombreCli.Enabled = False
-        Me.TNombreCli.Location = New System.Drawing.Point(159, 113)
+        Me.TNombreCli.Location = New System.Drawing.Point(146, 190)
         Me.TNombreCli.Name = "TNombreCli"
         Me.TNombreCli.Size = New System.Drawing.Size(237, 20)
         Me.TNombreCli.TabIndex = 8
@@ -152,7 +177,7 @@ Partial Class Facturacion
         '
         Me.LSeleccionar.AutoSize = True
         Me.LSeleccionar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LSeleccionar.Location = New System.Drawing.Point(136, 21)
+        Me.LSeleccionar.Location = New System.Drawing.Point(140, 19)
         Me.LSeleccionar.Name = "LSeleccionar"
         Me.LSeleccionar.Size = New System.Drawing.Size(164, 20)
         Me.LSeleccionar.TabIndex = 6
@@ -162,7 +187,7 @@ Partial Class Facturacion
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(35, 62)
+        Me.Label2.Location = New System.Drawing.Point(22, 53)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(112, 20)
         Me.Label2.TabIndex = 5
@@ -172,7 +197,7 @@ Partial Class Facturacion
         '
         Me.LDa.AutoSize = True
         Me.LDa.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LDa.Location = New System.Drawing.Point(68, 260)
+        Me.LDa.Location = New System.Drawing.Point(55, 337)
         Me.LDa.Name = "LDa"
         Me.LDa.Size = New System.Drawing.Size(79, 20)
         Me.LDa.TabIndex = 4
@@ -182,7 +207,7 @@ Partial Class Facturacion
         '
         Me.LDniC.AutoSize = True
         Me.LDniC.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LDniC.Location = New System.Drawing.Point(107, 211)
+        Me.LDniC.Location = New System.Drawing.Point(94, 288)
         Me.LDniC.Name = "LDniC"
         Me.LDniC.Size = New System.Drawing.Size(40, 20)
         Me.LDniC.TabIndex = 3
@@ -192,7 +217,7 @@ Partial Class Facturacion
         '
         Me.LApellidoC.AutoSize = True
         Me.LApellidoC.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LApellidoC.Location = New System.Drawing.Point(74, 162)
+        Me.LApellidoC.Location = New System.Drawing.Point(61, 239)
         Me.LApellidoC.Name = "LApellidoC"
         Me.LApellidoC.Size = New System.Drawing.Size(73, 20)
         Me.LApellidoC.TabIndex = 2
@@ -202,7 +227,7 @@ Partial Class Facturacion
         '
         Me.LNombreC.AutoSize = True
         Me.LNombreC.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LNombreC.Location = New System.Drawing.Point(76, 113)
+        Me.LNombreC.Location = New System.Drawing.Point(63, 190)
         Me.LNombreC.Name = "LNombreC"
         Me.LNombreC.Size = New System.Drawing.Size(71, 20)
         Me.LNombreC.TabIndex = 1
@@ -212,15 +237,22 @@ Partial Class Facturacion
         '
         Me.Panel3.BackColor = System.Drawing.SystemColors.InactiveCaption
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Panel3.Controls.Add(Me.BAgregar)
         Me.Panel3.Controls.Add(Me.TCantidad)
         Me.Panel3.Controls.Add(Me.TProducto)
-        Me.Panel3.Controls.Add(Me.LProducto)
+        Me.Panel3.Controls.Add(Me.BAgregar)
         Me.Panel3.Controls.Add(Me.Label3)
+        Me.Panel3.Controls.Add(Me.LProducto)
         Me.Panel3.Location = New System.Drawing.Point(484, 138)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(858, 117)
+        Me.Panel3.Size = New System.Drawing.Size(858, 248)
         Me.Panel3.TabIndex = 4
+        '
+        'TProducto
+        '
+        Me.TProducto.Location = New System.Drawing.Point(236, 21)
+        Me.TProducto.Name = "TProducto"
+        Me.TProducto.Size = New System.Drawing.Size(382, 20)
+        Me.TProducto.TabIndex = 28
         '
         'BAgregar
         '
@@ -229,27 +261,13 @@ Partial Class Facturacion
         Me.BAgregar.ForeColor = System.Drawing.Color.Black
         Me.BAgregar.Image = Global.Principal.My.Resources.Resources.shopping_cart_add_button_icon_icons_com_56132
         Me.BAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BAgregar.Location = New System.Drawing.Point(531, 24)
+        Me.BAgregar.Location = New System.Drawing.Point(636, 129)
         Me.BAgregar.Name = "BAgregar"
-        Me.BAgregar.Size = New System.Drawing.Size(242, 58)
+        Me.BAgregar.Size = New System.Drawing.Size(206, 46)
         Me.BAgregar.TabIndex = 18
-        Me.BAgregar.Text = "Agregar a la lista"
+        Me.BAgregar.Text = "Agregar a la compra"
         Me.BAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.BAgregar.UseVisualStyleBackColor = False
-        '
-        'TCantidad
-        '
-        Me.TCantidad.Location = New System.Drawing.Point(236, 60)
-        Me.TCantidad.Name = "TCantidad"
-        Me.TCantidad.Size = New System.Drawing.Size(135, 20)
-        Me.TCantidad.TabIndex = 23
-        '
-        'TProducto
-        '
-        Me.TProducto.Location = New System.Drawing.Point(236, 21)
-        Me.TProducto.Name = "TProducto"
-        Me.TProducto.Size = New System.Drawing.Size(201, 20)
-        Me.TProducto.TabIndex = 28
         '
         'LProducto
         '
@@ -261,35 +279,25 @@ Partial Class Facturacion
         Me.LProducto.TabIndex = 7
         Me.LProducto.Text = "Seleccionar Producto"
         '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(48, 58)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(81, 20)
-        Me.Label3.TabIndex = 19
-        Me.Label3.Text = "Cantidad"
-        '
         'DataGridView1
         '
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.ColumnHeadersHeight = 40
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Producto, Me.Cantidad, Me.Precio, Me.Sutotal, Me.Eliminar})
-        Me.DataGridView1.Location = New System.Drawing.Point(484, 284)
+        Me.DataGridView1.Location = New System.Drawing.Point(484, 405)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 50
-        Me.DataGridView1.Size = New System.Drawing.Size(858, 297)
+        Me.DataGridView1.Size = New System.Drawing.Size(858, 176)
         Me.DataGridView1.TabIndex = 10
         '
         'Producto
@@ -355,7 +363,7 @@ Partial Class Facturacion
         Me.Button1.BackColor = System.Drawing.SystemColors.ControlText
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.SystemColors.Control
-        Me.Button1.Location = New System.Drawing.Point(20, 651)
+        Me.Button1.Location = New System.Drawing.Point(20, 642)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(228, 38)
         Me.Button1.TabIndex = 10
@@ -398,17 +406,6 @@ Partial Class Facturacion
         Me.LForna.TabIndex = 21
         Me.LForna.Text = "Forma de Pago"
         '
-        'Button3
-        '
-        Me.Button3.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Button3.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(67, 470)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(326, 32)
-        Me.Button3.TabIndex = 23
-        Me.Button3.Text = "Agregar nuevo cliente"
-        Me.Button3.UseVisualStyleBackColor = False
-        '
         'Panel4
         '
         Me.Panel4.BackColor = System.Drawing.Color.Silver
@@ -433,6 +430,70 @@ Partial Class Facturacion
         Me.PictureBox1.TabIndex = 17
         Me.PictureBox1.TabStop = False
         Me.PictureBox1.WaitOnLoad = True
+        '
+        'DataGridView2
+        '
+        Me.DataGridView2.AllowUserToAddRows = False
+        Me.DataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridView2.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.DataGridView2.ColumnHeadersHeight = 40
+        Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.Descripcion, Me.Categoria, Me.PrecioProducto, Me.Stock})
+        Me.DataGridView2.Location = New System.Drawing.Point(484, 205)
+        Me.DataGridView2.Name = "DataGridView2"
+        Me.DataGridView2.RowHeadersWidth = 50
+        Me.DataGridView2.Size = New System.Drawing.Size(620, 168)
+        Me.DataGridView2.TabIndex = 25
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Producto"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        '
+        'Descripcion
+        '
+        Me.Descripcion.HeaderText = "Descripcion"
+        Me.Descripcion.Name = "Descripcion"
+        '
+        'Categoria
+        '
+        Me.Categoria.HeaderText = "Categoría"
+        Me.Categoria.Name = "Categoria"
+        '
+        'PrecioProducto
+        '
+        Me.PrecioProducto.HeaderText = "Precio"
+        Me.PrecioProducto.Name = "PrecioProducto"
+        '
+        'Stock
+        '
+        Me.Stock.HeaderText = "Stock"
+        Me.Stock.Name = "Stock"
+        '
+        'TCantidad
+        '
+        Me.TCantidad.Location = New System.Drawing.Point(668, 103)
+        Me.TCantidad.Name = "TCantidad"
+        Me.TCantidad.Size = New System.Drawing.Size(146, 20)
+        Me.TCantidad.TabIndex = 23
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(664, 65)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(150, 20)
+        Me.Label3.TabIndex = 19
+        Me.Label3.Text = "Ingresar cantidad"
         '
         'Button2
         '
@@ -468,7 +529,7 @@ Partial Class Facturacion
         Me.AutoSize = True
         Me.BackColor = System.Drawing.SystemColors.MenuBar
         Me.ClientSize = New System.Drawing.Size(1354, 710)
-        Me.Controls.Add(Me.Button3)
+        Me.Controls.Add(Me.DataGridView2)
         Me.Controls.Add(Me.CBForma)
         Me.Controls.Add(Me.LForna)
         Me.Controls.Add(Me.Button2)
@@ -493,6 +554,7 @@ Partial Class Facturacion
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -521,15 +583,12 @@ Partial Class Facturacion
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents CBForma As ComboBox
     Friend WithEvents LForna As Label
-    Friend WithEvents Label3 As Label
     Friend WithEvents Producto As DataGridViewTextBoxColumn
     Friend WithEvents Cantidad As DataGridViewTextBoxColumn
     Friend WithEvents Precio As DataGridViewTextBoxColumn
     Friend WithEvents Sutotal As DataGridViewTextBoxColumn
     Friend WithEvents Eliminar As DataGridViewButtonColumn
-    Friend WithEvents Button3 As Button
     Friend WithEvents Panel4 As Panel
-    Friend WithEvents TCantidad As TextBox
     Friend WithEvents TTelefono As TextBox
     Friend WithEvents TCliente As TextBox
     Friend WithEvents TDniCli As TextBox
@@ -537,4 +596,13 @@ Partial Class Facturacion
     Friend WithEvents TNombreCli As TextBox
     Friend WithEvents BAgregar As Button
     Friend WithEvents TProducto As TextBox
+    Friend WithEvents DataGridView2 As DataGridView
+    Friend WithEvents TCantidad As TextBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents BBuscar As Button
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents Descripcion As DataGridViewTextBoxColumn
+    Friend WithEvents Categoria As DataGridViewTextBoxColumn
+    Friend WithEvents PrecioProducto As DataGridViewTextBoxColumn
+    Friend WithEvents Stock As DataGridViewTextBoxColumn
 End Class
