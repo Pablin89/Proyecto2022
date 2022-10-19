@@ -41,13 +41,7 @@ Partial Class ReporteCajeros
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TCliente = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.BDescarga = New System.Windows.Forms.Button()
-        Me.CBcategoria = New System.Windows.Forms.ComboBox()
-        Me.Lcategoria = New System.Windows.Forms.Label()
-        Me.Lproducto = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -186,7 +180,7 @@ Partial Class ReporteCajeros
         'BBusqueda
         '
         Me.BBusqueda.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BBusqueda.Location = New System.Drawing.Point(327, 443)
+        Me.BBusqueda.Location = New System.Drawing.Point(320, 328)
         Me.BBusqueda.Name = "BBusqueda"
         Me.BBusqueda.Size = New System.Drawing.Size(219, 28)
         Me.BBusqueda.TabIndex = 34
@@ -209,7 +203,7 @@ Partial Class ReporteCajeros
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(198, 348)
+        Me.Label3.Location = New System.Drawing.Point(199, 272)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(139, 20)
         Me.Label3.TabIndex = 37
@@ -217,28 +211,10 @@ Partial Class ReporteCajeros
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(356, 348)
+        Me.TextBox2.Location = New System.Drawing.Point(357, 272)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(270, 20)
         Me.TextBox2.TabIndex = 39
-        '
-        'TCliente
-        '
-        Me.TCliente.Location = New System.Drawing.Point(356, 396)
-        Me.TCliente.Name = "TCliente"
-        Me.TCliente.Size = New System.Drawing.Size(270, 20)
-        Me.TCliente.TabIndex = 41
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(198, 396)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(142, 20)
-        Me.Label4.TabIndex = 40
-        Me.Label4.Text = "Seleccionar cliente"
         '
         'BDescarga
         '
@@ -250,45 +226,6 @@ Partial Class ReporteCajeros
         Me.BDescarga.Text = "Descargar Reporte"
         Me.BDescarga.UseVisualStyleBackColor = True
         '
-        'CBcategoria
-        '
-        Me.CBcategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.CBcategoria.Enabled = False
-        Me.CBcategoria.FormattingEnabled = True
-        Me.CBcategoria.Location = New System.Drawing.Point(356, 251)
-        Me.CBcategoria.Name = "CBcategoria"
-        Me.CBcategoria.Size = New System.Drawing.Size(270, 21)
-        Me.CBcategoria.TabIndex = 22
-        '
-        'Lcategoria
-        '
-        Me.Lcategoria.AutoSize = True
-        Me.Lcategoria.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lcategoria.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Lcategoria.Location = New System.Drawing.Point(175, 252)
-        Me.Lcategoria.Name = "Lcategoria"
-        Me.Lcategoria.Size = New System.Drawing.Size(162, 20)
-        Me.Lcategoria.TabIndex = 23
-        Me.Lcategoria.Text = "Seleccionar categoria"
-        '
-        'Lproducto
-        '
-        Me.Lproducto.AutoSize = True
-        Me.Lproducto.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lproducto.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Lproducto.Location = New System.Drawing.Point(178, 297)
-        Me.Lproducto.Name = "Lproducto"
-        Me.Lproducto.Size = New System.Drawing.Size(159, 20)
-        Me.Lproducto.TabIndex = 28
-        Me.Lproducto.Text = "Seleccionar producto"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(356, 297)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(270, 20)
-        Me.TextBox1.TabIndex = 38
-        '
         'ReporteCajeros
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -296,10 +233,7 @@ Partial Class ReporteCajeros
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1320, 647)
         Me.Controls.Add(Me.BDescarga)
-        Me.Controls.Add(Me.TCliente)
-        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.BBusqueda)
@@ -307,9 +241,6 @@ Partial Class ReporteCajeros
         Me.Controls.Add(Me.LMayores)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.Lproducto)
-        Me.Controls.Add(Me.Lcategoria)
-        Me.Controls.Add(Me.CBcategoria)
         Me.Controls.Add(Me.DateHasta)
         Me.Controls.Add(Me.LHasta)
         Me.Controls.Add(Me.DateDesde)
@@ -318,7 +249,7 @@ Partial Class ReporteCajeros
         Me.Controls.Add(Me.Label2)
         Me.Name = "ReporteCajeros"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Mi sucursal"
+        Me.Text = "Reportes de cajeros"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -340,13 +271,7 @@ Partial Class ReporteCajeros
     Friend WithEvents Label1 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TCliente As TextBox
-    Friend WithEvents Label4 As Label
     Friend WithEvents BDescarga As Button
     Friend WithEvents Desde As DataGridViewTextBoxColumn
     Friend WithEvents Hasta As DataGridViewTextBoxColumn
-    Friend WithEvents CBcategoria As ComboBox
-    Friend WithEvents Lcategoria As Label
-    Friend WithEvents Lproducto As Label
-    Friend WithEvents TextBox1 As TextBox
 End Class
