@@ -31,8 +31,8 @@
     End Sub
 
 
-    Private Sub GenerarReporte_Click(sender As Object, e As EventArgs) Handles GenerarReporte.Click
-        ReporteSucursalIndividual.Show()
+    Private Sub GenerarReporte_Click(sender As Object, e As EventArgs) Handles ReportesCajeros.Click
+        ReporteCajeros.Show()
         Me.Hide()
     End Sub
 
@@ -40,4 +40,16 @@
         NumerosDelMes.Show()
         Me.Hide()
     End Sub
+
+    Private Sub ReportesClientes_Click(sender As Object, e As EventArgs) Handles ReportesClientes.Click
+        ReportesClientes.ShowDropDown()
+        Me.Hide()
+    End Sub
+
+    Private Sub ReportesProductos_Click(sender As Object, e As EventArgs) Handles ReportesProductos.Click
+        ReportesProductos.ShowDropDown()
+        Me.Hide()
+    End Sub
+
+
 End Class

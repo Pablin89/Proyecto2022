@@ -122,7 +122,7 @@ Partial Class Facturacion
         '
         Me.BBuscar.BackColor = System.Drawing.Color.RosyBrown
         Me.BBuscar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BBuscar.Font = New System.Drawing.Font("MS Reference Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BBuscar.ForeColor = System.Drawing.Color.White
         Me.BBuscar.Image = Global.Principal.My.Resources.Resources.find_102325__1_
         Me.BBuscar.ImageAlign = System.Drawing.ContentAlignment.TopRight
