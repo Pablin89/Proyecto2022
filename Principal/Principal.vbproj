@@ -246,25 +246,22 @@
     <Compile Include="Presentacion\Usuario_Gerente\.Designer.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Usuario_Gerente\ReportesCategorias.Designer.vb">
-      <DependentUpon>ReportesCategorias.vb</DependentUpon>
+    <Compile Include="Presentacion\Usuario_Gerente\ReporteProductos.Designer.vb">
+      <DependentUpon>ReporteProductos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Usuario_Gerente\ReportesCategorias.vb">
+    <Compile Include="Presentacion\Usuario_Gerente\ReporteProductos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Usuario_Gerente\ReportesProductos.vb">
+    <Compile Include="Presentacion\Usuario_Gerente\ReportesCliente.Designer.vb">
+      <DependentUpon>ReportesCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_Gerente\ReportesCliente.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Usuario_Gerente\ReportesClientes.Designer.vb">
-      <DependentUpon>ReportesClientes.vb</DependentUpon>
+    <Compile Include="Presentacion\Usuario_Gerente\ReporteCajeros.Designer.vb">
+      <DependentUpon>ReporteCajeros.vb</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Usuario_Gerente\ReportesClientes.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentacion\Usuario_Gerente\ReportesCajeros.Designer.vb">
-      <DependentUpon>ReportesCajeros.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\Usuario_Gerente\ReportesCajeros.vb">
+    <Compile Include="Presentacion\Usuario_Gerente\ReporteCajeros.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\Usuario_Gerente\Gerente.Designer.vb">
@@ -370,11 +367,11 @@
     <EmbeddedResource Include="Presentacion\Usuario_Gerente\NumerosDelMes.resx">
       <DependentUpon>NumerosDelMes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Usuario_Gerente\ReportesCategorias.resx">
-      <DependentUpon>ReportesCategorias.vb</DependentUpon>
+    <EmbeddedResource Include="Presentacion\Usuario_Gerente\ReporteProductos.resx">
+      <DependentUpon>ReporteProductos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Usuario_Gerente\ReportesClientes.resx">
-      <DependentUpon>ReportesClientes.vb</DependentUpon>
+    <EmbeddedResource Include="Presentacion\Usuario_Gerente\ReportesCliente.resx">
+      <DependentUpon>ReportesCliente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.vb</DependentUpon>
@@ -388,8 +385,8 @@
     <EmbeddedResource Include="Presentacion\Usuario_Cajero\MisVentas.resx">
       <DependentUpon>MisVentas.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Usuario_Gerente\ReportesCajeros.resx">
-      <DependentUpon>ReportesCajeros.vb</DependentUpon>
+    <EmbeddedResource Include="Presentacion\Usuario_Gerente\ReporteCajeros.resx">
+      <DependentUpon>ReporteCajeros.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

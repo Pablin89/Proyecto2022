@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class ReportesCategorias
+Partial Class ReporteProductos
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -161,7 +161,7 @@ Partial Class ReportesCategorias
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(1370, 70)
         Me.Label2.TabIndex = 51
-        Me.Label2.Text = "Reportes por cajeros"
+        Me.Label2.Text = "Reportes por productos y categorias"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LMayores
@@ -261,7 +261,7 @@ Partial Class ReportesCategorias
         Me.TextBox1.Size = New System.Drawing.Size(271, 20)
         Me.TextBox1.TabIndex = 70
         '
-        'ReportesCategorias
+        'ReporteProductos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -285,8 +285,8 @@ Partial Class ReportesCategorias
         Me.Controls.Add(Me.LDesde)
         Me.Controls.Add(Me.Chart1)
         Me.Controls.Add(Me.Label2)
-        Me.Name = "ReportesCategorias"
-        Me.Text = "ReportesCategorias"
+        Me.Name = "ReporteProductos"
+        Me.Text = "Reportes Prodcutos y Categorias"
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

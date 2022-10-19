@@ -42,12 +42,12 @@
     End Sub
 
     Private Sub ReportesClientes_Click(sender As Object, e As EventArgs) Handles ReportesClientes.Click
-        ReportesClientes.ShowDropDown()
+        ReportesCliente.Show()
         Me.Hide()
     End Sub
 
     Private Sub ReportesProductos_Click(sender As Object, e As EventArgs) Handles ReportesProductos.Click
-        ReportesProductos.ShowDropDown()
+        ReporteProductos.Show()
         Me.Hide()
     End Sub
 
