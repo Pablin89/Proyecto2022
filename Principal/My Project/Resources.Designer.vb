@@ -183,6 +183,16 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property box_search_product_ean_barcode_icon_148907() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("box_search_product_ean_barcode_icon_148907", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property buscar() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("buscar", resourceCulture)
@@ -236,6 +246,16 @@ Namespace My.Resources
         Friend ReadOnly Property cashier_machine_cash_register_pos_icon_225168() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("cashier_machine_cash_register_pos_icon_225168", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property category_icon_icons_com_71725() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("category_icon-icons.com_71725", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
