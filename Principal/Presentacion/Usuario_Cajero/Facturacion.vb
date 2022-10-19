@@ -78,5 +78,13 @@
         'MDIAgregarCliente.Show()
     End Sub
 
+    Private Sub BBuscar_Click(sender As Object, e As EventArgs) Handles BBuscar.Click
+        Dim ask As MsgBoxResult
 
+        ask = MsgBox("El cliente no existe ¿Desea agregarlo al sistema?", vbYesNo + vbExclamation, "Cliente inexistente")
+
+        If ask = DialogResult.Yes Then
+            AgregarClienteMDI.Show()
+        End If
+    End Sub
 End Class
