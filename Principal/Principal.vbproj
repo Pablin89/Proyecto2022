@@ -107,6 +107,7 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="CDatos\DCliente.vb" />
+    <Compile Include="CDatos\DEmpleado.vb" />
     <Compile Include="CDatos\Empleado.vb">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
