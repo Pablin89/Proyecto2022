@@ -11,11 +11,11 @@ Imports System
 Imports System.Data.Entity
 Imports System.Data.Entity.Infrastructure
 
-Partial Public Class ProyectoEntities3
+Partial Public Class ProyectoEntities6
     Inherits DbContext
 
     Public Sub New()
-        MyBase.New("name=ProyectoEntities3")
+        MyBase.New("name=ProyectoEntities6")
     End Sub
 
     Protected Overrides Sub OnModelCreating(modelBuilder As DbModelBuilder)

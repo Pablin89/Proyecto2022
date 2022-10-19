@@ -1,6 +1,8 @@
 ﻿Imports System.ComponentModel
 
 Public Class GestionEmpleados
+    Dim objEmpleado = New NEmpleado
+
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim ask As MsgBoxResult
 
@@ -89,7 +91,18 @@ Public Class GestionEmpleados
         Else
             op = MsgBox("¿Desea agregar el nuevo cajero?", vbYesNo + vbDefaultButton2 + vbInformation, "Confirmar")
             If op = DialogResult.Yes Then
-                MsgBox("El cajero se registro correctamente", vbOKOnly + vbInformation, "Confirmar")
+
+                If (objEmpleado.agregar_empleado(CInt(TDni2.Text), TNombre2.Text, TApellido2.Text, RBmasculino.Text, DTfecha.Text, TDireccion.Text, TCorreo.Text, MTelefono.Text, PictureBox1.Image, CBoxEstado.Text)) Then
+
+                    MsgBox("El cajero se registro correctamente", vbOKOnly + vbInformation, "Confirmar")
+                    objEmpleado.cargarGrid(DataGridView1)
+
+                Else
+                    MsgBox("El empleado ya existe", vbOKOnly + vbCritical, "Confirmar")
+                    TDni2.Focus()
+
+                End If
+
                 TDni2.Clear()
                 TNombre2.Clear()
                 TApellido2.Clear()
@@ -99,6 +112,7 @@ Public Class GestionEmpleados
                 PictureBox1.Image = Nothing
                 RBmasculino.Checked = False
                 RBfemenino.Checked = False
+
 
             End If
         End If
@@ -177,5 +191,7 @@ Public Class GestionEmpleados
         End If
     End Sub
 
-
+    Private Sub GestionEmpleados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        objEmpleado.cargarGrid(DataGridView1)
+    End Sub
 End Class

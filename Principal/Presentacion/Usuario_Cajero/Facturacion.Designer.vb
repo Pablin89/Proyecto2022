@@ -42,8 +42,10 @@ Partial Class Facturacion
         Me.LApellidoC = New System.Windows.Forms.Label()
         Me.LNombreC = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.TCantidad = New System.Windows.Forms.TextBox()
         Me.TProducto = New System.Windows.Forms.TextBox()
         Me.BAgregar = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.LProducto = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -67,8 +69,6 @@ Partial Class Facturacion
         Me.Categoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PrecioProducto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Stock = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TCantidad = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.BConfirmar = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
@@ -122,7 +122,7 @@ Partial Class Facturacion
         '
         Me.BBuscar.BackColor = System.Drawing.Color.RosyBrown
         Me.BBuscar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BBuscar.Font = New System.Drawing.Font("MS Reference Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BBuscar.ForeColor = System.Drawing.Color.White
         Me.BBuscar.Image = Global.Principal.My.Resources.Resources.find_102325__1_
         Me.BBuscar.ImageAlign = System.Drawing.ContentAlignment.TopRight
@@ -247,6 +247,13 @@ Partial Class Facturacion
         Me.Panel3.Size = New System.Drawing.Size(858, 248)
         Me.Panel3.TabIndex = 4
         '
+        'TCantidad
+        '
+        Me.TCantidad.Location = New System.Drawing.Point(668, 103)
+        Me.TCantidad.Name = "TCantidad"
+        Me.TCantidad.Size = New System.Drawing.Size(146, 20)
+        Me.TCantidad.TabIndex = 23
+        '
         'TProducto
         '
         Me.TProducto.Location = New System.Drawing.Point(236, 21)
@@ -268,6 +275,17 @@ Partial Class Facturacion
         Me.BAgregar.Text = "Agregar a la compra"
         Me.BAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.BAgregar.UseVisualStyleBackColor = False
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(664, 65)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(150, 20)
+        Me.Label3.TabIndex = 19
+        Me.Label3.Text = "Ingresar cantidad"
         '
         'LProducto
         '
@@ -476,24 +494,6 @@ Partial Class Facturacion
         '
         Me.Stock.HeaderText = "Stock"
         Me.Stock.Name = "Stock"
-        '
-        'TCantidad
-        '
-        Me.TCantidad.Location = New System.Drawing.Point(668, 103)
-        Me.TCantidad.Name = "TCantidad"
-        Me.TCantidad.Size = New System.Drawing.Size(146, 20)
-        Me.TCantidad.TabIndex = 23
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(664, 65)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(150, 20)
-        Me.Label3.TabIndex = 19
-        Me.Label3.Text = "Ingresar cantidad"
         '
         'Button2
         '

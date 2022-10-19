@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class GestionEmpleados
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class GestionEmpleados
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -70,18 +70,6 @@ Partial Class GestionEmpleados
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.LEncargado = New System.Windows.Forms.Label()
         Me.Encargados = New System.Windows.Forms.TabControl()
-        Me.Apellido = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Dni = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Genero = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Correo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Direccion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Imagen = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.Modificar = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.Eliminar = New System.Windows.Forms.DataGridViewButtonColumn()
         CType(Me.ErrorCorreo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorFecha, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.AgregarCajeros.SuspendLayout()
@@ -438,7 +426,6 @@ Partial Class GestionEmpleados
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Apellido, Me.Nombre, Me.Dni, Me.Fecha, Me.Genero, Me.Correo, Me.Telefono, Me.Direccion, Me.Estado, Me.Imagen, Me.Modificar, Me.Eliminar})
         Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Top
         Me.DataGridView1.Location = New System.Drawing.Point(3, 241)
         Me.DataGridView1.Name = "DataGridView1"
@@ -618,66 +605,6 @@ Partial Class GestionEmpleados
         Me.Encargados.TabIndex = 4
         Me.Encargados.TabStop = False
         '
-        'Apellido
-        '
-        Me.Apellido.HeaderText = "Apellido"
-        Me.Apellido.Name = "Apellido"
-        '
-        'Nombre
-        '
-        Me.Nombre.HeaderText = "Nombre"
-        Me.Nombre.Name = "Nombre"
-        '
-        'Dni
-        '
-        Me.Dni.HeaderText = "DNI"
-        Me.Dni.Name = "Dni"
-        '
-        'Fecha
-        '
-        Me.Fecha.HeaderText = "Fecha de Nacimiento"
-        Me.Fecha.Name = "Fecha"
-        '
-        'Genero
-        '
-        Me.Genero.HeaderText = "Genero"
-        Me.Genero.Name = "Genero"
-        '
-        'Correo
-        '
-        Me.Correo.HeaderText = "Correo Electronico"
-        Me.Correo.Name = "Correo"
-        '
-        'Telefono
-        '
-        Me.Telefono.HeaderText = "Telefono"
-        Me.Telefono.Name = "Telefono"
-        '
-        'Direccion
-        '
-        Me.Direccion.HeaderText = "Dirección"
-        Me.Direccion.Name = "Direccion"
-        '
-        'Estado
-        '
-        Me.Estado.HeaderText = "Estado"
-        Me.Estado.Name = "Estado"
-        '
-        'Imagen
-        '
-        Me.Imagen.HeaderText = "Imagen"
-        Me.Imagen.Name = "Imagen"
-        '
-        'Modificar
-        '
-        Me.Modificar.HeaderText = "Modificar"
-        Me.Modificar.Name = "Modificar"
-        '
-        'Eliminar
-        '
-        Me.Eliminar.HeaderText = "Eliminar"
-        Me.Eliminar.Name = "Eliminar"
-        '
         'GestionEmpleados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -754,16 +681,4 @@ Partial Class GestionEmpleados
     Friend WithEvents LDni As Label
     Friend WithEvents LNombre As Label
     Friend WithEvents LApellido As Label
-    Friend WithEvents Apellido As DataGridViewTextBoxColumn
-    Friend WithEvents Nombre As DataGridViewTextBoxColumn
-    Friend WithEvents Dni As DataGridViewTextBoxColumn
-    Friend WithEvents Fecha As DataGridViewTextBoxColumn
-    Friend WithEvents Genero As DataGridViewTextBoxColumn
-    Friend WithEvents Correo As DataGridViewTextBoxColumn
-    Friend WithEvents Telefono As DataGridViewTextBoxColumn
-    Friend WithEvents Direccion As DataGridViewTextBoxColumn
-    Friend WithEvents Estado As DataGridViewTextBoxColumn
-    Friend WithEvents Imagen As DataGridViewImageColumn
-    Friend WithEvents Modificar As DataGridViewButtonColumn
-    Friend WithEvents Eliminar As DataGridViewButtonColumn
 End Class
