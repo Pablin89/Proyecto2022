@@ -1,6 +1,8 @@
 ﻿Imports System.ComponentModel
 
 Public Class GestionEmpleados
+    Dim objempleado = New NEmpleado
+
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim ask As MsgBoxResult
 
@@ -89,19 +91,24 @@ Public Class GestionEmpleados
         Else
             op = MsgBox("¿Desea agregar el nuevo cajero?", vbYesNo + vbDefaultButton2 + vbInformation, "Confirmar")
             If op = DialogResult.Yes Then
-                MsgBox("El cajero se registro correctamente", vbOKOnly + vbInformation, "Confirmar")
-                TDni2.Clear()
-                TNombre2.Clear()
-                TApellido2.Clear()
-                TDireccion.Clear()
-                TCorreo.Clear()
-                MTelefono.Clear()
-                PictureBox1.Image = Nothing
-                RBmasculino.Checked = False
-                RBfemenino.Checked = False
+                If (objempleado.agregar_empleado(CInt(TDni2.Text), TNombre2.Text, TApellido2.Text, RBmasculino.Text, DTfecha.Value, TDireccion.Text, TCorreo.Text, MTelefono.Text, PictureBox1.Image, CBoxEstado.Text)
+                                                 ) Then
+                    MsgBox("El cajero se registro correctamente", vbOKOnly + vbInformation, "Confirmar")
+                    objempleado.Cargargrid(DataGridView1)
+                End If
 
+                TDni2.Clear()
+                    TNombre2.Clear()
+                    TApellido2.Clear()
+                    TDireccion.Clear()
+                    TCorreo.Clear()
+                    MTelefono.Clear()
+                    PictureBox1.Image = Nothing
+                    RBmasculino.Checked = False
+                    RBfemenino.Checked = False
+
+                End If
             End If
-        End If
 
     End Sub
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
@@ -177,5 +184,7 @@ Public Class GestionEmpleados
         End If
     End Sub
 
-
+    Private Sub GestionEmpleados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        objempleado.cargargrid(DataGridView1)
+    End Sub
 End Class

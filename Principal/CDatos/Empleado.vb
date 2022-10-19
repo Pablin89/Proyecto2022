@@ -21,7 +21,7 @@ Partial Public Class Empleado
     Public Property correo As String
     Public Property telefono As Integer
     Public Property imagen As Byte()
-    Public Property estado As Integer
+    Public Property estado As String
     Public Property usuario_id As Integer
 
     Public Overridable Property Usuario As Usuario

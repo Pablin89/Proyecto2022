@@ -136,6 +136,7 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="CNegocio\NCliente.vb" />
+    <Compile Include="CNegocio\NEmpleado.vb" />
     <Compile Include="Presentacion\Usuario_Cajero\Cajeros.Designer.vb">
       <DependentUpon>Cajeros.vb</DependentUpon>
     </Compile>
