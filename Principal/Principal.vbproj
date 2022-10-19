@@ -236,9 +236,7 @@
     <Compile Include="Presentacion\Usuario_Gerente\ReporteSucursalIndividual.Designer.vb">
       <DependentUpon>ReporteSucursalIndividual.vb</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Usuario_Gerente\ReporteSucursalIndividual.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Presentacion\Usuario_Gerente\ReporteSucursalIndividual.vb" />
     <Compile Include="Presentacion\Usuario_Gerente\Gerente.Designer.vb">
       <DependentUpon>Gerente.vb</DependentUpon>
     </Compile>
