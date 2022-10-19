@@ -34,7 +34,9 @@ Partial Class Gerente
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.MenuGerente = New System.Windows.Forms.MenuStrip()
-        Me.GenerarReporte = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReportesCajeros = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReportesClientes = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReportesProductos = New System.Windows.Forms.ToolStripMenuItem()
         Me.NumerosMes = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -158,7 +160,7 @@ Partial Class Gerente
         Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel2.Location = New System.Drawing.Point(0, 731)
+        Me.Panel2.Location = New System.Drawing.Point(0, 747)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Panel2.Size = New System.Drawing.Size(1354, 2)
@@ -173,49 +175,69 @@ Partial Class Gerente
         Me.MenuGerente.Dock = System.Windows.Forms.DockStyle.Fill
         Me.MenuGerente.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MenuGerente.GripMargin = New System.Windows.Forms.Padding(2)
-        Me.MenuGerente.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GenerarReporte, Me.NumerosMes})
+        Me.MenuGerente.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReportesCajeros, Me.ReportesClientes, Me.ReportesProductos, Me.NumerosMes})
         Me.MenuGerente.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow
         Me.MenuGerente.Location = New System.Drawing.Point(0, 170)
-        Me.MenuGerente.MdiWindowListItem = Me.GenerarReporte
+        Me.MenuGerente.MdiWindowListItem = Me.ReportesCajeros
         Me.MenuGerente.Name = "MenuGerente"
         Me.MenuGerente.Padding = New System.Windows.Forms.Padding(6, 10, 6, 10)
         Me.MenuGerente.ShowItemToolTips = True
-        Me.MenuGerente.Size = New System.Drawing.Size(1354, 563)
+        Me.MenuGerente.Size = New System.Drawing.Size(1354, 579)
         Me.MenuGerente.TabIndex = 0
         Me.MenuGerente.Text = " "
         '
-        'GenerarReporte
+        'ReportesCajeros
         '
-        Me.GenerarReporte.AutoSize = False
-        Me.GenerarReporte.AutoToolTip = True
-        Me.GenerarReporte.BackColor = System.Drawing.Color.Orange
-        Me.GenerarReporte.ForeColor = System.Drawing.Color.Black
-        Me.GenerarReporte.Image = Global.Principal.My.Resources.Resources.statistic_icon_129319
-        Me.GenerarReporte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.GenerarReporte.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.GenerarReporte.Name = "GenerarReporte"
-        Me.GenerarReporte.Size = New System.Drawing.Size(1370, 128)
-        Me.GenerarReporte.Text = "Generar reporte"
-        Me.GenerarReporte.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.GenerarReporte.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.GenerarReporte.ToolTipText = "Esta sección del menú nos permite" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "generar reportes a partir de distintos" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "puntos" &
+        Me.ReportesCajeros.AutoSize = False
+        Me.ReportesCajeros.AutoToolTip = True
+        Me.ReportesCajeros.BackColor = System.Drawing.Color.Orange
+        Me.ReportesCajeros.ForeColor = System.Drawing.Color.Black
+        Me.ReportesCajeros.Image = Global.Principal.My.Resources.Resources.statistic_icon_129319
+        Me.ReportesCajeros.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ReportesCajeros.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.ReportesCajeros.Name = "ReportesCajeros"
+        Me.ReportesCajeros.Size = New System.Drawing.Size(1370, 128)
+        Me.ReportesCajeros.Text = "Reportes por cajeros"
+        Me.ReportesCajeros.ToolTipText = "Esta sección del menú nos permite" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "generar reportes a partir de distintos" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "puntos" &
     " de vista."
+        '
+        'ReportesClientes
+        '
+        Me.ReportesClientes.AutoSize = False
+        Me.ReportesClientes.BackColor = System.Drawing.Color.LightGreen
+        Me.ReportesClientes.ForeColor = System.Drawing.Color.Black
+        Me.ReportesClientes.Image = Global.Principal.My.Resources.Resources.female_cashier_avatar_people_icon_142371__2_
+        Me.ReportesClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ReportesClientes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.ReportesClientes.Name = "ReportesClientes"
+        Me.ReportesClientes.Size = New System.Drawing.Size(1341, 128)
+        Me.ReportesClientes.Text = "Reportes por clientes"
+        '
+        'ReportesProductos
+        '
+        Me.ReportesProductos.AutoSize = False
+        Me.ReportesProductos.BackColor = System.Drawing.Color.PowderBlue
+        Me.ReportesProductos.ForeColor = System.Drawing.Color.Black
+        Me.ReportesProductos.Image = Global.Principal.My.Resources.Resources.box_search_product_ean_barcode_icon_148907
+        Me.ReportesProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ReportesProductos.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.ReportesProductos.Name = "ReportesProductos"
+        Me.ReportesProductos.Size = New System.Drawing.Size(1341, 128)
+        Me.ReportesProductos.Text = "Reportes por productos"
         '
         'NumerosMes
         '
         Me.NumerosMes.AutoSize = False
-        Me.NumerosMes.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.NumerosMes.BackColor = System.Drawing.Color.DarkSalmon
         Me.NumerosMes.ForeColor = System.Drawing.Color.Black
         Me.NumerosMes.Image = Global.Principal.My.Resources.Resources.financial_report_calculator_chart_pie_icon_205131
-        Me.NumerosMes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.NumerosMes.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.NumerosMes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.NumerosMes.ImageTransparentColor = System.Drawing.Color.Transparent
         Me.NumerosMes.Name = "NumerosMes"
         Me.NumerosMes.RightToLeftAutoMirrorImage = True
         Me.NumerosMes.Size = New System.Drawing.Size(1370, 128)
         Me.NumerosMes.Text = "Números del último mes"
-        Me.NumerosMes.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.NumerosMes.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.NumerosMes.ToolTipText = "Esta sección del menú nos permite ver el rendimiento de la sucursal" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "desde el pun" &
     "to de vista de las ventas realizadas."
         '
@@ -225,7 +247,7 @@ Partial Class Gerente
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.ClientSize = New System.Drawing.Size(1354, 733)
+        Me.ClientSize = New System.Drawing.Size(1354, 749)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.MenuGerente)
         Me.Controls.Add(Me.Panel1)
@@ -257,11 +279,13 @@ Partial Class Gerente
     Friend WithEvents LSalirG As Label
     Friend WithEvents MenuGerente As MenuStrip
     Friend WithEvents Label1 As Label
-    Friend WithEvents GenerarReporte As ToolStripMenuItem
+    Friend WithEvents ReportesCajeros As ToolStripMenuItem
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Panel2 As Panel
     Friend WithEvents LFecha As Label
     Friend WithEvents LHora As Label
     Friend WithEvents NumerosMes As ToolStripMenuItem
+    Friend WithEvents ReportesClientes As ToolStripMenuItem
+    Friend WithEvents ReportesProductos As ToolStripMenuItem
 End Class

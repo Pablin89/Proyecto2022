@@ -210,10 +210,28 @@
     <Compile Include="Presentacion\Usuario_GerenteGral\RestaurarDatos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Usuario_Gerente\ReporteSucursalIndividual.Designer.vb">
-      <DependentUpon>ReporteSucursalIndividual.vb</DependentUpon>
+    <Compile Include="Presentacion\Usuario_Gerente\.Designer.vb">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Usuario_Gerente\ReporteSucursalIndividual.vb">
+    <Compile Include="Presentacion\Usuario_Gerente\ReportesCategorias.Designer.vb">
+      <DependentUpon>ReportesCategorias.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_Gerente\ReportesCategorias.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_Gerente\ReportesProductos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_Gerente\ReportesClientes.Designer.vb">
+      <DependentUpon>ReportesClientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_Gerente\ReportesClientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_Gerente\ReportesCajeros.Designer.vb">
+      <DependentUpon>ReportesCajeros.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_Gerente\ReportesCajeros.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\Usuario_Gerente\Gerente.Designer.vb">
@@ -319,6 +337,12 @@
     <EmbeddedResource Include="Presentacion\Usuario_Gerente\NumerosDelMes.resx">
       <DependentUpon>NumerosDelMes.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Usuario_Gerente\ReportesCategorias.resx">
+      <DependentUpon>ReportesCategorias.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Usuario_Gerente\ReportesClientes.resx">
+      <DependentUpon>ReportesClientes.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.vb</DependentUpon>
     </EmbeddedResource>
@@ -331,8 +355,8 @@
     <EmbeddedResource Include="Presentacion\Usuario_Cajero\MisVentas.resx">
       <DependentUpon>MisVentas.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Usuario_Gerente\ReporteSucursalIndividual.resx">
-      <DependentUpon>ReporteSucursalIndividual.vb</DependentUpon>
+    <EmbeddedResource Include="Presentacion\Usuario_Gerente\ReportesCajeros.resx">
+      <DependentUpon>ReportesCajeros.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -478,6 +502,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Proyecto.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\category_icon-icons.com_71725.png" />
+    <None Include="Resources\box_search_product_ean_barcode_icon_148907.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

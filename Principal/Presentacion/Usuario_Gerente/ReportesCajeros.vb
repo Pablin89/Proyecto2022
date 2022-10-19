@@ -1,4 +1,4 @@
-﻿Public Class ReporteSucursalIndividual
+﻿Public Class ReporteCajeros
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim ask As MsgBoxResult
