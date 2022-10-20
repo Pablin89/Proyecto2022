@@ -90,25 +90,32 @@ Public Class GestionEmpleados
             MsgBox("Debe completar todos los campos", vbOKOnly + vbDefaultButton1 + vbCritical, "Confirmar")
         Else
             op = MsgBox("¿Desea agregar el nuevo cajero?", vbYesNo + vbDefaultButton2 + vbInformation, "Confirmar")
-            If op = DialogResult.Yes Then
-                If (objempleado.agregar_empleado(CInt(TDni2.Text), TNombre2.Text, TApellido2.Text, RBmasculino.Text, DTfecha.Value, TDireccion.Text, TCorreo.Text, MTelefono.Text, PictureBox1.Image, CBoxEstado.Text)
-                                                 ) Then
+
+            If op = MsgBoxResult.Yes Then
+
+                If (objempleado.agregar_empleado(CInt(TDni2.Text), TNombre2.Text, TApellido2.Text, RBmasculino.Text, DTfecha.Value, TDireccion.Text, TCorreo.Text, MTelefono.Text, CBoxEstado.Text)) Then
+
                     MsgBox("El cajero se registro correctamente", vbOKOnly + vbInformation, "Confirmar")
-                    objempleado.Cargargrid(DataGridView1)
+                    objempleado.cargarGrid(dgEmpleados)
+
+                Else
+                    MsgBox("El empleado ya existe", vbOKOnly + vbDefaultButton2 + vbCritical, "Confirmar")
+
+
                 End If
 
                 TDni2.Clear()
-                    TNombre2.Clear()
-                    TApellido2.Clear()
-                    TDireccion.Clear()
-                    TCorreo.Clear()
-                    MTelefono.Clear()
-                    PictureBox1.Image = Nothing
-                    RBmasculino.Checked = False
-                    RBfemenino.Checked = False
+                TNombre2.Clear()
+                TApellido2.Clear()
+                TDireccion.Clear()
+                TCorreo.Clear()
+                MTelefono.Clear()
+                PictureBox1.Image = Nothing
+                RBmasculino.Checked = False
+                RBfemenino.Checked = False
 
-                End If
             End If
+        End If
 
     End Sub
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
@@ -135,6 +142,9 @@ Public Class GestionEmpleados
             RBfemenino.Checked = False
 
         End If
+    End Sub
+    Private Sub GestionEmpleados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        objempleado.cargarGrid(dgEmpleados)
     End Sub
 
     Private Sub GestionCajeros_Closed(sender As Object, e As EventArgs) Handles Me.Closed
@@ -184,7 +194,5 @@ Public Class GestionEmpleados
         End If
     End Sub
 
-    Private Sub GestionEmpleados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        objempleado.cargargrid(DataGridView1)
-    End Sub
+
 End Class

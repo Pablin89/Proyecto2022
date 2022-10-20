@@ -1,4 +1,7 @@
 ﻿Public Class GestionProductos
+    Dim objproducto = New NProducto
+    Dim objcategoria = New NCategoria
+
     Private Sub SoloNumeros_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TStock.KeyPress, TPrecioProd.KeyPress, TCodigoProd.KeyPress, TCodigo.KeyPress, TPrecio.KeyPress
         If (Char.IsNumber(e.KeyChar)) Then
             e.Handled = False
@@ -27,19 +30,27 @@
         Dim op As MsgBoxResult
 
         If String.IsNullOrWhiteSpace(TNombreProd.Text) Or Not IsNumeric(TStock.Text) Or String.IsNullOrWhiteSpace(TCodigoProd.Text) Or Not IsNumeric(TPrecioProd.Text) Or
-            String.IsNullOrWhiteSpace(CBcategoria.Text) Or String.IsNullOrWhiteSpace(TDescripcion.Text) Or IsNothing(PictureBox1.Image) Then
+            String.IsNullOrWhiteSpace(CBcategoria.Text) Or String.IsNullOrWhiteSpace(TDescripcion.Text) Then
 
             MsgBox("Debe completar todos los campos", vbOKOnly + vbDefaultButton1 + vbCritical, "Confirmar")
         Else
             op = MsgBox("¿Desea agregar el nuevo producto?", vbYesNo + vbDefaultButton2 + vbInformation, "Confirmar")
             If op = DialogResult.Yes Then
-                MsgBox("El producto se registro correctamente", vbOKOnly + vbInformation, "Confirmar")
+                If (objproducto.agregar_producto(TNombreProd.Text, TDescripcion.Text, TCodigoProd.Text, TPrecioProd.Text, TStock.Text, CBcategoria.Text, 1)) Then
+                    MsgBox("El producto se registro correctamente", vbOKOnly + vbInformation, "Confirmar")
+
+                    objproducto.cargarGrid(DataGridView1)
+                Else
+                    MsgBox("El producto ya existe", vbOKOnly + vbCritical, "Confirmar")
+
+                End If
+
+
                 TNombreProd.Clear()
                 TPrecioProd.Clear()
                 TStock.Clear()
                 TCodigoProd.Clear()
                 TDescripcion.Clear()
-                PictureBox1.Image = Nothing
             End If
 
         End If
@@ -95,12 +106,7 @@
             ComboCat.Enabled = False
         End If
     End Sub
-    Private Sub BAgregarImagen_Click(sender As Object, e As EventArgs) Handles BAgregarImagen.Click
-        OpenFileDialog1.InitialDirectory = "D:"
-        OpenFileDialog1.Filter = "Archivos imagenes|*.png|Archivos imagenes|*.jpg"
-        OpenFileDialog1.ShowDialog()
-        PictureBox1.ImageLocation = OpenFileDialog1.FileName
-    End Sub
+
 
     Private Sub BCancelar_Click(sender As Object, e As EventArgs) Handles BCancelar.Click
         Dim ask As MsgBoxResult
@@ -113,7 +119,6 @@
             TStock.Clear()
             TCodigoProd.Clear()
             TDescripcion.Clear()
-            PictureBox1.Image = Nothing
 
         End If
     End Sub
@@ -130,7 +135,7 @@
     End Sub
 
     Private Sub GestionProductos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Encargado.Show()
+        objproducto.cargarGrid(DataGridView1)
     End Sub
 
     Private Sub BConfirmarCat_Click(sender As Object, e As EventArgs) Handles BConfirmarCat.Click
@@ -141,7 +146,12 @@
         Else
             ask = MsgBox("¿Desea agregar la nueva Categoria?", vbYesNo + vbDefaultButton2 + vbInformation, "Confirmar")
             If ask = DialogResult.Yes Then
-                MsgBox("La categoria se registro correctamente", vbOKOnly + vbInformation, "Confirmar")
+                If (objcategoria.agregar_categoria(TDesc.Text)) Then
+                    MsgBox("La categoria se registro correctamente", vbOKOnly + vbInformation, "Confirmar")
+                Else
+                    MsgBox("La categoria ya existe", vbOKOnly + vbCritical, "Confirmar")
+                End If
+
                 TDesc.Clear()
             End If
         End If
@@ -155,5 +165,10 @@
         If ask = DialogResult.Yes Then
             TDesc.Clear()
         End If
+    End Sub
+
+    Private Sub TCat_TextChanged(sender As Object, e As EventArgs) Handles TCat.TextChanged
+        Dim cat = New Categoria
+        TCat.Text = cat.Id_categoria
     End Sub
 End Class

@@ -17,10 +17,10 @@ Partial Public Class Producto
     Public Property codigo As String
     Public Property precio As Decimal
     Public Property stock As Integer
-    Public Property imagen As Byte()
     Public Property categoria_id As Integer
     Public Property estado As Integer
 
     Public Overridable Property Categoria As Categoria
+    Public Overridable Property Detalle_venta As ICollection(Of Detalle_venta) = New HashSet(Of Detalle_venta)
 
 End Class

@@ -16,7 +16,7 @@ Partial Public Class Usuario
     Public Property contraseña As String
     Public Property perfil_id As Integer
 
-    Public Overridable Property Empleado As ICollection(Of Empleado) = New HashSet(Of Empleado)
     Public Overridable Property Perfil As Perfil
+    Public Overridable Property Empleado As ICollection(Of Empleado) = New HashSet(Of Empleado)
 
 End Class

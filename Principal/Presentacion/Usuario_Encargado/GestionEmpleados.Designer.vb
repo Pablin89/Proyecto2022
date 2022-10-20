@@ -55,7 +55,7 @@ Partial Class GestionEmpleados
         Me.LNombre = New System.Windows.Forms.Label()
         Me.LApellido = New System.Windows.Forms.Label()
         Me.EditarCajeros = New System.Windows.Forms.TabPage()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dgEmpleados = New System.Windows.Forms.DataGridView()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.ComboEstado = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -76,7 +76,7 @@ Partial Class GestionEmpleados
         Me.Panel4.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.EditarCajeros.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgEmpleados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Encargados.SuspendLayout()
@@ -408,7 +408,7 @@ Partial Class GestionEmpleados
         '
         'EditarCajeros
         '
-        Me.EditarCajeros.Controls.Add(Me.DataGridView1)
+        Me.EditarCajeros.Controls.Add(Me.dgEmpleados)
         Me.EditarCajeros.Controls.Add(Me.Panel3)
         Me.EditarCajeros.Controls.Add(Me.Panel2)
         Me.EditarCajeros.Location = New System.Drawing.Point(4, 76)
@@ -419,18 +419,18 @@ Partial Class GestionEmpleados
         Me.EditarCajeros.Text = "Editar Empleado"
         Me.EditarCajeros.UseVisualStyleBackColor = True
         '
-        'DataGridView1
+        'dgEmpleados
         '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.DataGridView1.Location = New System.Drawing.Point(3, 241)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(1356, 307)
-        Me.DataGridView1.TabIndex = 10
+        Me.dgEmpleados.AllowUserToAddRows = False
+        Me.dgEmpleados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgEmpleados.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.dgEmpleados.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.dgEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgEmpleados.Dock = System.Windows.Forms.DockStyle.Top
+        Me.dgEmpleados.Location = New System.Drawing.Point(3, 241)
+        Me.dgEmpleados.Name = "dgEmpleados"
+        Me.dgEmpleados.Size = New System.Drawing.Size(1356, 307)
+        Me.dgEmpleados.TabIndex = 10
         '
         'Panel3
         '
@@ -625,7 +625,7 @@ Partial Class GestionEmpleados
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.EditarCajeros.ResumeLayout(False)
         Me.EditarCajeros.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgEmpleados, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         Me.Panel2.ResumeLayout(False)
@@ -641,7 +641,7 @@ Partial Class GestionEmpleados
     Friend WithEvents ErrorFecha As ErrorProvider
     Friend WithEvents Encargados As TabControl
     Friend WithEvents EditarCajeros As TabPage
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dgEmpleados As DataGridView
     Friend WithEvents Panel3 As Panel
     Friend WithEvents ComboEstado As ComboBox
     Friend WithEvents Label2 As Label

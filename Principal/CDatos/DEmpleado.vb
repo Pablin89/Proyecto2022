@@ -3,7 +3,7 @@
 
     Function DGuardar_empleado(ByVal oempleado As Empleado) As Boolean
         Try
-            ctx.Empleado.add(oempleado)
+            ctx.Empleado.Add(oempleado)
             ctx.SaveChanges()
             Return True
         Catch ex As Exception

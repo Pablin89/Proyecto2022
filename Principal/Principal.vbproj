@@ -106,9 +106,17 @@
     <Compile Include="CDatos\Cliente.vb">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="CDatos\DCategoria.vb" />
     <Compile Include="CDatos\DCliente.vb" />
     <Compile Include="CDatos\DEmpleado.vb" />
+    <Compile Include="CDatos\Detalle_venta.vb">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\DProducto.vb" />
     <Compile Include="CDatos\Empleado.vb">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\Factura.vb">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="CDatos\Model1.Context.vb">
@@ -135,8 +143,10 @@
     <Compile Include="CDatos\Usuario.vb">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="CNegocio\NCategoria.vb" />
     <Compile Include="CNegocio\NCliente.vb" />
     <Compile Include="CNegocio\NEmpleado.vb" />
+    <Compile Include="CNegocio\NProducto.vb" />
     <Compile Include="Presentacion\Usuario_Cajero\Cajeros.Designer.vb">
       <DependentUpon>Cajeros.vb</DependentUpon>
     </Compile>

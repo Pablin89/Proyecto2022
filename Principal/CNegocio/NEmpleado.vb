@@ -1,5 +1,5 @@
 ﻿Public Class NEmpleado
-    Function agregar_empleado(ByVal dni As Integer, ByVal nombre As String, ByVal apellido As String, ByVal genero As String, ByVal fecha As DateTime, ByVal direccion As String, ByVal correo As String, ByVal telefono As String, ByVal imagen As Image, ByVal estado As Integer) As Boolean
+    Function agregar_empleado(ByVal dni As Integer, ByVal nombre As String, ByVal apellido As String, ByVal genero As String, ByVal fecha As Date, ByVal direccion As String, ByVal correo As String, ByVal telefono As String, ByVal estado As Integer) As Boolean
         Dim oempleados = New Empleado
 
         With oempleados

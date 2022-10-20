@@ -10,16 +10,15 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class Cliente
-    Public Property Id_cliente As Integer
-    Public Property dni As Integer
-    Public Property nombre As String
-    Public Property apellido As String
-    Public Property direccion As String
-    Public Property telefono As String
-    Public Property genero As String
-    Public Property correo As String
+Partial Public Class Detalle_venta
+    Public Property Id_detalle As Integer
+    Public Property cantidad As Integer
+    Public Property subtotal As Decimal
+    Public Property nro_factura As Integer
+    Public Property id_producto As Integer
+    Public Property precio As Decimal
 
-    Public Overridable Property Factura As ICollection(Of Factura) = New HashSet(Of Factura)
+    Public Overridable Property Producto As Producto
+    Public Overridable Property Factura As Factura
 
 End Class

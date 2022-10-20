@@ -25,14 +25,6 @@ Partial Class GestionProductos
         Me.Productos = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Stock = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Categoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Eliminar = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.Modificar = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BBuscar = New System.Windows.Forms.Button()
@@ -48,8 +40,6 @@ Partial Class GestionProductos
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.BCancelar = New System.Windows.Forms.Button()
         Me.BConfirmar = New System.Windows.Forms.Button()
-        Me.BAgregarImagen = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.CBcategoria = New System.Windows.Forms.ComboBox()
         Me.TStock = New System.Windows.Forms.TextBox()
         Me.TPrecioProd = New System.Windows.Forms.TextBox()
@@ -73,13 +63,11 @@ Partial Class GestionProductos
         Me.LCat = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
-        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.Productos.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.TabPage2.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage3.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -120,51 +108,10 @@ Partial Class GestionProductos
         Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nombre, Me.Descripcion, Me.Codigo, Me.Precio, Me.Stock, Me.Categoria, Me.Eliminar, Me.Modificar})
         Me.DataGridView1.Location = New System.Drawing.Point(0, 273)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(1358, 315)
         Me.DataGridView1.TabIndex = 8
-        '
-        'Nombre
-        '
-        Me.Nombre.HeaderText = "Nombre"
-        Me.Nombre.Name = "Nombre"
-        '
-        'Descripcion
-        '
-        Me.Descripcion.HeaderText = "Descripción"
-        Me.Descripcion.Name = "Descripcion"
-        '
-        'Codigo
-        '
-        Me.Codigo.HeaderText = "Codigo"
-        Me.Codigo.Name = "Codigo"
-        '
-        'Precio
-        '
-        Me.Precio.HeaderText = "Precio"
-        Me.Precio.Name = "Precio"
-        '
-        'Stock
-        '
-        Me.Stock.HeaderText = "Stock"
-        Me.Stock.Name = "Stock"
-        '
-        'Categoria
-        '
-        Me.Categoria.HeaderText = "Categoria"
-        Me.Categoria.Name = "Categoria"
-        '
-        'Eliminar
-        '
-        Me.Eliminar.HeaderText = "Eliminar"
-        Me.Eliminar.Name = "Eliminar"
-        '
-        'Modificar
-        '
-        Me.Modificar.HeaderText = "Modificar"
-        Me.Modificar.Name = "Modificar"
         '
         'Panel2
         '
@@ -307,8 +254,6 @@ Partial Class GestionProductos
         Me.TabPage2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.TabPage2.Controls.Add(Me.BCancelar)
         Me.TabPage2.Controls.Add(Me.BConfirmar)
-        Me.TabPage2.Controls.Add(Me.BAgregarImagen)
-        Me.TabPage2.Controls.Add(Me.PictureBox1)
         Me.TabPage2.Controls.Add(Me.CBcategoria)
         Me.TabPage2.Controls.Add(Me.TStock)
         Me.TabPage2.Controls.Add(Me.TPrecioProd)
@@ -335,7 +280,7 @@ Partial Class GestionProductos
         Me.BCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BCancelar.Image = Global.Principal.My.Resources.Resources.cancelar
         Me.BCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BCancelar.Location = New System.Drawing.Point(896, 377)
+        Me.BCancelar.Location = New System.Drawing.Point(438, 463)
         Me.BCancelar.Name = "BCancelar"
         Me.BCancelar.Size = New System.Drawing.Size(136, 46)
         Me.BCancelar.TabIndex = 30
@@ -349,7 +294,7 @@ Partial Class GestionProductos
         Me.BConfirmar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BConfirmar.Image = Global.Principal.My.Resources.Resources.iconoguardar__1_
         Me.BConfirmar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BConfirmar.Location = New System.Drawing.Point(1105, 377)
+        Me.BConfirmar.Location = New System.Drawing.Point(647, 463)
         Me.BConfirmar.Name = "BConfirmar"
         Me.BConfirmar.Size = New System.Drawing.Size(136, 46)
         Me.BConfirmar.TabIndex = 29
@@ -357,31 +302,11 @@ Partial Class GestionProductos
         Me.BConfirmar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.BConfirmar.UseVisualStyleBackColor = True
         '
-        'BAgregarImagen
-        '
-        Me.BAgregarImagen.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BAgregarImagen.Location = New System.Drawing.Point(1004, 294)
-        Me.BAgregarImagen.Name = "BAgregarImagen"
-        Me.BAgregarImagen.Size = New System.Drawing.Size(137, 27)
-        Me.BAgregarImagen.TabIndex = 28
-        Me.BAgregarImagen.Text = "Añadir Imagen"
-        Me.BAgregarImagen.UseVisualStyleBackColor = True
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox1.Location = New System.Drawing.Point(942, 87)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(262, 201)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 27
-        Me.PictureBox1.TabStop = False
-        '
         'CBcategoria
         '
         Me.CBcategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CBcategoria.FormattingEnabled = True
-        Me.CBcategoria.Items.AddRange(New Object() {"Bazar", "Jugueteria", "Regaleria"})
+        Me.CBcategoria.Items.AddRange(New Object() {"1", "2", "3"})
         Me.CBcategoria.Location = New System.Drawing.Point(425, 395)
         Me.CBcategoria.Name = "CBcategoria"
         Me.CBcategoria.Size = New System.Drawing.Size(388, 28)
@@ -605,10 +530,6 @@ Partial Class GestionProductos
         Me.Button3.Text = "<---Volver al menú principal"
         Me.Button3.UseVisualStyleBackColor = True
         '
-        'OpenFileDialog1
-        '
-        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
-        '
         'GestionProductos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -629,7 +550,6 @@ Partial Class GestionProductos
         Me.Panel2.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage3.PerformLayout()
         Me.ResumeLayout(False)
@@ -653,14 +573,6 @@ Partial Class GestionProductos
     Friend WithEvents Label1 As Label
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Label2 As Label
-    Friend WithEvents Nombre As DataGridViewTextBoxColumn
-    Friend WithEvents Descripcion As DataGridViewTextBoxColumn
-    Friend WithEvents Codigo As DataGridViewTextBoxColumn
-    Friend WithEvents Precio As DataGridViewTextBoxColumn
-    Friend WithEvents Stock As DataGridViewTextBoxColumn
-    Friend WithEvents Categoria As DataGridViewTextBoxColumn
-    Friend WithEvents Eliminar As DataGridViewButtonColumn
-    Friend WithEvents Modificar As DataGridViewButtonColumn
     Friend WithEvents Button3 As Button
     Friend WithEvents LPrecio As Label
     Friend WithEvents LCategoria As Label
@@ -676,9 +588,6 @@ Partial Class GestionProductos
     Friend WithEvents LDatos As Label
     Friend WithEvents CBcategoria As ComboBox
     Friend WithEvents BConfirmar As Button
-    Friend WithEvents BAgregarImagen As Button
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents BCancelar As Button
     Friend WithEvents TabPage3 As TabPage
     Friend WithEvents TDesc As TextBox
