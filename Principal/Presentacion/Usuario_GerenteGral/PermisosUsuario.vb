@@ -1,6 +1,7 @@
 ﻿Imports System.ComponentModel
 
 Public Class PermisosUsuario
+    Dim objempleado = New NEmpleado
     Private Sub BConfirmar_Click(sender As Object, e As EventArgs)
         Dim op As MsgBoxResult
 
@@ -157,5 +158,9 @@ Public Class PermisosUsuario
 
     Private Sub BEditarEmpleado_Click(sender As Object, e As EventArgs) Handles BEditarEmpleado.Click
         EditarEmpleado.Show()
+    End Sub
+
+    Private Sub PermisosUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        objempleado.cargarGrid(DataGridView1)
     End Sub
 End Class
