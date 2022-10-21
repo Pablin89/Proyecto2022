@@ -155,10 +155,10 @@
     <Compile Include="Presentacion\Usuario_Cajero\Cajeros.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Usuario_Encargado\ReportesVentas.Designer.vb">
-      <DependentUpon>ReportesVentas.vb</DependentUpon>
+    <Compile Include="Presentacion\Usuario_Encargado\ReporteVentas.Designer.vb">
+      <DependentUpon>ReporteVentas.vb</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Usuario_Encargado\ReportesVentas.vb">
+    <Compile Include="Presentacion\Usuario_Encargado\ReporteVentas.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\Usuario_GerenteGral\BackupDatos.Designer.vb">
@@ -330,8 +330,8 @@
     <EmbeddedResource Include="Presentacion\Usuario_Cajero\Cajeros.resx">
       <DependentUpon>Cajeros.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Usuario_Encargado\ReportesVentas.resx">
-      <DependentUpon>ReportesVentas.vb</DependentUpon>
+    <EmbeddedResource Include="Presentacion\Usuario_Encargado\ReporteVentas.resx">
+      <DependentUpon>ReporteVentas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Usuario_GerenteGral\BackupDatos.resx">
       <DependentUpon>BackupDatos.vb</DependentUpon>
