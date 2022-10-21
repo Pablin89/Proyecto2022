@@ -22,11 +22,11 @@ Partial Class ReporteVentas
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend3 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea4 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend4 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series4 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.BDescarga = New System.Windows.Forms.Button()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TCajero = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BBusqueda = New System.Windows.Forms.Button()
         Me.Lfiltro = New System.Windows.Forms.Label()
@@ -37,11 +37,11 @@ Partial Class ReporteVentas
         Me.LDesde = New System.Windows.Forms.Label()
         Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
+        Me.TCliente = New System.Windows.Forms.TextBox()
+        Me.TProducto = New System.Windows.Forms.TextBox()
+        Me.CBCajero = New System.Windows.Forms.CheckBox()
+        Me.CBCliente = New System.Windows.Forms.CheckBox()
+        Me.CBProducto = New System.Windows.Forms.CheckBox()
         Me.LMayores = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Desde = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -60,12 +60,13 @@ Partial Class ReporteVentas
         Me.BDescarga.Text = "Descargar Reporte"
         Me.BDescarga.UseVisualStyleBackColor = True
         '
-        'TextBox2
+        'TCajero
         '
-        Me.TextBox2.Location = New System.Drawing.Point(352, 254)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(270, 20)
-        Me.TextBox2.TabIndex = 54
+        Me.TCajero.Enabled = False
+        Me.TCajero.Location = New System.Drawing.Point(352, 254)
+        Me.TCajero.Name = "TCajero"
+        Me.TCajero.Size = New System.Drawing.Size(270, 20)
+        Me.TCajero.TabIndex = 54
         '
         'Label1
         '
@@ -156,16 +157,16 @@ Partial Class ReporteVentas
         '
         'Chart1
         '
-        ChartArea3.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea3)
-        Legend3.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend3)
+        ChartArea4.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea4)
+        Legend4.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend4)
         Me.Chart1.Location = New System.Drawing.Point(726, 97)
         Me.Chart1.Name = "Chart1"
-        Series3.ChartArea = "ChartArea1"
-        Series3.Legend = "Legend1"
-        Series3.Name = "Series1"
-        Me.Chart1.Series.Add(Series3)
+        Series4.ChartArea = "ChartArea1"
+        Series4.Legend = "Legend1"
+        Series4.Name = "Series1"
+        Me.Chart1.Series.Add(Series4)
         Me.Chart1.Size = New System.Drawing.Size(531, 325)
         Me.Chart1.TabIndex = 43
         Me.Chart1.Text = "Chart1"
@@ -183,55 +184,57 @@ Partial Class ReporteVentas
         Me.Label2.Text = "Reportes de ventas"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'TextBox1
+        'TCliente
         '
-        Me.TextBox1.Location = New System.Drawing.Point(352, 311)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(270, 20)
-        Me.TextBox1.TabIndex = 57
+        Me.TCliente.Enabled = False
+        Me.TCliente.Location = New System.Drawing.Point(352, 311)
+        Me.TCliente.Name = "TCliente"
+        Me.TCliente.Size = New System.Drawing.Size(270, 20)
+        Me.TCliente.TabIndex = 57
         '
-        'TextBox3
+        'TProducto
         '
-        Me.TextBox3.Location = New System.Drawing.Point(352, 366)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(270, 20)
-        Me.TextBox3.TabIndex = 59
+        Me.TProducto.Enabled = False
+        Me.TProducto.Location = New System.Drawing.Point(352, 366)
+        Me.TProducto.Name = "TProducto"
+        Me.TProducto.Size = New System.Drawing.Size(270, 20)
+        Me.TProducto.TabIndex = 59
         '
-        'CheckBox1
+        'CBCajero
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.CheckBox1.Location = New System.Drawing.Point(196, 254)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(140, 20)
-        Me.CheckBox1.TabIndex = 60
-        Me.CheckBox1.Text = "Seleccionar cajero"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.CBCajero.AutoSize = True
+        Me.CBCajero.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CBCajero.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.CBCajero.Location = New System.Drawing.Point(196, 254)
+        Me.CBCajero.Name = "CBCajero"
+        Me.CBCajero.Size = New System.Drawing.Size(140, 20)
+        Me.CBCajero.TabIndex = 60
+        Me.CBCajero.Text = "Seleccionar cajero"
+        Me.CBCajero.UseVisualStyleBackColor = True
         '
-        'CheckBox2
+        'CBCliente
         '
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.CheckBox2.Location = New System.Drawing.Point(196, 311)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(141, 20)
-        Me.CheckBox2.TabIndex = 61
-        Me.CheckBox2.Text = "Seleccionar cliente"
-        Me.CheckBox2.UseVisualStyleBackColor = True
+        Me.CBCliente.AutoSize = True
+        Me.CBCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CBCliente.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.CBCliente.Location = New System.Drawing.Point(196, 311)
+        Me.CBCliente.Name = "CBCliente"
+        Me.CBCliente.Size = New System.Drawing.Size(141, 20)
+        Me.CBCliente.TabIndex = 61
+        Me.CBCliente.Text = "Seleccionar cliente"
+        Me.CBCliente.UseVisualStyleBackColor = True
         '
-        'CheckBox3
+        'CBProducto
         '
-        Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.CheckBox3.Location = New System.Drawing.Point(181, 366)
-        Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(155, 20)
-        Me.CheckBox3.TabIndex = 62
-        Me.CheckBox3.Text = "Seleccionar producto"
-        Me.CheckBox3.UseVisualStyleBackColor = True
+        Me.CBProducto.AutoSize = True
+        Me.CBProducto.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CBProducto.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.CBProducto.Location = New System.Drawing.Point(181, 366)
+        Me.CBProducto.Name = "CBProducto"
+        Me.CBProducto.Size = New System.Drawing.Size(155, 20)
+        Me.CBProducto.TabIndex = 62
+        Me.CBProducto.Text = "Seleccionar producto"
+        Me.CBProducto.UseVisualStyleBackColor = True
         '
         'LMayores
         '
@@ -269,7 +272,7 @@ Partial Class ReporteVentas
         Me.Hasta.HeaderText = "Hasta"
         Me.Hasta.Name = "Hasta"
         '
-        'ReportesVentas
+        'ReporteVentas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -277,13 +280,13 @@ Partial Class ReporteVentas
         Me.ClientSize = New System.Drawing.Size(1369, 707)
         Me.Controls.Add(Me.LMayores)
         Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.CheckBox3)
-        Me.Controls.Add(Me.CheckBox2)
-        Me.Controls.Add(Me.CheckBox1)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.CBProducto)
+        Me.Controls.Add(Me.CBCliente)
+        Me.Controls.Add(Me.CBCajero)
+        Me.Controls.Add(Me.TProducto)
+        Me.Controls.Add(Me.TCliente)
         Me.Controls.Add(Me.BDescarga)
-        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.TCajero)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.BBusqueda)
         Me.Controls.Add(Me.Lfiltro)
@@ -294,7 +297,7 @@ Partial Class ReporteVentas
         Me.Controls.Add(Me.LDesde)
         Me.Controls.Add(Me.Chart1)
         Me.Controls.Add(Me.Label2)
-        Me.Name = "ReportesVentas"
+        Me.Name = "ReporteVentas"
         Me.Text = "ReportesVentas"
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -304,7 +307,7 @@ Partial Class ReporteVentas
     End Sub
 
     Friend WithEvents BDescarga As Button
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TCajero As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents BBusqueda As Button
     Friend WithEvents Lfiltro As Label
@@ -315,11 +318,11 @@ Partial Class ReporteVentas
     Friend WithEvents LDesde As Label
     Friend WithEvents Chart1 As DataVisualization.Charting.Chart
     Friend WithEvents Label2 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents CheckBox1 As CheckBox
-    Friend WithEvents CheckBox2 As CheckBox
-    Friend WithEvents CheckBox3 As CheckBox
+    Friend WithEvents TCliente As TextBox
+    Friend WithEvents TProducto As TextBox
+    Friend WithEvents CBCajero As CheckBox
+    Friend WithEvents CBCliente As CheckBox
+    Friend WithEvents CBProducto As CheckBox
     Friend WithEvents LMayores As Label
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Desde As DataGridViewTextBoxColumn
