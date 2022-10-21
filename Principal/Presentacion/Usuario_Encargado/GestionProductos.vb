@@ -141,7 +141,7 @@
     Private Sub BConfirmarCat_Click(sender As Object, e As EventArgs) Handles BConfirmarCat.Click
         Dim ask As MsgBoxResult
 
-        If String.IsNullOrWhiteSpace(TCat.Text) Or String.IsNullOrWhiteSpace(TDesc.Text) Then
+        If String.IsNullOrWhiteSpace(TDesc.Text) Then
             MsgBox("Debe completar todos los campos", vbOKOnly + vbDefaultButton1 + vbCritical, "Confirmar")
         Else
             ask = MsgBox("¿Desea agregar la nueva Categoria?", vbYesNo + vbDefaultButton2 + vbInformation, "Confirmar")
@@ -167,8 +167,4 @@
         End If
     End Sub
 
-    Private Sub TCat_TextChanged(sender As Object, e As EventArgs) Handles TCat.TextChanged
-        Dim cat = New Categoria
-        TCat.Text = cat.Id_categoria
-    End Sub
 End Class

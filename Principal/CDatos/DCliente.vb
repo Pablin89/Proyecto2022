@@ -4,8 +4,9 @@
     Function DGuardar_cliente(ByVal ocliente As Cliente) As Boolean
         Try
             ctx.Cliente.Add(ocliente)
-            ctx.savechanges()
+            ctx.SaveChanges()
             Return True
+
         Catch ex As Exception
             Return False
 

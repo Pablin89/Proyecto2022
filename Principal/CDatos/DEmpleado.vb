@@ -12,7 +12,7 @@
 
     End Function
 
-    Function getAll_empleados() As List(Of Empleado)
+    Function getEmpleadosAll() As List(Of Empleado)
         Dim listaEmpleados = (From c In ctx.Empleado Select c).ToList
         Return listaEmpleados
 

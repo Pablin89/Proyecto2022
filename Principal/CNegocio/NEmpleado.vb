@@ -28,7 +28,7 @@
 
     Public Sub cargarGrid(ByVal grid As DataGridView)
         Dim empleado As DEmpleado = New DEmpleado
-        grid.DataSource = empleado.getAll_empleados()
+        grid.DataSource = empleado.getEmpleadosAll()
 
         grid.Columns(0).HeaderText = ""
         grid.Columns(1).HeaderText = "DNI"
@@ -42,12 +42,10 @@
         grid.Columns(9).HeaderText = "Imagen"
         grid.Columns(10).HeaderText = "Estado"
         grid.Columns(11).HeaderText = ""
-        grid.Columns(0).Visible = False
-        grid.Columns(11).Visible = False
+        grid.Columns(12).HeaderText = ""
 
-        grid.Columns.Add(12, "Eliminar")
-        grid.Columns.Add(13, "Modificar")
-
+        'grid.Columns.Add(13, "Eliminar")
+        'grid.Columns.Add(14, "Modificar")
 
     End Sub
 

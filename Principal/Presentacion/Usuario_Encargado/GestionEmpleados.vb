@@ -1,4 +1,5 @@
 ﻿Imports System.ComponentModel
+Imports System.Text.RegularExpressions
 
 Public Class GestionEmpleados
     Dim objempleado = New NEmpleado
@@ -82,39 +83,40 @@ Public Class GestionEmpleados
     End Sub
     Private Sub BConfirmar_Click(sender As Object, e As EventArgs) Handles BConfirmar.Click
 
-        Dim op As MsgBoxResult
         If String.IsNullOrWhiteSpace(TNombre2.Text) Or String.IsNullOrWhiteSpace(TApellido2.Text) Or Not IsNumeric(TDni2.Text) Or String.IsNullOrWhiteSpace(TCorreo.Text) Or
             String.IsNullOrWhiteSpace(TDireccion.Text) Or String.IsNullOrWhiteSpace(MTelefono.Text) Or Not RBmasculino.Checked And Not RBfemenino.Checked Or String.IsNullOrWhiteSpace(CBoxEstado.Text) Or IsNothing(PictureBox1.Image) Or
             EmailValido(TCorreo.Text) = False Or FechaValida(DTfecha.Value.Year) = False Then
 
             MsgBox("Debe completar todos los campos", vbOKOnly + vbDefaultButton1 + vbCritical, "Confirmar")
-        Else
-            op = MsgBox("¿Desea agregar el nuevo cajero?", vbYesNo + vbDefaultButton2 + vbInformation, "Confirmar")
+            Exit Sub
+        End If
 
-            If op = MsgBoxResult.Yes Then
+        Dim op As MsgBoxResult
+        op = MsgBox("¿Desea agregar el nuevo cajero?", vbYesNo + vbDefaultButton2 + vbInformation, "Confirmar")
 
-                If (objempleado.agregar_empleado(CInt(TDni2.Text), TNombre2.Text, TApellido2.Text, RBmasculino.Text, DTfecha.Value, TDireccion.Text, TCorreo.Text, MTelefono.Text, CBoxEstado.Text)) Then
+        If MsgBoxResult.Yes = op Then
 
-                    MsgBox("El cajero se registro correctamente", vbOKOnly + vbInformation, "Confirmar")
-                    objempleado.cargarGrid(dgEmpleados)
+            If (objempleado.agregar_empleado(CInt(TDni2.Text), TNombre2.Text, TApellido2.Text, RBmasculino.Text, DTfecha.Value, TDireccion.Text, TCorreo.Text, MTelefono.Text, CBoxEstado.Text)) Then
 
-                Else
-                    MsgBox("El empleado ya existe", vbOKOnly + vbDefaultButton2 + vbCritical, "Confirmar")
+                MsgBox("El cajero se registro correctamente", vbOKOnly + vbInformation, "Confirmar")
+                objempleado.cargarGrid(dgEmpleados)
 
+            Else
+                MsgBox("El empleado ya existe", vbOKOnly + vbDefaultButton2 + vbCritical, "Confirmar")
 
-                End If
-
-                TDni2.Clear()
-                TNombre2.Clear()
-                TApellido2.Clear()
-                TDireccion.Clear()
-                TCorreo.Clear()
-                MTelefono.Clear()
-                PictureBox1.Image = Nothing
-                RBmasculino.Checked = False
-                RBfemenino.Checked = False
 
             End If
+
+            TDni2.Clear()
+            TNombre2.Clear()
+            TApellido2.Clear()
+            TDireccion.Clear()
+            TCorreo.Clear()
+            MTelefono.Clear()
+            PictureBox1.Image = Nothing
+            RBmasculino.Checked = False
+            RBfemenino.Checked = False
+
         End If
 
     End Sub

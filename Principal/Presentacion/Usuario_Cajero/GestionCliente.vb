@@ -92,9 +92,9 @@ Public Class GestionCliente
             op = MsgBox("¿Desea agregar el nuevo Cliente?", vbYesNo + vbDefaultButton2 + vbInformation, "Confirmar")
             If op = DialogResult.Yes And RBmasculino.Checked Then
 
-                If (objCliente.agregar_cliente(CInt(TDni2.Text), TNombre2.Text, TApellido2.Text, TDireccion.Text, MTelefono.Text, TCorreo.Text, RBmasculino.Text)) Then
-                    MsgBox("El cliente se registro correctamente", vbOKOnly + vbInformation, "Confirmar")
+                If (objCliente.agregar_cliente(TDni2.Text, TNombre2.Text, TApellido2.Text, TDireccion.Text, MTelefono.Text, RBmasculino.Text, TCorreo.Text)) Then
 
+                    MsgBox("El cliente se registro correctamente", vbOKOnly + vbInformation, "Confirmar")
                     objCliente.cargarGrid(dgvCliente)
 
 
@@ -110,6 +110,7 @@ Public Class GestionCliente
                 TCorreo.Clear()
                 MTelefono.Clear()
                 RBmasculino.Checked = False
+
             ElseIf op = DialogResult.Yes And RBfemenino.Checked Then
                 If (objCliente.agregar_cliente(CInt(TDni2.Text), TNombre2.Text, TApellido2.Text, TDireccion.Text, MTelefono.Text, TCorreo.Text, RBfemenino.Text)) Then
                     MsgBox("El cliente se registro correctamente", vbOKOnly + vbInformation, "Confirmar")

@@ -9,14 +9,14 @@
           <Key>
             <PropertyRef Name="Id_categoria" />
           </Key>
-          <Property Name="Id_categoria" Type="int" Nullable="false" />
+          <Property Name="Id_categoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="desc_categoria" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Cliente">
           <Key>
             <PropertyRef Name="Id_cliente" />
           </Key>
-          <Property Name="Id_cliente" Type="int" Nullable="false" />
+          <Property Name="Id_cliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="dni" Type="int" Nullable="false" />
           <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="apellido" Type="varchar" MaxLength="50" Nullable="false" />
@@ -29,7 +29,7 @@
           <Key>
             <PropertyRef Name="Id_detalle" />
           </Key>
-          <Property Name="Id_detalle" Type="int" Nullable="false" />
+          <Property Name="Id_detalle" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="cantidad" Type="int" Nullable="false" />
           <Property Name="subtotal" Type="decimal" Precision="18" Scale="0" Nullable="false" />
           <Property Name="nro_factura" Type="int" Nullable="false" />
@@ -40,7 +40,7 @@
           <Key>
             <PropertyRef Name="Id_empleado" />
           </Key>
-          <Property Name="Id_empleado" Type="int" Nullable="false" />
+          <Property Name="Id_empleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="dni_empleado" Type="int" Nullable="false" />
           <Property Name="nombre_empleado" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="apellido_empleado" Type="varchar" MaxLength="50" Nullable="false" />
@@ -49,15 +49,15 @@
           <Property Name="direccion" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="correo" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="telefono" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="imagen" Type="image" Nullable="false" />
+          <Property Name="imagen" Type="image" />
           <Property Name="estado" Type="int" Nullable="false" />
-          <Property Name="usuario_id" Type="int" Nullable="false" />
+          <Property Name="usuario_id" Type="int" />
         </EntityType>
         <EntityType Name="Factura">
           <Key>
             <PropertyRef Name="nro_factura" />
           </Key>
-          <Property Name="nro_factura" Type="int" Nullable="false" />
+          <Property Name="nro_factura" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="total" Type="decimal" Precision="18" Scale="0" Nullable="false" />
           <Property Name="fecha_venta" Type="date" Nullable="false" />
           <Property Name="id_cliente" Type="int" Nullable="false" />
@@ -67,14 +67,14 @@
           <Key>
             <PropertyRef Name="Id_perfil" />
           </Key>
-          <Property Name="Id_perfil" Type="int" Nullable="false" />
+          <Property Name="Id_perfil" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="desc_pefil" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Producto">
           <Key>
             <PropertyRef Name="Id_producto" />
           </Key>
-          <Property Name="Id_producto" Type="int" Nullable="false" />
+          <Property Name="Id_producto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="descripcion" Type="varchar(max)" Nullable="false" />
           <Property Name="codigo" Type="nchar" MaxLength="10" Nullable="false" />
@@ -87,7 +87,7 @@
           <Key>
             <PropertyRef Name="Id_usuario" />
           </Key>
-          <Property Name="Id_usuario" Type="int" Nullable="false" />
+          <Property Name="Id_usuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombre_usuario" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="contraseña" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="perfil_id" Type="int" Nullable="false" />
@@ -165,7 +165,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_usuario_id">
-          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
           <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuario">
@@ -218,80 +218,19 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ProyectoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Categoria">
-          <Key>
-            <PropertyRef Name="Id_categoria" />
-          </Key>
-          <Property Name="Id_categoria" Type="Int32" Nullable="false" />
-          <Property Name="desc_categoria" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Producto" Relationship="ProyectoModel.fk_categoria_id" FromRole="Categoria" ToRole="Producto" />
-        </EntityType>
-        <EntityType Name="Cliente">
-          <Key>
-            <PropertyRef Name="Id_cliente" />
-          </Key>
-          <Property Name="Id_cliente" Type="Int32" Nullable="false" />
-          <Property Name="dni" Type="Int32" Nullable="false" />
-          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="genero" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Factura" Relationship="ProyectoModel.fk_id_cliente" FromRole="Cliente" ToRole="Factura" />
-        </EntityType>
-        <EntityType Name="Perfil">
-          <Key>
-            <PropertyRef Name="Id_perfil" />
-          </Key>
-          <Property Name="Id_perfil" Type="Int32" Nullable="false" />
-          <Property Name="desc_pefil" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Usuario" Relationship="Self.fk_perfil_id" FromRole="Perfil" ToRole="Usuario" />
-        </EntityType>
-        <EntityType Name="Usuario">
-          <Key>
-            <PropertyRef Name="Id_usuario" />
-          </Key>
-          <Property Name="Id_usuario" Type="Int32" Nullable="false" />
-          <Property Name="nombre_usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="contraseña" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="perfil_id" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Perfil" Relationship="Self.fk_perfil_id" FromRole="Usuario" ToRole="Perfil" />
-          <NavigationProperty Name="Empleado" Relationship="ProyectoModel.fk_usuario_id" FromRole="Usuario" ToRole="Empleado" />
-        </EntityType>
-        <Association Name="fk_perfil_id">
-          <End Role="Perfil" Type="Self.Perfil" Multiplicity="1" />
-          <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Perfil">
-              <PropertyRef Name="Id_perfil" />
-            </Principal>
-            <Dependent Role="Usuario">
-              <PropertyRef Name="perfil_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="ProyectoEntities6" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Categoria" EntityType="Self.Categoria" />
-          <EntitySet Name="Cliente" EntityType="Self.Cliente" />
-          <EntitySet Name="Perfil" EntityType="Self.Perfil" />
-          <EntitySet Name="Usuario" EntityType="Self.Usuario" />
-          <AssociationSet Name="fk_perfil_id" Association="Self.fk_perfil_id">
-            <End Role="Perfil" EntitySet="Perfil" />
-            <End Role="Usuario" EntitySet="Usuario" />
-          </AssociationSet>
+          <EntitySet Name="Categoria" EntityType="ProyectoModel.Categoria" />
+          <EntitySet Name="Cliente" EntityType="ProyectoModel.Cliente" />
+          <EntitySet Name="Detalle_venta" EntityType="ProyectoModel.Detalle_venta" />
           <EntitySet Name="Empleado" EntityType="ProyectoModel.Empleado" />
-          <AssociationSet Name="fk_usuario_id" Association="ProyectoModel.fk_usuario_id">
-            <End Role="Usuario" EntitySet="Usuario" />
-            <End Role="Empleado" EntitySet="Empleado" />
-          </AssociationSet>
+          <EntitySet Name="Factura" EntityType="ProyectoModel.Factura" />
+          <EntitySet Name="Perfil" EntityType="ProyectoModel.Perfil" />
           <EntitySet Name="Producto" EntityType="ProyectoModel.Producto" />
+          <EntitySet Name="Usuario" EntityType="ProyectoModel.Usuario" />
           <AssociationSet Name="fk_categoria_id" Association="ProyectoModel.fk_categoria_id">
             <End Role="Categoria" EntitySet="Categoria" />
             <End Role="Producto" EntitySet="Producto" />
           </AssociationSet>
-          <EntitySet Name="Detalle_venta" EntityType="ProyectoModel.Detalle_venta" />
-          <EntitySet Name="Factura" EntityType="ProyectoModel.Factura" />
           <AssociationSet Name="fk_id_cliente" Association="ProyectoModel.fk_id_cliente">
             <End Role="Cliente" EntitySet="Cliente" />
             <End Role="Factura" EntitySet="Factura" />
@@ -308,12 +247,55 @@
             <End Role="Empleado" EntitySet="Empleado" />
             <End Role="Factura" EntitySet="Factura" />
           </AssociationSet>
+          <AssociationSet Name="fk_usuario_id" Association="ProyectoModel.fk_usuario_id">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="fk_perfil_id" Association="ProyectoModel.fk_perfil_id">
+            <End Role="Perfil" EntitySet="Perfil" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Categoria">
+          <Key>
+            <PropertyRef Name="Id_categoria" />
+          </Key>
+          <Property Name="Id_categoria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="desc_categoria" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Producto" Relationship="ProyectoModel.fk_categoria_id" FromRole="Categoria" ToRole="Producto" />
+        </EntityType>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="Id_cliente" />
+          </Key>
+          <Property Name="Id_cliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dni" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="apellido" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="direccion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="telefono" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="genero" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="correo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Factura" Relationship="ProyectoModel.fk_id_cliente" FromRole="Cliente" ToRole="Factura" />
+        </EntityType>
+        <EntityType Name="Detalle_venta">
+          <Key>
+            <PropertyRef Name="Id_detalle" />
+          </Key>
+          <Property Name="Id_detalle" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cantidad" Type="Int32" Nullable="false" />
+          <Property Name="subtotal" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="nro_factura" Type="Int32" Nullable="false" />
+          <Property Name="id_producto" Type="Int32" Nullable="false" />
+          <Property Name="precio" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <NavigationProperty Name="Producto" Relationship="ProyectoModel.fk_id_producto" FromRole="Detalle_venta" ToRole="Producto" />
+          <NavigationProperty Name="Factura" Relationship="ProyectoModel.fk_nro_factura" FromRole="Detalle_venta" ToRole="Factura" />
+        </EntityType>
         <EntityType Name="Empleado">
           <Key>
             <PropertyRef Name="Id_empleado" />
           </Key>
-          <Property Name="Id_empleado" Type="Int32" Nullable="false" />
+          <Property Name="Id_empleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="dni_empleado" Type="Int32" Nullable="false" />
           <Property Name="nombre_empleado" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="apellido_empleado" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -322,29 +304,38 @@
           <Property Name="direccion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="correo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="telefono" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="imagen" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="estado" Type="Int32" Nullable="false" />
-          <Property Name="usuario_id" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Usuario" Relationship="ProyectoModel.fk_usuario_id" FromRole="Empleado" ToRole="Usuario" />
+          <Property Name="usuario_id" Type="Int32" />
           <NavigationProperty Name="Factura" Relationship="ProyectoModel.fk_id_empleado" FromRole="Empleado" ToRole="Factura" />
+          <NavigationProperty Name="Usuario" Relationship="ProyectoModel.fk_usuario_id" FromRole="Empleado" ToRole="Usuario" />
         </EntityType>
-        <Association Name="fk_usuario_id">
-          <End Type="ProyectoModel.Usuario" Role="Usuario" Multiplicity="1" />
-          <End Type="ProyectoModel.Empleado" Role="Empleado" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Usuario">
-              <PropertyRef Name="Id_usuario" />
-            </Principal>
-            <Dependent Role="Empleado">
-              <PropertyRef Name="usuario_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
+        <EntityType Name="Factura">
+          <Key>
+            <PropertyRef Name="nro_factura" />
+          </Key>
+          <Property Name="nro_factura" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="total" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="fecha_venta" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="id_cliente" Type="Int32" Nullable="false" />
+          <Property Name="id_empleado" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Cliente" Relationship="ProyectoModel.fk_id_cliente" FromRole="Factura" ToRole="Cliente" />
+          <NavigationProperty Name="Detalle_venta" Relationship="ProyectoModel.fk_nro_factura" FromRole="Factura" ToRole="Detalle_venta" />
+          <NavigationProperty Name="Empleado" Relationship="ProyectoModel.fk_id_empleado" FromRole="Factura" ToRole="Empleado" />
+        </EntityType>
+        <EntityType Name="Perfil">
+          <Key>
+            <PropertyRef Name="Id_perfil" />
+          </Key>
+          <Property Name="Id_perfil" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="desc_pefil" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Usuario" Relationship="ProyectoModel.fk_perfil_id" FromRole="Perfil" ToRole="Usuario" />
+        </EntityType>
         <EntityType Name="Producto">
           <Key>
             <PropertyRef Name="Id_producto" />
           </Key>
-          <Property Name="Id_producto" Type="Int32" Nullable="false" />
+          <Property Name="Id_producto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="descripcion" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="codigo" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
@@ -354,6 +345,17 @@
           <Property Name="estado" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Categoria" Relationship="ProyectoModel.fk_categoria_id" FromRole="Producto" ToRole="Categoria" />
           <NavigationProperty Name="Detalle_venta" Relationship="ProyectoModel.fk_id_producto" FromRole="Producto" ToRole="Detalle_venta" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Id_usuario" />
+          </Key>
+          <Property Name="Id_usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre_usuario" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="contraseña" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="perfil_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Empleado" Relationship="ProyectoModel.fk_usuario_id" FromRole="Usuario" ToRole="Empleado" />
+          <NavigationProperty Name="Perfil" Relationship="ProyectoModel.fk_perfil_id" FromRole="Usuario" ToRole="Perfil" />
         </EntityType>
         <Association Name="fk_categoria_id">
           <End Type="ProyectoModel.Categoria" Role="Categoria" Multiplicity="1" />
@@ -367,32 +369,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="Detalle_venta">
-          <Key>
-            <PropertyRef Name="Id_detalle" />
-          </Key>
-          <Property Name="Id_detalle" Type="Int32" Nullable="false" />
-          <Property Name="cantidad" Type="Int32" Nullable="false" />
-          <Property Name="subtotal" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
-          <Property Name="nro_factura" Type="Int32" Nullable="false" />
-          <Property Name="id_producto" Type="Int32" Nullable="false" />
-          <Property Name="precio" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
-          <NavigationProperty Name="Producto" Relationship="ProyectoModel.fk_id_producto" FromRole="Detalle_venta" ToRole="Producto" />
-          <NavigationProperty Name="Factura" Relationship="ProyectoModel.fk_nro_factura" FromRole="Detalle_venta" ToRole="Factura" />
-        </EntityType>
-        <EntityType Name="Factura">
-          <Key>
-            <PropertyRef Name="nro_factura" />
-          </Key>
-          <Property Name="nro_factura" Type="Int32" Nullable="false" />
-          <Property Name="total" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
-          <Property Name="fecha_venta" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="id_cliente" Type="Int32" Nullable="false" />
-          <Property Name="id_empleado" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Cliente" Relationship="ProyectoModel.fk_id_cliente" FromRole="Factura" ToRole="Cliente" />
-          <NavigationProperty Name="Detalle_venta" Relationship="ProyectoModel.fk_nro_factura" FromRole="Factura" ToRole="Detalle_venta" />
-          <NavigationProperty Name="Empleado" Relationship="ProyectoModel.fk_id_empleado" FromRole="Factura" ToRole="Empleado" />
-        </EntityType>
         <Association Name="fk_id_cliente">
           <End Type="ProyectoModel.Cliente" Role="Cliente" Multiplicity="1" />
           <End Type="ProyectoModel.Factura" Role="Factura" Multiplicity="*" />
@@ -441,7 +417,31 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        <Association Name="fk_usuario_id">
+          <End Type="ProyectoModel.Usuario" Role="Usuario" Multiplicity="0..1" />
+          <End Type="ProyectoModel.Empleado" Role="Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id_usuario" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="usuario_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_perfil_id">
+          <End Type="ProyectoModel.Perfil" Role="Perfil" Multiplicity="1" />
+          <End Type="ProyectoModel.Usuario" Role="Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Perfil">
+              <PropertyRef Name="Id_perfil" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="perfil_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -450,40 +450,34 @@
           <EntitySetMapping Name="Categoria">
             <EntityTypeMapping TypeName="ProyectoModel.Categoria">
               <MappingFragment StoreEntitySet="Categoria">
-                <ScalarProperty Name="Id_categoria" ColumnName="Id_categoria" />
                 <ScalarProperty Name="desc_categoria" ColumnName="desc_categoria" />
+                <ScalarProperty Name="Id_categoria" ColumnName="Id_categoria" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Cliente">
             <EntityTypeMapping TypeName="ProyectoModel.Cliente">
               <MappingFragment StoreEntitySet="Cliente">
-                <ScalarProperty Name="Id_cliente" ColumnName="Id_cliente" />
-                <ScalarProperty Name="dni" ColumnName="dni" />
-                <ScalarProperty Name="nombre" ColumnName="nombre" />
-                <ScalarProperty Name="apellido" ColumnName="apellido" />
-                <ScalarProperty Name="direccion" ColumnName="direccion" />
-                <ScalarProperty Name="telefono" ColumnName="telefono" />
-                <ScalarProperty Name="genero" ColumnName="genero" />
                 <ScalarProperty Name="correo" ColumnName="correo" />
+                <ScalarProperty Name="genero" ColumnName="genero" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="apellido" ColumnName="apellido" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="dni" ColumnName="dni" />
+                <ScalarProperty Name="Id_cliente" ColumnName="Id_cliente" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Perfil">
-            <EntityTypeMapping TypeName="ProyectoModel.Perfil">
-              <MappingFragment StoreEntitySet="Perfil">
-                <ScalarProperty Name="Id_perfil" ColumnName="Id_perfil" />
-                <ScalarProperty Name="desc_pefil" ColumnName="desc_pefil" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Usuario">
-            <EntityTypeMapping TypeName="ProyectoModel.Usuario">
-              <MappingFragment StoreEntitySet="Usuario">
-                <ScalarProperty Name="Id_usuario" ColumnName="Id_usuario" />
-                <ScalarProperty Name="nombre_usuario" ColumnName="nombre_usuario" />
-                <ScalarProperty Name="contraseña" ColumnName="contraseña" />
-                <ScalarProperty Name="perfil_id" ColumnName="perfil_id" />
+          <EntitySetMapping Name="Detalle_venta">
+            <EntityTypeMapping TypeName="ProyectoModel.Detalle_venta">
+              <MappingFragment StoreEntitySet="Detalle_venta">
+                <ScalarProperty Name="precio" ColumnName="precio" />
+                <ScalarProperty Name="id_producto" ColumnName="id_producto" />
+                <ScalarProperty Name="nro_factura" ColumnName="nro_factura" />
+                <ScalarProperty Name="subtotal" ColumnName="subtotal" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="Id_detalle" ColumnName="Id_detalle" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -505,6 +499,25 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Factura">
+            <EntityTypeMapping TypeName="ProyectoModel.Factura">
+              <MappingFragment StoreEntitySet="Factura">
+                <ScalarProperty Name="id_empleado" ColumnName="id_empleado" />
+                <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+                <ScalarProperty Name="fecha_venta" ColumnName="fecha_venta" />
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="nro_factura" ColumnName="nro_factura" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Perfil">
+            <EntityTypeMapping TypeName="ProyectoModel.Perfil">
+              <MappingFragment StoreEntitySet="Perfil">
+                <ScalarProperty Name="desc_pefil" ColumnName="desc_pefil" />
+                <ScalarProperty Name="Id_perfil" ColumnName="Id_perfil" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Producto">
             <EntityTypeMapping TypeName="ProyectoModel.Producto">
               <MappingFragment StoreEntitySet="Producto">
@@ -519,26 +532,13 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Detalle_venta">
-            <EntityTypeMapping TypeName="ProyectoModel.Detalle_venta">
-              <MappingFragment StoreEntitySet="Detalle_venta">
-                <ScalarProperty Name="precio" ColumnName="precio" />
-                <ScalarProperty Name="id_producto" ColumnName="id_producto" />
-                <ScalarProperty Name="nro_factura" ColumnName="nro_factura" />
-                <ScalarProperty Name="subtotal" ColumnName="subtotal" />
-                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
-                <ScalarProperty Name="Id_detalle" ColumnName="Id_detalle" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Factura">
-            <EntityTypeMapping TypeName="ProyectoModel.Factura">
-              <MappingFragment StoreEntitySet="Factura">
-                <ScalarProperty Name="id_empleado" ColumnName="id_empleado" />
-                <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
-                <ScalarProperty Name="fecha_venta" ColumnName="fecha_venta" />
-                <ScalarProperty Name="total" ColumnName="total" />
-                <ScalarProperty Name="nro_factura" ColumnName="nro_factura" />
+          <EntitySetMapping Name="Usuario">
+            <EntityTypeMapping TypeName="ProyectoModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="perfil_id" ColumnName="perfil_id" />
+                <ScalarProperty Name="contraseña" ColumnName="contraseña" />
+                <ScalarProperty Name="nombre_usuario" ColumnName="nombre_usuario" />
+                <ScalarProperty Name="Id_usuario" ColumnName="Id_usuario" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

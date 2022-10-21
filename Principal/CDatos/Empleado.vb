@@ -22,9 +22,9 @@ Partial Public Class Empleado
     Public Property telefono As String
     Public Property imagen As Byte()
     Public Property estado As Integer
-    Public Property usuario_id As Integer
+    Public Property usuario_id As Nullable(Of Integer)
 
-    Public Overridable Property Usuario As Usuario
     Public Overridable Property Factura As ICollection(Of Factura) = New HashSet(Of Factura)
+    Public Overridable Property Usuario As Usuario
 
 End Class

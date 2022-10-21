@@ -24,11 +24,11 @@ Partial Public Class ProyectoEntities6
 
     Public Overridable Property Categoria() As DbSet(Of Categoria)
     Public Overridable Property Cliente() As DbSet(Of Cliente)
-    Public Overridable Property Perfil() As DbSet(Of Perfil)
-    Public Overridable Property Usuario() As DbSet(Of Usuario)
-    Public Overridable Property Empleado() As DbSet(Of Empleado)
-    Public Overridable Property Producto() As DbSet(Of Producto)
     Public Overridable Property Detalle_venta() As DbSet(Of Detalle_venta)
+    Public Overridable Property Empleado() As DbSet(Of Empleado)
     Public Overridable Property Factura() As DbSet(Of Factura)
+    Public Overridable Property Perfil() As DbSet(Of Perfil)
+    Public Overridable Property Producto() As DbSet(Of Producto)
+    Public Overridable Property Usuario() As DbSet(Of Usuario)
 
 End Class

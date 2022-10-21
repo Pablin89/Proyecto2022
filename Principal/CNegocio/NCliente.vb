@@ -1,21 +1,21 @@
 ﻿Public Class NCliente
-    Function agregar_cliente(ByVal dni As Integer, ByVal nombre As String, ByVal apellido As String, ByVal direccion As String, ByVal telefono As String, ByVal correo As String, ByVal genero As String) As Boolean
-        Dim oclientes = New Cliente
+    Function agregar_cliente(ByVal dni As Integer, ByVal nombre As String, ByVal apellido As String, ByVal direccion As String, ByVal telefono As String, ByVal genero As String, ByVal correo As String) As Boolean
+        Dim ocliente = New Cliente
 
-        With oclientes
+        With ocliente
             .dni = dni
             .nombre = nombre
             .apellido = apellido
             .direccion = direccion
             .telefono = telefono
-            .correo = correo
             .genero = genero
+            .correo = correo
         End With
 
 
         Dim objcliente = New DCliente
 
-        If objcliente.DGuardar_cliente(oclientes) Then
+        If objcliente.DGuardar_cliente(ocliente) Then
             Return True
         Else
             Return False
@@ -35,7 +35,7 @@
         grid.Columns(5).HeaderText = "Telefono"
         grid.Columns(6).HeaderText = "Genero"
         grid.Columns(7).HeaderText = "Correo"
-        grid.Columns.Add(8, "Modificar")
+        grid.Columns(8).HeaderText = ""
 
 
 

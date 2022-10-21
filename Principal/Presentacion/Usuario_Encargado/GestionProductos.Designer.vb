@@ -57,10 +57,8 @@ Partial Class GestionProductos
         Me.BCancelarcat = New System.Windows.Forms.Button()
         Me.BConfirmarCat = New System.Windows.Forms.Button()
         Me.TDesc = New System.Windows.Forms.TextBox()
-        Me.TCat = New System.Windows.Forms.TextBox()
         Me.LDatoscat = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.LCat = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Productos.SuspendLayout()
@@ -423,10 +421,8 @@ Partial Class GestionProductos
         Me.TabPage3.Controls.Add(Me.BCancelarcat)
         Me.TabPage3.Controls.Add(Me.BConfirmarCat)
         Me.TabPage3.Controls.Add(Me.TDesc)
-        Me.TabPage3.Controls.Add(Me.TCat)
         Me.TabPage3.Controls.Add(Me.LDatoscat)
         Me.TabPage3.Controls.Add(Me.Label4)
-        Me.TabPage3.Controls.Add(Me.LCat)
         Me.TabPage3.Location = New System.Drawing.Point(4, 76)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
@@ -464,18 +460,10 @@ Partial Class GestionProductos
         '
         'TDesc
         '
-        Me.TDesc.Location = New System.Drawing.Point(562, 309)
+        Me.TDesc.Location = New System.Drawing.Point(576, 219)
         Me.TDesc.Name = "TDesc"
         Me.TDesc.Size = New System.Drawing.Size(388, 26)
         Me.TDesc.TabIndex = 13
-        '
-        'TCat
-        '
-        Me.TCat.Enabled = False
-        Me.TCat.Location = New System.Drawing.Point(562, 198)
-        Me.TCat.Name = "TCat"
-        Me.TCat.Size = New System.Drawing.Size(388, 26)
-        Me.TCat.TabIndex = 12
         '
         'LDatoscat
         '
@@ -492,21 +480,11 @@ Partial Class GestionProductos
         '
         Me.Label4.AutoSize = True
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(399, 312)
+        Me.Label4.Location = New System.Drawing.Point(413, 222)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(103, 20)
         Me.Label4.TabIndex = 10
         Me.Label4.Text = "Descripción"
-        '
-        'LCat
-        '
-        Me.LCat.AutoSize = True
-        Me.LCat.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LCat.Location = New System.Drawing.Point(399, 204)
-        Me.LCat.Name = "LCat"
-        Me.LCat.Size = New System.Drawing.Size(87, 20)
-        Me.LCat.TabIndex = 9
-        Me.LCat.Text = "Categoria"
         '
         'Label2
         '
@@ -591,10 +569,8 @@ Partial Class GestionProductos
     Friend WithEvents BCancelar As Button
     Friend WithEvents TabPage3 As TabPage
     Friend WithEvents TDesc As TextBox
-    Friend WithEvents TCat As TextBox
     Friend WithEvents LDatoscat As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents LCat As Label
     Friend WithEvents BCancelarcat As Button
     Friend WithEvents BConfirmarCat As Button
 End Class
