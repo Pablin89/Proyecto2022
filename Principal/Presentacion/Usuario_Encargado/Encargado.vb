@@ -63,4 +63,9 @@
         MisDatos.Show()
         Me.Hide()
     End Sub
+
+    Private Sub ReportesVentas_Click(sender As Object, e As EventArgs) Handles ReportesVentas.Click
+        ReporteVentas.Show()
+        Me.Hide()
+    End Sub
 End Class

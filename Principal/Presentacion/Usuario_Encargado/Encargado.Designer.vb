@@ -29,18 +29,19 @@ Partial Class Encargado
         Me.LFecha = New System.Windows.Forms.Label()
         Me.LHora = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.BCerrarSesion = New System.Windows.Forms.Button()
         Me.LSalirG = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.MenuEncargado = New System.Windows.Forms.MenuStrip()
         Me.GestiónCajerosItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VentasItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GestiónProductosItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReportesVentas = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BCerrarSesion = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuEncargado.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Timer1
@@ -99,22 +100,6 @@ Partial Class Encargado
         Me.Panel3.Size = New System.Drawing.Size(131, 151)
         Me.Panel3.TabIndex = 6
         '
-        'BCerrarSesion
-        '
-        Me.BCerrarSesion.BackColor = System.Drawing.Color.Transparent
-        Me.BCerrarSesion.BackgroundImage = Global.Principal.My.Resources.Resources.Logout_37127
-        Me.BCerrarSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.BCerrarSesion.ForeColor = System.Drawing.Color.Transparent
-        Me.BCerrarSesion.Location = New System.Drawing.Point(47, 44)
-        Me.BCerrarSesion.Name = "BCerrarSesion"
-        Me.BCerrarSesion.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.BCerrarSesion.Size = New System.Drawing.Size(62, 56)
-        Me.BCerrarSesion.TabIndex = 1
-        Me.BCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BCerrarSesion.UseVisualStyleBackColor = False
-        '
         'LSalirG
         '
         Me.LSalirG.AutoSize = True
@@ -144,17 +129,6 @@ Partial Class Encargado
         Me.Label1.Text = "Encargado: José Perez"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.Principal.My.Resources.Resources.Messirve__1_
-        Me.PictureBox1.Location = New System.Drawing.Point(11, 3)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(157, 145)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
-        Me.PictureBox1.WaitOnLoad = True
-        '
         'MenuEncargado
         '
         Me.MenuEncargado.AutoSize = False
@@ -164,7 +138,7 @@ Partial Class Encargado
         Me.MenuEncargado.Dock = System.Windows.Forms.DockStyle.Fill
         Me.MenuEncargado.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MenuEncargado.GripMargin = New System.Windows.Forms.Padding(2)
-        Me.MenuEncargado.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GestiónCajerosItem, Me.VentasItem, Me.GestiónProductosItem})
+        Me.MenuEncargado.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GestiónCajerosItem, Me.VentasItem, Me.GestiónProductosItem, Me.ReportesVentas})
         Me.MenuEncargado.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow
         Me.MenuEncargado.Location = New System.Drawing.Point(0, 153)
         Me.MenuEncargado.MdiWindowListItem = Me.VentasItem
@@ -227,6 +201,46 @@ Partial Class Encargado
     "itar los datos de los productos existentes." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "- Eliminar un producto de la lista." &
     ""
         '
+        'ReportesVentas
+        '
+        Me.ReportesVentas.BackColor = System.Drawing.Color.LightGreen
+        Me.ReportesVentas.Font = New System.Drawing.Font("Franklin Gothic Medium", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ReportesVentas.Image = Global.Principal.My.Resources.Resources.statistic_icon_129319
+        Me.ReportesVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ReportesVentas.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.ReportesVentas.Name = "ReportesVentas"
+        Me.ReportesVentas.Size = New System.Drawing.Size(1109, 132)
+        Me.ReportesVentas.Text = "Reportes de Ventas"
+        Me.ReportesVentas.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ReportesVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        '
+        'BCerrarSesion
+        '
+        Me.BCerrarSesion.BackColor = System.Drawing.Color.Transparent
+        Me.BCerrarSesion.BackgroundImage = Global.Principal.My.Resources.Resources.Logout_37127
+        Me.BCerrarSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.BCerrarSesion.ForeColor = System.Drawing.Color.Transparent
+        Me.BCerrarSesion.Location = New System.Drawing.Point(47, 44)
+        Me.BCerrarSesion.Name = "BCerrarSesion"
+        Me.BCerrarSesion.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.BCerrarSesion.Size = New System.Drawing.Size(62, 56)
+        Me.BCerrarSesion.TabIndex = 1
+        Me.BCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BCerrarSesion.UseVisualStyleBackColor = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.Principal.My.Resources.Resources.Messirve__1_
+        Me.PictureBox1.Location = New System.Drawing.Point(11, 3)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(157, 145)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
+        Me.PictureBox1.WaitOnLoad = True
+        '
         'Encargado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -242,9 +256,9 @@ Partial Class Encargado
         Me.Panel1.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuEncargado.ResumeLayout(False)
         Me.MenuEncargado.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -264,4 +278,5 @@ Partial Class Encargado
     Friend WithEvents GestiónCajerosItem As ToolStripMenuItem
     Friend WithEvents VentasItem As ToolStripMenuItem
     Friend WithEvents GestiónProductosItem As ToolStripMenuItem
+    Friend WithEvents ReportesVentas As ToolStripMenuItem
 End Class
