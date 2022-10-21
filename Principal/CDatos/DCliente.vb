@@ -1,5 +1,5 @@
 ﻿Public Class DCliente
-    Dim ctx As ProyectoEntities8 = New ProyectoEntities8
+    Dim ctx As ProyectoEntities6 = New ProyectoEntities6
 
     Function DGuardar_cliente(ByVal ocliente As Cliente) As Boolean
         Try

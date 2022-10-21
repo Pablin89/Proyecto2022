@@ -304,11 +304,11 @@ Partial Class GestionProductos
         '
         Me.CBcategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CBcategoria.FormattingEnabled = True
+        Me.CBcategoria.Items.AddRange(New Object() {"1", "2", "3"})
         Me.CBcategoria.Location = New System.Drawing.Point(425, 395)
         Me.CBcategoria.Name = "CBcategoria"
         Me.CBcategoria.Size = New System.Drawing.Size(388, 28)
         Me.CBcategoria.TabIndex = 12
-        Me.CBcategoria.ValueMember = "desc_categoria"
         '
         'TStock
         '

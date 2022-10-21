@@ -1,5 +1,5 @@
 ﻿Public Class DCategoria
-    Dim ctx As ProyectoEntities8 = New ProyectoEntities8
+    Dim ctx As ProyectoEntities6 = New ProyectoEntities6
 
     Function DGuardar_categoria(ByVal ocat As Categoria) As Boolean
         Try

@@ -135,7 +135,6 @@
     End Sub
 
     Private Sub GestionProductos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
         objproducto.cargarGrid(DataGridView1)
     End Sub
 
