@@ -84,7 +84,6 @@ Partial Class ModificarEmpleado
         '
         'MTelefono
         '
-        Me.MTelefono.Enabled = False
         Me.MTelefono.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MTelefono.Location = New System.Drawing.Point(494, 414)
         Me.MTelefono.Mask = "(999)000-0000"
@@ -107,7 +106,6 @@ Partial Class ModificarEmpleado
         'BModificar
         '
         Me.BModificar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BModificar.Enabled = False
         Me.BModificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BModificar.Image = Global.Principal.My.Resources.Resources.iconoguardar__1_
         Me.BModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -122,10 +120,9 @@ Partial Class ModificarEmpleado
         'CBEstado
         '
         Me.CBEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.CBEstado.Enabled = False
         Me.CBEstado.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CBEstado.FormattingEnabled = True
-        Me.CBEstado.Items.AddRange(New Object() {"Activo", "Inactivo"})
+        Me.CBEstado.Items.AddRange(New Object() {"1", "0"})
         Me.CBEstado.Location = New System.Drawing.Point(494, 504)
         Me.CBEstado.Name = "CBEstado"
         Me.CBEstado.Size = New System.Drawing.Size(276, 24)
@@ -145,7 +142,6 @@ Partial Class ModificarEmpleado
         'BAgregarImagen
         '
         Me.BAgregarImagen.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BAgregarImagen.Enabled = False
         Me.BAgregarImagen.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BAgregarImagen.Location = New System.Drawing.Point(866, 435)
         Me.BAgregarImagen.Name = "BAgregarImagen"
@@ -167,7 +163,6 @@ Partial Class ModificarEmpleado
         '
         'DTFecha
         '
-        Me.DTFecha.Enabled = False
         Me.DTFecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DTFecha.Location = New System.Drawing.Point(494, 316)
         Me.DTFecha.Name = "DTFecha"
@@ -176,7 +171,6 @@ Partial Class ModificarEmpleado
         '
         'TDireccion
         '
-        Me.TDireccion.Enabled = False
         Me.TDireccion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TDireccion.Location = New System.Drawing.Point(494, 461)
         Me.TDireccion.Name = "TDireccion"
@@ -185,7 +179,6 @@ Partial Class ModificarEmpleado
         '
         'TCorreo
         '
-        Me.TCorreo.Enabled = False
         Me.TCorreo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TCorreo.Location = New System.Drawing.Point(494, 367)
         Me.TCorreo.Name = "TCorreo"
@@ -194,7 +187,6 @@ Partial Class ModificarEmpleado
         '
         'TDni2
         '
-        Me.TDni2.Enabled = False
         Me.TDni2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TDni2.Location = New System.Drawing.Point(494, 269)
         Me.TDni2.Name = "TDni2"
@@ -203,7 +195,6 @@ Partial Class ModificarEmpleado
         '
         'TNombre2
         '
-        Me.TNombre2.Enabled = False
         Me.TNombre2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TNombre2.Location = New System.Drawing.Point(494, 224)
         Me.TNombre2.Name = "TNombre2"
@@ -212,7 +203,6 @@ Partial Class ModificarEmpleado
         '
         'TApellido2
         '
-        Me.TApellido2.Enabled = False
         Me.TApellido2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TApellido2.Location = New System.Drawing.Point(494, 181)
         Me.TApellido2.Name = "TApellido2"
@@ -310,7 +300,6 @@ Partial Class ModificarEmpleado
         'RBfemenino
         '
         Me.RBfemenino.AutoSize = True
-        Me.RBfemenino.Enabled = False
         Me.RBfemenino.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RBfemenino.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.RBfemenino.Location = New System.Drawing.Point(920, 186)
@@ -324,7 +313,6 @@ Partial Class ModificarEmpleado
         'RBmasculino
         '
         Me.RBmasculino.AutoSize = True
-        Me.RBmasculino.Enabled = False
         Me.RBmasculino.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RBmasculino.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.RBmasculino.Location = New System.Drawing.Point(920, 156)

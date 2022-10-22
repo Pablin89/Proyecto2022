@@ -48,19 +48,5 @@
 
     End Sub
 
-    Function baja_empleado() As Boolean
-        Dim oempleado = New Empleado
-
-        oempleado.estado = 0
-
-        Dim objempleado = New DEmpleado
-
-        If objempleado.DGuardar_empleado(oempleado) Then
-            Return True
-        Else
-            Return False
-
-        End If
-    End Function
 
 End Class

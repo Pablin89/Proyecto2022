@@ -205,5 +205,25 @@ Public Class GestionCliente
         Else
             BModificar.Enabled = False
         End If
+        Dim i As Integer
+        i = dgvCliente.CurrentRow.Index
+
+        ModificarCliente.TNombre2.Text = dgvCliente.Rows(i).Cells(2).Value.ToString
+        ModificarCliente.TApellido2.Text = dgvCliente.Rows(i).Cells(3).Value.ToString
+        ModificarCliente.TDni2.Text = dgvCliente.Rows(i).Cells(1).Value
+        ModificarCliente.TCorreo2.Text = dgvCliente.Rows(i).Cells(7).Value
+        ModificarCliente.TDireccion.Text = dgvCliente.Rows(i).Cells(4).Value
+        ModificarCliente.MTelefono.Text = dgvCliente.Rows(i).Cells(5).Value
+
+        If dgvCliente.Rows(i).Cells(6).Value.ToString = "Masculino" Then
+            RBmasculino.Checked = True
+        Else
+            RBfemenino.Checked = True
+        End If
+
+    End Sub
+
+    Private Sub BModificar_Click(sender As Object, e As EventArgs) Handles BModificar.Click
+        ModificarCliente.Show()
     End Sub
 End Class

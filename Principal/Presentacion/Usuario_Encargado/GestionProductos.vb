@@ -176,6 +176,16 @@
             BModificar.Enabled = False
 
         End If
+        Dim i As Integer
+        i = DataGridView1.CurrentRow.Index
+
+        ModificarProducto.TNombreProd.Text = DataGridView1.Rows(i).Cells(1).Value.ToString
+        ModificarProducto.TDescripcion.Text = DataGridView1.Rows(i).Cells(2).Value.ToString
+        ModificarProducto.TCodigoProd.Text = DataGridView1.Rows(i).Cells(3).Value
+        ModificarProducto.TPrecioProd.Text = DataGridView1.Rows(i).Cells(4).Value
+        ModificarProducto.TStock.Text = DataGridView1.Rows(i).Cells(5).Value
+        ModificarProducto.CBcategoria.Text = DataGridView1.Rows(i).Cells(6).Value
+
     End Sub
 
     Private Sub comboCategoria()
@@ -188,6 +198,11 @@
             CBcategoria.DataSource = list
 
         End If
+
+    End Sub
+
+    Private Sub BModificar_Click(sender As Object, e As EventArgs) Handles BModificar.Click
+        ModificarProducto.Show()
 
     End Sub
 End Class

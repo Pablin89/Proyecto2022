@@ -17,4 +17,15 @@
         Return listaCliente
 
     End Function
+
+    Function DActualizar_cliente(ByVal ocliente As Cliente) As Boolean
+        Try
+            ctx.Entry(ocliente).State = Entity.EntityState.Modified
+            ctx.SaveChanges()
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+
+    End Function
 End Class

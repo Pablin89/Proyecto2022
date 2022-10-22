@@ -1,4 +1,5 @@
 ﻿Public Class ModificarProducto
+    Dim cat = New DCategoria
     Private Sub SoloNumeros_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TStock.KeyPress, TPrecioProd.KeyPress
         If (Char.IsNumber(e.KeyChar)) Then
             e.Handled = False
@@ -51,12 +52,21 @@
             GestionProductos.Show()
         End If
     End Sub
-    Private Sub BAgregarImagen_Click(sender As Object, e As EventArgs) Handles BAgregarImagen.Click
-        OpenFileDialog1.InitialDirectory = "D:"
-        OpenFileDialog1.Filter = "Archivos imagenes|*.png|Archivos imagenes|*.jpg"
-        OpenFileDialog1.ShowDialog()
-        PictureBox1.ImageLocation = OpenFileDialog1.FileName
+
+    Private Sub comboCategoria()
+
+        Dim list = cat.getAll_categorias()
+
+        If (list.count > 0) Then
+            CBcategoria.DisplayMember = "id_categoria"
+            CBcategoria.ValueMember = "id_categoria"
+            CBcategoria.DataSource = list
+
+        End If
+
     End Sub
 
-
+    Private Sub ModificarProducto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        comboCategoria()
+    End Sub
 End Class

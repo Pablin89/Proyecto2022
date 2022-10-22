@@ -92,13 +92,36 @@ Public Class GestionEmpleados
         End If
 
         Dim op As MsgBoxResult
-        op = MsgBox("¿Desea agregar el nuevo cajero?", vbYesNo + vbDefaultButton2 + vbInformation, "Confirmar")
+        op = MsgBox("¿Desea agregar el nuevo empleado?", vbYesNo + vbDefaultButton2 + vbInformation, "Confirmar")
 
-        If MsgBoxResult.Yes = op Then
+        If MsgBoxResult.Yes = op And RBmasculino.Checked Then
 
             If (objempleado.agregar_empleado(CInt(TDni2.Text), TNombre2.Text, TApellido2.Text, RBmasculino.Text, DTfecha.Value, TDireccion.Text, TCorreo.Text, MTelefono.Text, CBoxEstado.Text)) Then
 
-                MsgBox("El cajero se registro correctamente", vbOKOnly + vbInformation, "Confirmar")
+                MsgBox("El empleado se registro correctamente", vbOKOnly + vbInformation, "Confirmar")
+                objempleado.cargarGrid(dgEmpleados)
+
+            Else
+                MsgBox("El empleado ya existe", vbOKOnly + vbDefaultButton2 + vbCritical, "Confirmar")
+
+
+            End If
+
+            TDni2.Clear()
+            TNombre2.Clear()
+            TApellido2.Clear()
+            TDireccion.Clear()
+            TCorreo.Clear()
+            MTelefono.Clear()
+            PictureBox1.Image = Nothing
+            RBmasculino.Checked = False
+            RBfemenino.Checked = False
+
+        ElseIf MsgBoxResult.Yes = op And RBfemenino.Checked Then
+
+            If (objempleado.agregar_empleado(CInt(TDni2.Text), TNombre2.Text, TApellido2.Text, RBfemenino.Text, DTfecha.Value, TDireccion.Text, TCorreo.Text, MTelefono.Text, CBoxEstado.Text)) Then
+
+                MsgBox("El empleado se registro correctamente", vbOKOnly + vbInformation, "Confirmar")
                 objempleado.cargarGrid(dgEmpleados)
 
             Else
@@ -205,6 +228,19 @@ Public Class GestionEmpleados
             BModificar.Enabled = False
             BEliminar.Enabled = False
         End If
+
+        Dim i As Integer
+        i = dgEmpleados.CurrentRow.Index
+
+        ModificarEmpleado.TNombre2.Text = dgEmpleados.Rows(i).Cells(2).Value.ToString
+        ModificarEmpleado.TDni2.Text = dgEmpleados.Rows(i).Cells(1).Value.ToString
+        ModificarEmpleado.TApellido2.Text = dgEmpleados.Rows(i).Cells(3).Value.ToString
+        ModificarEmpleado.TDireccion.Text = dgEmpleados.Rows(i).Cells(6).Value
+        ModificarEmpleado.TCorreo.Text = dgEmpleados.Rows(i).Cells(7).Value
+        ModificarEmpleado.MTelefono.Text = dgEmpleados.Rows(i).Cells(8).Value
+        ModificarEmpleado.DTFecha.Value = dgEmpleados.Rows(i).Cells(5).Value
+        ModificarEmpleado.CBEstado.Text = dgEmpleados.Rows(i).Cells(10).Value
+
     End Sub
 
     Private Sub BEliminar_Click(sender As Object, e As EventArgs) Handles BEliminar.Click
@@ -224,4 +260,9 @@ Public Class GestionEmpleados
 
         End If
     End Sub
+
+    Private Sub BModificar_Click(sender As Object, e As EventArgs) Handles BModificar.Click
+        ModificarEmpleado.Show()
+    End Sub
+
 End Class

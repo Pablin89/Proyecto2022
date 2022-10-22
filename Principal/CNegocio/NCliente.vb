@@ -38,5 +38,28 @@
         grid.Columns(8).Visible = False
 
     End Sub
+    Function actualizar_cliente(ByVal dni As Integer, ByVal nombre As String, ByVal apellido As String, ByVal direccion As String, ByVal telefono As String, ByVal genero As String, ByVal correo As String) As Boolean
+        Dim ocliente = New Cliente
+
+        With ocliente
+            .dni = dni
+            .nombre = nombre
+            .apellido = apellido
+            .direccion = direccion
+            .telefono = telefono
+            .genero = genero
+            .correo = correo
+        End With
+
+
+        Dim objcliente = New DCliente
+
+        If objcliente.DActualizar_cliente(ocliente) Then
+            Return True
+        Else
+            Return False
+
+        End If
+    End Function
 
 End Class

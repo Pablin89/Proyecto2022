@@ -1,6 +1,7 @@
 ﻿Imports System.ComponentModel
 
 Public Class ModificarCliente
+    Dim objcliente = New NCliente
     Private Sub SoloNumeros_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TDni2.KeyPress
         If (Char.IsNumber(e.KeyChar)) Then
             e.Handled = False
@@ -36,14 +37,21 @@ Public Class ModificarCliente
         Else
             op = MsgBox("¿Desea modificar los datos del Cliente?", vbYesNo + vbDefaultButton2 + vbInformation, "Modificar")
             If op = DialogResult.Yes Then
+                If (objcliente.actualizar_cliente(TDni2.Text, TNombre2.Text, TApellido2.Text, TDireccion.Text, MTelefono.Text, TCorreo2.Text, RBmasculino.Text)) Then
+                    MsgBox("Los datos se actualizaron correctamente", vbOKOnly + vbInformation, "Modificar")
+                Else
+                    MsgBox("Los datos no se pudieron modificar", vbOKOnly + vbCritical, "Modificar")
+                End If
+
                 TDni2.Clear()
-                TNombre2.Clear()
-                TApellido2.Clear()
-                TDireccion.Clear()
-                TCorreo2.Clear()
-                MTelefono.Clear()
+                    TNombre2.Clear()
+                    TApellido2.Clear()
+                    TDireccion.Clear()
+                    TCorreo2.Clear()
+                    MTelefono.Clear()
+                End If
             End If
-        End If
+
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -53,7 +61,7 @@ Public Class ModificarCliente
 
         If ask = MsgBoxResult.Yes Then
             Me.Close()
-            Cajeros.Show()
+            GestionCliente.Show()
         End If
     End Sub
 
