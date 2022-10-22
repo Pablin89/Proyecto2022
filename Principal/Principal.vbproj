@@ -114,7 +114,9 @@
     <Compile Include="CDatos\Detalle_venta.vb">
       <DependentUpon>Modelo1.tt</DependentUpon>
     </Compile>
+    <Compile Include="CDatos\DPerfil.vb" />
     <Compile Include="CDatos\DProducto.vb" />
+    <Compile Include="CDatos\DUsuario.vb" />
     <Compile Include="CDatos\Empleado.vb">
       <DependentUpon>Modelo1.tt</DependentUpon>
     </Compile>
@@ -149,6 +151,7 @@
     <Compile Include="CNegocio\NCliente.vb" />
     <Compile Include="CNegocio\NEmpleado.vb" />
     <Compile Include="CNegocio\NProducto.vb" />
+    <Compile Include="CNegocio\NUsuario.vb" />
     <Compile Include="Presentacion\Usuario_Cajero\Cajeros.Designer.vb">
       <DependentUpon>Cajeros.vb</DependentUpon>
     </Compile>
@@ -568,6 +571,13 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Modelo1.edmx</DependentUpon>
       <LastGenOutput>Modelo1.vb</LastGenOutput>
+    </Content>
+    <Content Include="Proyecto.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Proyecto_log.ldf">
+      <DependentUpon>Proyecto.mdf</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

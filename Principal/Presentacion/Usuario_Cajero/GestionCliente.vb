@@ -197,4 +197,13 @@ Public Class GestionCliente
         End If
 
     End Sub
+
+    Private Sub dgvCliente_Click(sender As Object, e As EventArgs) Handles dgvCliente.Click
+
+        If dgvCliente.CurrentRow IsNot Nothing Then
+            BModificar.Enabled = True
+        Else
+            BModificar.Enabled = False
+        End If
+    End Sub
 End Class

@@ -37,9 +37,6 @@
         grid.Columns(8).Visible = False
         grid.Columns(9).Visible = False
 
-        grid.Columns.Add(10, "Eliminar")
-        grid.Columns.Add(11, "Modificar")
-
         grid.Columns(0).Visible = False
 
 

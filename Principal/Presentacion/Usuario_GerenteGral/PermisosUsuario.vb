@@ -163,4 +163,21 @@ Public Class PermisosUsuario
     Private Sub PermisosUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         objempleado.cargarGrid(DataGridView1)
     End Sub
+
+    Private Sub DataGridView1_CellMouseDown(sender As Object, e As DataGridViewCellMouseEventArgs) Handles DataGridView1.CellMouseDown
+        If DataGridView1.CurrentRow IsNot Nothing Then
+            BEditarEmpleado.Enabled = True
+        Else
+            BEditarEmpleado.Enabled = False
+        End If
+    End Sub
+
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+        Dim i As Integer
+        Dim empleado = New EditarEmpleado
+        i = DataGridView1.CurrentRow.Index
+
+        empleado.TNombre.Text = DataGridView1.Rows(i).Cells(2).Value.ToString
+
+    End Sub
 End Class

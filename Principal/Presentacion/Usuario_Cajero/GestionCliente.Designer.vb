@@ -48,6 +48,7 @@ Partial Class GestionCliente
         Me.TabModificarCliente = New System.Windows.Forms.TabPage()
         Me.dgvCliente = New System.Windows.Forms.DataGridView()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.BModificar = New System.Windows.Forms.Button()
         Me.TCorreo2 = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.BBuscar = New System.Windows.Forms.Button()
@@ -349,6 +350,7 @@ Partial Class GestionCliente
         Me.Panel3.AutoSize = True
         Me.Panel3.BackColor = System.Drawing.Color.LightSlateGray
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel3.Controls.Add(Me.BModificar)
         Me.Panel3.Controls.Add(Me.TCorreo2)
         Me.Panel3.Controls.Add(Me.Label2)
         Me.Panel3.Controls.Add(Me.BBuscar)
@@ -366,6 +368,21 @@ Partial Class GestionCliente
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(1351, 228)
         Me.Panel3.TabIndex = 10
+        '
+        'BModificar
+        '
+        Me.BModificar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BModificar.Enabled = False
+        Me.BModificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BModificar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.BModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BModificar.Location = New System.Drawing.Point(998, 149)
+        Me.BModificar.Name = "BModificar"
+        Me.BModificar.Size = New System.Drawing.Size(128, 44)
+        Me.BModificar.TabIndex = 13
+        Me.BModificar.Text = "Modificar"
+        Me.BModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BModificar.UseVisualStyleBackColor = True
         '
         'TCorreo2
         '
@@ -559,4 +576,5 @@ Partial Class GestionCliente
     Friend WithEvents TCorreo2 As TextBox
     Friend WithEvents ErrorCorreo2 As ErrorProvider
     Friend WithEvents BVentas As Button
+    Friend WithEvents BModificar As Button
 End Class

@@ -103,6 +103,7 @@ Partial Class PermisosUsuario
         'BEditarEmpleado
         '
         Me.BEditarEmpleado.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.BEditarEmpleado.Enabled = False
         Me.BEditarEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.BEditarEmpleado.Location = New System.Drawing.Point(1001, 181)
         Me.BEditarEmpleado.Name = "BEditarEmpleado"

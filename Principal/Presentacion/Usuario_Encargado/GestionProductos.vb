@@ -1,6 +1,7 @@
 ﻿Public Class GestionProductos
     Dim objproducto = New NProducto
     Dim objcategoria = New NCategoria
+    Dim cat = New DCategoria
 
     Private Sub SoloNumeros_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TStock.KeyPress, TPrecioProd.KeyPress, TCodigoProd.KeyPress, TCodigo.KeyPress, TPrecio.KeyPress
         If (Char.IsNumber(e.KeyChar)) Then
@@ -44,8 +45,6 @@
                     MsgBox("El producto ya existe", vbOKOnly + vbCritical, "Confirmar")
 
                 End If
-
-
                 TNombreProd.Clear()
                 TPrecioProd.Clear()
                 TStock.Clear()
@@ -136,6 +135,7 @@
 
     Private Sub GestionProductos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         objproducto.cargarGrid(DataGridView1)
+        comboCategoria()
     End Sub
 
     Private Sub BConfirmarCat_Click(sender As Object, e As EventArgs) Handles BConfirmarCat.Click
@@ -167,4 +167,27 @@
         End If
     End Sub
 
+    Private Sub DataGridView1_Click(sender As Object, e As EventArgs) Handles DataGridView1.Click
+        If DataGridView1.CurrentRow IsNot Nothing Then
+            BEliminar.Enabled = True
+            BModificar.Enabled = True
+        Else
+            BEliminar.Enabled = False
+            BModificar.Enabled = False
+
+        End If
+    End Sub
+
+    Private Sub comboCategoria()
+
+        Dim list = cat.getAll_categorias()
+
+        If (list.count > 0) Then
+            CBcategoria.DisplayMember = "id_categoria"
+            CBcategoria.ValueMember = "id_categoria"
+            CBcategoria.DataSource = list
+
+        End If
+
+    End Sub
 End Class

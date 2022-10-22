@@ -35,9 +35,8 @@
         grid.Columns(5).HeaderText = "Telefono"
         grid.Columns(6).HeaderText = "Genero"
         grid.Columns(7).HeaderText = "Correo"
-        grid.Columns(8).HeaderText = ""
-
-
+        grid.Columns(8).Visible = False
 
     End Sub
+
 End Class

@@ -23,8 +23,6 @@ Partial Class GestionEmpleados
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -60,6 +58,8 @@ Partial Class GestionEmpleados
         Me.EditarCajeros = New System.Windows.Forms.TabPage()
         Me.dgEmpleados = New System.Windows.Forms.DataGridView()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.BModificar = New System.Windows.Forms.Button()
+        Me.BEliminar = New System.Windows.Forms.Button()
         Me.ComboEstado = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.BBuscar = New System.Windows.Forms.Button()
@@ -425,28 +425,12 @@ Partial Class GestionEmpleados
         'dgEmpleados
         '
         Me.dgEmpleados.AllowUserToAddRows = False
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dgEmpleados.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dgEmpleados.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgEmpleados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgEmpleados.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.dgEmpleados.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgEmpleados.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgEmpleados.DefaultCellStyle = DataGridViewCellStyle3
         Me.dgEmpleados.Dock = System.Windows.Forms.DockStyle.Top
         Me.dgEmpleados.Location = New System.Drawing.Point(3, 241)
         Me.dgEmpleados.Name = "dgEmpleados"
@@ -458,6 +442,8 @@ Partial Class GestionEmpleados
         Me.Panel3.AutoSize = True
         Me.Panel3.BackColor = System.Drawing.Color.LightSlateGray
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel3.Controls.Add(Me.BModificar)
+        Me.Panel3.Controls.Add(Me.BEliminar)
         Me.Panel3.Controls.Add(Me.ComboEstado)
         Me.Panel3.Controls.Add(Me.Label2)
         Me.Panel3.Controls.Add(Me.BBuscar)
@@ -475,6 +461,37 @@ Partial Class GestionEmpleados
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(1356, 238)
         Me.Panel3.TabIndex = 9
+        '
+        'BModificar
+        '
+        Me.BModificar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BModificar.Enabled = False
+        Me.BModificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BModificar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.BModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BModificar.Location = New System.Drawing.Point(1071, 151)
+        Me.BModificar.Name = "BModificar"
+        Me.BModificar.Size = New System.Drawing.Size(120, 46)
+        Me.BModificar.TabIndex = 14
+        Me.BModificar.Text = "Modificar"
+        Me.BModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BModificar.UseVisualStyleBackColor = True
+        '
+        'BEliminar
+        '
+        Me.BEliminar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BEliminar.Enabled = False
+        Me.BEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BEliminar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.BEliminar.Image = Global.Principal.My.Resources.Resources.cancelar
+        Me.BEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BEliminar.Location = New System.Drawing.Point(889, 151)
+        Me.BEliminar.Name = "BEliminar"
+        Me.BEliminar.Size = New System.Drawing.Size(120, 46)
+        Me.BEliminar.TabIndex = 13
+        Me.BEliminar.Text = "Eliminar"
+        Me.BEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BEliminar.UseVisualStyleBackColor = True
         '
         'ComboEstado
         '
@@ -702,4 +719,6 @@ Partial Class GestionEmpleados
     Friend WithEvents LDni As Label
     Friend WithEvents LNombre As Label
     Friend WithEvents LApellido As Label
+    Friend WithEvents BModificar As Button
+    Friend WithEvents BEliminar As Button
 End Class

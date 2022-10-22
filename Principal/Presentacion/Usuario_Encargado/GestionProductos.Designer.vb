@@ -61,6 +61,8 @@ Partial Class GestionProductos
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
+        Me.BModificar = New System.Windows.Forms.Button()
+        Me.BEliminar = New System.Windows.Forms.Button()
         Me.Productos.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -114,6 +116,8 @@ Partial Class GestionProductos
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Panel2.Controls.Add(Me.BModificar)
+        Me.Panel2.Controls.Add(Me.BEliminar)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.BBuscar)
         Me.Panel2.Controls.Add(Me.ComboCat)
@@ -508,6 +512,37 @@ Partial Class GestionProductos
         Me.Button3.Text = "<---Volver al menú principal"
         Me.Button3.UseVisualStyleBackColor = True
         '
+        'BModificar
+        '
+        Me.BModificar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BModificar.Enabled = False
+        Me.BModificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BModificar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.BModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BModificar.Location = New System.Drawing.Point(1071, 174)
+        Me.BModificar.Name = "BModificar"
+        Me.BModificar.Size = New System.Drawing.Size(120, 46)
+        Me.BModificar.TabIndex = 31
+        Me.BModificar.Text = "Modificar"
+        Me.BModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BModificar.UseVisualStyleBackColor = True
+        '
+        'BEliminar
+        '
+        Me.BEliminar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BEliminar.Enabled = False
+        Me.BEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BEliminar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.BEliminar.Image = Global.Principal.My.Resources.Resources.cancelar
+        Me.BEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BEliminar.Location = New System.Drawing.Point(889, 174)
+        Me.BEliminar.Name = "BEliminar"
+        Me.BEliminar.Size = New System.Drawing.Size(120, 46)
+        Me.BEliminar.TabIndex = 30
+        Me.BEliminar.Text = "Eliminar"
+        Me.BEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BEliminar.UseVisualStyleBackColor = True
+        '
         'GestionProductos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -573,4 +608,6 @@ Partial Class GestionProductos
     Friend WithEvents Label4 As Label
     Friend WithEvents BCancelarcat As Button
     Friend WithEvents BConfirmarCat As Button
+    Friend WithEvents BModificar As Button
+    Friend WithEvents BEliminar As Button
 End Class
