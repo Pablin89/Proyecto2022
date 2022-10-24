@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class ListarProductos
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class ListarProductos
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.LLista = New System.Windows.Forms.Label()
@@ -36,13 +36,6 @@ Partial Class ListarProductos
         Me.CBnombre = New System.Windows.Forms.CheckBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Stock = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Categoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Imgaen = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Panel1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -72,7 +65,7 @@ Partial Class ListarProductos
         'BBuscar
         '
         Me.BBuscar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BBuscar.Font = New System.Drawing.Font("MS Reference Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BBuscar.ForeColor = System.Drawing.SystemColors.ControlText
         Me.BBuscar.Image = Global.Principal.My.Resources.Resources.buscar2
         Me.BBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -192,46 +185,10 @@ Partial Class ListarProductos
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.ColumnHeadersHeight = 40
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nombre, Me.Descripcion, Me.Codigo, Me.Precio, Me.Stock, Me.Categoria, Me.Imgaen})
         Me.DataGridView1.Location = New System.Drawing.Point(0, 3)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(1359, 449)
         Me.DataGridView1.TabIndex = 1
-        '
-        'Nombre
-        '
-        Me.Nombre.HeaderText = "Nombre"
-        Me.Nombre.Name = "Nombre"
-        '
-        'Descripcion
-        '
-        Me.Descripcion.HeaderText = "Descripcion"
-        Me.Descripcion.Name = "Descripcion"
-        '
-        'Codigo
-        '
-        Me.Codigo.HeaderText = "Codigo"
-        Me.Codigo.Name = "Codigo"
-        '
-        'Precio
-        '
-        Me.Precio.HeaderText = "Precio"
-        Me.Precio.Name = "Precio"
-        '
-        'Stock
-        '
-        Me.Stock.HeaderText = "Stock"
-        Me.Stock.Name = "Stock"
-        '
-        'Categoria
-        '
-        Me.Categoria.HeaderText = "Categoria"
-        Me.Categoria.Name = "Categoria"
-        '
-        'Imgaen
-        '
-        Me.Imgaen.HeaderText = "Imagen"
-        Me.Imgaen.Name = "Imgaen"
         '
         'ListarProductos
         '
@@ -275,11 +232,4 @@ Partial Class ListarProductos
     Friend WithEvents CBnombre As CheckBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents Nombre As DataGridViewTextBoxColumn
-    Friend WithEvents Descripcion As DataGridViewTextBoxColumn
-    Friend WithEvents Codigo As DataGridViewTextBoxColumn
-    Friend WithEvents Precio As DataGridViewTextBoxColumn
-    Friend WithEvents Stock As DataGridViewTextBoxColumn
-    Friend WithEvents Categoria As DataGridViewTextBoxColumn
-    Friend WithEvents Imgaen As DataGridViewImageColumn
 End Class

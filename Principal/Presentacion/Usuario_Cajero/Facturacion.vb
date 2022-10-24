@@ -1,5 +1,5 @@
 ﻿Public Class Facturacion
-
+    Dim objproducto = New NProducto
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim ask As MsgBoxResult
 
@@ -30,13 +30,8 @@
     End Sub
 
     Private Sub Facturacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-
-        'TODO: esta línea de código carga datos en la tabla 'ProyectoDataSet2.Productos' Puede moverla o quitarla según sea necesario.
-
-        'TODO:   esta línea de código carga datos en la tabla 'Proyecto2DataSet.Clientes' Puede moverla o quitarla según sea necesario.
-        'Me.ClientesTableAdapter.Fill(Me.ProyectoDataSet.Clientes)
-        'Timer1.Start()
+        Timer1.Start()
+        objproducto.cargarGrid_facturacion(dgvProductos)
     End Sub
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         LFecha.Text = DateAndTime.Today.ToLongDateString

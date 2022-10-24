@@ -37,7 +37,7 @@
         Else
             op = MsgBox("¿Desea agregar el nuevo producto?", vbYesNo + vbDefaultButton2 + vbInformation, "Confirmar")
             If op = DialogResult.Yes Then
-                If (objproducto.agregar_producto(TNombreProd.Text, TDescripcion.Text, TCodigoProd.Text, TPrecioProd.Text, TStock.Text, CBcategoria.Text, 1)) Then
+                If (objproducto.agregar_producto(TNombreProd.Text, TDescripcion.Text, TCodigoProd.Text, TPrecioProd.Text, TStock.Text, CBcategoria.SelectedValue, 1)) Then
                     MsgBox("El producto se registro correctamente", vbOKOnly + vbInformation, "Confirmar")
 
                     objproducto.cargarGrid(DataGridView1)
@@ -184,7 +184,7 @@
         ModificarProducto.TCodigoProd.Text = DataGridView1.Rows(i).Cells(3).Value
         ModificarProducto.TPrecioProd.Text = DataGridView1.Rows(i).Cells(4).Value
         ModificarProducto.TStock.Text = DataGridView1.Rows(i).Cells(5).Value
-        ModificarProducto.CBcategoria.Text = DataGridView1.Rows(i).Cells(6).Value
+        ModificarProducto.CBcategoria.SelectedValue = DataGridView1.Rows(i).Cells(6).Value.ToString
 
     End Sub
 
@@ -193,8 +193,9 @@
         Dim list = cat.getAll_categorias()
 
         If (list.count > 0) Then
-            CBcategoria.DisplayMember = "id_categoria"
+            CBcategoria.DisplayMember = "desc_categoria"
             CBcategoria.ValueMember = "id_categoria"
+            CBcategoria.SelectedValue = "id_categoria"
             CBcategoria.DataSource = list
 
         End If

@@ -1,5 +1,5 @@
 ﻿Public Class ListarProductos
-
+    Dim objproduto = New NProducto
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim ask As MsgBoxResult
 
@@ -84,5 +84,9 @@
             MessageBox.Show("Solo se permiten letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 
         End If
+    End Sub
+
+    Private Sub ListarProductos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        objproduto.cargarGrid(DataGridView1)
     End Sub
 End Class

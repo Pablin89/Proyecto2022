@@ -23,9 +23,9 @@ Partial Class Facturacion
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Facturacion))
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.LCajero = New System.Windows.Forms.Label()
         Me.TFactura = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -42,8 +42,10 @@ Partial Class Facturacion
         Me.LApellidoC = New System.Windows.Forms.Label()
         Me.LNombreC = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.TCantidad = New System.Windows.Forms.TextBox()
         Me.TProducto = New System.Windows.Forms.TextBox()
         Me.BAgregar = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.LProducto = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -61,14 +63,7 @@ Partial Class Facturacion
         Me.LForna = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Categoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PrecioProducto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Stock = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TCantidad = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.dgvProductos = New System.Windows.Forms.DataGridView()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.BConfirmar = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
@@ -76,7 +71,7 @@ Partial Class Facturacion
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LCajero
@@ -122,7 +117,7 @@ Partial Class Facturacion
         '
         Me.BBuscar.BackColor = System.Drawing.Color.RosyBrown
         Me.BBuscar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BBuscar.Font = New System.Drawing.Font("MS Reference Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BBuscar.ForeColor = System.Drawing.Color.White
         Me.BBuscar.Image = Global.Principal.My.Resources.Resources.find_102325__1_
         Me.BBuscar.ImageAlign = System.Drawing.ContentAlignment.TopRight
@@ -247,6 +242,13 @@ Partial Class Facturacion
         Me.Panel3.Size = New System.Drawing.Size(858, 248)
         Me.Panel3.TabIndex = 4
         '
+        'TCantidad
+        '
+        Me.TCantidad.Location = New System.Drawing.Point(668, 103)
+        Me.TCantidad.Name = "TCantidad"
+        Me.TCantidad.Size = New System.Drawing.Size(146, 20)
+        Me.TCantidad.TabIndex = 23
+        '
         'TProducto
         '
         Me.TProducto.Location = New System.Drawing.Point(236, 21)
@@ -269,6 +271,17 @@ Partial Class Facturacion
         Me.BAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.BAgregar.UseVisualStyleBackColor = False
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(664, 65)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(150, 20)
+        Me.Label3.TabIndex = 19
+        Me.Label3.Text = "Ingresar cantidad"
+        '
         'LProducto
         '
         Me.LProducto.AutoSize = True
@@ -284,14 +297,14 @@ Partial Class Facturacion
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView1.ColumnHeadersHeight = 40
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Producto, Me.Cantidad, Me.Precio, Me.Sutotal, Me.Eliminar})
         Me.DataGridView1.Location = New System.Drawing.Point(484, 405)
@@ -379,7 +392,7 @@ Partial Class Facturacion
         Me.LHora.BackColor = System.Drawing.Color.Transparent
         Me.LHora.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LHora.ForeColor = System.Drawing.Color.Black
-        Me.LHora.Location = New System.Drawing.Point(1070, 29)
+        Me.LHora.Location = New System.Drawing.Point(1142, 30)
         Me.LHora.Name = "LHora"
         Me.LHora.Size = New System.Drawing.Size(61, 24)
         Me.LHora.TabIndex = 16
@@ -431,69 +444,25 @@ Partial Class Facturacion
         Me.PictureBox1.TabStop = False
         Me.PictureBox1.WaitOnLoad = True
         '
-        'DataGridView2
+        'dgvProductos
         '
-        Me.DataGridView2.AllowUserToAddRows = False
-        Me.DataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView2.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Me.DataGridView2.ColumnHeadersHeight = 40
-        Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.Descripcion, Me.Categoria, Me.PrecioProducto, Me.Stock})
-        Me.DataGridView2.Location = New System.Drawing.Point(484, 205)
-        Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.RowHeadersWidth = 50
-        Me.DataGridView2.Size = New System.Drawing.Size(620, 168)
-        Me.DataGridView2.TabIndex = 25
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.HeaderText = "Producto"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        '
-        'Descripcion
-        '
-        Me.Descripcion.HeaderText = "Descripcion"
-        Me.Descripcion.Name = "Descripcion"
-        '
-        'Categoria
-        '
-        Me.Categoria.HeaderText = "Categoría"
-        Me.Categoria.Name = "Categoria"
-        '
-        'PrecioProducto
-        '
-        Me.PrecioProducto.HeaderText = "Precio"
-        Me.PrecioProducto.Name = "PrecioProducto"
-        '
-        'Stock
-        '
-        Me.Stock.HeaderText = "Stock"
-        Me.Stock.Name = "Stock"
-        '
-        'TCantidad
-        '
-        Me.TCantidad.Location = New System.Drawing.Point(668, 103)
-        Me.TCantidad.Name = "TCantidad"
-        Me.TCantidad.Size = New System.Drawing.Size(146, 20)
-        Me.TCantidad.TabIndex = 23
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(664, 65)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(150, 20)
-        Me.Label3.TabIndex = 19
-        Me.Label3.Text = "Ingresar cantidad"
+        Me.dgvProductos.AllowUserToAddRows = False
+        Me.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvProductos.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvProductos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        Me.dgvProductos.ColumnHeadersHeight = 40
+        Me.dgvProductos.Location = New System.Drawing.Point(484, 205)
+        Me.dgvProductos.Name = "dgvProductos"
+        Me.dgvProductos.RowHeadersWidth = 50
+        Me.dgvProductos.Size = New System.Drawing.Size(620, 168)
+        Me.dgvProductos.TabIndex = 25
         '
         'Button2
         '
@@ -529,7 +498,7 @@ Partial Class Facturacion
         Me.AutoSize = True
         Me.BackColor = System.Drawing.SystemColors.MenuBar
         Me.ClientSize = New System.Drawing.Size(1354, 710)
-        Me.Controls.Add(Me.DataGridView2)
+        Me.Controls.Add(Me.dgvProductos)
         Me.Controls.Add(Me.CBForma)
         Me.Controls.Add(Me.LForna)
         Me.Controls.Add(Me.Button2)
@@ -554,7 +523,7 @@ Partial Class Facturacion
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -596,13 +565,8 @@ Partial Class Facturacion
     Friend WithEvents TNombreCli As TextBox
     Friend WithEvents BAgregar As Button
     Friend WithEvents TProducto As TextBox
-    Friend WithEvents DataGridView2 As DataGridView
+    Friend WithEvents dgvProductos As DataGridView
     Friend WithEvents TCantidad As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents BBuscar As Button
-    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents Descripcion As DataGridViewTextBoxColumn
-    Friend WithEvents Categoria As DataGridViewTextBoxColumn
-    Friend WithEvents PrecioProducto As DataGridViewTextBoxColumn
-    Friend WithEvents Stock As DataGridViewTextBoxColumn
 End Class

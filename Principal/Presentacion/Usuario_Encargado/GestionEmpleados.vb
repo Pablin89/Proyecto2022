@@ -244,21 +244,7 @@ Public Class GestionEmpleados
     End Sub
 
     Private Sub BEliminar_Click(sender As Object, e As EventArgs) Handles BEliminar.Click
-        Dim ask As MsgBoxResult
 
-        If dgEmpleados.CurrentRow IsNot Nothing Then
-
-            ask = MsgBox("Estas seguro de dar de baja al empleado", vbYesNo + vbInformation, "Eliminar")
-
-            If MsgBoxResult.Yes = ask Then
-
-                If (objempleado.baja_empleado()) Then
-                    MsgBox("El empleado ha sido dado de baja", vbOKOnly + vbExclamation, "Eliminar")
-                End If
-
-            End If
-
-        End If
     End Sub
 
     Private Sub BModificar_Click(sender As Object, e As EventArgs) Handles BModificar.Click

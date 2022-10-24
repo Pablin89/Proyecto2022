@@ -58,8 +58,9 @@
         Dim list = cat.getAll_categorias()
 
         If (list.count > 0) Then
-            CBcategoria.DisplayMember = "id_categoria"
+            CBcategoria.DisplayMember = "desc_categoria"
             CBcategoria.ValueMember = "id_categoria"
+            CBcategoria.SelectedValue = "id_categoria"
             CBcategoria.DataSource = list
 
         End If

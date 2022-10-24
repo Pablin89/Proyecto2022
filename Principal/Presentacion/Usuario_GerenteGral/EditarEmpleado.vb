@@ -25,7 +25,7 @@ Public Class EditarEmpleado
         Else
             op = MsgBox("¿Desea guardar los cambios?", vbYesNo + vbDefaultButton2 + vbInformation, "Confirmar")
             If op = DialogResult.Yes Then
-                If (objusuario.agregar_usuario(TUsuario.Text, TContraseña.Text, CBperfil.Text)) Then
+                If (objusuario.agregar_usuario(TUsuario.Text, TContraseña.Text, CBperfil.SelectedValue)) Then
                     MsgBox("Los cambios se realizaron correctamente", vbOKOnly + vbDefaultButton1 + vbInformation, "Cambios realizados")
                 End If
                 TUsuario.Clear()
@@ -51,8 +51,9 @@ Public Class EditarEmpleado
         Dim list = perfiles.getPerfiles()
 
         If (list.count > 0) Then
-            CBperfil.DisplayMember = "id_perfil"
+            CBperfil.DisplayMember = "desc_pefil"
             CBperfil.ValueMember = "id_perfil"
+            CBperfil.SelectedValue = "id_perfil"
             CBperfil.DataSource = list
 
         End If

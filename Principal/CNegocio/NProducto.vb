@@ -41,5 +41,23 @@
 
 
     End Sub
+    Public Sub cargarGrid_facturacion(ByVal grid As DataGridView)
+        Dim producto As DProducto = New DProducto
+        grid.DataSource = producto.getAll_productos()
+
+        grid.Columns(0).HeaderText = ""
+        grid.Columns(1).HeaderText = "Producto"
+        grid.Columns(2).HeaderText = "Descripcion"
+        grid.Columns(3).HeaderText = "Codigo"
+        grid.Columns(4).HeaderText = "Precio"
+        grid.Columns(5).HeaderText = "Stock"
+        grid.Columns(6).Visible = False
+        grid.Columns(7).Visible = False
+        grid.Columns(8).Visible = False
+        grid.Columns(9).Visible = False
+        grid.Columns(0).Visible = False
+
+
+    End Sub
 
 End Class
