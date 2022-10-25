@@ -44,7 +44,7 @@
         ElseIf TUsuario.Text = "Cajero" Then
             Me.Hide()
             Cajeros.Show()
-        ElseIf TUsuario.Text = "GerenteGral" Then
+        ElseIf TUsuario.Text = "SuperAdmin" Then
             Me.Hide()
             GerenteGral.Show()
         Else
