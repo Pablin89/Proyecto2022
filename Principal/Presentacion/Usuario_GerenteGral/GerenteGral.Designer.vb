@@ -27,19 +27,19 @@ Partial Class GerenteGral
         Me.LFecha = New System.Windows.Forms.Label()
         Me.LHora = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.BCerrarSesion = New System.Windows.Forms.Button()
         Me.LSalirG = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.MenuGerente = New System.Windows.Forms.MenuStrip()
         Me.AñadirEncargadoItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BackupBase = New System.Windows.Forms.ToolStripMenuItem()
         Me.RestaurarBase = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BCerrarSesion = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
-        Me.MenuGerente.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuGerente.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -93,6 +93,22 @@ Partial Class GerenteGral
         Me.Panel3.Size = New System.Drawing.Size(131, 170)
         Me.Panel3.TabIndex = 6
         '
+        'BCerrarSesion
+        '
+        Me.BCerrarSesion.BackColor = System.Drawing.Color.Transparent
+        Me.BCerrarSesion.BackgroundImage = Global.Principal.My.Resources.Resources.Logout_37127
+        Me.BCerrarSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.BCerrarSesion.Location = New System.Drawing.Point(35, 59)
+        Me.BCerrarSesion.Name = "BCerrarSesion"
+        Me.BCerrarSesion.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.BCerrarSesion.Size = New System.Drawing.Size(62, 56)
+        Me.BCerrarSesion.TabIndex = 1
+        Me.BCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BCerrarSesion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BCerrarSesion.UseVisualStyleBackColor = False
+        '
         'LSalirG
         '
         Me.LSalirG.AutoSize = True
@@ -118,8 +134,19 @@ Partial Class GerenteGral
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(378, 51)
         Me.Label1.TabIndex = 3
-        Me.Label1.Text = "Gerente General: José Perez"
+        Me.Label1.Text = "Super Administrador: José Perez"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.Principal.My.Resources.Resources.Messirve__1_
+        Me.PictureBox1.Location = New System.Drawing.Point(11, 11)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(157, 145)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
+        Me.PictureBox1.WaitOnLoad = True
         '
         'Timer1
         '
@@ -195,33 +222,6 @@ Partial Class GerenteGral
         Me.RestaurarBase.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.RestaurarBase.ToolTipText = "Esta sección nos permite agregar nuevas sucursales."
         '
-        'BCerrarSesion
-        '
-        Me.BCerrarSesion.BackColor = System.Drawing.Color.Transparent
-        Me.BCerrarSesion.BackgroundImage = Global.Principal.My.Resources.Resources.Logout_37127
-        Me.BCerrarSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.BCerrarSesion.Location = New System.Drawing.Point(35, 59)
-        Me.BCerrarSesion.Name = "BCerrarSesion"
-        Me.BCerrarSesion.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.BCerrarSesion.Size = New System.Drawing.Size(62, 56)
-        Me.BCerrarSesion.TabIndex = 1
-        Me.BCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BCerrarSesion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.BCerrarSesion.UseVisualStyleBackColor = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.Principal.My.Resources.Resources.Messirve__1_
-        Me.PictureBox1.Location = New System.Drawing.Point(11, 11)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(157, 145)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
-        Me.PictureBox1.WaitOnLoad = True
-        '
         'GerenteGral
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -238,9 +238,9 @@ Partial Class GerenteGral
         Me.Panel1.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuGerente.ResumeLayout(False)
         Me.MenuGerente.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

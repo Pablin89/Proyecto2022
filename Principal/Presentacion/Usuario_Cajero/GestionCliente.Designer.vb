@@ -60,7 +60,6 @@ Partial Class GestionCliente
         Me.CBnombre = New System.Windows.Forms.CheckBox()
         Me.CBapellido = New System.Windows.Forms.CheckBox()
         Me.ErrorCorreo = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.ErrorCorreo2 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.BVentas = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabRegistroCliente.SuspendLayout()
@@ -68,7 +67,6 @@ Partial Class GestionCliente
         CType(Me.dgvCliente, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         CType(Me.ErrorCorreo, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ErrorCorreo2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -192,7 +190,6 @@ Partial Class GestionCliente
         Me.RBfemenino.Name = "RBfemenino"
         Me.RBfemenino.Size = New System.Drawing.Size(98, 24)
         Me.RBfemenino.TabIndex = 45
-        Me.RBfemenino.TabStop = True
         Me.RBfemenino.Text = "Femenino"
         Me.RBfemenino.UseVisualStyleBackColor = True
         '
@@ -205,7 +202,6 @@ Partial Class GestionCliente
         Me.RBmasculino.Name = "RBmasculino"
         Me.RBmasculino.Size = New System.Drawing.Size(98, 24)
         Me.RBmasculino.TabIndex = 44
-        Me.RBmasculino.TabStop = True
         Me.RBmasculino.Text = "Masculino"
         Me.RBmasculino.UseVisualStyleBackColor = True
         '
@@ -496,10 +492,6 @@ Partial Class GestionCliente
         '
         Me.ErrorCorreo.ContainerControl = Me
         '
-        'ErrorCorreo2
-        '
-        Me.ErrorCorreo2.ContainerControl = Me
-        '
         'BVentas
         '
         Me.BVentas.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
@@ -533,7 +525,6 @@ Partial Class GestionCliente
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         CType(Me.ErrorCorreo, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ErrorCorreo2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -574,7 +565,6 @@ Partial Class GestionCliente
     Friend WithEvents BCancelar As Button
     Friend WithEvents ErrorCorreo As ErrorProvider
     Friend WithEvents TCorreo2 As TextBox
-    Friend WithEvents ErrorCorreo2 As ErrorProvider
     Friend WithEvents BVentas As Button
     Friend WithEvents BModificar As Button
 End Class

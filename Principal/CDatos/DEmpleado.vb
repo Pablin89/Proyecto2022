@@ -17,4 +17,33 @@
         Return listaEmpleados
 
     End Function
+
+    Public Sub buscar_nombre(ByVal nombre As String, ByVal grid As DataGridView)
+        grid.DataSource = ctx.Empleado.SqlQuery("Select * from Empleado where nombre_empleado like '%" + nombre + "%'").ToList
+    End Sub
+
+    Public Sub buscar_apellido(ByVal apellido As String, ByVal grid As DataGridView)
+        grid.DataSource = ctx.Empleado.SqlQuery("Select * from Empleado where apellido_empleado like '%" + apellido + "%'").ToList
+    End Sub
+
+    Public Sub buscar_dni(ByVal dni As String, ByVal grid As DataGridView)
+        grid.DataSource = ctx.Empleado.SqlQuery("Select * from Empleado where dni_empleado like '%" + dni + "%'").ToList
+    End Sub
+
+    Public Sub buscar_estado(ByVal estado As String, ByVal grid As DataGridView)
+        grid.DataSource = ctx.Empleado.SqlQuery("Select * from Empleado where estado like '%" + estado + "%'").ToList
+    End Sub
+
+    Function baja_empleado(estado As String, id As String) As Boolean
+
+        Try
+            Dim act = (From e In ctx.Empleado Where e.Id_empleado = id).Single()
+            act.estado = estado
+            ctx.SaveChanges()
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+
 End Class

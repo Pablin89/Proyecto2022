@@ -40,7 +40,7 @@
                 If (objproducto.agregar_producto(TNombreProd.Text, TDescripcion.Text, TCodigoProd.Text, TPrecioProd.Text, TStock.Text, CBcategoria.SelectedValue, 1)) Then
                     MsgBox("El producto se registro correctamente", vbOKOnly + vbInformation, "Confirmar")
 
-                    objproducto.cargarGrid(DataGridView1)
+                    objproducto.cargarGrid(dgvProductos)
                 Else
                     MsgBox("El producto ya existe", vbOKOnly + vbCritical, "Confirmar")
 
@@ -127,14 +127,21 @@
     End Sub
 
     Private Sub BBuscar_Click(sender As Object, e As EventArgs) Handles BBuscar.Click
-        If String.IsNullOrWhiteSpace(TNombre.Text) And String.IsNullOrWhiteSpace(TCodigo.Text) And String.IsNullOrWhiteSpace(TPrecio.Text) And String.IsNullOrWhiteSpace(ComboCat.Text) Then
-            MsgBox("Debe realizar la busqueda por al menos una opcion", vbOKOnly + vbExclamation, "Buscar")
+        Dim prod = New DProducto
 
+        If Not String.IsNullOrEmpty(TNombre.Text) And CBnombre.Checked = True Then
+            prod.buscar_nombre(TNombre.Text, dgvProductos)
+        ElseIf Not String.IsNullOrEmpty(TCodigo.Text) And CBcodigo.Checked = True Then
+            prod.buscar_codigo(TCodigo.Text, dgvProductos)
+        ElseIf Not String.IsNullOrEmpty(TPrecio.Text) And CBprecio.Checked = True Then
+            prod.buscar_precio(TPrecio.Text, dgvProductos)
+        Else
+            prod.buscar_categoria(ComboCat.SelectedValue, dgvProductos)
         End If
     End Sub
 
     Private Sub GestionProductos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        objproducto.cargarGrid(DataGridView1)
+        objproducto.cargarGrid(dgvProductos)
         comboCategoria()
     End Sub
 
@@ -167,8 +174,8 @@
         End If
     End Sub
 
-    Private Sub DataGridView1_Click(sender As Object, e As EventArgs) Handles DataGridView1.Click
-        If DataGridView1.CurrentRow IsNot Nothing Then
+    Private Sub DataGridView1_Click(sender As Object, e As EventArgs) Handles dgvProductos.Click
+        If dgvProductos.CurrentRow IsNot Nothing Then
             BEliminar.Enabled = True
             BModificar.Enabled = True
         Else
@@ -177,14 +184,14 @@
 
         End If
         Dim i As Integer
-        i = DataGridView1.CurrentRow.Index
+        i = dgvProductos.CurrentRow.Index
 
-        ModificarProducto.TNombreProd.Text = DataGridView1.Rows(i).Cells(1).Value.ToString
-        ModificarProducto.TDescripcion.Text = DataGridView1.Rows(i).Cells(2).Value.ToString
-        ModificarProducto.TCodigoProd.Text = DataGridView1.Rows(i).Cells(3).Value
-        ModificarProducto.TPrecioProd.Text = DataGridView1.Rows(i).Cells(4).Value
-        ModificarProducto.TStock.Text = DataGridView1.Rows(i).Cells(5).Value
-        ModificarProducto.CBcategoria.SelectedValue = DataGridView1.Rows(i).Cells(6).Value.ToString
+        ModificarProducto.TNombreProd.Text = dgvProductos.Rows(i).Cells(1).Value.ToString
+        ModificarProducto.TDescripcion.Text = dgvProductos.Rows(i).Cells(2).Value.ToString
+        ModificarProducto.TCodigoProd.Text = dgvProductos.Rows(i).Cells(3).Value
+        ModificarProducto.TPrecioProd.Text = dgvProductos.Rows(i).Cells(4).Value
+        ModificarProducto.TStock.Text = dgvProductos.Rows(i).Cells(5).Value
+        ModificarProducto.CBcategoria.Text = dgvProductos.Rows(i).Cells(6).Value.ToString
 
     End Sub
 
@@ -198,12 +205,15 @@
             CBcategoria.SelectedValue = "id_categoria"
             CBcategoria.DataSource = list
 
+            ComboCat.DisplayMember = "desc_categoria"
+            ComboCat.ValueMember = "id_categoria"
+            ComboCat.SelectedValue = "id_categoria"
+            ComboCat.DataSource = list
         End If
 
     End Sub
 
     Private Sub BModificar_Click(sender As Object, e As EventArgs) Handles BModificar.Click
         ModificarProducto.Show()
-
     End Sub
 End Class

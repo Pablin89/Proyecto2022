@@ -30,11 +30,11 @@ Partial Class PermisosUsuario
         Me.BuscarEmpleado = New System.Windows.Forms.TabPage()
         Me.BEditarEmpleado = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dgvEmpleados = New System.Windows.Forms.DataGridView()
         Me.ComboEstado = New System.Windows.Forms.ComboBox()
         Me.BBuscar = New System.Windows.Forms.Button()
         Me.TDni = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TNombre2 = New System.Windows.Forms.TextBox()
         Me.TApellido = New System.Windows.Forms.TextBox()
         Me.CBestado = New System.Windows.Forms.CheckBox()
         Me.CBdni = New System.Windows.Forms.CheckBox()
@@ -44,7 +44,7 @@ Partial Class PermisosUsuario
         CType(Me.ErrorContra, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorRepcontra, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BuscarEmpleado.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvEmpleados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -83,11 +83,11 @@ Partial Class PermisosUsuario
         Me.BuscarEmpleado.BackColor = System.Drawing.Color.DarkGray
         Me.BuscarEmpleado.Controls.Add(Me.BEditarEmpleado)
         Me.BuscarEmpleado.Controls.Add(Me.Label2)
-        Me.BuscarEmpleado.Controls.Add(Me.DataGridView1)
+        Me.BuscarEmpleado.Controls.Add(Me.dgvEmpleados)
         Me.BuscarEmpleado.Controls.Add(Me.ComboEstado)
         Me.BuscarEmpleado.Controls.Add(Me.BBuscar)
         Me.BuscarEmpleado.Controls.Add(Me.TDni)
-        Me.BuscarEmpleado.Controls.Add(Me.TextBox1)
+        Me.BuscarEmpleado.Controls.Add(Me.TNombre2)
         Me.BuscarEmpleado.Controls.Add(Me.TApellido)
         Me.BuscarEmpleado.Controls.Add(Me.CBestado)
         Me.BuscarEmpleado.Controls.Add(Me.CBdni)
@@ -125,23 +125,23 @@ Partial Class PermisosUsuario
         Me.Label2.TabIndex = 23
         Me.Label2.Text = "Lista de Empleados"
         '
-        'DataGridView1
+        'dgvEmpleados
         '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(3, 232)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(1337, 337)
-        Me.DataGridView1.TabIndex = 22
+        Me.dgvEmpleados.AllowUserToAddRows = False
+        Me.dgvEmpleados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvEmpleados.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvEmpleados.Location = New System.Drawing.Point(3, 232)
+        Me.dgvEmpleados.Name = "dgvEmpleados"
+        Me.dgvEmpleados.Size = New System.Drawing.Size(1337, 337)
+        Me.dgvEmpleados.TabIndex = 22
         '
         'ComboEstado
         '
         Me.ComboEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboEstado.Enabled = False
         Me.ComboEstado.FormattingEnabled = True
-        Me.ComboEstado.Items.AddRange(New Object() {"Activo", "Inactivo"})
+        Me.ComboEstado.Items.AddRange(New Object() {"1", "0"})
         Me.ComboEstado.Location = New System.Drawing.Point(886, 88)
         Me.ComboEstado.Name = "ComboEstado"
         Me.ComboEstado.Size = New System.Drawing.Size(302, 28)
@@ -170,13 +170,13 @@ Partial Class PermisosUsuario
         Me.TDni.Size = New System.Drawing.Size(303, 26)
         Me.TDni.TabIndex = 19
         '
-        'TextBox1
+        'TNombre2
         '
-        Me.TextBox1.Enabled = False
-        Me.TextBox1.Location = New System.Drawing.Point(321, 90)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(274, 26)
-        Me.TextBox1.TabIndex = 18
+        Me.TNombre2.Enabled = False
+        Me.TNombre2.Location = New System.Drawing.Point(321, 90)
+        Me.TNombre2.Name = "TNombre2"
+        Me.TNombre2.Size = New System.Drawing.Size(274, 26)
+        Me.TNombre2.TabIndex = 18
         '
         'TApellido
         '
@@ -268,7 +268,7 @@ Partial Class PermisosUsuario
         CType(Me.ErrorRepcontra, System.ComponentModel.ISupportInitialize).EndInit()
         Me.BuscarEmpleado.ResumeLayout(False)
         Me.BuscarEmpleado.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvEmpleados, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
@@ -292,11 +292,11 @@ Partial Class PermisosUsuario
     Friend WithEvents LDni As Label
     Friend WithEvents LNombre As Label
     Friend WithEvents LApellido As Label
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dgvEmpleados As DataGridView
     Friend WithEvents ComboEstado As ComboBox
     Friend WithEvents BBuscar As Button
     Friend WithEvents TDni As TextBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TNombre2 As TextBox
     Friend WithEvents TApellido As TextBox
     Friend WithEvents CBestado As CheckBox
     Friend WithEvents CBdni As CheckBox

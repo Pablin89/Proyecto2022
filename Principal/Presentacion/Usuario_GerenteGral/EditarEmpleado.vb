@@ -18,8 +18,8 @@ Public Class EditarEmpleado
 
     Private Sub BConfirmar_Click(sender As Object, e As EventArgs) Handles BConfirmar.Click
         Dim op As MsgBoxResult
-        If String.IsNullOrWhiteSpace(TUsuario.Text) Or String.IsNullOrWhiteSpace(TRepcontra.Text) Or
-           String.IsNullOrWhiteSpace(TContraseña.Text) Or String.IsNullOrWhiteSpace(CBperfil.Text) Or contraseñaValida(TContraseña.Text) = False Then
+        If String.IsNullOrWhiteSpace(TUsuario.Text) Or String.IsNullOrWhiteSpace(TRepcontra.Text) Or String.IsNullOrWhiteSpace(TContraseña.Text) Or
+            String.IsNullOrWhiteSpace(CBperfil.Text) Or contraseñaValida(TContraseña.Text) = False Or contraseñaIguales(TContraseña.Text, TRepcontra.Text) = False Then
 
             MsgBox("Debe completar todos los campos", vbOKOnly + vbDefaultButton1 + vbCritical, "Completar campos")
         Else
@@ -91,6 +91,23 @@ Public Class EditarEmpleado
             ErrorContra.SetError(sender, "")
         Else
             ErrorContra.SetError(sender, "Debe contener al menos una mayuscula y más de 6 digitos")
+        End If
+    End Sub
+
+    Function contraseñaIguales(contra As String, repcontra As String) As Boolean
+        If (contra = repcontra) Then
+            Return True
+        Else
+            Return False
+        End If
+
+    End Function
+
+    Private Sub TRepcontra_Validating(sender As Object, e As CancelEventArgs) Handles TRepcontra.Validating
+        If contraseñaIguales(TContraseña.Text, TRepcontra.Text) = True Then
+            ErrorRepContra.SetError(sender, "")
+        Else
+            ErrorRepContra.SetError(sender, "Las contraseñas deben ser iguales")
         End If
     End Sub
 End Class

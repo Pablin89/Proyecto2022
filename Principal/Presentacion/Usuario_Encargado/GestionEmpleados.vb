@@ -1,9 +1,9 @@
 ﻿Imports System.ComponentModel
-Imports System.Text.RegularExpressions
+
 
 Public Class GestionEmpleados
     Dim objempleado = New NEmpleado
-
+    Dim emp = New DEmpleado
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim ask As MsgBoxResult
 
@@ -114,12 +114,10 @@ Public Class GestionEmpleados
             TCorreo.Clear()
             MTelefono.Clear()
             PictureBox1.Image = Nothing
-            RBmasculino.Checked = False
-            RBfemenino.Checked = False
 
         ElseIf MsgBoxResult.Yes = op And RBfemenino.Checked Then
 
-            If (objempleado.agregar_empleado(CInt(TDni2.Text), TNombre2.Text, TApellido2.Text, RBfemenino.Text, DTfecha.Value, TDireccion.Text, TCorreo.Text, MTelefono.Text, CBoxEstado.Text)) Then
+            If (objempleado.agregar_empleado(TDni2.Text, TNombre2.Text, TApellido2.Text, RBfemenino.Text, DTfecha.Value, TDireccion.Text, TCorreo.Text, MTelefono.Text, CBoxEstado.Text)) Then
 
                 MsgBox("El empleado se registro correctamente", vbOKOnly + vbInformation, "Confirmar")
                 objempleado.cargarGrid(dgEmpleados)
@@ -137,9 +135,6 @@ Public Class GestionEmpleados
             TCorreo.Clear()
             MTelefono.Clear()
             PictureBox1.Image = Nothing
-            RBmasculino.Checked = False
-            RBfemenino.Checked = False
-
         End If
 
     End Sub
@@ -163,8 +158,6 @@ Public Class GestionEmpleados
             TCorreo.Clear()
             MTelefono.Clear()
             PictureBox1.Image = Nothing
-            RBmasculino.Checked = False
-            RBfemenino.Checked = False
 
         End If
     End Sub
@@ -177,9 +170,16 @@ Public Class GestionEmpleados
     End Sub
 
     Private Sub BBuscar_Click(sender As Object, e As EventArgs) Handles BBuscar.Click
-        If String.IsNullOrWhiteSpace(TNombre.Text) And String.IsNullOrWhiteSpace(TApellido.Text) And String.IsNullOrWhiteSpace(TDni.Text) And String.IsNullOrWhiteSpace(ComboEstado.Text) Then
-            MsgBox("Debe realizar la busqueda por al menos una opcion", vbOKOnly + vbExclamation, "Buscar")
+        Dim emp = New DEmpleado
 
+        If Not String.IsNullOrEmpty(TNombre.Text) And CBnombre.Checked = True Then
+            emp.buscar_nombre(TNombre.Text, dgEmpleados)
+        ElseIf Not String.IsNullOrEmpty(TApellido.Text) And CBapellido.Checked = True Then
+            emp.buscar_apellido(TApellido.Text, dgEmpleados)
+        ElseIf Not String.IsNullOrEmpty(TDni.Text) And CBdni.Checked = True Then
+            emp.buscar_dni(TDni.Text, dgEmpleados)
+        Else
+            emp.buscar_estado(ComboEstado.Text, dgEmpleados)
         End If
     End Sub
 
@@ -215,7 +215,7 @@ Public Class GestionEmpleados
         If FechaValida(DTfecha.Value.Year) = True Then
             ErrorFecha.SetError(sender, "")
         Else
-            ErrorFecha.SetError(sender, "debe ingresar fecha correcta")
+            ErrorFecha.SetError(sender, "debe ingresar una fecha correcta")
         End If
     End Sub
 
@@ -241,9 +241,13 @@ Public Class GestionEmpleados
         ModificarEmpleado.DTFecha.Value = dgEmpleados.Rows(i).Cells(5).Value
         ModificarEmpleado.CBEstado.Text = dgEmpleados.Rows(i).Cells(10).Value
 
-    End Sub
-
-    Private Sub BEliminar_Click(sender As Object, e As EventArgs) Handles BEliminar.Click
+        If dgEmpleados.Rows(i).Cells(4).Value.ToString = "Masculino" Then
+            ModificarEmpleado.RBmasculino.Checked = True
+            ModificarEmpleado.RBfemenino.Checked = False
+        Else
+            ModificarEmpleado.RBfemenino.Checked = True
+            ModificarEmpleado.RBmasculino.Checked = False
+        End If
 
     End Sub
 
@@ -251,4 +255,8 @@ Public Class GestionEmpleados
         ModificarEmpleado.Show()
     End Sub
 
+    Private Sub BEliminar_Click(sender As Object, e As EventArgs) Handles BEliminar.Click
+        emp.baja_empleado(0, dgEmpleados.CurrentRow.Cells(0).Value.ToString)
+        objempleado.cargarGrid(dgEmpleados)
+    End Sub
 End Class

@@ -14,8 +14,6 @@ Public Class ModificarEmpleado
             op = MsgBox("Desea guardar los cambios?", vbYesNo + vbDefaultButton2 + vbInformation, "Modificar")
             If op = DialogResult.Yes Then
                 MsgBox("Los datos se guardaron correctamente", vbOKOnly + vbInformation, "Modificar")
-
-
             End If
         End If
 
@@ -72,7 +70,7 @@ Public Class ModificarEmpleado
 
     Private Sub TCorreo_Validating(sender As Object, e As CancelEventArgs) Handles TCorreo.Validating
         If EmailValido(TCorreo.Text) = False Then
-            ErrorCorreo.SetError(sender, "debe introducir una dirección de correo")
+            ErrorCorreo.SetError(sender, "Debe introducir una dirección de correo")
         Else
             ErrorCorreo.SetError(sender, "")
         End If
@@ -99,7 +97,7 @@ Public Class ModificarEmpleado
         If FechaValida(DTFecha.Value.Year) = True Then
             ErrorFecha.SetError(sender, "")
         Else
-            ErrorFecha.SetError(sender, "debe ingresar fecha correcta")
+            ErrorFecha.SetError(sender, "Debe ingresar fecha correcta")
         End If
     End Sub
 

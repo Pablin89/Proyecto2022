@@ -498,7 +498,7 @@ Partial Class GestionEmpleados
         Me.ComboEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboEstado.Enabled = False
         Me.ComboEstado.FormattingEnabled = True
-        Me.ComboEstado.Items.AddRange(New Object() {"Activo", "Inactivo"})
+        Me.ComboEstado.Items.AddRange(New Object() {"1", "0"})
         Me.ComboEstado.Location = New System.Drawing.Point(889, 92)
         Me.ComboEstado.Name = "ComboEstado"
         Me.ComboEstado.Size = New System.Drawing.Size(302, 28)

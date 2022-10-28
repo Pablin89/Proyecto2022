@@ -266,9 +266,6 @@
     <Compile Include="Presentacion\Usuario_GerenteGral\RestaurarDatos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Usuario_Gerente\.Designer.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Presentacion\Usuario_Gerente\ReporteProductos.Designer.vb">
       <DependentUpon>ReporteProductos.vb</DependentUpon>
     </Compile>

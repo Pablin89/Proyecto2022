@@ -23,6 +23,7 @@ Partial Class ListarProductos
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.LLista = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.BBuscar = New System.Windows.Forms.Button()
@@ -35,9 +36,9 @@ Partial Class ListarProductos
         Me.CBprecio = New System.Windows.Forms.CheckBox()
         Me.CBnombre = New System.Windows.Forms.CheckBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dgvProductos = New System.Windows.Forms.DataGridView()
         Me.Panel1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LLista
@@ -69,7 +70,7 @@ Partial Class ListarProductos
         Me.BBuscar.ForeColor = System.Drawing.SystemColors.ControlText
         Me.BBuscar.Image = Global.Principal.My.Resources.Resources.buscar2
         Me.BBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BBuscar.Location = New System.Drawing.Point(614, 198)
+        Me.BBuscar.Location = New System.Drawing.Point(617, 215)
         Me.BBuscar.Name = "BBuscar"
         Me.BBuscar.Size = New System.Drawing.Size(120, 43)
         Me.BBuscar.TabIndex = 37
@@ -80,20 +81,20 @@ Partial Class ListarProductos
         'ComboCat
         '
         Me.ComboCat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboCat.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboCat.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboCat.FormattingEnabled = True
-        Me.ComboCat.Location = New System.Drawing.Point(907, 157)
+        Me.ComboCat.Location = New System.Drawing.Point(925, 156)
         Me.ComboCat.Name = "ComboCat"
-        Me.ComboCat.Size = New System.Drawing.Size(287, 21)
+        Me.ComboCat.Size = New System.Drawing.Size(287, 26)
         Me.ComboCat.TabIndex = 36
         '
         'TCodigo
         '
         Me.TCodigo.Enabled = False
-        Me.TCodigo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TCodigo.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TCodigo.Location = New System.Drawing.Point(362, 159)
         Me.TCodigo.Name = "TCodigo"
-        Me.TCodigo.Size = New System.Drawing.Size(284, 22)
+        Me.TCodigo.Size = New System.Drawing.Size(284, 24)
         Me.TCodigo.TabIndex = 35
         '
         'CBcodigo
@@ -111,19 +112,19 @@ Partial Class ListarProductos
         'TPrecio
         '
         Me.TPrecio.Enabled = False
-        Me.TPrecio.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TPrecio.Location = New System.Drawing.Point(907, 96)
+        Me.TPrecio.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TPrecio.Location = New System.Drawing.Point(925, 95)
         Me.TPrecio.Name = "TPrecio"
-        Me.TPrecio.Size = New System.Drawing.Size(287, 22)
+        Me.TPrecio.Size = New System.Drawing.Size(287, 24)
         Me.TPrecio.TabIndex = 33
         '
         'TNombre
         '
         Me.TNombre.Enabled = False
-        Me.TNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TNombre.Location = New System.Drawing.Point(362, 96)
         Me.TNombre.Name = "TNombre"
-        Me.TNombre.Size = New System.Drawing.Size(284, 22)
+        Me.TNombre.Size = New System.Drawing.Size(284, 24)
         Me.TNombre.TabIndex = 32
         '
         'CBcat
@@ -164,31 +165,39 @@ Partial Class ListarProductos
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.DataGridView1)
+        Me.Panel1.Controls.Add(Me.dgvProductos)
         Me.Panel1.Location = New System.Drawing.Point(3, 283)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1359, 455)
         Me.Panel1.TabIndex = 38
         '
-        'DataGridView1
+        'dgvProductos
         '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlDark
-        Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.dgvProductos.AllowUserToAddRows = False
+        Me.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvProductos.BackgroundColor = System.Drawing.SystemColors.ControlDark
+        Me.dgvProductos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.DataGridView1.ColumnHeadersHeight = 40
-        Me.DataGridView1.Location = New System.Drawing.Point(0, 3)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(1359, 449)
-        Me.DataGridView1.TabIndex = 1
+        Me.dgvProductos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvProductos.ColumnHeadersHeight = 40
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvProductos.DefaultCellStyle = DataGridViewCellStyle2
+        Me.dgvProductos.Location = New System.Drawing.Point(0, 3)
+        Me.dgvProductos.Name = "dgvProductos"
+        Me.dgvProductos.Size = New System.Drawing.Size(1359, 449)
+        Me.dgvProductos.TabIndex = 1
         '
         'ListarProductos
         '
@@ -214,7 +223,7 @@ Partial Class ListarProductos
         Me.Text = "Lista de Productos"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -231,5 +240,5 @@ Partial Class ListarProductos
     Friend WithEvents CBprecio As CheckBox
     Friend WithEvents CBnombre As CheckBox
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dgvProductos As DataGridView
 End Class

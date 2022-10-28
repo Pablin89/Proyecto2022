@@ -1,5 +1,8 @@
 ﻿Public Class ListarProductos
     Dim objproduto = New NProducto
+    Dim objcategoria = New NCategoria
+    Dim cat = New DCategoria
+
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim ask As MsgBoxResult
 
@@ -53,9 +56,16 @@
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles BBuscar.Click
-        If String.IsNullOrWhiteSpace(TNombre.Text) And String.IsNullOrWhiteSpace(TCodigo.Text) And String.IsNullOrWhiteSpace(TPrecio.Text) And String.IsNullOrWhiteSpace(ComboCat.Text) Then
-            MsgBox("Debe realizar la busqueda por al menos una opcion", vbOKOnly + vbExclamation, "Buscar")
+        Dim prod = New DProducto
 
+        If Not String.IsNullOrEmpty(TNombre.Text) And CBnombre.Checked = True Then
+            prod.buscar_nombre(TNombre.Text, dgvProductos)
+        ElseIf Not String.IsNullOrEmpty(TCodigo.Text) And CBcodigo.Checked = True Then
+            prod.buscar_codigo(TCodigo.Text, dgvProductos)
+        ElseIf Not String.IsNullOrEmpty(TPrecio.Text) And CBprecio.Checked = True Then
+            prod.buscar_precio(TPrecio.Text, dgvProductos)
+        Else
+            prod.buscar_categoria(ComboCat.SelectedValue, dgvProductos)
         End If
     End Sub
 
@@ -87,6 +97,20 @@
     End Sub
 
     Private Sub ListarProductos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        objproduto.cargarGrid(DataGridView1)
+        objproduto.cargarGrid(dgvProductos)
+        comboCategoria()
+    End Sub
+
+    Private Sub comboCategoria()
+        Dim list = cat.getAll_categorias()
+
+        If list.count > 0 Then
+            ComboCat.DisplayMember = "desc_categoria"
+            ComboCat.ValueMember = "id_categoria"
+            ComboCat.SelectedValue = "id_categoria"
+            ComboCat.DataSource = list
+
+        End If
+
     End Sub
 End Class

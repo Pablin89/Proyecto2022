@@ -3,6 +3,7 @@
 Public Class GestionCliente
 
     Dim objCliente = New NCliente
+    Dim cli = New DCliente
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim ask As MsgBoxResult
@@ -112,7 +113,7 @@ Public Class GestionCliente
                 RBmasculino.Checked = False
 
             ElseIf op = DialogResult.Yes And RBfemenino.Checked Then
-                If (objCliente.agregar_cliente(CInt(TDni2.Text), TNombre2.Text, TApellido2.Text, TDireccion.Text, MTelefono.Text, TCorreo.Text, RBfemenino.Text)) Then
+                If (objCliente.agregar_cliente(TDni2.Text, TNombre2.Text, TApellido2.Text, TDireccion.Text, MTelefono.Text, RBfemenino.Text, TCorreo.Text)) Then
                     MsgBox("El cliente se registro correctamente", vbOKOnly + vbInformation, "Confirmar")
 
                     objCliente.cargarGrid(dgvCliente)
@@ -157,10 +158,17 @@ Public Class GestionCliente
     End Sub
 
     Private Sub BBuscar_Click(sender As Object, e As EventArgs) Handles BBuscar.Click
-        If String.IsNullOrWhiteSpace(TNombre.Text) And String.IsNullOrWhiteSpace(TApellido.Text) And String.IsNullOrWhiteSpace(TDni.Text) And EmailValido(TCorreo2.Text) = False Then
-            MsgBox("Debe realizar la busqueda por al menos una opcion", vbOKOnly + vbExclamation, "Buscar")
 
+        If Not String.IsNullOrEmpty(TNombre.Text) And CBnombre.Checked = True Then
+            cli.buscar_nombre(TNombre.Text, dgvCliente)
+        ElseIf Not String.IsNullOrEmpty(TApellido.Text) And CBapellido.Checked = True Then
+            cli.buscar_apellido(TApellido.Text, dgvCliente)
+        ElseIf Not String.IsNullOrEmpty(TDni.Text) And CBdni.Checked = True Then
+            cli.buscar_dni(TDni.Text, dgvCliente)
+        Else
+            cli.buscar_correo(TCorreo2.Text, dgvCliente)
         End If
+
     End Sub
 
     Private Sub GestionCliente_Closed(sender As Object, e As EventArgs) Handles Me.Closed
@@ -177,14 +185,6 @@ Public Class GestionCliente
     Private Shared Function EmailValido(strEmail As String) As Boolean
         Return System.Text.RegularExpressions.Regex.IsMatch(strEmail, "^(?("")("".+?""@)|(([0-9a-zA-Z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-zA-Z])@))" & "(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,6}))$")
     End Function
-
-    Private Sub TCorreo2_Validating(sender As Object, e As CancelEventArgs) Handles TCorreo2.Validating
-        If EmailValido(TCorreo.Text) = False Then
-            ErrorCorreo2.SetError(sender, "debe introducir una dirección de correo")
-        Else
-            ErrorCorreo2.SetError(sender, "")
-        End If
-    End Sub
 
     Private Sub BVentas_Click(sender As Object, e As EventArgs) Handles BVentas.Click
         Dim ask As MsgBoxResult
@@ -216,9 +216,11 @@ Public Class GestionCliente
         ModificarCliente.MTelefono.Text = dgvCliente.Rows(i).Cells(5).Value
 
         If dgvCliente.Rows(i).Cells(6).Value.ToString = "Masculino" Then
-            RBmasculino.Checked = True
+            ModificarCliente.RBmasculino.Checked = True
+            ModificarCliente.RBfemenino.Checked = False
         Else
-            RBfemenino.Checked = True
+            ModificarCliente.RBfemenino.Checked = True
+            ModificarCliente.RBmasculino.Checked = False
         End If
 
     End Sub
@@ -226,4 +228,5 @@ Public Class GestionCliente
     Private Sub BModificar_Click(sender As Object, e As EventArgs) Handles BModificar.Click
         ModificarCliente.Show()
     End Sub
+
 End Class

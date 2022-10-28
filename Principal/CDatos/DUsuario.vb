@@ -17,4 +17,27 @@
         Return listaEmpleados
 
     End Function
+
+    Function login(usuario As String, pass As String) As Boolean
+        Try
+            Dim querry As IQueryable(Of Usuario) = From u In ctx.Usuario Where u.nombre_usuario = usuario And u.contraseña = pass Select u
+
+            If querry.Count() = 0 Then
+                Return False
+            Else
+                Return True
+            End If
+        Catch ex As Exception
+            Return False
+        End Try
+
+    End Function
+
+    Function login_id(usuario As String, pass As String) As List(Of Usuario)
+        Dim querry As IQueryable(Of Usuario) = From u In ctx.Usuario Where u.nombre_usuario = usuario And u.contraseña = pass Select u
+
+        Dim lista = querry.ToList
+
+        Return lista
+    End Function
 End Class

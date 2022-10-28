@@ -39,12 +39,10 @@
         grid.Columns(6).HeaderText = "Dirección"
         grid.Columns(7).HeaderText = "Correo"
         grid.Columns(8).HeaderText = "Telefono"
-        grid.Columns(9).HeaderText = "Imagen"
-        grid.Columns(10).HeaderText = "Estado"
-        grid.Columns(11).HeaderText = ""
+        grid.Columns(9).HeaderText = "Estado"
+        grid.Columns(10).Visible = False
+        grid.Columns(11).Visible = False
         grid.Columns(12).Visible = False
-        grid.Columns(13).Visible = False
-        grid.Columns(0).Visible = False
 
     End Sub
 

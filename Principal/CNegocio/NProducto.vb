@@ -12,7 +12,6 @@
             .estado = estado
         End With
 
-
         Dim objproductos = New DProducto
 
         If objproductos.DGuardar_producto(oproductos) Then
@@ -23,9 +22,9 @@
         End If
     End Function
     Public Sub cargarGrid(ByVal grid As DataGridView)
-        Dim producto As DProducto = New DProducto
-        grid.DataSource = producto.getAll_productos()
+        Dim oproducto As DProducto = New DProducto
 
+        grid.DataSource = oproducto.getAll_productos()
         grid.Columns(0).HeaderText = ""
         grid.Columns(1).HeaderText = "Nombre"
         grid.Columns(2).HeaderText = "Descripcion"
@@ -36,15 +35,14 @@
         grid.Columns(7).HeaderText = "Estado"
         grid.Columns(8).Visible = False
         grid.Columns(9).Visible = False
-
         grid.Columns(0).Visible = False
-
 
     End Sub
     Public Sub cargarGrid_facturacion(ByVal grid As DataGridView)
-        Dim producto As DProducto = New DProducto
-        grid.DataSource = producto.getAll_productos()
 
+        Dim producto As DProducto = New DProducto
+
+        grid.DataSource = producto.getAll_productos()
         grid.Columns(0).HeaderText = ""
         grid.Columns(1).HeaderText = "Producto"
         grid.Columns(2).HeaderText = "Descripcion"
@@ -55,9 +53,8 @@
         grid.Columns(7).Visible = False
         grid.Columns(8).Visible = False
         grid.Columns(9).Visible = False
-        grid.Columns(0).Visible = False
-
-
     End Sub
+
+
 
 End Class

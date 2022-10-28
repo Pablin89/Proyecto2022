@@ -41,7 +41,9 @@ Partial Class EditarEmpleado
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TDni = New System.Windows.Forms.TextBox()
         Me.ErrorContra = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.ErrorRepContra = New System.Windows.Forms.ErrorProvider(Me.components)
         CType(Me.ErrorContra, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ErrorRepContra, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TUsuario
@@ -228,6 +230,10 @@ Partial Class EditarEmpleado
         '
         Me.ErrorContra.ContainerControl = Me
         '
+        'ErrorRepContra
+        '
+        Me.ErrorRepContra.ContainerControl = Me
+        '
         'EditarEmpleado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -256,6 +262,7 @@ Partial Class EditarEmpleado
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Editar Empleado"
         CType(Me.ErrorContra, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ErrorRepContra, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -279,4 +286,5 @@ Partial Class EditarEmpleado
     Friend WithEvents Label3 As Label
     Friend WithEvents TDni As TextBox
     Friend WithEvents ErrorContra As ErrorProvider
+    Friend WithEvents ErrorRepContra As ErrorProvider
 End Class

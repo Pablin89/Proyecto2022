@@ -2,6 +2,7 @@
 
 Public Class ModificarCliente
     Dim objcliente = New NCliente
+
     Private Sub SoloNumeros_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TDni2.KeyPress
         If (Char.IsNumber(e.KeyChar)) Then
             e.Handled = False
@@ -66,7 +67,7 @@ Public Class ModificarCliente
     End Sub
 
     Private Sub ModificarCliente_Closed(sender As Object, e As EventArgs) Handles Me.Closed
-        Cajeros.Show()
+        GestionCliente.Show()
     End Sub
 
     Private Sub TCorreo2_Validating(sender As Object, e As CancelEventArgs) Handles TCorreo2.Validating

@@ -20,11 +20,10 @@ Partial Public Class Empleado
     Public Property direccion As String
     Public Property correo As String
     Public Property telefono As String
-    Public Property imagen As Byte()
     Public Property estado As Integer
-    Public Property usuario_id As Nullable(Of Integer)
+    Public Property id_usuario As Nullable(Of Integer)
 
-    Public Overridable Property Factura As ICollection(Of Factura) = New HashSet(Of Factura)
     Public Overridable Property Usuario As Usuario
+    Public Overridable Property Factura As ICollection(Of Factura) = New HashSet(Of Factura)
 
 End Class

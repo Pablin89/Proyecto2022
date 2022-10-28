@@ -24,7 +24,7 @@ Partial Class GestionProductos
     Private Sub InitializeComponent()
         Me.Productos = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dgvProductos = New System.Windows.Forms.DataGridView()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.BModificar = New System.Windows.Forms.Button()
         Me.BEliminar = New System.Windows.Forms.Button()
@@ -65,7 +65,7 @@ Partial Class GestionProductos
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Productos.SuspendLayout()
         Me.TabPage1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.TabPage3.SuspendLayout()
@@ -91,7 +91,7 @@ Partial Class GestionProductos
         '
         'TabPage1
         '
-        Me.TabPage1.Controls.Add(Me.DataGridView1)
+        Me.TabPage1.Controls.Add(Me.dgvProductos)
         Me.TabPage1.Controls.Add(Me.Panel2)
         Me.TabPage1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.TabPage1.Location = New System.Drawing.Point(4, 76)
@@ -102,16 +102,16 @@ Partial Class GestionProductos
         Me.TabPage1.Text = "Editar Producto"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
-        'DataGridView1
+        'dgvProductos
         '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(0, 273)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(1358, 315)
-        Me.DataGridView1.TabIndex = 8
+        Me.dgvProductos.AllowUserToAddRows = False
+        Me.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvProductos.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
+        Me.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvProductos.Location = New System.Drawing.Point(0, 273)
+        Me.dgvProductos.Name = "dgvProductos"
+        Me.dgvProductos.Size = New System.Drawing.Size(1358, 315)
+        Me.dgvProductos.TabIndex = 8
         '
         'Panel2
         '
@@ -558,7 +558,7 @@ Partial Class GestionProductos
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Productos.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
@@ -584,7 +584,7 @@ Partial Class GestionProductos
     Friend WithEvents CBnombre As CheckBox
     Friend WithEvents BBuscar As Button
     Friend WithEvents Label1 As Label
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dgvProductos As DataGridView
     Friend WithEvents Label2 As Label
     Friend WithEvents Button3 As Button
     Friend WithEvents LPrecio As Label

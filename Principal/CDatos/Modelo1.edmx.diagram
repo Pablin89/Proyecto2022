@@ -17,9 +17,9 @@
         <AssociationConnector Association="ProyectoModel1.fk_id_producto" ManuallyRouted="false" />
         <AssociationConnector Association="ProyectoModel1.fk_nro_factura" ManuallyRouted="false" />
         <AssociationConnector Association="ProyectoModel1.fk_perfil_id" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="ProyectoModel1.Empleado" Width="1.5" PointX="5.25" PointY="1" />
-        <AssociationConnector Association="ProyectoModel1.fk_id_empleado" />
+        <EntityTypeShape EntityType="ProyectoModel1.Empleado" Width="1.5" PointX="5.25" PointY="1.125" />
         <AssociationConnector Association="ProyectoModel1.fk_usuario_id" />
+        <AssociationConnector Association="ProyectoModel1.fk_id_empleado" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

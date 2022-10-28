@@ -106,10 +106,10 @@ Public Class PermisosUsuario
     Private Sub CBnombre_CheckedChanged(sender As Object, e As EventArgs) Handles CBnombre.CheckedChanged
         If CBnombre.Checked = True Then
             CBnombre.Font = New Font(CBnombre.Font.Bold, 13)
-            TNombre.Enabled = True
+            TNombre2.Enabled = True
         Else
             CBnombre.Font = New Font(CBnombre.Font.Name, 12)
-            TNombre.Enabled = False
+            TNombre2.Enabled = False
         End If
     End Sub
 
@@ -161,22 +161,38 @@ Public Class PermisosUsuario
     End Sub
 
     Private Sub PermisosUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        objempleado.cargarGrid(DataGridView1)
+        objempleado.cargarGrid(dgvEmpleados)
     End Sub
 
-    Private Sub DataGridView1_Click(sender As Object, e As EventArgs) Handles DataGridView1.Click
-        If DataGridView1.CurrentRow IsNot Nothing Then
+    Private Sub DataGridView1_Click(sender As Object, e As EventArgs) Handles dgvEmpleados.Click
+        If dgvEmpleados.CurrentRow IsNot Nothing Then
             BEditarEmpleado.Enabled = True
         Else
             BEditarEmpleado.Enabled = False
         End If
 
         Dim i As Integer
-        i = DataGridView1.CurrentRow.Index
-        EditarEmpleado.TNombre.Text = DataGridView1.Rows(i).Cells(2).Value.ToString
-        EditarEmpleado.TApellido.Text = DataGridView1.Rows(i).Cells(3).Value.ToString
-        EditarEmpleado.TDni.Text = DataGridView1.Rows(i).Cells(1).Value.ToString
+        i = dgvEmpleados.CurrentRow.Index
+        EditarEmpleado.TNombre.Text = dgvEmpleados.Rows(i).Cells(2).Value.ToString
+        EditarEmpleado.TApellido.Text = dgvEmpleados.Rows(i).Cells(3).Value.ToString
+        EditarEmpleado.TDni.Text = dgvEmpleados.Rows(i).Cells(1).Value.ToString
 
 
+    End Sub
+
+    Private Sub BBuscar_Click(sender As Object, e As EventArgs) Handles BBuscar.Click
+        Dim emp = New DEmpleado
+
+        If Not String.IsNullOrEmpty(TNombre2.Text) And CBnombre.Checked = True Then
+            emp.buscar_nombre(TNombre2.Text, dgvEmpleados)
+
+        ElseIf Not String.IsNullOrEmpty(TApellido.Text) And CBapellido.Checked = True Then
+            emp.buscar_apellido(TApellido.Text, dgvEmpleados)
+
+        ElseIf Not String.IsNullOrEmpty(TDni.Text) And CBdni.Checked = True Then
+            emp.buscar_dni(TDni.Text, dgvEmpleados)
+        Else
+            emp.buscar_estado(ComboEstado.Text, dgvEmpleados)
+        End If
     End Sub
 End Class

@@ -1,5 +1,6 @@
 ﻿Public Class Facturacion
     Dim objproducto = New NProducto
+    Dim cliente = New DCliente
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim ask As MsgBoxResult
 
@@ -49,8 +50,6 @@
             TDniCli.Clear()
             TTelefono.Clear()
             TTotal.Clear()
-
-
         End If
 
     End Sub
@@ -68,10 +67,15 @@
         Cajeros.Show()
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs)
+    Private Sub BBuscar_Click(sender As Object, e As EventArgs) Handles BBuscar.Click
+        Dim lista As List(Of Cliente) = cliente.buscar_cliente(TCliente.Text)
+        Dim datos = lista.ToList
+        Dim u = datos(0)
 
-        'MDIAgregarCliente.Show()
+        TDniCli.Text = u.dni
+        TNombreCli.Text = u.nombre
+        TApellidoCli.Text = u.apellido
+        TTelefono.Text = u.telefono
+
     End Sub
-
-
 End Class

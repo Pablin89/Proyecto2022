@@ -1,4 +1,5 @@
 ﻿Public Class Principal
+    Dim usuario = New DUsuario
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         LUsuario.Visible = False
@@ -34,24 +35,23 @@
 
     Private Sub BSesion_Click(sender As Object, e As EventArgs) Handles BSesion.Click
 
+        Dim isValidLogin As Boolean = usuario.login(TUsuario.Text, TContraseña.Text)
+        Dim datos As List(Of Usuario) = usuario.login_id(TUsuario.Text, TContraseña.Text)
 
-        If TUsuario.Text = "Encargado" Then
-            Me.Hide()
-            Encargado.Show()
-        ElseIf TUsuario.Text = "Gerente" Then
-            Me.Hide()
-            Gerente.Show()
-        ElseIf TUsuario.Text = "Cajero" Then
-            Me.Hide()
+        Dim lista = datos.ToList
+        Dim c = lista(0)
+
+        If isValidLogin = True And c.perfil_id = 1 Then
             Cajeros.Show()
-        ElseIf TUsuario.Text = "SuperAdmin" Then
-            Me.Hide()
+        ElseIf isValidLogin = True And c.perfil_id = 2 Then
+            Encargado.Show()
+        ElseIf isValidLogin = True And c.perfil_id = 3 Then
+            Gerente.Show()
+        ElseIf isValidLogin = True And c.perfil_id = 4 Then
             GerenteGral.Show()
         Else
-            MsgBox("El usuario o contraseña ingresados son incorrectos. Intente nuevamente o pongase en contacto con el administrador del sistema.", MsgBoxStyle.Critical, "Problema de inicio de sesión")
-
+            MessageBox.Show("Usuario o Contraseña incorrectos!, por favor verifique.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End If
-
 
     End Sub
 End Class

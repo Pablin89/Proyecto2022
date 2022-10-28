@@ -49,9 +49,8 @@
           <Property Name="direccion" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="correo" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="telefono" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="imagen" Type="image" />
           <Property Name="estado" Type="int" Nullable="false" />
-          <Property Name="usuario_id" Type="int" />
+          <Property Name="id_usuario" Type="int" />
         </EntityType>
         <EntityType Name="Factura">
           <Key>
@@ -172,7 +171,7 @@
               <PropertyRef Name="Id_usuario" />
             </Principal>
             <Dependent Role="Empleado">
-              <PropertyRef Name="usuario_id" />
+              <PropertyRef Name="id_usuario" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -389,13 +388,13 @@
             <End Role="Usuario" EntitySet="Usuario" />
           </AssociationSet>
           <EntitySet Name="Empleado" EntityType="ProyectoModel1.Empleado" />
-          <AssociationSet Name="fk_id_empleado" Association="ProyectoModel1.fk_id_empleado">
-            <End Role="Empleado" EntitySet="Empleado" />
-            <End Role="Factura" EntitySet="Factura" />
-          </AssociationSet>
           <AssociationSet Name="fk_usuario_id" Association="ProyectoModel1.fk_usuario_id">
             <End Role="Usuario" EntitySet="Usuario" />
             <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="fk_id_empleado" Association="ProyectoModel1.fk_id_empleado">
+            <End Role="Empleado" EntitySet="Empleado" />
+            <End Role="Factura" EntitySet="Factura" />
           </AssociationSet>
           </EntityContainer>
         <EntityType Name="Empleado">
@@ -411,12 +410,23 @@
           <Property Name="direccion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="correo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="telefono" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="estado" Type="Int32" Nullable="false" />
-          <Property Name="usuario_id" Type="Int32" />
-          <NavigationProperty Name="Factura" Relationship="ProyectoModel1.fk_id_empleado" FromRole="Empleado" ToRole="Factura" />
+          <Property Name="id_usuario" Type="Int32" />
           <NavigationProperty Name="Usuario" Relationship="ProyectoModel1.fk_usuario_id" FromRole="Empleado" ToRole="Usuario" />
+          <NavigationProperty Name="Factura" Relationship="ProyectoModel1.fk_id_empleado" FromRole="Empleado" ToRole="Factura" />
         </EntityType>
+        <Association Name="fk_usuario_id">
+          <End Type="ProyectoModel1.Usuario" Role="Usuario" Multiplicity="0..1" />
+          <End Type="ProyectoModel1.Empleado" Role="Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id_usuario" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="id_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="fk_id_empleado">
           <End Type="ProyectoModel1.Empleado" Role="Empleado" Multiplicity="1" />
           <End Type="ProyectoModel1.Factura" Role="Factura" Multiplicity="*" />
@@ -426,18 +436,6 @@
             </Principal>
             <Dependent Role="Factura">
               <PropertyRef Name="id_empleado" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_usuario_id">
-          <End Type="ProyectoModel1.Usuario" Role="Usuario" Multiplicity="0..1" />
-          <End Type="ProyectoModel1.Empleado" Role="Empleado" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Usuario">
-              <PropertyRef Name="Id_usuario" />
-            </Principal>
-            <Dependent Role="Empleado">
-              <PropertyRef Name="usuario_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -527,9 +525,8 @@
           <EntitySetMapping Name="Empleado">
             <EntityTypeMapping TypeName="ProyectoModel1.Empleado">
               <MappingFragment StoreEntitySet="Empleado">
-                <ScalarProperty Name="usuario_id" ColumnName="usuario_id" />
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
                 <ScalarProperty Name="estado" ColumnName="estado" />
-                <ScalarProperty Name="imagen" ColumnName="imagen" />
                 <ScalarProperty Name="telefono" ColumnName="telefono" />
                 <ScalarProperty Name="correo" ColumnName="correo" />
                 <ScalarProperty Name="direccion" ColumnName="direccion" />
