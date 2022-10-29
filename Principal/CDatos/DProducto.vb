@@ -33,4 +33,32 @@
     Public Sub buscar_categoria(ByVal cat As String, ByVal grid As DataGridView)
         grid.DataSource = ctx.Producto.SqlQuery("SELECT * FROM Producto WHERE categoria_id like '%" + cat + "%'").ToList
     End Sub
+
+    Function baja_producto(estado As String, id As String) As Boolean
+
+        Try
+            Dim act = (From p In ctx.Producto Where p.Id_producto = id).Single()
+            act.estado = estado
+            ctx.SaveChanges()
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+
+    Function modificar_producto(nombre As String, descripcion As String, codigo As Integer, precio As Decimal, stock As Integer, cat As Integer, estado As Integer, id As String) As Boolean
+        Try
+            Dim act = (From p In ctx.Producto Where p.Id_producto = id).ToList()(0)
+            act.nombre = nombre
+            act.descripcion = descripcion
+            act.codigo = codigo
+            act.precio = precio
+            act.stock = stock
+            act.categoria_id = cat
+            ctx.SaveChanges()
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
 End Class

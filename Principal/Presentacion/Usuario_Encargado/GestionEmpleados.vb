@@ -239,7 +239,7 @@ Public Class GestionEmpleados
         ModificarEmpleado.TCorreo.Text = dgEmpleados.Rows(i).Cells(7).Value
         ModificarEmpleado.MTelefono.Text = dgEmpleados.Rows(i).Cells(8).Value
         ModificarEmpleado.DTFecha.Value = dgEmpleados.Rows(i).Cells(5).Value
-        ModificarEmpleado.CBEstado.Text = dgEmpleados.Rows(i).Cells(10).Value
+        ModificarEmpleado.CBEstado.Text = dgEmpleados.Rows(i).Cells(9).Value
 
         If dgEmpleados.Rows(i).Cells(4).Value.ToString = "Masculino" Then
             ModificarEmpleado.RBmasculino.Checked = True
@@ -256,7 +256,13 @@ Public Class GestionEmpleados
     End Sub
 
     Private Sub BEliminar_Click(sender As Object, e As EventArgs) Handles BEliminar.Click
-        emp.baja_empleado(0, dgEmpleados.CurrentRow.Cells(0).Value.ToString)
-        objempleado.cargarGrid(dgEmpleados)
+        Dim ask As MsgBoxResult
+        ask = MsgBox("Estas seguro de dar de baja al producto", vbYesNo + vbInformation, "Eliminar")
+
+        If ask = MsgBoxResult.Yes Then
+            emp.baja_empleado(0, dgEmpleados.CurrentRow.Cells(0).Value.ToString)
+            objempleado.cargarGrid(dgEmpleados)
+        End If
+
     End Sub
 End Class

@@ -25,7 +25,7 @@ Public Class EditarEmpleado
         Else
             op = MsgBox("¿Desea guardar los cambios?", vbYesNo + vbDefaultButton2 + vbInformation, "Confirmar")
             If op = DialogResult.Yes Then
-                If (objusuario.agregar_usuario(TUsuario.Text, TContraseña.Text, CBperfil.SelectedValue)) Then
+                If (objusuario.agregar_usuario(TUsuario.Text, TContraseña.Text, CBperfil.SelectedValue, PermisosUsuario.dgvEmpleados.CurrentRow.Cells(0).Value)) Then
                     MsgBox("Los cambios se realizaron correctamente", vbOKOnly + vbDefaultButton1 + vbInformation, "Cambios realizados")
                 End If
                 TUsuario.Clear()

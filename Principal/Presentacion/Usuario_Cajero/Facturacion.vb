@@ -1,6 +1,9 @@
 ﻿Public Class Facturacion
+    Dim lista As List(Of Cliente)
     Dim objproducto = New NProducto
     Dim cliente = New DCliente
+    Dim prod = New DProducto
+    Dim us = New DUsuario
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim ask As MsgBoxResult
 
@@ -68,14 +71,52 @@
     End Sub
 
     Private Sub BBuscar_Click(sender As Object, e As EventArgs) Handles BBuscar.Click
-        Dim lista As List(Of Cliente) = cliente.buscar_cliente(TCliente.Text)
-        Dim datos = lista.ToList
-        Dim u = datos(0)
 
-        TDniCli.Text = u.dni
-        TNombreCli.Text = u.nombre
-        TApellidoCli.Text = u.apellido
-        TTelefono.Text = u.telefono
+        If cliente.buscar_cliente(TCliente.Text).Equals(False) Then
+            Dim ask As MsgBoxResult
+            MsgBox("El cliente no esta registrado", vbOKOnly + vbCritical, "Buscar Cliente")
+
+            ask = MsgBox("Desea registrar al cliente?", vbYesNo + vbInformation, "Buscar Cliente")
+            If ask = MsgBoxResult.Yes Then
+                Me.Close()
+                GestionCliente.Show()
+            End If
+
+        Else
+
+            lista = cliente.datos_cliente(TCliente.Text)
+            Dim datos = lista.ToList
+            Dim u = datos(0)
+
+
+            TDniCli.Text = u.dni
+            TNombreCli.Text = u.nombre
+            TApellidoCli.Text = u.apellido
+            TTelefono.Text = u.telefono
+        End If
+
+
+
+
+    End Sub
+
+    Private Sub TProducto_TextChanged(sender As Object, e As EventArgs) Handles TProducto.TextChanged
+        prod.buscar_nombre(TProducto.Text, dgvProductos)
+    End Sub
+
+    Private Sub BAgregar_Click(sender As Object, e As EventArgs) Handles BAgregar.Click
+
+        Dim i As Integer
+        i = dgvProductos.CurrentRow.Index
+
+        MsgBox("Cantidad supera al stock")
+        Dim stock = dgvProductos.Rows(i).Cells(5).Value
+
+        If (CInt(TCantidad.Text) > stock) Then
+            MsgBox("Cantidad supera al stock")
+            Exit Sub
+
+        End If
 
     End Sub
 End Class

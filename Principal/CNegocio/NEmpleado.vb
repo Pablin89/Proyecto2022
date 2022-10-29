@@ -42,7 +42,7 @@
         grid.Columns(9).HeaderText = "Estado"
         grid.Columns(10).Visible = False
         grid.Columns(11).Visible = False
-        grid.Columns(12).Visible = False
+
 
     End Sub
 

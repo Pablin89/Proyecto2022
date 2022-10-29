@@ -2,6 +2,7 @@
     Dim objproducto = New NProducto
     Dim objcategoria = New NCategoria
     Dim cat = New DCategoria
+    Dim prod = New DProducto
 
     Private Sub SoloNumeros_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TStock.KeyPress, TPrecioProd.KeyPress, TCodigoProd.KeyPress, TCodigo.KeyPress, TPrecio.KeyPress
         If (Char.IsNumber(e.KeyChar)) Then
@@ -215,5 +216,16 @@
 
     Private Sub BModificar_Click(sender As Object, e As EventArgs) Handles BModificar.Click
         ModificarProducto.Show()
+    End Sub
+
+    Private Sub BEliminar_Click(sender As Object, e As EventArgs) Handles BEliminar.Click
+        Dim ask As MsgBoxResult
+        ask = MsgBox("Estas seguro de dar de baja al producto", vbYesNo + vbInformation, "Eliminar")
+
+        If ask = MsgBoxResult.Yes Then
+            prod.baja_producto(0, dgvProductos.CurrentRow.Cells(0).Value.ToString)
+            objproducto.cargarGrid(dgvProductos)
+        End If
+
     End Sub
 End Class

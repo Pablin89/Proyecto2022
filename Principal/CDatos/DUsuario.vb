@@ -33,11 +33,17 @@
 
     End Function
 
-    Function login_id(usuario As String, pass As String) As List(Of Usuario)
-        Dim querry As IQueryable(Of Usuario) = From u In ctx.Usuario Where u.nombre_usuario = usuario And u.contraseña = pass Select u
+    Function login_id(usuario As String, pass As String) As Integer
+        Try
+            Dim querry As IQueryable(Of Usuario) = From us In ctx.Usuario Where us.nombre_usuario = usuario And us.contraseña = pass Select us
 
-        Dim lista = querry.ToList
+            Dim lista As List(Of Usuario) = querry.ToList
+            Dim datos = lista.ToList(0)
 
-        Return lista
+            Return datos.perfil_id
+
+        Catch ex As Exception
+            Return 0
+        End Try
     End Function
 End Class

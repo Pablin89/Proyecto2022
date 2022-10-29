@@ -2,7 +2,7 @@
 
 Public Class ModificarCliente
     Dim objcliente = New NCliente
-
+    Dim cli = New DCliente
     Private Sub SoloNumeros_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TDni2.KeyPress
         If (Char.IsNumber(e.KeyChar)) Then
             e.Handled = False
@@ -37,21 +37,33 @@ Public Class ModificarCliente
             MsgBox("Debe completar todos los campos", vbOKOnly + vbDefaultButton1 + vbCritical, "Modificar")
         Else
             op = MsgBox("¿Desea modificar los datos del Cliente?", vbYesNo + vbDefaultButton2 + vbInformation, "Modificar")
-            If op = DialogResult.Yes Then
-                If (objcliente.actualizar_cliente(TDni2.Text, TNombre2.Text, TApellido2.Text, TDireccion.Text, MTelefono.Text, TCorreo2.Text, RBmasculino.Text)) Then
-                    MsgBox("Los datos se actualizaron correctamente", vbOKOnly + vbInformation, "Modificar")
+            If op = DialogResult.Yes And RBmasculino.Checked = True Then
+                If (cli.modificar_cliente(TDni2.Text, TNombre2.Text, TApellido2.Text, TDireccion.Text, MTelefono.Text, RBmasculino.Text, TCorreo2.Text, GestionCliente.dgvCliente.CurrentRow.Cells(0).Value)) Then
+                    op = MsgBox("Los datos se actualizaron correctamente", vbOKOnly + vbInformation, "Modificar")
+                    If op = MsgBoxResult.Ok Then
+                        Me.Close()
+                        GestionCliente.Show()
+                        objcliente.cargarGrid(GestionCliente.dgvCliente)
+                    End If
+                Else
+                    MsgBox("Los datos no se pudieron modificar", vbOKOnly + vbCritical, "Modificar")
+                End If
+            ElseIf op = MsgBoxResult.Yes And RBfemenino.Checked = True Then
+
+                If (cli.modificar_cliente(TDni2.Text, TNombre2.Text, TApellido2.Text, TDireccion.Text, MTelefono.Text, RBfemenino.Text, TCorreo2.Text, GestionCliente.dgvCliente.CurrentRow.Cells(0).Value)) Then
+                    op = MsgBox("Los datos se actualizaron correctamente", vbOKOnly + vbInformation, "Modificar")
+                    If op = MsgBoxResult.Ok Then
+                        Me.Close()
+                        GestionCliente.Show()
+                        objcliente.cargarGrid(GestionCliente.dgvCliente)
+                    End If
                 Else
                     MsgBox("Los datos no se pudieron modificar", vbOKOnly + vbCritical, "Modificar")
                 End If
 
-                TDni2.Clear()
-                    TNombre2.Clear()
-                    TApellido2.Clear()
-                    TDireccion.Clear()
-                    TCorreo2.Clear()
-                    MTelefono.Clear()
-                End If
+
             End If
+        End If
 
     End Sub
 

@@ -45,5 +45,22 @@
             Return False
         End Try
     End Function
-
+    Function modificar_empleado(ByVal dni As Integer, ByVal nombre As String, ByVal apellido As String, ByVal genero As String, ByVal fecha As Date, ByVal direccion As String, ByVal correo As String, ByVal telefono As String, ByVal estado As Integer, id As String) As Boolean
+        Try
+            Dim act = (From e In ctx.Empleado Where e.Id_empleado = id).ToList()(0)
+            act.dni_empleado = dni
+            act.nombre_empleado = nombre
+            act.apellido_empleado = apellido
+            act.genero = genero
+            act.fecha_nacimiento = fecha
+            act.direccion = direccion
+            act.correo = correo
+            act.telefono = telefono
+            act.estado = estado
+            ctx.SaveChanges()
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
 End Class

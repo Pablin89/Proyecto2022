@@ -1,5 +1,7 @@
 ﻿Public Class ModificarProducto
     Dim cat = New DCategoria
+    Dim prod = New DProducto
+    Dim objprod = New NProducto
     Private Sub SoloNumeros_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TStock.KeyPress, TPrecioProd.KeyPress
         If (Char.IsNumber(e.KeyChar)) Then
             e.Handled = False
@@ -34,7 +36,15 @@
         Else
             op = MsgBox("¿Desea modificar los datos del producto?", vbYesNo + vbDefaultButton2 + vbInformation, "Modificar")
             If op = DialogResult.Yes Then
-                MsgBox("Los datos se guardaron correctamente", vbOKOnly + vbInformation, "Confirmar")
+                prod.modificar_producto(TNombreProd.Text, TDescripcion.Text, TCodigoProd.Text, TPrecioProd.Text, TStock.Text, CBcategoria.SelectedValue, 1, GestionProductos.dgvProductos.CurrentRow.Cells(0).Value)
+                op = MsgBox("Los datos se guardaron correctamente", vbOKOnly + vbInformation, "Confirmar")
+                If op = MsgBoxResult.Ok Then
+                    Me.Close()
+                    GestionProductos.Show()
+                    objprod.cargarGrid(GestionProductos.dgvProductos)
+
+                End If
+
 
             End If
 

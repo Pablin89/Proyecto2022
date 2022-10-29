@@ -21,9 +21,8 @@ Partial Public Class Empleado
     Public Property correo As String
     Public Property telefono As String
     Public Property estado As Integer
-    Public Property id_usuario As Nullable(Of Integer)
 
-    Public Overridable Property Usuario As Usuario
+    Public Overridable Property Usuario As ICollection(Of Usuario) = New HashSet(Of Usuario)
     Public Overridable Property Factura As ICollection(Of Factura) = New HashSet(Of Factura)
 
 End Class

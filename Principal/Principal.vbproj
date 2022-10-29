@@ -110,10 +110,12 @@
     </Compile>
     <Compile Include="CDatos\DCategoria.vb" />
     <Compile Include="CDatos\DCliente.vb" />
+    <Compile Include="CDatos\DDetalle.vb" />
     <Compile Include="CDatos\DEmpleado.vb" />
     <Compile Include="CDatos\Detalle_venta.vb">
       <DependentUpon>Modelo1.tt</DependentUpon>
     </Compile>
+    <Compile Include="CDatos\DFactura.vb" />
     <Compile Include="CDatos\DPerfil.vb" />
     <Compile Include="CDatos\DProducto.vb" />
     <Compile Include="CDatos\DUsuario.vb" />
@@ -149,7 +151,9 @@
     </Compile>
     <Compile Include="CNegocio\NCategoria.vb" />
     <Compile Include="CNegocio\NCliente.vb" />
+    <Compile Include="CNegocio\NDetalle.vb" />
     <Compile Include="CNegocio\NEmpleado.vb" />
+    <Compile Include="CNegocio\NFactura.vb" />
     <Compile Include="CNegocio\NProducto.vb" />
     <Compile Include="CNegocio\NUsuario.vb" />
     <Compile Include="Presentacion\Usuario_Cajero\Cajeros.Designer.vb">

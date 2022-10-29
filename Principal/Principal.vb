@@ -1,5 +1,6 @@
 ﻿Public Class Principal
-    Dim usuario = New DUsuario
+    Dim us = New DUsuario
+    Dim ctx As ProyectoEntities8 = New ProyectoEntities8
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         LUsuario.Visible = False
@@ -35,22 +36,19 @@
 
     Private Sub BSesion_Click(sender As Object, e As EventArgs) Handles BSesion.Click
 
-        Dim isValidLogin As Boolean = usuario.login(TUsuario.Text, TContraseña.Text)
-        Dim datos As List(Of Usuario) = usuario.login_id(TUsuario.Text, TContraseña.Text)
+        Dim isValidLogin As Boolean = us.login(TUsuario.Text, TContraseña.Text)
+        Dim datos As Integer = us.login_id(TUsuario.Text, TContraseña.Text)
 
-        Dim lista = datos.ToList
-        Dim c = lista(0)
-
-        If isValidLogin = True And c.perfil_id = 1 Then
+        If isValidLogin = True And datos = 1 Then
             Cajeros.Show()
-        ElseIf isValidLogin = True And c.perfil_id = 2 Then
+        ElseIf isValidLogin = True And datos = 2 Then
             Encargado.Show()
-        ElseIf isValidLogin = True And c.perfil_id = 3 Then
+        ElseIf isValidLogin = True And datos = 3 Then
             Gerente.Show()
-        ElseIf isValidLogin = True And c.perfil_id = 4 Then
-            GerenteGral.Show()
+        ElseIf isValidLogin = False And datos = 0 Then
+            MsgBox("Usuario o Contraseña incorrectos!, por favor verifique.", vbOKOnly + vbCritical, "Inicio Sesion")
         Else
-            MessageBox.Show("Usuario o Contraseña incorrectos!, por favor verifique.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            GerenteGral.Show()
         End If
 
     End Sub
