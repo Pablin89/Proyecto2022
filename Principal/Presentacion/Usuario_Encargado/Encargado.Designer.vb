@@ -29,19 +29,19 @@ Partial Class Encargado
         Me.LFecha = New System.Windows.Forms.Label()
         Me.LHora = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.BCerrarSesion = New System.Windows.Forms.Button()
         Me.LSalirG = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.LEncargado = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.MenuEncargado = New System.Windows.Forms.MenuStrip()
         Me.GestiónCajerosItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VentasItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GestiónProductosItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportesVentas = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BCerrarSesion = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
-        Me.MenuEncargado.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuEncargado.SuspendLayout()
         Me.SuspendLayout()
         '
         'Timer1
@@ -56,7 +56,7 @@ Partial Class Encargado
         Me.Panel1.Controls.Add(Me.LFecha)
         Me.Panel1.Controls.Add(Me.LHora)
         Me.Panel1.Controls.Add(Me.Panel3)
-        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.LEncargado)
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
@@ -100,6 +100,22 @@ Partial Class Encargado
         Me.Panel3.Size = New System.Drawing.Size(131, 151)
         Me.Panel3.TabIndex = 6
         '
+        'BCerrarSesion
+        '
+        Me.BCerrarSesion.BackColor = System.Drawing.Color.Transparent
+        Me.BCerrarSesion.BackgroundImage = Global.Principal.My.Resources.Resources.Logout_37127
+        Me.BCerrarSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.BCerrarSesion.ForeColor = System.Drawing.Color.Transparent
+        Me.BCerrarSesion.Location = New System.Drawing.Point(47, 44)
+        Me.BCerrarSesion.Name = "BCerrarSesion"
+        Me.BCerrarSesion.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.BCerrarSesion.Size = New System.Drawing.Size(62, 56)
+        Me.BCerrarSesion.TabIndex = 1
+        Me.BCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BCerrarSesion.UseVisualStyleBackColor = False
+        '
         'LSalirG
         '
         Me.LSalirG.AutoSize = True
@@ -116,18 +132,28 @@ Partial Class Encargado
         Me.LSalirG.Text = "Cerrar Sesión"
         Me.LSalirG.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Label1
+        'LEncargado
         '
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Navy
-        Me.Label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Label1.Location = New System.Drawing.Point(548, 27)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(287, 51)
-        Me.Label1.TabIndex = 3
-        Me.Label1.Text = "Encargado: José Perez"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.LEncargado.BackColor = System.Drawing.Color.Transparent
+        Me.LEncargado.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LEncargado.ForeColor = System.Drawing.Color.Navy
+        Me.LEncargado.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.LEncargado.Location = New System.Drawing.Point(548, 27)
+        Me.LEncargado.Name = "LEncargado"
+        Me.LEncargado.Size = New System.Drawing.Size(312, 51)
+        Me.LEncargado.TabIndex = 3
+        Me.LEncargado.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.Principal.My.Resources.Resources.Messirve__1_
+        Me.PictureBox1.Location = New System.Drawing.Point(11, 3)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(157, 145)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
+        Me.PictureBox1.WaitOnLoad = True
         '
         'MenuEncargado
         '
@@ -214,33 +240,6 @@ Partial Class Encargado
         Me.ReportesVentas.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.ReportesVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         '
-        'BCerrarSesion
-        '
-        Me.BCerrarSesion.BackColor = System.Drawing.Color.Transparent
-        Me.BCerrarSesion.BackgroundImage = Global.Principal.My.Resources.Resources.Logout_37127
-        Me.BCerrarSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.BCerrarSesion.ForeColor = System.Drawing.Color.Transparent
-        Me.BCerrarSesion.Location = New System.Drawing.Point(47, 44)
-        Me.BCerrarSesion.Name = "BCerrarSesion"
-        Me.BCerrarSesion.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.BCerrarSesion.Size = New System.Drawing.Size(62, 56)
-        Me.BCerrarSesion.TabIndex = 1
-        Me.BCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BCerrarSesion.UseVisualStyleBackColor = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.Principal.My.Resources.Resources.Messirve__1_
-        Me.PictureBox1.Location = New System.Drawing.Point(11, 3)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(157, 145)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
-        Me.PictureBox1.WaitOnLoad = True
-        '
         'Encargado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -256,9 +255,9 @@ Partial Class Encargado
         Me.Panel1.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuEncargado.ResumeLayout(False)
         Me.MenuEncargado.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -271,7 +270,7 @@ Partial Class Encargado
     Friend WithEvents Panel3 As Panel
     Friend WithEvents BCerrarSesion As Button
     Friend WithEvents LSalirG As Label
-    Friend WithEvents Label1 As Label
+    Friend WithEvents LEncargado As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents MenuEncargado As MenuStrip

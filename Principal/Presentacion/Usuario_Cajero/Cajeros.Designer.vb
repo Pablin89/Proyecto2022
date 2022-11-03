@@ -29,7 +29,7 @@ Partial Class Cajeros
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.BCerrarSesion = New System.Windows.Forms.Button()
         Me.LSalirG = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.LCajero = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.MenuEncargado = New System.Windows.Forms.MenuStrip()
@@ -53,7 +53,7 @@ Partial Class Cajeros
         Me.Panel1.Controls.Add(Me.LFecha)
         Me.Panel1.Controls.Add(Me.LHora)
         Me.Panel1.Controls.Add(Me.Panel3)
-        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.LCajero)
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
@@ -129,18 +129,17 @@ Partial Class Cajeros
         Me.LSalirG.Text = "Cerrar Sesión"
         Me.LSalirG.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Label1
+        'LCajero
         '
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Navy
-        Me.Label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Label1.Location = New System.Drawing.Point(548, 27)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(287, 51)
-        Me.Label1.TabIndex = 3
-        Me.Label1.Text = "Cajero: José Perez"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.LCajero.BackColor = System.Drawing.Color.Transparent
+        Me.LCajero.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LCajero.ForeColor = System.Drawing.Color.Navy
+        Me.LCajero.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.LCajero.Location = New System.Drawing.Point(503, 27)
+        Me.LCajero.Name = "LCajero"
+        Me.LCajero.Size = New System.Drawing.Size(347, 51)
+        Me.LCajero.TabIndex = 3
+        Me.LCajero.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'PictureBox1
         '
@@ -293,7 +292,7 @@ Partial Class Cajeros
     Friend WithEvents Panel3 As Panel
     Friend WithEvents BCerrarSesion As Button
     Friend WithEvents LSalirG As Label
-    Friend WithEvents Label1 As Label
+    Friend WithEvents LCajero As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Timer1 As Timer
     Friend WithEvents MenuEncargado As MenuStrip

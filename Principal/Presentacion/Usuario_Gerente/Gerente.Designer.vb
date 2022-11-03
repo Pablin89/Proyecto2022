@@ -29,7 +29,7 @@ Partial Class Gerente
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.BCerrarSesion = New System.Windows.Forms.Button()
         Me.LSalirG = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.LGerente = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -51,7 +51,7 @@ Partial Class Gerente
         Me.Panel1.Controls.Add(Me.LFecha)
         Me.Panel1.Controls.Add(Me.LHora)
         Me.Panel1.Controls.Add(Me.Panel3)
-        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.LGerente)
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
@@ -126,18 +126,17 @@ Partial Class Gerente
         Me.LSalirG.Text = "Cerrar Sesión"
         Me.LSalirG.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'Label1
+        'LGerente
         '
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Label1.Location = New System.Drawing.Point(548, 27)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(287, 51)
-        Me.Label1.TabIndex = 3
-        Me.Label1.Text = "Gerente: José Perez"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.LGerente.BackColor = System.Drawing.Color.Transparent
+        Me.LGerente.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LGerente.ForeColor = System.Drawing.Color.White
+        Me.LGerente.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.LGerente.Location = New System.Drawing.Point(548, 27)
+        Me.LGerente.Name = "LGerente"
+        Me.LGerente.Size = New System.Drawing.Size(315, 51)
+        Me.LGerente.TabIndex = 3
+        Me.LGerente.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'PictureBox1
         '
@@ -160,7 +159,7 @@ Partial Class Gerente
         Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel2.Location = New System.Drawing.Point(0, 747)
+        Me.Panel2.Location = New System.Drawing.Point(0, 739)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Panel2.Size = New System.Drawing.Size(1354, 2)
@@ -182,7 +181,7 @@ Partial Class Gerente
         Me.MenuGerente.Name = "MenuGerente"
         Me.MenuGerente.Padding = New System.Windows.Forms.Padding(6, 10, 6, 10)
         Me.MenuGerente.ShowItemToolTips = True
-        Me.MenuGerente.Size = New System.Drawing.Size(1354, 579)
+        Me.MenuGerente.Size = New System.Drawing.Size(1354, 571)
         Me.MenuGerente.TabIndex = 0
         Me.MenuGerente.Text = " "
         '
@@ -247,7 +246,7 @@ Partial Class Gerente
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.ClientSize = New System.Drawing.Size(1354, 749)
+        Me.ClientSize = New System.Drawing.Size(1354, 741)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.MenuGerente)
         Me.Controls.Add(Me.Panel1)
@@ -278,7 +277,7 @@ Partial Class Gerente
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents LSalirG As Label
     Friend WithEvents MenuGerente As MenuStrip
-    Friend WithEvents Label1 As Label
+    Friend WithEvents LGerente As Label
     Friend WithEvents ReportesCajeros As ToolStripMenuItem
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Timer1 As Timer

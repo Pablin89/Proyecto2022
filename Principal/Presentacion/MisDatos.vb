@@ -1,7 +1,7 @@
 ﻿Imports System.ComponentModel
 
 Public Class MisDatos
-
+    Dim emp = New DEmpleado
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim ask As MsgBoxResult
 
@@ -38,4 +38,19 @@ Public Class MisDatos
         End If
     End Sub
 
+    Private Sub MisDatos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim lista As List(Of Empleado) = emp.datos_empleado(Principal.TUsuario.Text, Principal.TContraseña.Text)
+        Dim empDatos = lista.ToList(0)
+
+        TNombre2.Text = empDatos.nombre_empleado
+        TApellido2.Text = empDatos.apellido_empleado
+        TDni2.Text = empDatos.dni_empleado
+        DTFecha.Value = empDatos.fecha_nacimiento
+        TDireccion.Text = empDatos.direccion
+        TCorreo.Text = empDatos.correo
+        TTelofono.Text = empDatos.telefono
+        TGenero.Text = empDatos.genero
+
+
+    End Sub
 End Class

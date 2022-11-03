@@ -34,10 +34,10 @@
         End Try
     End Function
 
-    Public Sub buscar_nombre(ByVal nom As String, ByVal grid As DataGridView)
+    Public Sub buscar_nombre(ByVal idemp As Integer, ByVal nom As String, ByVal grid As DataGridView)
 
         Dim querry = (From f In ctx.Factura Join c In ctx.Cliente On f.id_cliente Equals c.Id_cliente
-                      Where c.nombre.Contains(nom) Select f.Nro_factura, f.total, f.fecha_venta, c.nombre, c.apellido, f.forma_pago).ToList
+                      Where f.id_empleado = idemp And c.nombre.Contains(nom) Select f.Nro_factura, f.total, f.fecha_venta, c.nombre, c.apellido, f.forma_pago).ToList
 
         grid.DataSource = querry.ToList
 

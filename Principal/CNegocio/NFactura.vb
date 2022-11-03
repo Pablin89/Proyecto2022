@@ -23,10 +23,11 @@
         End If
     End Function
 
-    Public Sub cargarGrid(ByVal grid As DataGridView)
+    Public Sub cargarGrid(ByVal id As Integer, ByVal grid As DataGridView)
         Dim ctx As ProyectoEntities8 = New ProyectoEntities8
 
         Dim querry = (From f In ctx.Factura Join c In ctx.Cliente On f.id_cliente Equals c.Id_cliente Join e In ctx.Empleado On f.id_empleado Equals e.Id_empleado
+                      Where f.id_empleado = id
                       Select f.Nro_factura, f.total, f.fecha_venta, c.nombre, c.apellido, f.forma_pago).ToList
 
 

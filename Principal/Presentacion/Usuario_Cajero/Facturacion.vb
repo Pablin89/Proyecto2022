@@ -234,4 +234,7 @@
 
     End Sub
 
+    Private Sub TCajero_TextChanged(sender As Object, e As EventArgs) Handles TCajero.TextChanged
+
+    End Sub
 End Class

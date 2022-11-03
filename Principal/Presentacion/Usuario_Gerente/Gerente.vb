@@ -1,4 +1,5 @@
 ﻿Public Class Gerente
+    Dim emp = New DEmpleado
     Private Sub BSalir1_Click(sender As Object, e As EventArgs) Handles BCerrarSesion.Click
         Dim ask As MsgBoxResult
 
@@ -28,6 +29,10 @@
 
     Private Sub Gerente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Timer1.Start()
+        Dim lista As List(Of Empleado) = emp.datos_empleado(Principal.TUsuario.Text, Principal.TContraseña.Text)
+        Dim empDatos = lista.ToList(0)
+
+        LGerente.Text = "Gerente:" + " " + empDatos.nombre_empleado + " " + empDatos.apellido_empleado
     End Sub
 
 

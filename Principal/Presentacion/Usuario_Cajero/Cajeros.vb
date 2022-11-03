@@ -1,6 +1,12 @@
 ﻿Public Class Cajeros
+    Dim emp = New DEmpleado
+
     Private Sub Cajeros_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Timer1.Start()
+        Dim lista As List(Of Empleado) = emp.datos_empleado(Principal.TUsuario.Text, Principal.TContraseña.Text)
+        Dim empDatos = lista.ToList(0)
+
+        LCajero.Text = "Cajero:" + " " + empDatos.nombre_empleado + " " + empDatos.apellido_empleado
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick

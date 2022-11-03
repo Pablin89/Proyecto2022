@@ -40,9 +40,8 @@ Partial Class MisDatos
         Me.LNombre = New System.Windows.Forms.Label()
         Me.LApellido = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.TGenero = New System.Windows.Forms.TextBox()
         Me.TTelofono = New System.Windows.Forms.TextBox()
+        Me.TGenero = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -234,9 +233,14 @@ Partial Class MisDatos
         Me.PictureBox1.TabIndex = 48
         Me.PictureBox1.TabStop = False
         '
-        'OpenFileDialog1
+        'TTelofono
         '
-        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        Me.TTelofono.Enabled = False
+        Me.TTelofono.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TTelofono.Location = New System.Drawing.Point(888, 418)
+        Me.TTelofono.Name = "TTelofono"
+        Me.TTelofono.Size = New System.Drawing.Size(276, 22)
+        Me.TTelofono.TabIndex = 57
         '
         'TGenero
         '
@@ -246,15 +250,6 @@ Partial Class MisDatos
         Me.TGenero.Name = "TGenero"
         Me.TGenero.Size = New System.Drawing.Size(276, 22)
         Me.TGenero.TabIndex = 56
-        '
-        'TTelofono
-        '
-        Me.TTelofono.Enabled = False
-        Me.TTelofono.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TTelofono.Location = New System.Drawing.Point(888, 418)
-        Me.TTelofono.Name = "TTelofono"
-        Me.TTelofono.Size = New System.Drawing.Size(276, 22)
-        Me.TTelofono.TabIndex = 57
         '
         'MisDatos
         '
@@ -308,7 +303,6 @@ Partial Class MisDatos
     Friend WithEvents LNombre As Label
     Friend WithEvents LApellido As Label
     Friend WithEvents Button1 As Button
-    Friend WithEvents OpenFileDialog1 As OpenFileDialog
-    Friend WithEvents TGenero As TextBox
     Friend WithEvents TTelofono As TextBox
+    Friend WithEvents TGenero As TextBox
 End Class

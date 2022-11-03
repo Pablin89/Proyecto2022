@@ -4,6 +4,7 @@
     Dim det = New DDetalle
     Dim fac = New DFactura
     Dim cli = New DCliente
+    Dim emp = New DEmpleado
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim ask As MsgBoxResult
 
@@ -22,7 +23,12 @@
     End Sub
 
     Private Sub MisVentas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        objfactura.cargarGrid(dgvFactura)
+        Dim lista As List(Of Empleado) = emp.datos_empleado(Principal.TUsuario.Text, Principal.TContraseña.Text)
+        Dim empDatos = lista.ToList(0)
+
+        objfactura.cargarGrid(empDatos.Id_empleado, dgvFactura)
+
+
     End Sub
 
     Private Sub dgvFactura_Click(sender As Object, e As EventArgs) Handles dgvFactura.Click
@@ -32,6 +38,9 @@
     End Sub
 
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
-        fac.buscar_nombre(TextBox1.Text, dgvFactura)
+        Dim lista As List(Of Empleado) = emp.datos_empleado(Principal.TUsuario.Text, Principal.TContraseña.Text)
+        Dim empDatos = lista.ToList(0)
+
+        fac.buscar_nombre(empDatos.Id_empleado, TextBox1.Text, dgvFactura)
     End Sub
 End Class
