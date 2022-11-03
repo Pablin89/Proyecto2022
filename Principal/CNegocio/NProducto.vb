@@ -22,9 +22,12 @@
         End If
     End Function
     Public Sub cargarGrid(ByVal grid As DataGridView)
-        Dim oproducto As DProducto = New DProducto
+        Dim ctx As ProyectoEntities8 = New ProyectoEntities8
+        Dim querry = (From p In ctx.Producto Join c In ctx.Categoria On p.categoria_id Equals c.Id_categoria
+                      Select p.Id_producto, p.nombre, p.descripcion, p.codigo, p.precio, p.stock, c.desc_categoria, p.estado).ToList
 
-        grid.DataSource = oproducto.getAll_productos()
+
+        grid.DataSource = querry.ToList
         grid.Columns(0).HeaderText = ""
         grid.Columns(1).HeaderText = "Nombre"
         grid.Columns(2).HeaderText = "Descripcion"
@@ -33,9 +36,7 @@
         grid.Columns(5).HeaderText = "Stock"
         grid.Columns(6).HeaderText = "Categoria"
         grid.Columns(7).HeaderText = "Estado"
-        grid.Columns(8).Visible = False
-        grid.Columns(9).Visible = False
-        grid.Columns(0).Visible = False
+
 
     End Sub
     Public Sub cargarGrid_facturacion(ByVal grid As DataGridView)

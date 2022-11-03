@@ -11,14 +11,15 @@ Imports System
 Imports System.Collections.Generic
 
 Partial Public Class Factura
-    Public Property nro_factura As Integer
-    Public Property total As Decimal
+    Public Property Nro_factura As Integer
     Public Property fecha_venta As Date
-    Public Property id_cliente As Integer
+    Public Property total As Decimal
+    Public Property forma_pago As String
     Public Property id_empleado As Integer
+    Public Property id_cliente As Integer
 
     Public Overridable Property Cliente As Cliente
-    Public Overridable Property Detalle_venta As ICollection(Of Detalle_venta) = New HashSet(Of Detalle_venta)
     Public Overridable Property Empleado As Empleado
+    Public Overridable Property Detalle As ICollection(Of Detalle) = New HashSet(Of Detalle)
 
 End Class

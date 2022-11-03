@@ -27,8 +27,9 @@ Partial Class Facturacion
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Facturacion))
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.LCajero = New System.Windows.Forms.Label()
-        Me.TFactura = New System.Windows.Forms.TextBox()
+        Me.TCajero = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.TIdcli = New System.Windows.Forms.TextBox()
         Me.BBuscar = New System.Windows.Forms.Button()
         Me.TTelefono = New System.Windows.Forms.TextBox()
         Me.TCliente = New System.Windows.Forms.TextBox()
@@ -47,12 +48,7 @@ Partial Class Facturacion
         Me.BAgregar = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.LProducto = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Sutotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Eliminar = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.dgvCompra = New System.Windows.Forms.DataGridView()
         Me.TTotal = New System.Windows.Forms.TextBox()
         Me.LTotal = New System.Windows.Forms.Label()
         Me.LFecha = New System.Windows.Forms.Label()
@@ -62,13 +58,14 @@ Partial Class Facturacion
         Me.CBForma = New System.Windows.Forms.ComboBox()
         Me.LForna = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.TIdCajero = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.dgvProductos = New System.Windows.Forms.DataGridView()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.BConfirmar = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvCompra, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -84,18 +81,19 @@ Partial Class Facturacion
         Me.LCajero.TabIndex = 0
         Me.LCajero.Text = "Cajero: "
         '
-        'TFactura
+        'TCajero
         '
-        Me.TFactura.Enabled = False
-        Me.TFactura.Location = New System.Drawing.Point(296, 30)
-        Me.TFactura.Name = "TFactura"
-        Me.TFactura.Size = New System.Drawing.Size(187, 20)
-        Me.TFactura.TabIndex = 1
+        Me.TCajero.Enabled = False
+        Me.TCajero.Location = New System.Drawing.Point(296, 30)
+        Me.TCajero.Name = "TCajero"
+        Me.TCajero.Size = New System.Drawing.Size(187, 20)
+        Me.TCajero.TabIndex = 1
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.NavajoWhite
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel1.Controls.Add(Me.TIdcli)
         Me.Panel1.Controls.Add(Me.BBuscar)
         Me.Panel1.Controls.Add(Me.TTelefono)
         Me.Panel1.Controls.Add(Me.TCliente)
@@ -112,6 +110,14 @@ Partial Class Facturacion
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(417, 387)
         Me.Panel1.TabIndex = 2
+        '
+        'TIdcli
+        '
+        Me.TIdcli.Enabled = False
+        Me.TIdcli.Location = New System.Drawing.Point(345, 53)
+        Me.TIdcli.Name = "TIdcli"
+        Me.TIdcli.Size = New System.Drawing.Size(51, 20)
+        Me.TIdcli.TabIndex = 39
         '
         'BBuscar
         '
@@ -141,7 +147,7 @@ Partial Class Facturacion
         '
         Me.TCliente.Location = New System.Drawing.Point(146, 53)
         Me.TCliente.Name = "TCliente"
-        Me.TCliente.Size = New System.Drawing.Size(237, 20)
+        Me.TCliente.Size = New System.Drawing.Size(178, 20)
         Me.TCliente.TabIndex = 12
         '
         'TDniCli
@@ -292,11 +298,12 @@ Partial Class Facturacion
         Me.LProducto.TabIndex = 7
         Me.LProducto.Text = "Seleccionar Producto"
         '
-        'DataGridView1
+        'dgvCompra
         '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.dgvCompra.AllowUserToAddRows = False
+        Me.dgvCompra.AllowUserToDeleteRows = False
+        Me.dgvCompra.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvCompra.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -304,41 +311,15 @@ Partial Class Facturacion
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.DataGridView1.ColumnHeadersHeight = 40
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Producto, Me.Cantidad, Me.Precio, Me.Sutotal, Me.Eliminar})
-        Me.DataGridView1.Location = New System.Drawing.Point(484, 405)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowHeadersWidth = 50
-        Me.DataGridView1.Size = New System.Drawing.Size(858, 176)
-        Me.DataGridView1.TabIndex = 10
-        '
-        'Producto
-        '
-        Me.Producto.HeaderText = "Producto"
-        Me.Producto.Name = "Producto"
-        '
-        'Cantidad
-        '
-        Me.Cantidad.HeaderText = "Cantidad"
-        Me.Cantidad.Name = "Cantidad"
-        '
-        'Precio
-        '
-        Me.Precio.HeaderText = "Precio "
-        Me.Precio.Name = "Precio"
-        '
-        'Sutotal
-        '
-        Me.Sutotal.HeaderText = "Total"
-        Me.Sutotal.Name = "Sutotal"
-        '
-        'Eliminar
-        '
-        Me.Eliminar.HeaderText = "Eliminar"
-        Me.Eliminar.Name = "Eliminar"
-        Me.Eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Eliminar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.dgvCompra.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvCompra.ColumnHeadersHeight = 40
+        Me.dgvCompra.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.dgvCompra.Location = New System.Drawing.Point(484, 405)
+        Me.dgvCompra.Name = "dgvCompra"
+        Me.dgvCompra.ReadOnly = True
+        Me.dgvCompra.RowHeadersWidth = 50
+        Me.dgvCompra.Size = New System.Drawing.Size(858, 176)
+        Me.dgvCompra.TabIndex = 10
         '
         'TTotal
         '
@@ -423,8 +404,9 @@ Partial Class Facturacion
         '
         Me.Panel4.BackColor = System.Drawing.Color.Silver
         Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel4.Controls.Add(Me.TIdCajero)
         Me.Panel4.Controls.Add(Me.PictureBox1)
-        Me.Panel4.Controls.Add(Me.TFactura)
+        Me.Panel4.Controls.Add(Me.TCajero)
         Me.Panel4.Controls.Add(Me.LCajero)
         Me.Panel4.Controls.Add(Me.LHora)
         Me.Panel4.Controls.Add(Me.LFecha)
@@ -432,6 +414,14 @@ Partial Class Facturacion
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(1335, 129)
         Me.Panel4.TabIndex = 24
+        '
+        'TIdCajero
+        '
+        Me.TIdCajero.Enabled = False
+        Me.TIdCajero.Location = New System.Drawing.Point(489, 29)
+        Me.TIdCajero.Name = "TIdCajero"
+        Me.TIdCajero.Size = New System.Drawing.Size(51, 20)
+        Me.TIdCajero.TabIndex = 18
         '
         'PictureBox1
         '
@@ -447,6 +437,7 @@ Partial Class Facturacion
         'dgvProductos
         '
         Me.dgvProductos.AllowUserToAddRows = False
+        Me.dgvProductos.AllowUserToDeleteRows = False
         Me.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvProductos.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -460,6 +451,7 @@ Partial Class Facturacion
         Me.dgvProductos.ColumnHeadersHeight = 40
         Me.dgvProductos.Location = New System.Drawing.Point(484, 205)
         Me.dgvProductos.Name = "dgvProductos"
+        Me.dgvProductos.ReadOnly = True
         Me.dgvProductos.RowHeadersWidth = 50
         Me.dgvProductos.Size = New System.Drawing.Size(620, 168)
         Me.dgvProductos.TabIndex = 25
@@ -506,7 +498,7 @@ Partial Class Facturacion
         Me.Controls.Add(Me.BConfirmar)
         Me.Controls.Add(Me.TTotal)
         Me.Controls.Add(Me.LTotal)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.dgvCompra)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel4)
@@ -519,7 +511,7 @@ Partial Class Facturacion
         Me.Panel1.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvCompra, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -530,7 +522,7 @@ Partial Class Facturacion
     End Sub
 
     Friend WithEvents LCajero As Label
-    Friend WithEvents TFactura As TextBox
+    Friend WithEvents TCajero As TextBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents LSeleccionar As Label
     Friend WithEvents Label2 As Label
@@ -540,7 +532,6 @@ Partial Class Facturacion
     Friend WithEvents LNombreC As Label
     Friend WithEvents Panel3 As Panel
     Friend WithEvents LProducto As Label
-    Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents TTotal As TextBox
     Friend WithEvents LTotal As Label
     Friend WithEvents BConfirmar As Button
@@ -552,11 +543,6 @@ Partial Class Facturacion
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents CBForma As ComboBox
     Friend WithEvents LForna As Label
-    Friend WithEvents Producto As DataGridViewTextBoxColumn
-    Friend WithEvents Cantidad As DataGridViewTextBoxColumn
-    Friend WithEvents Precio As DataGridViewTextBoxColumn
-    Friend WithEvents Sutotal As DataGridViewTextBoxColumn
-    Friend WithEvents Eliminar As DataGridViewButtonColumn
     Friend WithEvents Panel4 As Panel
     Friend WithEvents TTelefono As TextBox
     Friend WithEvents TCliente As TextBox
@@ -569,4 +555,7 @@ Partial Class Facturacion
     Friend WithEvents TCantidad As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents BBuscar As Button
+    Friend WithEvents TIdcli As TextBox
+    Friend WithEvents TIdCajero As TextBox
+    Private WithEvents dgvCompra As DataGridView
 End Class

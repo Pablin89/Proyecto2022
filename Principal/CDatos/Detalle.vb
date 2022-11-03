@@ -10,12 +10,12 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class Detalle_venta
+Partial Public Class Detalle
     Public Property Id_detalle As Integer
     Public Property cantidad As Integer
     Public Property precio As Decimal
-    Public Property nro_factura As Integer
     Public Property id_producto As Integer
+    Public Property nro_factura As Integer
 
     Public Overridable Property Producto As Producto
     Public Overridable Property Factura As Factura

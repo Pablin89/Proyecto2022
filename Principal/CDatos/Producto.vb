@@ -19,8 +19,9 @@ Partial Public Class Producto
     Public Property stock As Integer
     Public Property categoria_id As Integer
     Public Property estado As Integer
+    Public Property stock_minimo As Nullable(Of Integer)
 
     Public Overridable Property Categoria As Categoria
-    Public Overridable Property Detalle_venta As ICollection(Of Detalle_venta) = New HashSet(Of Detalle_venta)
+    Public Overridable Property Detalle As ICollection(Of Detalle) = New HashSet(Of Detalle)
 
 End Class

@@ -112,7 +112,7 @@
     <Compile Include="CDatos\DCliente.vb" />
     <Compile Include="CDatos\DDetalle.vb" />
     <Compile Include="CDatos\DEmpleado.vb" />
-    <Compile Include="CDatos\Detalle_venta.vb">
+    <Compile Include="CDatos\Detalle.vb">
       <DependentUpon>Modelo1.tt</DependentUpon>
     </Compile>
     <Compile Include="CDatos\DFactura.vb" />

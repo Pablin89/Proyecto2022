@@ -84,7 +84,7 @@ Public Class GestionEmpleados
     Private Sub BConfirmar_Click(sender As Object, e As EventArgs) Handles BConfirmar.Click
 
         If String.IsNullOrWhiteSpace(TNombre2.Text) Or String.IsNullOrWhiteSpace(TApellido2.Text) Or Not IsNumeric(TDni2.Text) Or String.IsNullOrWhiteSpace(TCorreo.Text) Or
-            String.IsNullOrWhiteSpace(TDireccion.Text) Or String.IsNullOrWhiteSpace(MTelefono.Text) Or Not RBmasculino.Checked And Not RBfemenino.Checked Or String.IsNullOrWhiteSpace(CBoxEstado.Text) Or IsNothing(PictureBox1.Image) Or
+            String.IsNullOrWhiteSpace(TDireccion.Text) Or String.IsNullOrWhiteSpace(MTelefono.Text) Or Not RBmasculino.Checked And Not RBfemenino.Checked Or String.IsNullOrWhiteSpace(CBoxEstado.Text) Or
             EmailValido(TCorreo.Text) = False Or FechaValida(DTfecha.Value.Year) = False Then
 
             MsgBox("Debe completar todos los campos", vbOKOnly + vbDefaultButton1 + vbCritical, "Confirmar")
@@ -96,7 +96,8 @@ Public Class GestionEmpleados
 
         If MsgBoxResult.Yes = op And RBmasculino.Checked Then
 
-            If (objempleado.agregar_empleado(CInt(TDni2.Text), TNombre2.Text, TApellido2.Text, RBmasculino.Text, DTfecha.Value, TDireccion.Text, TCorreo.Text, MTelefono.Text, CBoxEstado.Text)) Then
+            If emp.existe_empleado(TNombre2.Text, TApellido2.Text, TDni2.Text) = False Then
+                objempleado.agregar_empleado(CInt(TDni2.Text), TNombre2.Text, TApellido2.Text, RBmasculino.Text, DTfecha.Value, TDireccion.Text, TCorreo.Text, MTelefono.Text, CBoxEstado.Text)
 
                 MsgBox("El empleado se registro correctamente", vbOKOnly + vbInformation, "Confirmar")
                 objempleado.cargarGrid(dgEmpleados)

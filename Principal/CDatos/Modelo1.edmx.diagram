@@ -7,19 +7,19 @@
       <Diagram DiagramId="d9319d136deb4664a91be916b98fb323" Name="Diagram1">
         <EntityTypeShape EntityType="ProyectoModel1.Categoria" Width="1.5" PointX="5.25" PointY="10.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ProyectoModel1.Cliente" Width="1.5" PointX="5.25" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProyectoModel1.Factura" Width="1.5" PointX="8.375" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ProyectoModel1.Perfil" Width="1.5" PointX="0.5" PointY="2.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ProyectoModel1.Producto" Width="1.5" PointX="7.5" PointY="9.375" IsExpanded="true" />
         <AssociationConnector Association="ProyectoModel1.fk_categoria_id" ManuallyRouted="false" />
-        <AssociationConnector Association="ProyectoModel1.fk_id_cliente" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="ProyectoModel1.Detalle_venta" Width="1.5" PointX="9.75" PointY="5.75" />
         <EntityTypeShape EntityType="ProyectoModel1.Usuario" Width="1.5" PointX="2.75" PointY="1.5" />
-        <AssociationConnector Association="ProyectoModel1.fk_id_producto" />
-        <AssociationConnector Association="ProyectoModel1.fk_nro_factura" />
         <AssociationConnector Association="ProyectoModel1.fk_perfil_id" />
         <EntityTypeShape EntityType="ProyectoModel1.Empleado" Width="1.5" PointX="4.75" PointY="1.875" />
         <AssociationConnector Association="ProyectoModel1.fk_empleado_id" />
+        <EntityTypeShape EntityType="ProyectoModel1.Factura" Width="1.5" PointX="7.875" PointY="3.75" />
+        <AssociationConnector Association="ProyectoModel1.fk_id_cliente" />
         <AssociationConnector Association="ProyectoModel1.fk_id_empleado" />
+        <EntityTypeShape EntityType="ProyectoModel1.Detalle" Width="1.5" PointX="10.125" PointY="7" />
+        <AssociationConnector Association="ProyectoModel1.fk_id_producto" />
+        <AssociationConnector Association="ProyectoModel1.fk_nro_factura" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

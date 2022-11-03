@@ -38,7 +38,10 @@
         Else
             op = MsgBox("¿Desea agregar el nuevo producto?", vbYesNo + vbDefaultButton2 + vbInformation, "Confirmar")
             If op = DialogResult.Yes Then
-                If (objproducto.agregar_producto(TNombreProd.Text, TDescripcion.Text, TCodigoProd.Text, TPrecioProd.Text, TStock.Text, CBcategoria.SelectedValue, 1)) Then
+
+                If prod.existe_producto(TNombreProd.Text, TDescripcion.Text, TCodigoProd.Text) = False Then
+
+                    objproducto.agregar_producto(TNombreProd.Text, TDescripcion.Text, TCodigoProd.Text, TPrecioProd.Text, TStock.Text, CBcategoria.SelectedValue, 1)
                     MsgBox("El producto se registro correctamente", vbOKOnly + vbInformation, "Confirmar")
 
                     objproducto.cargarGrid(dgvProductos)
@@ -154,7 +157,10 @@
         Else
             ask = MsgBox("¿Desea agregar la nueva Categoria?", vbYesNo + vbDefaultButton2 + vbInformation, "Confirmar")
             If ask = DialogResult.Yes Then
-                If (objcategoria.agregar_categoria(TDesc.Text)) Then
+
+                If cat.existe_categoria(TDesc.Text) = False Then
+
+                    objcategoria.agregar_categoria(TDesc.Text)
                     MsgBox("La categoria se registro correctamente", vbOKOnly + vbInformation, "Confirmar")
                 Else
                     MsgBox("La categoria ya existe", vbOKOnly + vbCritical, "Confirmar")

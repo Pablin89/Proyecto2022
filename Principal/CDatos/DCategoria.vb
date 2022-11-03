@@ -17,4 +17,18 @@
         Return listaCategorias
 
     End Function
+
+    Function existe_categoria(ByVal desc As String)
+        Try
+            Dim existe As Boolean
+            Dim querry = (From c In ctx.Categoria Where c.desc_categoria = desc Select c).First()
+            If querry.desc_categoria = desc Then
+                existe = True
+            End If
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+
+    End Function
 End Class

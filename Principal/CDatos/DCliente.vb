@@ -74,4 +74,18 @@
             Return False
         End Try
     End Function
+
+    Function existe_cliente(ByVal nombre As String, ByVal ape As String, ByVal dni As Integer)
+        Try
+            Dim existe As Boolean
+            Dim querry = (From c In ctx.Cliente Where c.nombre = nombre And c.apellido = ape And c.dni = dni Select c).First()
+            If (querry.apellido = ape And querry.nombre = nombre And querry.dni = dni) Then
+                existe = True
+            End If
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+
 End Class

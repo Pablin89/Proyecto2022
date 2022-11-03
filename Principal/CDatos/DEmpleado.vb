@@ -63,4 +63,30 @@
             Return False
         End Try
     End Function
+
+    Function datos_empleado(usuario As String, pass As String) As List(Of Empleado)
+
+        Dim querry As IQueryable(Of Empleado) = From emp In ctx.Empleado
+                                                Join us In ctx.Usuario On us.empleado_id Equals emp.Id_empleado
+                                                Where us.nombre_usuario = usuario And us.contraseña = pass
+                                                Select emp
+
+        Dim lista As List(Of Empleado) = querry.ToList
+
+        Return lista
+    End Function
+
+    Function existe_empleado(ByVal nombre As String, ByVal ape As String, ByVal dni As Integer)
+        Try
+            Dim existe As Boolean
+            Dim querry = (From e In ctx.Empleado Where e.nombre_empleado = nombre And e.apellido_empleado = ape And e.dni_empleado = dni Select e).First()
+            If (querry.apellido_empleado = ape And querry.nombre_empleado = nombre And querry.dni_empleado = dni) Then
+                existe = True
+            End If
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+
+    End Function
 End Class
