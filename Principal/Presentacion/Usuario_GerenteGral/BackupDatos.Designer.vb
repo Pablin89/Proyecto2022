@@ -29,8 +29,10 @@ Partial Class BackupDatos
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Conectar = New System.Windows.Forms.OpenFileDialog()
+        Me.Buscar = New System.Windows.Forms.FolderBrowserDialog()
         Me.SuspendLayout()
         '
         'Label1
@@ -113,15 +115,14 @@ Partial Class BackupDatos
         Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button2.UseVisualStyleBackColor = True
         '
-        'ComboBox1
+        'ComboBox
         '
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(465, 197)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(438, 28)
-        Me.ComboBox1.TabIndex = 15
+        Me.ComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox.FormattingEnabled = True
+        Me.ComboBox.Location = New System.Drawing.Point(465, 197)
+        Me.ComboBox.Name = "ComboBox"
+        Me.ComboBox.Size = New System.Drawing.Size(438, 28)
+        Me.ComboBox.TabIndex = 15
         '
         'Label2
         '
@@ -134,6 +135,10 @@ Partial Class BackupDatos
         Me.Label2.TabIndex = 14
         Me.Label2.Text = "Base de Datos"
         '
+        'Conectar
+        '
+        Me.Conectar.FileName = "Conectar"
+        '
         'BackupDatos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -145,7 +150,7 @@ Partial Class BackupDatos
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.ComboBox)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label1)
@@ -165,6 +170,8 @@ Partial Class BackupDatos
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Button2 As Button
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents ComboBox As ComboBox
     Friend WithEvents Label2 As Label
+    Friend WithEvents Conectar As OpenFileDialog
+    Friend WithEvents Buscar As FolderBrowserDialog
 End Class

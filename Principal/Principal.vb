@@ -42,14 +42,18 @@
 
         If isValidLogin = True And datos = 1 Then
             Cajeros.Show()
+            Me.Hide()
         ElseIf isValidLogin = True And datos = 2 Then
             Encargado.Show()
+            Me.Hide()
         ElseIf isValidLogin = True And datos = 3 Then
             Gerente.Show()
+            Me.Hide()
         ElseIf isValidLogin = False And datos = 0 Then
             MsgBox("Usuario o Contraseña incorrectos!, por favor verifique.", vbOKOnly + vbCritical, "Inicio Sesion")
         Else
             GerenteGral.Show()
+            Me.Hide()
         End If
 
     End Sub

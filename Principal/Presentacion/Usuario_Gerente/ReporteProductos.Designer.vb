@@ -22,9 +22,9 @@ Partial Class ReporteProductos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.BDescarga = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BBusqueda = New System.Windows.Forms.Button()
@@ -137,16 +137,16 @@ Partial Class ReporteProductos
         '
         'Chart1
         '
-        ChartArea2.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea2)
-        Legend2.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend2)
+        ChartArea1.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea1)
+        Legend1.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend1)
         Me.Chart1.Location = New System.Drawing.Point(734, 119)
         Me.Chart1.Name = "Chart1"
-        Series2.ChartArea = "ChartArea1"
-        Series2.Legend = "Legend1"
-        Series2.Name = "Series1"
-        Me.Chart1.Series.Add(Series2)
+        Series1.ChartArea = "ChartArea1"
+        Series1.Legend = "Legend1"
+        Series1.Name = "Series1"
+        Me.Chart1.Series.Add(Series1)
         Me.Chart1.Size = New System.Drawing.Size(531, 325)
         Me.Chart1.TabIndex = 43
         Me.Chart1.Text = "Chart1"
@@ -159,7 +159,7 @@ Partial Class ReporteProductos
         Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Label2.Location = New System.Drawing.Point(0, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(1370, 70)
+        Me.Label2.Size = New System.Drawing.Size(1362, 70)
         Me.Label2.TabIndex = 51
         Me.Label2.Text = "Reportes por productos y categorias"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -170,9 +170,9 @@ Partial Class ReporteProductos
         Me.LMayores.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LMayores.ForeColor = System.Drawing.Color.White
         Me.LMayores.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.LMayores.Location = New System.Drawing.Point(0, 551)
+        Me.LMayores.Location = New System.Drawing.Point(0, 549)
         Me.LMayores.Name = "LMayores"
-        Me.LMayores.Size = New System.Drawing.Size(1370, 33)
+        Me.LMayores.Size = New System.Drawing.Size(1362, 33)
         Me.LMayores.TabIndex = 63
         Me.LMayores.Text = "Resultados"
         Me.LMayores.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -185,9 +185,9 @@ Partial Class ReporteProductos
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Desde, Me.Hasta})
         Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.DataGridView1.Location = New System.Drawing.Point(0, 584)
+        Me.DataGridView1.Location = New System.Drawing.Point(0, 582)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(1370, 159)
+        Me.DataGridView1.Size = New System.Drawing.Size(1362, 159)
         Me.DataGridView1.TabIndex = 62
         '
         'Desde
@@ -266,7 +266,7 @@ Partial Class ReporteProductos
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1370, 743)
+        Me.ClientSize = New System.Drawing.Size(1362, 741)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.CheckBox2)

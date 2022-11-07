@@ -46,6 +46,28 @@
             Return 0
         End Try
     End Function
+    Function buscar_usuario(ByVal id As String) As Boolean
+        Try
+            Dim consulta As IQueryable(Of Usuario) = From u In ctx.Usuario Where u.empleado_id = id Select u
+
+            Dim lista = consulta.ToList(0)
+
+            Return True
+
+        Catch ex As Exception
+
+            Return False
+        End Try
+    End Function
 
 
+    Function usuario(ByVal id As String) As List(Of Usuario)
+
+        Dim q As IQueryable(Of Usuario) = (From u In ctx.Usuario Where u.empleado_id = id Select u)
+        Dim lista As List(Of Usuario) = q.ToList
+
+        Return lista
+
+
+    End Function
 End Class

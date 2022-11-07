@@ -43,4 +43,12 @@
 
         fac.buscar_nombre(empDatos.Id_empleado, TextBox1.Text, dgvFactura)
     End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim lista As List(Of Empleado) = emp.datos_empleado(Principal.TUsuario.Text, Principal.TContraseña.Text)
+        Dim empDatos = lista.ToList(0)
+
+        fac.buscar_fecha(empDatos.Id_empleado, DTdesde.Value, DThasta.Value, dgvFactura)
+    End Sub
+
 End Class

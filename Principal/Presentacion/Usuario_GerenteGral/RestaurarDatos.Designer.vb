@@ -30,6 +30,7 @@ Partial Class RestaurarDatos
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Buscar = New System.Windows.Forms.OpenFileDialog()
         Me.SuspendLayout()
         '
         'Label1
@@ -118,6 +119,10 @@ Partial Class RestaurarDatos
         Me.Label2.TabIndex = 22
         Me.Label2.Text = "Base de Datos a restaurar"
         '
+        'Buscar
+        '
+        Me.Buscar.FileName = "OpenFileDialog1"
+        '
         'RestaurarDatos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -149,4 +154,5 @@ Partial Class RestaurarDatos
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents Buscar As OpenFileDialog
 End Class

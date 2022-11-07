@@ -2,6 +2,8 @@
 
 Public Class PermisosUsuario
     Dim objempleado = New NEmpleado
+    Dim objusuario = New NUsuario
+    Dim us = New DUsuario
     Private Sub BConfirmar_Click(sender As Object, e As EventArgs)
         Dim op As MsgBoxResult
 
@@ -165,17 +167,43 @@ Public Class PermisosUsuario
     End Sub
 
     Private Sub DataGridView1_Click(sender As Object, e As EventArgs) Handles dgvEmpleados.Click
+
         If dgvEmpleados.CurrentRow IsNot Nothing Then
             BEditarEmpleado.Enabled = True
         Else
             BEditarEmpleado.Enabled = False
         End If
 
+
         Dim i As Integer
         i = dgvEmpleados.CurrentRow.Index
+
+        Dim lista As List(Of Usuario)
+
+
         EditarEmpleado.TNombre.Text = dgvEmpleados.Rows(i).Cells(2).Value.ToString
         EditarEmpleado.TApellido.Text = dgvEmpleados.Rows(i).Cells(3).Value.ToString
         EditarEmpleado.TDni.Text = dgvEmpleados.Rows(i).Cells(1).Value.ToString
+
+        If us.buscar_usuario(dgvEmpleados.Rows(i).Cells(0).Value.ToString).Equals(False) Then
+            EditarEmpleado.TUsuario.Text = ""
+            EditarEmpleado.TContraseña.Text = ""
+            EditarEmpleado.TRepcontra.Text = ""
+            EditarEmpleado.CBperfil.SelectedValue = ""
+        Else
+
+            lista = us.usuario(dgvEmpleados.Rows(i).Cells(0).Value.ToString)
+            Dim datos = lista.ToList
+            Dim u = datos(0)
+
+
+            EditarEmpleado.TUsuario.Text = u.nombre_usuario
+            EditarEmpleado.TContraseña.Text = u.contraseña
+            EditarEmpleado.TRepcontra.Text = u.contraseña
+            EditarEmpleado.CBperfil.ValueMember = u.perfil_id
+        End If
+
+
 
 
     End Sub

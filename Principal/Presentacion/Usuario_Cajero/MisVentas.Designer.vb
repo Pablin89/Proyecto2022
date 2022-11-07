@@ -22,19 +22,19 @@ Partial Class MisVentas
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
+        Me.DThasta = New System.Windows.Forms.DateTimePicker()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.DTdesde = New System.Windows.Forms.DateTimePicker()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.dgvFactura = New System.Windows.Forms.DataGridView()
@@ -71,13 +71,13 @@ Partial Class MisVentas
         Me.Panel3.BackColor = System.Drawing.Color.DarkSlateGray
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel3.Controls.Add(Me.Label4)
-        Me.Panel3.Controls.Add(Me.DateTimePicker2)
+        Me.Panel3.Controls.Add(Me.DThasta)
         Me.Panel3.Controls.Add(Me.Label7)
         Me.Panel3.Controls.Add(Me.Label6)
         Me.Panel3.Controls.Add(Me.TextBox1)
         Me.Panel3.Controls.Add(Me.Label5)
         Me.Panel3.Controls.Add(Me.Label3)
-        Me.Panel3.Controls.Add(Me.DateTimePicker1)
+        Me.Panel3.Controls.Add(Me.DTdesde)
         Me.Panel3.Controls.Add(Me.Label2)
         Me.Panel3.Controls.Add(Me.Button2)
         Me.Panel3.Cursor = System.Windows.Forms.Cursors.Default
@@ -99,14 +99,14 @@ Partial Class MisVentas
         Me.Label4.TabIndex = 21
         Me.Label4.Text = "Fecha hasta"
         '
-        'DateTimePicker2
+        'DThasta
         '
-        Me.DateTimePicker2.CalendarFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePicker2.Location = New System.Drawing.Point(1101, 36)
-        Me.DateTimePicker2.MinDate = New Date(2016, 11, 24, 0, 0, 0, 0)
-        Me.DateTimePicker2.Name = "DateTimePicker2"
-        Me.DateTimePicker2.Size = New System.Drawing.Size(223, 20)
-        Me.DateTimePicker2.TabIndex = 20
+        Me.DThasta.CalendarFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DThasta.Location = New System.Drawing.Point(1101, 36)
+        Me.DThasta.MinDate = New Date(2016, 11, 24, 0, 0, 0, 0)
+        Me.DThasta.Name = "DThasta"
+        Me.DThasta.Size = New System.Drawing.Size(223, 20)
+        Me.DThasta.TabIndex = 20
         '
         'Label7
         '
@@ -160,14 +160,14 @@ Partial Class MisVentas
         Me.Label3.TabIndex = 13
         Me.Label3.Text = "Fecha desde"
         '
-        'DateTimePicker1
+        'DTdesde
         '
-        Me.DateTimePicker1.CalendarFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePicker1.Location = New System.Drawing.Point(682, 35)
-        Me.DateTimePicker1.MinDate = New Date(2016, 11, 24, 0, 0, 0, 0)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(223, 20)
-        Me.DateTimePicker1.TabIndex = 12
+        Me.DTdesde.CalendarFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DTdesde.Location = New System.Drawing.Point(682, 35)
+        Me.DTdesde.MinDate = New Date(2016, 11, 24, 0, 0, 0, 0)
+        Me.DTdesde.Name = "DTdesde"
+        Me.DTdesde.Size = New System.Drawing.Size(223, 20)
+        Me.DTdesde.TabIndex = 12
         '
         'Label2
         '
@@ -201,14 +201,14 @@ Partial Class MisVentas
         Me.dgvFactura.AllowUserToAddRows = False
         Me.dgvFactura.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvFactura.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvFactura.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvFactura.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvFactura.Dock = System.Windows.Forms.DockStyle.Left
         Me.dgvFactura.Location = New System.Drawing.Point(0, 308)
@@ -222,14 +222,14 @@ Partial Class MisVentas
         Me.dgvDetalle.AllowUserToDeleteRows = False
         Me.dgvDetalle.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvDetalle.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvDetalle.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvDetalle.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvDetalle.Dock = System.Windows.Forms.DockStyle.Right
         Me.dgvDetalle.Location = New System.Drawing.Point(707, 308)
@@ -267,7 +267,7 @@ Partial Class MisVentas
     Friend WithEvents Button1 As Button
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Label3 As Label
-    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents DTdesde As DateTimePicker
     Friend WithEvents Label2 As Label
     Friend WithEvents Button2 As Button
     Friend WithEvents dgvFactura As DataGridView
@@ -277,5 +277,5 @@ Partial Class MisVentas
     Friend WithEvents Label7 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents DateTimePicker2 As DateTimePicker
+    Friend WithEvents DThasta As DateTimePicker
 End Class

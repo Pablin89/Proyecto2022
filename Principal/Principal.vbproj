@@ -102,6 +102,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CDatos\BackUp.vb" />
     <Compile Include="CDatos\Categoria.vb">
       <DependentUpon>Modelo1.tt</DependentUpon>
     </Compile>

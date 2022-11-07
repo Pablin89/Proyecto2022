@@ -10,16 +10,15 @@
     Dim fac = New DFactura
     Dim det = New DDetalle
     Public tabla As New DataTable
-
-
     Dim total As Double
+
+
     Structure productoFactura
         Dim id As Integer
         Dim nombre As String
         Dim cantidad As Integer
         Dim precio As Double
         Dim subtotal As Double
-
     End Structure
 
     Public mercaderia(100) As productoFactura
@@ -114,9 +113,8 @@
         TCajero.Text = empDatos.nombre_empleado + " " + empDatos.apellido_empleado
         TIdCajero.Text = empDatos.Id_empleado
 
-
-
     End Sub
+
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         LFecha.Text = DateAndTime.Today.ToLongDateString
         LHora.Text = DateAndTime.TimeOfDay
@@ -128,6 +126,7 @@
         ask = MsgBox("¿Esta seguro de cancelar la venta?", vbYesNo + vbExclamation, "Cancelar Venta")
 
         If ask = DialogResult.Yes Then
+            dgvCompra.DataSource = Nothing
             TIdcli.Clear()
             TNombreCli.Clear()
             TApellidoCli.Clear()
@@ -137,6 +136,7 @@
         End If
 
     End Sub
+
     Private Sub SoloNumeros_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TCantidad.KeyPress
         If (Char.IsNumber(e.KeyChar)) Then
             e.Handled = False
@@ -147,6 +147,7 @@
             MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End If
     End Sub
+
     Private Sub Facturacion_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         Cajeros.Show()
     End Sub
@@ -169,7 +170,6 @@
             lista = cliente.datos_cliente(TCliente.Text)
             Dim datos = lista.ToList
             Dim u = datos(0)
-
 
             TDniCli.Text = u.dni
             TNombreCli.Text = u.nombre
@@ -234,7 +234,18 @@
 
     End Sub
 
-    Private Sub TCajero_TextChanged(sender As Object, e As EventArgs) Handles TCajero.TextChanged
-
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Dim ask As MsgBoxResult
+        If dgvCompra.Rows.Count = 0 Then
+            MsgBox("No hay productos para eliminar", vbOKOnly + vbInformation, "Eliminar")
+            TTotal.Text = 0
+        Else
+            ask = MsgBox("Estas seguro de eliminar el producto", vbYesNo + vbCritical, "Eliminar")
+            If MsgBoxResult.Yes = ask Then
+                total = total - dgvCompra.Item(4, dgvCompra.CurrentRow.Index).Value
+                TTotal.Text = total
+                dgvCompra.Rows.Remove(dgvCompra.Rows(dgvCompra.CurrentRow.Index))
+            End If
+        End If
     End Sub
 End Class

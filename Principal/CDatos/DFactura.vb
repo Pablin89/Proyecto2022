@@ -44,4 +44,10 @@
 
     End Sub
 
+    Public Sub buscar_fecha(ByVal id As Integer, ByVal fechaD As Date, ByVal fechaH As Date, ByVal grid As DataGridView)
+
+        Dim querry = (From f In ctx.Factura Join c In ctx.Cliente On f.id_cliente Equals c.Id_cliente Join e In ctx.Empleado On f.id_empleado Equals e.Id_empleado
+                      Where f.id_empleado = id And f.fecha_venta >= fechaD And f.fecha_venta <= fechaH Select f.Nro_factura, f.total, f.fecha_venta, c.nombre, c.apellido, f.forma_pago).ToList
+        grid.DataSource = querry.ToList
+    End Sub
 End Class
