@@ -89,4 +89,17 @@
         End Try
 
     End Function
+
+    Public Sub reporte_cajero(ByVal dni As Integer, ByVal id As Integer, ByVal fechaD As Date, ByVal fechaH As Date, grid As DataGridView)
+        Dim querry = (From f In ctx.Factura Join e In ctx.Empleado On f.id_empleado Equals e.Id_empleado
+                      Where e.dni_empleado = dni And f.id_empleado = id And f.fecha_venta >= fechaD And f.fecha_venta <= fechaH
+                      Select e.dni_empleado, e.nombre_empleado, e.apellido_empleado, f.Nro_factura, f.fecha_venta).ToList
+
+        grid.DataSource = querry.ToList
+        grid.Columns(0).HeaderText = "DNI Empleado"
+        grid.Columns(1).HeaderText = "Nombre Empleado"
+        grid.Columns(2).HeaderText = "Apellido Empleado"
+        grid.Columns(3).HeaderText = "Nro Factura"
+        grid.Columns(4).HeaderText = "Fecha Venta"
+    End Sub
 End Class
