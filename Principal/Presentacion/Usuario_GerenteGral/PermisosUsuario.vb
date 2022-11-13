@@ -4,37 +4,7 @@ Public Class PermisosUsuario
     Dim objempleado = New NEmpleado
     Dim objusuario = New NUsuario
     Dim us = New DUsuario
-    Private Sub BConfirmar_Click(sender As Object, e As EventArgs)
-        Dim op As MsgBoxResult
 
-        If String.IsNullOrWhiteSpace(TNombre.Text) Or String.IsNullOrWhiteSpace(TContraseña.Text) Or String.IsNullOrWhiteSpace(TRepcontra.Text) Or
-            String.IsNullOrWhiteSpace(CBperfil.Text) Or ContraseñaValida(TContraseña.Text) = False Or ContraseñasIguales(TContraseña.Text, TRepcontra.Text) = False Then
-
-            MsgBox("Debe completar todos los campos", vbOKOnly + vbDefaultButton1 + vbCritical, "Confirmar")
-        Else
-            op = MsgBox("¿Desa confirmar el permiso?", vbYesNo + vbDefaultButton2 + vbInformation, "Confirmar")
-            If op = DialogResult.Yes Then
-                MsgBox("El permiso se registro correctamente", vbOKOnly + vbInformation, "Confirmar")
-
-                TNombre.Clear()
-                TContraseña.Clear()
-                TRepcontra.Clear()
-
-            End If
-        End If
-    End Sub
-
-    Private Sub BCancelar_Click(sender As Object, e As EventArgs)
-        Dim ask As MsgBoxResult
-
-        ask = MsgBox("¿Estas seguro de cancelar el registro?", vbYesNo + vbExclamation, "Cancelar")
-
-        If ask = DialogResult.Yes Then
-            TNombre.Clear()
-            TContraseña.Clear()
-            TRepcontra.Clear()
-        End If
-    End Sub
     Private Shared Function ContraseñaValida(password As String) As Boolean
 
         If (password Is Nothing) Then
@@ -164,6 +134,7 @@ Public Class PermisosUsuario
 
     Private Sub PermisosUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         objempleado.cargarGrid(dgvEmpleados)
+        objusuario.cargarGrid(dgvUsuario)
     End Sub
 
     Private Sub DataGridView1_Click(sender As Object, e As EventArgs) Handles dgvEmpleados.Click
@@ -191,6 +162,12 @@ Public Class PermisosUsuario
             EditarEmpleado.TRepcontra.Text = ""
             EditarEmpleado.CBperfil.SelectedValue = ""
         Else
+            EditarEmpleado.TUsuario.Enabled = False
+            EditarEmpleado.TContraseña.Enabled = False
+            EditarEmpleado.TRepcontra.Enabled = False
+            EditarEmpleado.CBperfil.Enabled = False
+            EditarEmpleado.BConfirmar.Enabled = False
+            EditarEmpleado.BCancelar.Enabled = False
 
             lista = us.usuario(dgvEmpleados.Rows(i).Cells(0).Value.ToString)
             Dim datos = lista.ToList
@@ -201,11 +178,9 @@ Public Class PermisosUsuario
             EditarEmpleado.TContraseña.Text = u.contraseña
             EditarEmpleado.TRepcontra.Text = u.contraseña
             EditarEmpleado.CBperfil.ValueMember = u.perfil_id
+
+
         End If
-
-
-
-
     End Sub
 
     Private Sub BBuscar_Click(sender As Object, e As EventArgs) Handles BBuscar.Click
@@ -222,5 +197,30 @@ Public Class PermisosUsuario
         Else
             emp.buscar_estado(ComboEstado.Text, dgvEmpleados)
         End If
+    End Sub
+
+
+    Private Sub dgvUsuario_Click(sender As Object, e As EventArgs) Handles dgvUsuario.Click
+        If dgvEmpleados.CurrentRow IsNot Nothing Then
+            BModificar.Enabled = True
+        Else
+            BModificar.Enabled = False
+        End If
+
+
+        Dim i As Integer
+        i = dgvUsuario.CurrentRow.Index
+        ModificarUsuario.TApellido.Text = dgvUsuario.Rows(i).Cells(2).Value.ToString
+        ModificarUsuario.TNombre.Text = dgvUsuario.Rows(i).Cells(1).Value.ToString
+        ModificarUsuario.TUsuario.Text = dgvUsuario.Rows(i).Cells(3).Value.ToString
+        ModificarUsuario.TContraseña.Text = dgvUsuario.Rows(i).Cells(4).Value.ToString
+        ModificarUsuario.TRepcontra.Text = dgvUsuario.Rows(i).Cells(4).Value.ToString
+
+
+
+    End Sub
+
+    Private Sub BModificar_Click(sender As Object, e As EventArgs) Handles BModificar.Click
+        ModificarUsuario.Show()
     End Sub
 End Class

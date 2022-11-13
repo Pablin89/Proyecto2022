@@ -42,5 +42,23 @@
 
     End Sub
 
+    Public Sub cargarGrid_ventas(ByVal grid As DataGridView)
+        Dim ctx As ProyectoEntities8 = New ProyectoEntities8
+
+        Dim querry = (From f In ctx.Factura Join c In ctx.Cliente On f.id_cliente Equals c.Id_cliente Join e In ctx.Empleado On f.id_empleado Equals e.Id_empleado
+                      Select f.Nro_factura, e.nombre_empleado, e.apellido_empleado, f.fecha_venta, c.nombre, c.apellido, f.forma_pago, f.total).ToList
+
+
+        grid.DataSource = querry.ToList
+        grid.Columns(0).HeaderText = "Nro Factura"
+        grid.Columns(1).HeaderText = "Nombre Empleado"
+        grid.Columns(2).HeaderText = "Apellido Empleado"
+        grid.Columns(3).HeaderText = "Fecha Venta"
+        grid.Columns(4).HeaderText = "Nombre Cliente"
+        grid.Columns(5).HeaderText = "Apellido Cliente"
+        grid.Columns(6).HeaderText = "Forma de Pago"
+        grid.Columns(6).HeaderText = "Total"
+
+    End Sub
 
 End Class

@@ -8,5 +8,6 @@
         ReporteCajeros.TCajero.Text = DataGridView1.CurrentRow.Cells(1).Value
         ReporteCajeros.TId.Text = DataGridView1.CurrentRow.Cells(0).Value
         Me.Close()
+
     End Sub
 End Class

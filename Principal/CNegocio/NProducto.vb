@@ -1,5 +1,5 @@
 ﻿Public Class NProducto
-    Function agregar_producto(ByVal nombre As String, ByVal descripcion As String, ByVal codigo As Integer, ByVal precio As Decimal, ByVal stock As Integer, ByVal categoria As Integer, ByVal estado As Integer) As Boolean
+    Function agregar_producto(ByVal nombre As String, ByVal descripcion As String, ByVal codigo As Integer, ByVal precio As Decimal, ByVal stockMin As Integer, ByVal stock As Integer, ByVal categoria As Integer, ByVal estado As Integer) As Boolean
         Dim oproductos = New Producto
 
         With oproductos
@@ -7,6 +7,7 @@
             .descripcion = descripcion
             .codigo = codigo
             .precio = precio
+            .stock_minimo = stockMin
             .stock = stock
             .categoria_id = categoria
             .estado = estado
@@ -24,7 +25,7 @@
     Public Sub cargarGrid(ByVal grid As DataGridView)
         Dim ctx As ProyectoEntities8 = New ProyectoEntities8
         Dim querry = (From p In ctx.Producto Join c In ctx.Categoria On p.categoria_id Equals c.Id_categoria
-                      Select p.Id_producto, p.nombre, p.descripcion, p.codigo, p.precio, p.stock, c.desc_categoria, p.estado).ToList
+                      Select p.Id_producto, p.nombre, p.descripcion, p.codigo, p.precio, p.stock, p.stock_minimo, c.desc_categoria, p.estado).ToList
 
 
         grid.DataSource = querry.ToList
@@ -34,26 +35,26 @@
         grid.Columns(3).HeaderText = "Codigo"
         grid.Columns(4).HeaderText = "Precio"
         grid.Columns(5).HeaderText = "Stock"
-        grid.Columns(6).HeaderText = "Categoria"
-        grid.Columns(7).HeaderText = "Estado"
+        grid.Columns(6).HeaderText = "Stock Minimo"
+        grid.Columns(7).HeaderText = "Categoria"
+        grid.Columns(8).HeaderText = "Estado"
 
 
     End Sub
     Public Sub cargarGrid_facturacion(ByVal grid As DataGridView)
+        Dim ctx As ProyectoEntities8 = New ProyectoEntities8
+        Dim querry = (From p In ctx.Producto Join c In ctx.Categoria On p.categoria_id Equals c.Id_categoria
+                      Where p.stock > 0 And p.estado = 1 Select p.Id_producto, p.nombre, p.descripcion, p.codigo, p.precio, p.stock, c.desc_categoria).ToList
 
-        Dim producto As DProducto = New DProducto
 
-        grid.DataSource = producto.getAll_productos()
+        grid.DataSource = querry.ToList()
         grid.Columns(0).HeaderText = ""
         grid.Columns(1).HeaderText = "Producto"
         grid.Columns(2).HeaderText = "Descripcion"
         grid.Columns(3).HeaderText = "Codigo"
         grid.Columns(4).HeaderText = "Precio"
         grid.Columns(5).HeaderText = "Stock"
-        grid.Columns(6).Visible = False
-        grid.Columns(7).Visible = False
-        grid.Columns(8).Visible = False
-        grid.Columns(9).Visible = False
+        grid.Columns(6).HeaderText = "Catgoria"
     End Sub
 
 

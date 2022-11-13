@@ -70,6 +70,29 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1537.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1537.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1537.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1537.0\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1537.0\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1537.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System">
       <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.dll</HintPath>
     </Reference>
@@ -80,6 +103,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
@@ -106,6 +130,7 @@
     <Compile Include="CDatos\Categoria.vb">
       <DependentUpon>Modelo1.tt</DependentUpon>
     </Compile>
+    <Compile Include="CDatos\Class1.vb" />
     <Compile Include="CDatos\Cliente.vb">
       <DependentUpon>Modelo1.tt</DependentUpon>
     </Compile>
@@ -161,6 +186,12 @@
       <DependentUpon>Cajeros.vb</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Usuario_Cajero\Cajeros.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_Encargado\CajerosGrid.Designer.vb">
+      <DependentUpon>CajerosGrid.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_Encargado\CajerosGrid.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\Usuario_Encargado\ReporteVentas.Designer.vb">
@@ -247,6 +278,12 @@
     <Compile Include="Presentacion\Usuario_Encargado\ModificarProducto.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentacion\Usuario_GerenteGral\ModificarUsuario.Designer.vb">
+      <DependentUpon>ModificarUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_GerenteGral\ModificarUsuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentacion\Usuario_GerenteGral\PermisosUsuario.Designer.vb">
       <DependentUpon>PermisosUsuario.vb</DependentUpon>
     </Compile>
@@ -277,16 +314,16 @@
     <Compile Include="Presentacion\Usuario_Gerente\GridCajero.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentacion\Usuario_Gerente\ReporteCategoriasa.Designer.vb">
+      <DependentUpon>ReporteCategoriasa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_Gerente\ReporteCategoriasa.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentacion\Usuario_Gerente\ReporteProductos.Designer.vb">
       <DependentUpon>ReporteProductos.vb</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Usuario_Gerente\ReporteProductos.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentacion\Usuario_Gerente\ReportesCliente.Designer.vb">
-      <DependentUpon>ReportesCliente.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\Usuario_Gerente\ReportesCliente.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\Usuario_Gerente\ReporteCajeros.Designer.vb">
@@ -341,6 +378,9 @@
     <EmbeddedResource Include="Presentacion\Usuario_Cajero\Cajeros.resx">
       <DependentUpon>Cajeros.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Usuario_Encargado\CajerosGrid.resx">
+      <DependentUpon>CajerosGrid.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Usuario_Encargado\ReporteVentas.resx">
       <DependentUpon>ReporteVentas.vb</DependentUpon>
     </EmbeddedResource>
@@ -383,6 +423,9 @@
     <EmbeddedResource Include="Presentacion\Usuario_Encargado\ModificarProducto.resx">
       <DependentUpon>ModificarProducto.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Usuario_GerenteGral\ModificarUsuario.resx">
+      <DependentUpon>ModificarUsuario.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Usuario_GerenteGral\PermisosUsuario.resx">
       <DependentUpon>PermisosUsuario.vb</DependentUpon>
     </EmbeddedResource>
@@ -404,11 +447,11 @@
     <EmbeddedResource Include="Presentacion\Usuario_Gerente\NumerosDelMes.resx">
       <DependentUpon>NumerosDelMes.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Usuario_Gerente\ReporteCategoriasa.resx">
+      <DependentUpon>ReporteCategoriasa.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Usuario_Gerente\ReporteProductos.resx">
       <DependentUpon>ReporteProductos.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Usuario_Gerente\ReportesCliente.resx">
-      <DependentUpon>ReportesCliente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.vb</DependentUpon>
@@ -587,9 +630,26 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Proyecto_log.ldf">
-      <DependentUpon>Proyecto.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>Proyecto.mdf</DependentUpon>
     </Content>
+    <Content Include="SqlServerTypes\Loader.cs" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="System\Security\Principal\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

@@ -70,4 +70,18 @@
 
 
     End Function
+    Function modificar_usuario(usuario As String, contra As String, perfil As Integer, emp As Integer, id As Integer) As Boolean
+        Try
+            Dim act = (From u In ctx.Usuario Where u.Id_usuario = id).ToList()(0)
+            act.nombre_usuario = usuario
+            act.contraseña = contra
+            act.perfil_id = perfil
+            act.empleado_id = emp
+            ctx.SaveChanges()
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+
 End Class

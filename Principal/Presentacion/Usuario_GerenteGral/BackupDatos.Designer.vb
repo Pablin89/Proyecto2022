@@ -33,6 +33,8 @@ Partial Class BackupDatos
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Conectar = New System.Windows.Forms.OpenFileDialog()
         Me.Buscar = New System.Windows.Forms.FolderBrowserDialog()
+        Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.SuspendLayout()
         '
         'Label1
@@ -119,6 +121,7 @@ Partial Class BackupDatos
         '
         Me.ComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox.FormattingEnabled = True
+        Me.ComboBox.Items.AddRange(New Object() {"D:\USUARIOS\ALUMNO\DOCUMENTOS\PROYECTO.MDF"})
         Me.ComboBox.Location = New System.Drawing.Point(465, 197)
         Me.ComboBox.Name = "ComboBox"
         Me.ComboBox.Size = New System.Drawing.Size(438, 28)
@@ -138,6 +141,10 @@ Partial Class BackupDatos
         'Conectar
         '
         Me.Conectar.FileName = "Conectar"
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
         'BackupDatos
         '
@@ -174,4 +181,6 @@ Partial Class BackupDatos
     Friend WithEvents Label2 As Label
     Friend WithEvents Conectar As OpenFileDialog
     Friend WithEvents Buscar As FolderBrowserDialog
+    Friend WithEvents SaveFileDialog1 As SaveFileDialog
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
 End Class

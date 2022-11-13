@@ -4,7 +4,7 @@ Public Class BackUp
 
     Public Function resguardoDatos(p_nombreResguardo As String, p_direccion As String)
         Try
-            Dim conexion As New SqlConnection("Data Source=.\SQLEXPRESS;Initial Catalog=Cultural;Integrated Security=True")
+            Dim conexion As New SqlConnection("Data Source=USER\SQL2;AttachDbFilename=D:\usuarios\alumno\Documentos\Proyecto.mdf;Initial Catalog=Proyecto;Integrated Security=True")
             Using conexion
                 conexion.Open()
                 Dim cmd As New SqlCommand("resguardar")

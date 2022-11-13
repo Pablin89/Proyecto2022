@@ -56,13 +56,14 @@
         End Try
     End Function
 
-    Function modificar_producto(nombre As String, descripcion As String, codigo As Integer, precio As Decimal, stock As Integer, cat As Integer, estado As Integer, id As String) As Boolean
+    Function modificar_producto(nombre As String, descripcion As String, codigo As Integer, precio As Decimal, stockMin As Integer, stock As Integer, cat As Integer, estado As Integer, id As String) As Boolean
         Try
             Dim act = (From p In ctx.Producto Where p.Id_producto = id).ToList()(0)
             act.nombre = nombre
             act.descripcion = descripcion
             act.codigo = codigo
             act.precio = precio
+            act.stock_minimo = stockMin
             act.stock = stock
             act.categoria_id = cat
             ctx.SaveChanges()
@@ -99,4 +100,29 @@
         End Try
 
     End Function
+    Public Sub productos_vendidos(grid As DataGridView)
+        Dim querry = (From d In ctx.Detalle Join f In ctx.Factura On d.nro_factura Equals f.Nro_factura Join p In ctx.Producto On d.id_producto Equals p.Id_producto
+                      Join c In ctx.Categoria On p.categoria_id Equals c.Id_categoria Group d.cantidad By p.nombre, c.desc_categoria Into grupo = Group
+                      Select Producto = nombre, Cantidad = grupo.Sum(), Categoria = desc_categoria Order By Cantidad Descending)
+        grid.DataSource = querry.ToList
+    End Sub
+
+    Public Sub productos_masVendidos(ByVal fechaD As Date, ByVal fechaH As Date, grid As DataGridView)
+        Dim querry = (From d In ctx.Detalle Join f In ctx.Factura On d.nro_factura Equals f.Nro_factura Join p In ctx.Producto On d.id_producto Equals p.Id_producto
+                      Join c In ctx.Categoria On p.categoria_id Equals c.Id_categoria Where f.fecha_venta >= fechaD And f.fecha_venta <= fechaH Group d.cantidad By p.nombre, c.desc_categoria Into grupo = Group
+                      Select Producto = nombre, Cantidad = grupo.Sum(), Categoria = desc_categoria Order By Cantidad Descending)
+        grid.DataSource = querry.ToList
+    End Sub
+
+    Public Sub productos_stock(grid As DataGridView)
+        Dim querry = (From p In ctx.Producto Join c In ctx.Categoria On p.categoria_id Equals c.Id_categoria Where p.stock <= p.stock_minimo
+                      Select p.nombre, c.desc_categoria, p.stock, p.stock_minimo)
+        grid.DataSource = querry.ToList
+
+        grid.Columns(0).HeaderText = "Producto"
+        grid.Columns(1).HeaderText = "Categoria"
+        grid.Columns(2).HeaderText = "Stock"
+        grid.Columns(3).HeaderText = "Stock Minimo"
+    End Sub
+
 End Class

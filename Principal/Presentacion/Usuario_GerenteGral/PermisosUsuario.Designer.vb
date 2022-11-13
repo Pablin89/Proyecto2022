@@ -28,11 +28,12 @@ Partial Class PermisosUsuario
         Me.ErrorContra = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.ErrorRepcontra = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.BuscarEmpleado = New System.Windows.Forms.TabPage()
+        Me.BModificar = New System.Windows.Forms.Button()
+        Me.dgvUsuario = New System.Windows.Forms.DataGridView()
         Me.BEditarEmpleado = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.dgvEmpleados = New System.Windows.Forms.DataGridView()
         Me.ComboEstado = New System.Windows.Forms.ComboBox()
-        Me.BBuscar = New System.Windows.Forms.Button()
         Me.TDni = New System.Windows.Forms.TextBox()
         Me.TNombre2 = New System.Windows.Forms.TextBox()
         Me.TApellido = New System.Windows.Forms.TextBox()
@@ -41,9 +42,11 @@ Partial Class PermisosUsuario
         Me.CBnombre = New System.Windows.Forms.CheckBox()
         Me.CBapellido = New System.Windows.Forms.CheckBox()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.BBuscar = New System.Windows.Forms.Button()
         CType(Me.ErrorContra, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorRepcontra, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BuscarEmpleado.SuspendLayout()
+        CType(Me.dgvUsuario, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvEmpleados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.SuspendLayout()
@@ -81,6 +84,8 @@ Partial Class PermisosUsuario
         'BuscarEmpleado
         '
         Me.BuscarEmpleado.BackColor = System.Drawing.Color.DarkGray
+        Me.BuscarEmpleado.Controls.Add(Me.BModificar)
+        Me.BuscarEmpleado.Controls.Add(Me.dgvUsuario)
         Me.BuscarEmpleado.Controls.Add(Me.BEditarEmpleado)
         Me.BuscarEmpleado.Controls.Add(Me.Label2)
         Me.BuscarEmpleado.Controls.Add(Me.dgvEmpleados)
@@ -100,16 +105,39 @@ Partial Class PermisosUsuario
         Me.BuscarEmpleado.TabIndex = 0
         Me.BuscarEmpleado.Text = "Seleccionar Empleado"
         '
+        'BModificar
+        '
+        Me.BModificar.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.BModificar.Enabled = False
+        Me.BModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.BModificar.Location = New System.Drawing.Point(956, 156)
+        Me.BModificar.Name = "BModificar"
+        Me.BModificar.Size = New System.Drawing.Size(291, 34)
+        Me.BModificar.TabIndex = 26
+        Me.BModificar.Text = "Editar empleado seleccionado"
+        Me.BModificar.UseVisualStyleBackColor = False
+        '
+        'dgvUsuario
+        '
+        Me.dgvUsuario.AllowUserToAddRows = False
+        Me.dgvUsuario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvUsuario.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.dgvUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvUsuario.Location = New System.Drawing.Point(736, 231)
+        Me.dgvUsuario.Name = "dgvUsuario"
+        Me.dgvUsuario.Size = New System.Drawing.Size(601, 337)
+        Me.dgvUsuario.TabIndex = 25
+        '
         'BEditarEmpleado
         '
         Me.BEditarEmpleado.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.BEditarEmpleado.Enabled = False
         Me.BEditarEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.BEditarEmpleado.Location = New System.Drawing.Point(1001, 181)
+        Me.BEditarEmpleado.Location = New System.Drawing.Point(32, 156)
         Me.BEditarEmpleado.Name = "BEditarEmpleado"
-        Me.BEditarEmpleado.Size = New System.Drawing.Size(291, 34)
+        Me.BEditarEmpleado.Size = New System.Drawing.Size(228, 34)
         Me.BEditarEmpleado.TabIndex = 24
-        Me.BEditarEmpleado.Text = "Editar empleado seleccionado"
+        Me.BEditarEmpleado.Text = "Otrogar Permiso"
         Me.BEditarEmpleado.UseVisualStyleBackColor = False
         '
         'Label2
@@ -119,7 +147,7 @@ Partial Class PermisosUsuario
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.MidnightBlue
         Me.Label2.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Label2.Location = New System.Drawing.Point(546, 205)
+        Me.Label2.Location = New System.Drawing.Point(694, 195)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(193, 24)
         Me.Label2.TabIndex = 23
@@ -133,7 +161,7 @@ Partial Class PermisosUsuario
         Me.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvEmpleados.Location = New System.Drawing.Point(3, 232)
         Me.dgvEmpleados.Name = "dgvEmpleados"
-        Me.dgvEmpleados.Size = New System.Drawing.Size(1337, 337)
+        Me.dgvEmpleados.Size = New System.Drawing.Size(727, 337)
         Me.dgvEmpleados.TabIndex = 22
         '
         'ComboEstado
@@ -146,21 +174,6 @@ Partial Class PermisosUsuario
         Me.ComboEstado.Name = "ComboEstado"
         Me.ComboEstado.Size = New System.Drawing.Size(302, 28)
         Me.ComboEstado.TabIndex = 21
-        '
-        'BBuscar
-        '
-        Me.BBuscar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BBuscar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.BBuscar.Image = Global.Principal.My.Resources.Resources.buscar
-        Me.BBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BBuscar.Location = New System.Drawing.Point(578, 134)
-        Me.BBuscar.Name = "BBuscar"
-        Me.BBuscar.Size = New System.Drawing.Size(120, 46)
-        Me.BBuscar.TabIndex = 20
-        Me.BBuscar.Text = "Buscar"
-        Me.BBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.BBuscar.UseVisualStyleBackColor = True
         '
         'TDni
         '
@@ -251,6 +264,21 @@ Partial Class PermisosUsuario
         Me.TabControl1.TabIndex = 6
         Me.TabControl1.TabStop = False
         '
+        'BBuscar
+        '
+        Me.BBuscar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BBuscar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.BBuscar.Image = Global.Principal.My.Resources.Resources.buscar
+        Me.BBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BBuscar.Location = New System.Drawing.Point(578, 134)
+        Me.BBuscar.Name = "BBuscar"
+        Me.BBuscar.Size = New System.Drawing.Size(120, 46)
+        Me.BBuscar.TabIndex = 20
+        Me.BBuscar.Text = "Buscar"
+        Me.BBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BBuscar.UseVisualStyleBackColor = True
+        '
         'PermisosUsuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -268,6 +296,7 @@ Partial Class PermisosUsuario
         CType(Me.ErrorRepcontra, System.ComponentModel.ISupportInitialize).EndInit()
         Me.BuscarEmpleado.ResumeLayout(False)
         Me.BuscarEmpleado.PerformLayout()
+        CType(Me.dgvUsuario, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvEmpleados, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
         Me.ResumeLayout(False)
@@ -306,4 +335,6 @@ Partial Class PermisosUsuario
     Friend WithEvents BEditarEmpleado As Button
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents LUsuario As Label
+    Friend WithEvents BModificar As Button
+    Friend WithEvents dgvUsuario As DataGridView
 End Class

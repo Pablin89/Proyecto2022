@@ -46,12 +46,12 @@
         Me.Hide()
     End Sub
 
-    Private Sub ReportesClientes_Click(sender As Object, e As EventArgs) Handles ReportesClientes.Click
-        ReportesCliente.Show()
+    Private Sub ReportesClientes_Click(sender As Object, e As EventArgs) Handles ReporteCategoria.Click
+        ReporteCategorias.Show()
         Me.Hide()
     End Sub
 
-    Private Sub ReportesProductos_Click(sender As Object, e As EventArgs) Handles ReportesProductos.Click
+    Private Sub ReportesProducto_Click(sender As Object, e As EventArgs) Handles ReporteProducto.Click
         ReporteProductos.Show()
         Me.Hide()
     End Sub

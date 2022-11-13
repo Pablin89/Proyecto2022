@@ -22,40 +22,28 @@ Partial Class NumerosDelMes
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.CBMes = New System.Windows.Forms.CheckBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.CBaño = New System.Windows.Forms.CheckBox()
         Me.BBuscar = New System.Windows.Forms.Button()
         Me.DataGridView4 = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.DataGridView3 = New System.Windows.Forms.DataGridView()
-        Me.NombreCliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ApellidoCliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CantidadCompras = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.LProductomenos = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Categroría = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.LProductomas = New System.Windows.Forms.Label()
+        Me.DateDesde = New System.Windows.Forms.DateTimePicker()
+        Me.LDesde = New System.Windows.Forms.Label()
+        Me.DateHasta = New System.Windows.Forms.DateTimePicker()
+        Me.LHasta = New System.Windows.Forms.Label()
         Me.Panel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -109,11 +97,11 @@ Partial Class NumerosDelMes
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Teal
+        Me.Panel1.Controls.Add(Me.DateHasta)
+        Me.Panel1.Controls.Add(Me.LHasta)
+        Me.Panel1.Controls.Add(Me.DateDesde)
+        Me.Panel1.Controls.Add(Me.LDesde)
         Me.Panel1.Controls.Add(Me.Button2)
-        Me.Panel1.Controls.Add(Me.CBMes)
-        Me.Panel1.Controls.Add(Me.TextBox1)
-        Me.Panel1.Controls.Add(Me.ComboBox1)
-        Me.Panel1.Controls.Add(Me.CBaño)
         Me.Panel1.Controls.Add(Me.BBuscar)
         Me.Panel1.Location = New System.Drawing.Point(1127, 24)
         Me.Panel1.Name = "Panel1"
@@ -125,11 +113,11 @@ Partial Class NumerosDelMes
         Me.Button2.BackColor = System.Drawing.Color.Gainsboro
         Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button2.Font = New System.Drawing.Font("MS Reference Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Button2.Image = Global.Principal.My.Resources.Resources.calendar_office_day_1474__2_
         Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.Location = New System.Drawing.Point(15, 200)
+        Me.Button2.Location = New System.Drawing.Point(20, 179)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(208, 47)
         Me.Button2.TabIndex = 27
@@ -137,52 +125,12 @@ Partial Class NumerosDelMes
         Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button2.UseVisualStyleBackColor = False
         '
-        'CBMes
-        '
-        Me.CBMes.AutoSize = True
-        Me.CBMes.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CBMes.ForeColor = System.Drawing.SystemColors.Control
-        Me.CBMes.Location = New System.Drawing.Point(43, 114)
-        Me.CBMes.Name = "CBMes"
-        Me.CBMes.Size = New System.Drawing.Size(153, 22)
-        Me.CBMes.TabIndex = 26
-        Me.CBMes.Text = "Seleccionar mes"
-        Me.CBMes.UseVisualStyleBackColor = True
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(43, 61)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(153, 20)
-        Me.TextBox1.TabIndex = 25
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"})
-        Me.ComboBox1.Location = New System.Drawing.Point(43, 142)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(153, 21)
-        Me.ComboBox1.TabIndex = 24
-        '
-        'CBaño
-        '
-        Me.CBaño.AutoSize = True
-        Me.CBaño.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CBaño.ForeColor = System.Drawing.SystemColors.Control
-        Me.CBaño.Location = New System.Drawing.Point(43, 33)
-        Me.CBaño.Name = "CBaño"
-        Me.CBaño.Size = New System.Drawing.Size(149, 22)
-        Me.CBaño.TabIndex = 23
-        Me.CBaño.Text = "Seleccionar año"
-        Me.CBaño.UseVisualStyleBackColor = True
-        '
         'BBuscar
         '
         Me.BBuscar.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.BBuscar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BBuscar.Font = New System.Drawing.Font("MS Reference Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BBuscar.ForeColor = System.Drawing.SystemColors.Control
         Me.BBuscar.Image = Global.Principal.My.Resources.Resources.Print_icon_icons_com_73705
         Me.BBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -197,38 +145,24 @@ Partial Class NumerosDelMes
         'DataGridView4
         '
         Me.DataGridView4.AllowUserToAddRows = False
+        Me.DataGridView4.AllowUserToDeleteRows = False
         Me.DataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView4.BackgroundColor = System.Drawing.Color.LightCyan
         Me.DataGridView4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView4.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView4.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.DataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView4.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6})
         Me.DataGridView4.Location = New System.Drawing.Point(596, 395)
         Me.DataGridView4.Name = "DataGridView4"
+        Me.DataGridView4.ReadOnly = True
         Me.DataGridView4.Size = New System.Drawing.Size(512, 215)
         Me.DataGridView4.TabIndex = 19
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.HeaderText = "Nombre del cajero"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.HeaderText = "Apellido del cajero"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.HeaderText = "Cantidad de ventas"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
         '
         'Label3
         '
@@ -244,38 +178,24 @@ Partial Class NumerosDelMes
         'DataGridView3
         '
         Me.DataGridView3.AllowUserToAddRows = False
+        Me.DataGridView3.AllowUserToDeleteRows = False
         Me.DataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView3.BackgroundColor = System.Drawing.Color.LightCyan
         Me.DataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView3.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView3.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
         Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView3.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NombreCliente, Me.ApellidoCliente, Me.CantidadCompras})
         Me.DataGridView3.Location = New System.Drawing.Point(46, 395)
         Me.DataGridView3.Name = "DataGridView3"
+        Me.DataGridView3.ReadOnly = True
         Me.DataGridView3.Size = New System.Drawing.Size(512, 215)
         Me.DataGridView3.TabIndex = 17
-        '
-        'NombreCliente
-        '
-        Me.NombreCliente.HeaderText = "Nombre del cliente"
-        Me.NombreCliente.Name = "NombreCliente"
-        '
-        'ApellidoCliente
-        '
-        Me.ApellidoCliente.HeaderText = "Apellido del cliente"
-        Me.ApellidoCliente.Name = "ApellidoCliente"
-        '
-        'CantidadCompras
-        '
-        Me.CantidadCompras.HeaderText = "Cantidad de compras"
-        Me.CantidadCompras.Name = "CantidadCompras"
         '
         'Label2
         '
@@ -291,85 +211,57 @@ Partial Class NumerosDelMes
         'DataGridView2
         '
         Me.DataGridView2.AllowUserToAddRows = False
+        Me.DataGridView2.AllowUserToDeleteRows = False
         Me.DataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.DataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3})
         Me.DataGridView2.Location = New System.Drawing.Point(594, 57)
         Me.DataGridView2.Name = "DataGridView2"
+        Me.DataGridView2.ReadOnly = True
         Me.DataGridView2.Size = New System.Drawing.Size(512, 282)
         Me.DataGridView2.TabIndex = 16
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.HeaderText = "Producto"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Categoría"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Cantidad Vendidos"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
         '
         'LProductomenos
         '
         Me.LProductomenos.AutoSize = True
         Me.LProductomenos.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LProductomenos.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.LProductomenos.Location = New System.Drawing.Point(746, 23)
+        Me.LProductomenos.Location = New System.Drawing.Point(653, 23)
         Me.LProductomenos.Name = "LProductomenos"
-        Me.LProductomenos.Size = New System.Drawing.Size(224, 20)
+        Me.LProductomenos.Size = New System.Drawing.Size(369, 20)
         Me.LProductomenos.TabIndex = 15
-        Me.LProductomenos.Text = "Productos menos vendidos"
+        Me.LProductomenos.Text = "Productos menores o iguales al stock minimo"
         '
         'DataGridView1
         '
         Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.LightCyan
         Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Producto, Me.Categroría, Me.Cantidad})
         Me.DataGridView1.Location = New System.Drawing.Point(46, 57)
         Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.Size = New System.Drawing.Size(512, 282)
         Me.DataGridView1.TabIndex = 14
-        '
-        'Producto
-        '
-        Me.Producto.HeaderText = "Producto"
-        Me.Producto.Name = "Producto"
-        '
-        'Categroría
-        '
-        Me.Categroría.HeaderText = "Categoría"
-        Me.Categroría.Name = "Categroría"
-        '
-        'Cantidad
-        '
-        Me.Cantidad.HeaderText = "Cantidad Vendidos"
-        Me.Cantidad.Name = "Cantidad"
         '
         'LProductomas
         '
@@ -381,6 +273,50 @@ Partial Class NumerosDelMes
         Me.LProductomas.Size = New System.Drawing.Size(204, 20)
         Me.LProductomas.TabIndex = 14
         Me.LProductomas.Text = "Productos más vendidos"
+        '
+        'DateDesde
+        '
+        Me.DateDesde.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateDesde.Location = New System.Drawing.Point(91, 50)
+        Me.DateDesde.MaxDate = New Date(2050, 12, 31, 0, 0, 0, 0)
+        Me.DateDesde.MinDate = New Date(2015, 11, 24, 0, 0, 0, 0)
+        Me.DateDesde.Name = "DateDesde"
+        Me.DateDesde.Size = New System.Drawing.Size(132, 20)
+        Me.DateDesde.TabIndex = 74
+        Me.DateDesde.Value = New Date(2022, 11, 12, 0, 0, 0, 0)
+        '
+        'LDesde
+        '
+        Me.LDesde.AutoSize = True
+        Me.LDesde.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LDesde.ForeColor = System.Drawing.Color.White
+        Me.LDesde.Location = New System.Drawing.Point(16, 50)
+        Me.LDesde.Name = "LDesde"
+        Me.LDesde.Size = New System.Drawing.Size(61, 20)
+        Me.LDesde.TabIndex = 73
+        Me.LDesde.Text = "Desde"
+        '
+        'DateHasta
+        '
+        Me.DateHasta.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateHasta.Location = New System.Drawing.Point(91, 97)
+        Me.DateHasta.MaxDate = New Date(2050, 12, 24, 0, 0, 0, 0)
+        Me.DateHasta.MinDate = New Date(2015, 11, 25, 0, 0, 0, 0)
+        Me.DateHasta.Name = "DateHasta"
+        Me.DateHasta.Size = New System.Drawing.Size(127, 20)
+        Me.DateHasta.TabIndex = 76
+        Me.DateHasta.Value = New Date(2022, 11, 12, 0, 0, 0, 0)
+        '
+        'LHasta
+        '
+        Me.LHasta.AutoSize = True
+        Me.LHasta.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LHasta.ForeColor = System.Drawing.Color.White
+        Me.LHasta.Location = New System.Drawing.Point(25, 97)
+        Me.LHasta.Name = "LHasta"
+        Me.LHasta.Size = New System.Drawing.Size(57, 20)
+        Me.LHasta.TabIndex = 75
+        Me.LHasta.Text = "Hasta"
         '
         'NumerosDelMes
         '
@@ -413,27 +349,15 @@ Partial Class NumerosDelMes
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents LProductomas As Label
     Friend WithEvents DataGridView3 As DataGridView
-    Friend WithEvents NombreCliente As DataGridViewTextBoxColumn
-    Friend WithEvents ApellidoCliente As DataGridViewTextBoxColumn
-    Friend WithEvents CantidadCompras As DataGridViewTextBoxColumn
     Friend WithEvents Label2 As Label
     Friend WithEvents DataGridView2 As DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
     Friend WithEvents LProductomenos As Label
-    Friend WithEvents Producto As DataGridViewTextBoxColumn
-    Friend WithEvents Categroría As DataGridViewTextBoxColumn
-    Friend WithEvents Cantidad As DataGridViewTextBoxColumn
     Friend WithEvents DataGridView4 As DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
     Friend WithEvents Label3 As Label
-    Friend WithEvents CBaño As CheckBox
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents Button2 As Button
-    Friend WithEvents CBMes As CheckBox
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents DateDesde As DateTimePicker
+    Friend WithEvents LDesde As Label
+    Friend WithEvents DateHasta As DateTimePicker
+    Friend WithEvents LHasta As Label
 End Class

@@ -102,4 +102,5 @@
         grid.Columns(3).HeaderText = "Nro Factura"
         grid.Columns(4).HeaderText = "Fecha Venta"
     End Sub
+
 End Class

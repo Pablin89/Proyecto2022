@@ -36,7 +36,7 @@
         Else
             op = MsgBox("¿Desea modificar los datos del producto?", vbYesNo + vbDefaultButton2 + vbInformation, "Modificar")
             If op = DialogResult.Yes Then
-                prod.modificar_producto(TNombreProd.Text, TDescripcion.Text, TCodigoProd.Text, TPrecioProd.Text, TStock.Text, CBcategoria.SelectedValue, 1, GestionProductos.dgvProductos.CurrentRow.Cells(0).Value)
+                prod.modificar_producto(TNombreProd.Text, TDescripcion.Text, TCodigoProd.Text, TPrecioProd.Text, TStockMin.Text, TStock.Text, CBcategoria.SelectedValue, 1, GestionProductos.dgvProductos.CurrentRow.Cells(0).Value)
                 op = MsgBox("Los datos se guardaron correctamente", vbOKOnly + vbInformation, "Confirmar")
                 If op = MsgBoxResult.Ok Then
                     Me.Close()

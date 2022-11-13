@@ -14,25 +14,12 @@
             MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End If
     End Sub
-    Private Sub SoloLetras_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TNombreProd.KeyPress, TDesc.KeyPress
-        If (Char.IsLetter(e.KeyChar)) Then
-            e.Handled = False
-
-        ElseIf (Char.IsControl(e.KeyChar)) Then
-            e.Handled = False
-
-        Else
-            e.Handled = True
-            MessageBox.Show("Solo se permiten letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-
-        End If
-    End Sub
 
     Private Sub BConfirmar_Click(sender As Object, e As EventArgs) Handles BConfirmar.Click
         Dim op As MsgBoxResult
 
         If String.IsNullOrWhiteSpace(TNombreProd.Text) Or Not IsNumeric(TStock.Text) Or String.IsNullOrWhiteSpace(TCodigoProd.Text) Or Not IsNumeric(TPrecioProd.Text) Or
-            String.IsNullOrWhiteSpace(CBcategoria.Text) Or String.IsNullOrWhiteSpace(TDescripcion.Text) Then
+            String.IsNullOrWhiteSpace(CBcategoria.Text) Or String.IsNullOrWhiteSpace(TDescripcion.Text) Or String.IsNullOrWhiteSpace(TStockMin.Text) Then
 
             MsgBox("Debe completar todos los campos", vbOKOnly + vbDefaultButton1 + vbCritical, "Confirmar")
         Else
@@ -41,7 +28,7 @@
 
                 If prod.existe_producto(TNombreProd.Text, TDescripcion.Text, TCodigoProd.Text) = False Then
 
-                    objproducto.agregar_producto(TNombreProd.Text, TDescripcion.Text, TCodigoProd.Text, TPrecioProd.Text, TStock.Text, CBcategoria.SelectedValue, 1)
+                    objproducto.agregar_producto(TNombreProd.Text, TDescripcion.Text, TCodigoProd.Text, TPrecioProd.Text, TStockMin.Text, TStock.Text, CBcategoria.SelectedValue, 1)
                     MsgBox("El producto se registro correctamente", vbOKOnly + vbInformation, "Confirmar")
 
                     objproducto.cargarGrid(dgvProductos)
@@ -51,6 +38,7 @@
                 End If
                 TNombreProd.Clear()
                 TPrecioProd.Clear()
+                TStockMin.Clear()
                 TStock.Clear()
                 TCodigoProd.Clear()
                 TDescripcion.Clear()
@@ -198,7 +186,21 @@
         ModificarProducto.TCodigoProd.Text = dgvProductos.Rows(i).Cells(3).Value
         ModificarProducto.TPrecioProd.Text = dgvProductos.Rows(i).Cells(4).Value
         ModificarProducto.TStock.Text = dgvProductos.Rows(i).Cells(5).Value
-        ModificarProducto.CBcategoria.Text = dgvProductos.Rows(i).Cells(6).Value.ToString
+        ModificarProducto.TStockMin.Text = dgvProductos.Rows(i).Cells(6).Value
+
+        If dgvProductos.Rows(i).Cells(7).Value.ToString = "Bazar" Then
+            ModificarProducto.CBcategoria.Text = "Bazar"
+        ElseIf dgvProductos.Rows(i).Cells(7).Value.ToString = "Jugueteria" Then
+            ModificarProducto.CBcategoria.Text = "Jugueteria"
+        ElseIf dgvProductos.Rows(i).Cells(7).Value.ToString = "Libreria" Then
+            ModificarProducto.CBcategoria.SelectedValue = 3
+        ElseIf dgvProductos.Rows(i).Cells(7).Value.ToString = "Ferreteria" Then
+            ModificarProducto.CBcategoria.SelectedValue = 4
+        ElseIf dgvProductos.Rows(i).Cells(7).Value.ToString = "Cotillon" Then
+            ModificarProducto.CBcategoria.SelectedValue = 5
+        Else
+            ModificarProducto.CBcategoria.Text = "Joyeria"
+        End If
 
     End Sub
 

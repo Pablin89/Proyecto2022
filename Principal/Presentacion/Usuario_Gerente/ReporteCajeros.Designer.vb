@@ -22,9 +22,8 @@ Partial Class ReporteCajeros
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea5 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend5 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
         Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.LDesde = New System.Windows.Forms.Label()
         Me.DateDesde = New System.Windows.Forms.DateTimePicker()
@@ -50,16 +49,12 @@ Partial Class ReporteCajeros
         '
         'Chart1
         '
-        ChartArea2.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea2)
-        Legend2.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend2)
+        ChartArea5.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea5)
+        Legend5.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend5)
         Me.Chart1.Location = New System.Drawing.Point(738, 73)
         Me.Chart1.Name = "Chart1"
-        Series2.ChartArea = "ChartArea1"
-        Series2.Legend = "Legend1"
-        Series2.Name = "Series1"
-        Me.Chart1.Series.Add(Series2)
         Me.Chart1.Size = New System.Drawing.Size(542, 325)
         Me.Chart1.TabIndex = 9
         Me.Chart1.Text = "Chart1"
@@ -79,12 +74,12 @@ Partial Class ReporteCajeros
         '
         Me.DateDesde.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.DateDesde.Location = New System.Drawing.Point(284, 145)
-        Me.DateDesde.MaxDate = New Date(2022, 11, 7, 22, 29, 52, 0)
+        Me.DateDesde.MaxDate = New Date(2100, 3, 12, 0, 0, 0, 0)
         Me.DateDesde.MinDate = New Date(2015, 11, 24, 0, 0, 0, 0)
         Me.DateDesde.Name = "DateDesde"
         Me.DateDesde.Size = New System.Drawing.Size(132, 20)
         Me.DateDesde.TabIndex = 15
-        Me.DateDesde.Value = New Date(2022, 11, 7, 0, 0, 0, 0)
+        Me.DateDesde.Value = New Date(2022, 11, 12, 0, 0, 0, 0)
         '
         'LHasta
         '
@@ -101,12 +96,12 @@ Partial Class ReporteCajeros
         '
         Me.DateHasta.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.DateHasta.Location = New System.Drawing.Point(498, 145)
-        Me.DateHasta.MaxDate = New Date(2022, 11, 7, 0, 0, 0, 0)
+        Me.DateHasta.MaxDate = New Date(2105, 7, 10, 0, 0, 0, 0)
         Me.DateHasta.MinDate = New Date(2015, 11, 25, 0, 0, 0, 0)
         Me.DateHasta.Name = "DateHasta"
         Me.DateHasta.Size = New System.Drawing.Size(127, 20)
         Me.DateHasta.TabIndex = 18
-        Me.DateHasta.Value = New Date(2022, 11, 7, 0, 0, 0, 0)
+        Me.DateHasta.Value = New Date(2022, 11, 12, 0, 0, 0, 0)
         '
         'Button1
         '
@@ -138,7 +133,7 @@ Partial Class ReporteCajeros
         Me.dgvEmpleado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvEmpleado.BackgroundColor = System.Drawing.Color.Navy
         Me.dgvEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvEmpleado.Location = New System.Drawing.Point(2, 478)
+        Me.dgvEmpleado.Location = New System.Drawing.Point(2, 494)
         Me.dgvEmpleado.Name = "dgvEmpleado"
         Me.dgvEmpleado.ReadOnly = True
         Me.dgvEmpleado.Size = New System.Drawing.Size(732, 195)
@@ -150,7 +145,7 @@ Partial Class ReporteCajeros
         Me.LMayores.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LMayores.ForeColor = System.Drawing.Color.White
         Me.LMayores.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.LMayores.Location = New System.Drawing.Point(-2, 451)
+        Me.LMayores.Location = New System.Drawing.Point(42, 467)
         Me.LMayores.Name = "LMayores"
         Me.LMayores.Size = New System.Drawing.Size(1320, 24)
         Me.LMayores.TabIndex = 30
@@ -170,10 +165,10 @@ Partial Class ReporteCajeros
         '
         'BBusqueda
         '
-        Me.BBusqueda.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BBusqueda.Location = New System.Drawing.Point(369, 345)
+        Me.BBusqueda.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BBusqueda.Location = New System.Drawing.Point(345, 345)
         Me.BBusqueda.Name = "BBusqueda"
-        Me.BBusqueda.Size = New System.Drawing.Size(219, 28)
+        Me.BBusqueda.Size = New System.Drawing.Size(243, 28)
         Me.BBusqueda.TabIndex = 34
         Me.BBusqueda.Text = "Aplicar criterios seleccionados"
         Me.BBusqueda.UseVisualStyleBackColor = True
@@ -212,11 +207,15 @@ Partial Class ReporteCajeros
         '
         'Buscar
         '
-        Me.Buscar.Location = New System.Drawing.Point(613, 269)
+        Me.Buscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Buscar.Image = Global.Principal.My.Resources.Resources.buscar2
+        Me.Buscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Buscar.Location = New System.Drawing.Point(613, 263)
         Me.Buscar.Name = "Buscar"
-        Me.Buscar.Size = New System.Drawing.Size(99, 33)
+        Me.Buscar.Size = New System.Drawing.Size(106, 42)
         Me.Buscar.TabIndex = 43
         Me.Buscar.Text = "Buscar"
+        Me.Buscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Buscar.UseVisualStyleBackColor = True
         '
         'TCajero
@@ -229,7 +228,7 @@ Partial Class ReporteCajeros
         '
         'TId
         '
-        Me.TId.Location = New System.Drawing.Point(649, 308)
+        Me.TId.Location = New System.Drawing.Point(649, 322)
         Me.TId.Name = "TId"
         Me.TId.Size = New System.Drawing.Size(29, 20)
         Me.TId.TabIndex = 45
@@ -243,7 +242,7 @@ Partial Class ReporteCajeros
         Me.dgvDetalle.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvDetalle.BackgroundColor = System.Drawing.Color.Navy
         Me.dgvDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvDetalle.Location = New System.Drawing.Point(740, 478)
+        Me.dgvDetalle.Location = New System.Drawing.Point(740, 494)
         Me.dgvDetalle.Name = "dgvDetalle"
         Me.dgvDetalle.ReadOnly = True
         Me.dgvDetalle.Size = New System.Drawing.Size(610, 195)

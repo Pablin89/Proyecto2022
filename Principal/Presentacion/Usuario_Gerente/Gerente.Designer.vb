@@ -35,8 +35,8 @@ Partial Class Gerente
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.MenuGerente = New System.Windows.Forms.MenuStrip()
         Me.ReportesCajeros = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ReportesClientes = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ReportesProductos = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReporteCategoria = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReporteProducto = New System.Windows.Forms.ToolStripMenuItem()
         Me.NumerosMes = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -174,7 +174,7 @@ Partial Class Gerente
         Me.MenuGerente.Dock = System.Windows.Forms.DockStyle.Fill
         Me.MenuGerente.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MenuGerente.GripMargin = New System.Windows.Forms.Padding(2)
-        Me.MenuGerente.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReportesCajeros, Me.ReportesClientes, Me.ReportesProductos, Me.NumerosMes})
+        Me.MenuGerente.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReportesCajeros, Me.ReporteCategoria, Me.ReporteProducto, Me.NumerosMes})
         Me.MenuGerente.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow
         Me.MenuGerente.Location = New System.Drawing.Point(0, 170)
         Me.MenuGerente.MdiWindowListItem = Me.ReportesCajeros
@@ -200,29 +200,29 @@ Partial Class Gerente
         Me.ReportesCajeros.ToolTipText = "Esta sección del menú nos permite" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "generar reportes a partir de distintos" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "puntos" &
     " de vista."
         '
-        'ReportesClientes
+        'ReporteCategoria
         '
-        Me.ReportesClientes.AutoSize = False
-        Me.ReportesClientes.BackColor = System.Drawing.Color.LightGreen
-        Me.ReportesClientes.ForeColor = System.Drawing.Color.Black
-        Me.ReportesClientes.Image = Global.Principal.My.Resources.Resources.female_cashier_avatar_people_icon_142371__2_
-        Me.ReportesClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ReportesClientes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.ReportesClientes.Name = "ReportesClientes"
-        Me.ReportesClientes.Size = New System.Drawing.Size(1341, 128)
-        Me.ReportesClientes.Text = "Reportes por clientes"
+        Me.ReporteCategoria.AutoSize = False
+        Me.ReporteCategoria.BackColor = System.Drawing.Color.LightGreen
+        Me.ReporteCategoria.ForeColor = System.Drawing.Color.Black
+        Me.ReporteCategoria.Image = Global.Principal.My.Resources.Resources.female_cashier_avatar_people_icon_142371__2_
+        Me.ReporteCategoria.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ReporteCategoria.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.ReporteCategoria.Name = "ReporteCategoria"
+        Me.ReporteCategoria.Size = New System.Drawing.Size(1360, 128)
+        Me.ReporteCategoria.Text = "Reportes por Categorias"
         '
-        'ReportesProductos
+        'ReporteProducto
         '
-        Me.ReportesProductos.AutoSize = False
-        Me.ReportesProductos.BackColor = System.Drawing.Color.PowderBlue
-        Me.ReportesProductos.ForeColor = System.Drawing.Color.Black
-        Me.ReportesProductos.Image = Global.Principal.My.Resources.Resources.box_search_product_ean_barcode_icon_148907
-        Me.ReportesProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ReportesProductos.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.ReportesProductos.Name = "ReportesProductos"
-        Me.ReportesProductos.Size = New System.Drawing.Size(1341, 128)
-        Me.ReportesProductos.Text = "Reportes por productos"
+        Me.ReporteProducto.AutoSize = False
+        Me.ReporteProducto.BackColor = System.Drawing.Color.PowderBlue
+        Me.ReporteProducto.ForeColor = System.Drawing.Color.Black
+        Me.ReporteProducto.Image = Global.Principal.My.Resources.Resources.box_search_product_ean_barcode_icon_148907
+        Me.ReporteProducto.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ReporteProducto.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.ReporteProducto.Name = "ReporteProducto"
+        Me.ReporteProducto.Size = New System.Drawing.Size(1360, 128)
+        Me.ReporteProducto.Text = "Reportes por productos"
         '
         'NumerosMes
         '
@@ -285,6 +285,6 @@ Partial Class Gerente
     Friend WithEvents LFecha As Label
     Friend WithEvents LHora As Label
     Friend WithEvents NumerosMes As ToolStripMenuItem
-    Friend WithEvents ReportesClientes As ToolStripMenuItem
-    Friend WithEvents ReportesProductos As ToolStripMenuItem
+    Friend WithEvents ReporteCategoria As ToolStripMenuItem
+    Friend WithEvents ReporteProducto As ToolStripMenuItem
 End Class

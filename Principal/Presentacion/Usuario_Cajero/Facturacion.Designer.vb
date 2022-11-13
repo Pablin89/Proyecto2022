@@ -486,11 +486,15 @@ Partial Class Facturacion
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(740, 652)
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.Image = Global.Principal.My.Resources.Resources.cancelar
+        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button3.Location = New System.Drawing.Point(787, 651)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(144, 37)
+        Me.Button3.Size = New System.Drawing.Size(181, 46)
         Me.Button3.TabIndex = 26
         Me.Button3.Text = "Eliminar Producto Seleccionado"
+        Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button3.UseVisualStyleBackColor = True
         '
         'Facturacion

@@ -33,13 +33,14 @@
     End Function
 
     Public Sub ver_detalle(id As Integer, grid As DataGridView)
-        Dim querry = (From d In ctx.Detalle Join p In ctx.Producto On d.id_producto Equals p.Id_producto
-                      Where id = d.nro_factura Select d.cantidad, d.precio, p.nombre).ToList
+        Dim querry = (From d In ctx.Detalle Join p In ctx.Producto On d.id_producto Equals p.Id_producto Join c In ctx.Categoria On p.categoria_id Equals c.Id_categoria
+                      Where id = d.nro_factura Select d.cantidad, d.precio, p.nombre, c.desc_categoria).ToList
         grid.DataSource = querry.ToList
 
         grid.Columns(0).HeaderText = "Cantidad"
         grid.Columns(1).HeaderText = "Precio"
         grid.Columns(2).HeaderText = "Producto"
+
 
     End Sub
 End Class

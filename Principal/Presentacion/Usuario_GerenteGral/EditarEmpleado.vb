@@ -3,6 +3,7 @@
 Public Class EditarEmpleado
     Dim objusuario = New NUsuario
     Dim perfiles = New DPerfil
+    Dim us = New DUsuario
     Private Sub BCancelar_Click(sender As Object, e As EventArgs) Handles BCancelar.Click
         Dim ask As MsgBoxResult
 
@@ -25,12 +26,14 @@ Public Class EditarEmpleado
         Else
             op = MsgBox("¿Desea guardar los cambios?", vbYesNo + vbDefaultButton2 + vbInformation, "Confirmar")
             If op = DialogResult.Yes Then
-                If (objusuario.agregar_usuario(TUsuario.Text, TContraseña.Text, CBperfil.SelectedValue, PermisosUsuario.dgvEmpleados.CurrentRow.Cells(0).Value)) Then
+
+                objusuario.agregar_usuario(TUsuario.Text, TContraseña.Text, CBperfil.SelectedValue, PermisosUsuario.dgvEmpleados.CurrentRow.Cells(0).Value)
                     MsgBox("Los cambios se realizaron correctamente", vbOKOnly + vbDefaultButton1 + vbInformation, "Cambios realizados")
-                End If
+                us.cargarGrid(PermisosUsuario.dgvUsuario)
                 TUsuario.Clear()
                 TContraseña.Clear()
                 TRepcontra.Clear()
+                Me.Close()
 
             End If
         End If

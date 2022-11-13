@@ -22,29 +22,21 @@ Partial Class GestionVentas
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dgvVentas = New System.Windows.Forms.DataGridView()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.DThasta = New System.Windows.Forms.DateTimePicker()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.DTdesde = New System.Windows.Forms.DateTimePicker()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.TCajero = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.BBuscar = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Dni = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fechal = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Apellido = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ClienteApellido = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NombreCliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Correo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Eliminar = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.LCliente = New System.Windows.Forms.Label()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvVentas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -66,50 +58,106 @@ Partial Class GestionVentas
         Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Label1.Location = New System.Drawing.Point(0, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(1354, 73)
+        Me.Label1.Size = New System.Drawing.Size(1354, 84)
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "Gestión de Ventas"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'DataGridView1
+        'dgvVentas
         '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView1.BackgroundColor = System.Drawing.Color.LightCyan
-        Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Dni, Me.Fechal, Me.Apellido, Me.Nombre, Me.ClienteApellido, Me.NombreCliente, Me.Correo, Me.Eliminar})
-        Me.DataGridView1.Location = New System.Drawing.Point(0, 0)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(1359, 489)
-        Me.DataGridView1.TabIndex = 11
+        Me.dgvVentas.AllowUserToAddRows = False
+        Me.dgvVentas.AllowUserToDeleteRows = False
+        Me.dgvVentas.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.dgvVentas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvVentas.BackgroundColor = System.Drawing.Color.LightCyan
+        Me.dgvVentas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvVentas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.dgvVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvVentas.Location = New System.Drawing.Point(0, 0)
+        Me.dgvVentas.Name = "dgvVentas"
+        Me.dgvVentas.ReadOnly = True
+        Me.dgvVentas.Size = New System.Drawing.Size(1359, 489)
+        Me.dgvVentas.TabIndex = 11
         '
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.DarkSlateGray
-        Me.Panel3.Controls.Add(Me.TextBox1)
-        Me.Panel3.Controls.Add(Me.LCliente)
+        Me.Panel3.Controls.Add(Me.Label3)
+        Me.Panel3.Controls.Add(Me.DThasta)
+        Me.Panel3.Controls.Add(Me.Label5)
+        Me.Panel3.Controls.Add(Me.DTdesde)
+        Me.Panel3.Controls.Add(Me.Button2)
         Me.Panel3.Controls.Add(Me.TCajero)
         Me.Panel3.Controls.Add(Me.Label4)
-        Me.Panel3.Controls.Add(Me.Label3)
-        Me.Panel3.Controls.Add(Me.DateTimePicker1)
         Me.Panel3.Controls.Add(Me.Label2)
-        Me.Panel3.Controls.Add(Me.BBuscar)
         Me.Panel3.Cursor = System.Windows.Forms.Cursors.Default
         Me.Panel3.Location = New System.Drawing.Point(1, 81)
         Me.Panel3.Margin = New System.Windows.Forms.Padding(8)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(1361, 167)
         Me.Panel3.TabIndex = 12
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label3.Location = New System.Drawing.Point(973, 43)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(109, 20)
+        Me.Label3.TabIndex = 26
+        Me.Label3.Text = "Fecha hasta"
+        '
+        'DThasta
+        '
+        Me.DThasta.CalendarFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DThasta.Location = New System.Drawing.Point(1088, 43)
+        Me.DThasta.MinDate = New Date(2016, 11, 24, 0, 0, 0, 0)
+        Me.DThasta.Name = "DThasta"
+        Me.DThasta.Size = New System.Drawing.Size(223, 20)
+        Me.DThasta.TabIndex = 25
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label5.Location = New System.Drawing.Point(550, 41)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(113, 20)
+        Me.Label5.TabIndex = 24
+        Me.Label5.Text = "Fecha desde"
+        '
+        'DTdesde
+        '
+        Me.DTdesde.CalendarFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DTdesde.Location = New System.Drawing.Point(669, 42)
+        Me.DTdesde.MinDate = New Date(2016, 11, 24, 0, 0, 0, 0)
+        Me.DTdesde.Name = "DTdesde"
+        Me.DTdesde.Size = New System.Drawing.Size(223, 20)
+        Me.DTdesde.TabIndex = 23
+        '
+        'Button2
+        '
+        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Button2.Image = Global.Principal.My.Resources.Resources.buscar2
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button2.Location = New System.Drawing.Point(892, 97)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(120, 44)
+        Me.Button2.TabIndex = 22
+        Me.Button2.Text = "Buscar"
+        Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'TCajero
         '
@@ -130,26 +178,6 @@ Partial Class GestionVentas
         Me.Label4.TabIndex = 14
         Me.Label4.Text = "Seleccionar Cajero"
         '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(930, 43)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(158, 20)
-        Me.Label3.TabIndex = 13
-        Me.Label3.Text = "Seleccionar Fecha"
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePicker1.Location = New System.Drawing.Point(1113, 42)
-        Me.DateTimePicker1.MinDate = New Date(2016, 11, 24, 0, 0, 0, 0)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(211, 22)
-        Me.DateTimePicker1.TabIndex = 12
-        '
         'Label2
         '
         Me.Label2.AutoSize = True
@@ -162,88 +190,14 @@ Partial Class GestionVentas
         Me.Label2.TabIndex = 10
         Me.Label2.Text = "Últimas Ventas"
         '
-        'BBuscar
-        '
-        Me.BBuscar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BBuscar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.BBuscar.Image = Global.Principal.My.Resources.Resources.buscar2
-        Me.BBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BBuscar.Location = New System.Drawing.Point(627, 99)
-        Me.BBuscar.Name = "BBuscar"
-        Me.BBuscar.Size = New System.Drawing.Size(121, 43)
-        Me.BBuscar.TabIndex = 8
-        Me.BBuscar.Text = "Buscar"
-        Me.BBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.BBuscar.UseVisualStyleBackColor = True
-        '
         'Panel1
         '
         Me.Panel1.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Panel1.Controls.Add(Me.DataGridView1)
+        Me.Panel1.Controls.Add(Me.dgvVentas)
         Me.Panel1.Location = New System.Drawing.Point(-4, 249)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1362, 492)
         Me.Panel1.TabIndex = 0
-        '
-        'Dni
-        '
-        Me.Dni.HeaderText = "Nro Factura"
-        Me.Dni.Name = "Dni"
-        '
-        'Fechal
-        '
-        Me.Fechal.HeaderText = "Fecha"
-        Me.Fechal.Name = "Fechal"
-        '
-        'Apellido
-        '
-        Me.Apellido.HeaderText = "Apellido del cajero"
-        Me.Apellido.Name = "Apellido"
-        '
-        'Nombre
-        '
-        Me.Nombre.HeaderText = "Nombre del cajero"
-        Me.Nombre.Name = "Nombre"
-        '
-        'ClienteApellido
-        '
-        Me.ClienteApellido.HeaderText = "Apellido del Cliente"
-        Me.ClienteApellido.Name = "ClienteApellido"
-        '
-        'NombreCliente
-        '
-        Me.NombreCliente.HeaderText = "Nombre del cliente"
-        Me.NombreCliente.Name = "NombreCliente"
-        '
-        'Correo
-        '
-        Me.Correo.HeaderText = "Total"
-        Me.Correo.Name = "Correo"
-        '
-        'Eliminar
-        '
-        Me.Eliminar.HeaderText = "Cancelar Venta"
-        Me.Eliminar.Name = "Eliminar"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(662, 42)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(222, 22)
-        Me.TextBox1.TabIndex = 17
-        '
-        'LCliente
-        '
-        Me.LCliente.AutoSize = True
-        Me.LCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LCliente.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LCliente.Location = New System.Drawing.Point(485, 44)
-        Me.LCliente.Name = "LCliente"
-        Me.LCliente.Size = New System.Drawing.Size(164, 20)
-        Me.LCliente.TabIndex = 16
-        Me.LCliente.Text = "Seleccionar Cliente"
         '
         'GestionVentas
         '
@@ -258,7 +212,7 @@ Partial Class GestionVentas
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Gestión de Ventas"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvVentas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         Me.Panel1.ResumeLayout(False)
@@ -267,23 +221,15 @@ Partial Class GestionVentas
     End Sub
     Friend WithEvents Button1 As Button
     Friend WithEvents Label1 As Label
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dgvVentas As DataGridView
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Label4 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents Label2 As Label
-    Friend WithEvents BBuscar As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents TCajero As TextBox
-    Friend WithEvents Dni As DataGridViewTextBoxColumn
-    Friend WithEvents Fechal As DataGridViewTextBoxColumn
-    Friend WithEvents Apellido As DataGridViewTextBoxColumn
-    Friend WithEvents Nombre As DataGridViewTextBoxColumn
-    Friend WithEvents ClienteApellido As DataGridViewTextBoxColumn
-    Friend WithEvents NombreCliente As DataGridViewTextBoxColumn
-    Friend WithEvents Correo As DataGridViewTextBoxColumn
-    Friend WithEvents Eliminar As DataGridViewButtonColumn
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents LCliente As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents DThasta As DateTimePicker
+    Friend WithEvents Label5 As Label
+    Friend WithEvents DTdesde As DateTimePicker
+    Friend WithEvents Button2 As Button
 End Class
