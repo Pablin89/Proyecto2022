@@ -187,20 +187,8 @@
         ModificarProducto.TPrecioProd.Text = dgvProductos.Rows(i).Cells(4).Value
         ModificarProducto.TStock.Text = dgvProductos.Rows(i).Cells(5).Value
         ModificarProducto.TStockMin.Text = dgvProductos.Rows(i).Cells(6).Value
+        ModificarProducto.CBoxEstado.Text = dgvProductos.Rows(i).Cells(8).Value
 
-        If dgvProductos.Rows(i).Cells(7).Value.ToString = "Bazar" Then
-            ModificarProducto.CBcategoria.Text = "Bazar"
-        ElseIf dgvProductos.Rows(i).Cells(7).Value.ToString = "Jugueteria" Then
-            ModificarProducto.CBcategoria.Text = "Jugueteria"
-        ElseIf dgvProductos.Rows(i).Cells(7).Value.ToString = "Libreria" Then
-            ModificarProducto.CBcategoria.SelectedValue = 3
-        ElseIf dgvProductos.Rows(i).Cells(7).Value.ToString = "Ferreteria" Then
-            ModificarProducto.CBcategoria.SelectedValue = 4
-        ElseIf dgvProductos.Rows(i).Cells(7).Value.ToString = "Cotillon" Then
-            ModificarProducto.CBcategoria.SelectedValue = 5
-        Else
-            ModificarProducto.CBcategoria.Text = "Joyeria"
-        End If
 
     End Sub
 
@@ -228,11 +216,15 @@
 
     Private Sub BEliminar_Click(sender As Object, e As EventArgs) Handles BEliminar.Click
         Dim ask As MsgBoxResult
-        ask = MsgBox("Estas seguro de dar de baja al producto", vbYesNo + vbInformation, "Eliminar")
+        If dgvProductos.CurrentRow.Cells(8).Value = 1 Then
+            ask = MsgBox("¿Estas seguro de dar de baja al producto?", vbYesNo + vbInformation, "Eliminar")
 
-        If ask = MsgBoxResult.Yes Then
-            prod.baja_producto(0, dgvProductos.CurrentRow.Cells(0).Value.ToString)
-            objproducto.cargarGrid(dgvProductos)
+            If ask = MsgBoxResult.Yes Then
+                prod.baja_producto(0, dgvProductos.CurrentRow.Cells(0).Value.ToString)
+                objproducto.cargarGrid(dgvProductos)
+            End If
+        Else
+            MsgBox("El producto ya esta dado de baja", vbOKOnly + vbExclamation, "Elimniar")
         End If
 
     End Sub

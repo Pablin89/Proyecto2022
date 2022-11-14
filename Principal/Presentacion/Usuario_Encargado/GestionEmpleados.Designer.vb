@@ -37,8 +37,6 @@ Partial Class GestionEmpleados
         Me.BConfirmar = New System.Windows.Forms.Button()
         Me.CBoxEstado = New System.Windows.Forms.ComboBox()
         Me.LEstado = New System.Windows.Forms.Label()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.RBfemenino = New System.Windows.Forms.RadioButton()
         Me.RBmasculino = New System.Windows.Forms.RadioButton()
         Me.DTfecha = New System.Windows.Forms.DateTimePicker()
@@ -77,7 +75,6 @@ Partial Class GestionEmpleados
         CType(Me.ErrorFecha, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.AgregarCajeros.SuspendLayout()
         Me.Panel4.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.EditarCajeros.SuspendLayout()
         CType(Me.dgEmpleados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
@@ -139,8 +136,6 @@ Partial Class GestionEmpleados
         Me.Panel4.Controls.Add(Me.BConfirmar)
         Me.Panel4.Controls.Add(Me.CBoxEstado)
         Me.Panel4.Controls.Add(Me.LEstado)
-        Me.Panel4.Controls.Add(Me.Button3)
-        Me.Panel4.Controls.Add(Me.PictureBox1)
         Me.Panel4.Controls.Add(Me.RBfemenino)
         Me.Panel4.Controls.Add(Me.RBmasculino)
         Me.Panel4.Controls.Add(Me.DTfecha)
@@ -169,7 +164,7 @@ Partial Class GestionEmpleados
         Me.BCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BCancelar.Image = Global.Principal.My.Resources.Resources.cancelar
         Me.BCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BCancelar.Location = New System.Drawing.Point(844, 409)
+        Me.BCancelar.Location = New System.Drawing.Point(536, 489)
         Me.BCancelar.Name = "BCancelar"
         Me.BCancelar.Size = New System.Drawing.Size(137, 46)
         Me.BCancelar.TabIndex = 34
@@ -179,7 +174,7 @@ Partial Class GestionEmpleados
         '
         'MTelefono
         '
-        Me.MTelefono.Location = New System.Drawing.Point(535, 336)
+        Me.MTelefono.Location = New System.Drawing.Point(575, 297)
         Me.MTelefono.Mask = "(999)000-0000"
         Me.MTelefono.Name = "MTelefono"
         Me.MTelefono.Size = New System.Drawing.Size(276, 26)
@@ -191,7 +186,7 @@ Partial Class GestionEmpleados
         Me.Label4.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(600, 59)
+        Me.Label4.Location = New System.Drawing.Point(640, 20)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(172, 24)
         Me.Label4.TabIndex = 30
@@ -203,7 +198,7 @@ Partial Class GestionEmpleados
         Me.BConfirmar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BConfirmar.Image = Global.Principal.My.Resources.Resources.iconoguardar__1_
         Me.BConfirmar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BConfirmar.Location = New System.Drawing.Point(1017, 409)
+        Me.BConfirmar.Location = New System.Drawing.Point(753, 489)
         Me.BConfirmar.Name = "BConfirmar"
         Me.BConfirmar.Size = New System.Drawing.Size(137, 46)
         Me.BConfirmar.TabIndex = 26
@@ -216,7 +211,7 @@ Partial Class GestionEmpleados
         Me.CBoxEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CBoxEstado.FormattingEnabled = True
         Me.CBoxEstado.Items.AddRange(New Object() {"1", "0"})
-        Me.CBoxEstado.Location = New System.Drawing.Point(535, 426)
+        Me.CBoxEstado.Location = New System.Drawing.Point(575, 393)
         Me.CBoxEstado.Name = "CBoxEstado"
         Me.CBoxEstado.Size = New System.Drawing.Size(276, 28)
         Me.CBoxEstado.TabIndex = 25
@@ -226,38 +221,18 @@ Partial Class GestionEmpleados
         Me.LEstado.AutoSize = True
         Me.LEstado.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LEstado.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LEstado.Location = New System.Drawing.Point(348, 435)
+        Me.LEstado.Location = New System.Drawing.Point(388, 396)
         Me.LEstado.Name = "LEstado"
         Me.LEstado.Size = New System.Drawing.Size(66, 20)
         Me.LEstado.TabIndex = 24
         Me.LEstado.Text = "Estado"
-        '
-        'Button3
-        '
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(909, 360)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(137, 27)
-        Me.Button3.TabIndex = 22
-        Me.Button3.Text = "Añadir Imagen"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox1.Location = New System.Drawing.Point(844, 153)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(262, 201)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 21
-        Me.PictureBox1.TabStop = False
         '
         'RBfemenino
         '
         Me.RBfemenino.AutoSize = True
         Me.RBfemenino.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RBfemenino.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.RBfemenino.Location = New System.Drawing.Point(963, 109)
+        Me.RBfemenino.Location = New System.Drawing.Point(753, 443)
         Me.RBfemenino.Name = "RBfemenino"
         Me.RBfemenino.Size = New System.Drawing.Size(98, 24)
         Me.RBfemenino.TabIndex = 20
@@ -270,7 +245,7 @@ Partial Class GestionEmpleados
         Me.RBmasculino.AutoSize = True
         Me.RBmasculino.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RBmasculino.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.RBmasculino.Location = New System.Drawing.Point(963, 79)
+        Me.RBmasculino.Location = New System.Drawing.Point(575, 443)
         Me.RBmasculino.Name = "RBmasculino"
         Me.RBmasculino.Size = New System.Drawing.Size(98, 24)
         Me.RBmasculino.TabIndex = 19
@@ -280,7 +255,7 @@ Partial Class GestionEmpleados
         '
         'DTfecha
         '
-        Me.DTfecha.Location = New System.Drawing.Point(535, 238)
+        Me.DTfecha.Location = New System.Drawing.Point(575, 199)
         Me.DTfecha.Name = "DTfecha"
         Me.DTfecha.Size = New System.Drawing.Size(276, 26)
         Me.DTfecha.TabIndex = 18
@@ -288,35 +263,35 @@ Partial Class GestionEmpleados
         '
         'TDireccion
         '
-        Me.TDireccion.Location = New System.Drawing.Point(535, 383)
+        Me.TDireccion.Location = New System.Drawing.Point(575, 344)
         Me.TDireccion.Name = "TDireccion"
         Me.TDireccion.Size = New System.Drawing.Size(276, 26)
         Me.TDireccion.TabIndex = 17
         '
         'TCorreo
         '
-        Me.TCorreo.Location = New System.Drawing.Point(535, 289)
+        Me.TCorreo.Location = New System.Drawing.Point(575, 250)
         Me.TCorreo.Name = "TCorreo"
         Me.TCorreo.Size = New System.Drawing.Size(276, 26)
         Me.TCorreo.TabIndex = 13
         '
         'TDni2
         '
-        Me.TDni2.Location = New System.Drawing.Point(535, 191)
+        Me.TDni2.Location = New System.Drawing.Point(575, 152)
         Me.TDni2.Name = "TDni2"
         Me.TDni2.Size = New System.Drawing.Size(276, 26)
         Me.TDni2.TabIndex = 12
         '
         'TNombre2
         '
-        Me.TNombre2.Location = New System.Drawing.Point(535, 146)
+        Me.TNombre2.Location = New System.Drawing.Point(575, 107)
         Me.TNombre2.Name = "TNombre2"
         Me.TNombre2.Size = New System.Drawing.Size(276, 26)
         Me.TNombre2.TabIndex = 11
         '
         'TApellido2
         '
-        Me.TApellido2.Location = New System.Drawing.Point(535, 103)
+        Me.TApellido2.Location = New System.Drawing.Point(575, 64)
         Me.TApellido2.Name = "TApellido2"
         Me.TApellido2.Size = New System.Drawing.Size(276, 26)
         Me.TApellido2.TabIndex = 10
@@ -326,7 +301,7 @@ Partial Class GestionEmpleados
         Me.LDireccion.AutoSize = True
         Me.LDireccion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LDireccion.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LDireccion.Location = New System.Drawing.Point(348, 386)
+        Me.LDireccion.Location = New System.Drawing.Point(388, 347)
         Me.LDireccion.Name = "LDireccion"
         Me.LDireccion.Size = New System.Drawing.Size(84, 20)
         Me.LDireccion.TabIndex = 9
@@ -337,7 +312,7 @@ Partial Class GestionEmpleados
         Me.LTelefono.AutoSize = True
         Me.LTelefono.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LTelefono.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LTelefono.Location = New System.Drawing.Point(348, 342)
+        Me.LTelefono.Location = New System.Drawing.Point(388, 303)
         Me.LTelefono.Name = "LTelefono"
         Me.LTelefono.Size = New System.Drawing.Size(79, 20)
         Me.LTelefono.TabIndex = 8
@@ -348,7 +323,7 @@ Partial Class GestionEmpleados
         Me.LCorreo.AutoSize = True
         Me.LCorreo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LCorreo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LCorreo.Location = New System.Drawing.Point(348, 292)
+        Me.LCorreo.Location = New System.Drawing.Point(388, 253)
         Me.LCorreo.Name = "LCorreo"
         Me.LCorreo.Size = New System.Drawing.Size(158, 20)
         Me.LCorreo.TabIndex = 5
@@ -359,7 +334,7 @@ Partial Class GestionEmpleados
         Me.LGenero.AutoSize = True
         Me.LGenero.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LGenero.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LGenero.Location = New System.Drawing.Point(866, 81)
+        Me.LGenero.Location = New System.Drawing.Point(388, 443)
         Me.LGenero.Name = "LGenero"
         Me.LGenero.Size = New System.Drawing.Size(74, 20)
         Me.LGenero.TabIndex = 4
@@ -370,7 +345,7 @@ Partial Class GestionEmpleados
         Me.LFecha.AutoSize = True
         Me.LFecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LFecha.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LFecha.Location = New System.Drawing.Point(348, 241)
+        Me.LFecha.Location = New System.Drawing.Point(388, 202)
         Me.LFecha.Name = "LFecha"
         Me.LFecha.Size = New System.Drawing.Size(178, 20)
         Me.LFecha.TabIndex = 3
@@ -381,7 +356,7 @@ Partial Class GestionEmpleados
         Me.LDni.AutoSize = True
         Me.LDni.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LDni.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LDni.Location = New System.Drawing.Point(348, 194)
+        Me.LDni.Location = New System.Drawing.Point(388, 155)
         Me.LDni.Name = "LDni"
         Me.LDni.Size = New System.Drawing.Size(40, 20)
         Me.LDni.TabIndex = 2
@@ -392,7 +367,7 @@ Partial Class GestionEmpleados
         Me.LNombre.AutoSize = True
         Me.LNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LNombre.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LNombre.Location = New System.Drawing.Point(348, 149)
+        Me.LNombre.Location = New System.Drawing.Point(388, 110)
         Me.LNombre.Name = "LNombre"
         Me.LNombre.Size = New System.Drawing.Size(71, 20)
         Me.LNombre.TabIndex = 1
@@ -403,7 +378,7 @@ Partial Class GestionEmpleados
         Me.LApellido.AutoSize = True
         Me.LApellido.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LApellido.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LApellido.Location = New System.Drawing.Point(348, 106)
+        Me.LApellido.Location = New System.Drawing.Point(388, 67)
         Me.LApellido.Name = "LApellido"
         Me.LApellido.Size = New System.Drawing.Size(73, 20)
         Me.LApellido.TabIndex = 0
@@ -660,7 +635,6 @@ Partial Class GestionEmpleados
         Me.AgregarCajeros.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.EditarCajeros.ResumeLayout(False)
         Me.EditarCajeros.PerformLayout()
         CType(Me.dgEmpleados, System.ComponentModel.ISupportInitialize).EndInit()
@@ -701,8 +675,6 @@ Partial Class GestionEmpleados
     Friend WithEvents BConfirmar As Button
     Friend WithEvents CBoxEstado As ComboBox
     Friend WithEvents LEstado As Label
-    Friend WithEvents Button3 As Button
-    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents RBfemenino As RadioButton
     Friend WithEvents RBmasculino As RadioButton
     Friend WithEvents DTfecha As DateTimePicker

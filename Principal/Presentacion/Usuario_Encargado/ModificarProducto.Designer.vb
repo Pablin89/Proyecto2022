@@ -41,6 +41,8 @@ Partial Class ModificarProducto
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.TStockMin = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.CBoxEstado = New System.Windows.Forms.ComboBox()
+        Me.LEstado = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
@@ -51,7 +53,7 @@ Partial Class ModificarProducto
         Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Label1.Location = New System.Drawing.Point(0, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(1362, 73)
+        Me.Label1.Size = New System.Drawing.Size(1354, 73)
         Me.Label1.TabIndex = 31
         Me.Label1.Text = "Modificar datos del Producto"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -71,7 +73,7 @@ Partial Class ModificarProducto
         Me.BModificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BModificar.Image = Global.Principal.My.Resources.Resources.iconoguardar__1_
         Me.BModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BModificar.Location = New System.Drawing.Point(616, 593)
+        Me.BModificar.Location = New System.Drawing.Point(615, 603)
         Me.BModificar.Name = "BModificar"
         Me.BModificar.Size = New System.Drawing.Size(137, 46)
         Me.BModificar.TabIndex = 48
@@ -85,7 +87,7 @@ Partial Class ModificarProducto
         Me.CBcategoria.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CBcategoria.FormattingEnabled = True
         Me.CBcategoria.Items.AddRange(New Object() {"Bazar", "Jugueteria", "Regaleria"})
-        Me.CBcategoria.Location = New System.Drawing.Point(474, 528)
+        Me.CBcategoria.Location = New System.Drawing.Point(473, 504)
         Me.CBcategoria.Name = "CBcategoria"
         Me.CBcategoria.Size = New System.Drawing.Size(388, 24)
         Me.CBcategoria.TabIndex = 45
@@ -93,7 +95,7 @@ Partial Class ModificarProducto
         'TStock
         '
         Me.TStock.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TStock.Location = New System.Drawing.Point(474, 465)
+        Me.TStock.Location = New System.Drawing.Point(473, 441)
         Me.TStock.Name = "TStock"
         Me.TStock.Size = New System.Drawing.Size(388, 22)
         Me.TStock.TabIndex = 44
@@ -101,7 +103,7 @@ Partial Class ModificarProducto
         'TPrecioProd
         '
         Me.TPrecioProd.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TPrecioProd.Location = New System.Drawing.Point(474, 340)
+        Me.TPrecioProd.Location = New System.Drawing.Point(473, 316)
         Me.TPrecioProd.Name = "TPrecioProd"
         Me.TPrecioProd.Size = New System.Drawing.Size(388, 22)
         Me.TPrecioProd.TabIndex = 43
@@ -109,7 +111,7 @@ Partial Class ModificarProducto
         'TCodigoProd
         '
         Me.TCodigoProd.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TCodigoProd.Location = New System.Drawing.Point(474, 278)
+        Me.TCodigoProd.Location = New System.Drawing.Point(473, 254)
         Me.TCodigoProd.Name = "TCodigoProd"
         Me.TCodigoProd.Size = New System.Drawing.Size(388, 22)
         Me.TCodigoProd.TabIndex = 42
@@ -117,7 +119,7 @@ Partial Class ModificarProducto
         'TDescripcion
         '
         Me.TDescripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TDescripcion.Location = New System.Drawing.Point(474, 215)
+        Me.TDescripcion.Location = New System.Drawing.Point(473, 191)
         Me.TDescripcion.Name = "TDescripcion"
         Me.TDescripcion.Size = New System.Drawing.Size(388, 22)
         Me.TDescripcion.TabIndex = 41
@@ -125,7 +127,7 @@ Partial Class ModificarProducto
         'TNombreProd
         '
         Me.TNombreProd.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TNombreProd.Location = New System.Drawing.Point(474, 154)
+        Me.TNombreProd.Location = New System.Drawing.Point(473, 130)
         Me.TNombreProd.Name = "TNombreProd"
         Me.TNombreProd.Size = New System.Drawing.Size(388, 22)
         Me.TNombreProd.TabIndex = 40
@@ -135,7 +137,7 @@ Partial Class ModificarProducto
         Me.LDatos.AutoSize = True
         Me.LDatos.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LDatos.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LDatos.Location = New System.Drawing.Point(600, 112)
+        Me.LDatos.Location = New System.Drawing.Point(594, 88)
         Me.LDatos.Name = "LDatos"
         Me.LDatos.Size = New System.Drawing.Size(134, 20)
         Me.LDatos.TabIndex = 39
@@ -146,7 +148,7 @@ Partial Class ModificarProducto
         Me.LPrecio.AutoSize = True
         Me.LPrecio.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LPrecio.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LPrecio.Location = New System.Drawing.Point(311, 343)
+        Me.LPrecio.Location = New System.Drawing.Point(310, 319)
         Me.LPrecio.Name = "LPrecio"
         Me.LPrecio.Size = New System.Drawing.Size(59, 20)
         Me.LPrecio.TabIndex = 38
@@ -157,7 +159,7 @@ Partial Class ModificarProducto
         Me.LCategoria.AutoSize = True
         Me.LCategoria.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LCategoria.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LCategoria.Location = New System.Drawing.Point(311, 529)
+        Me.LCategoria.Location = New System.Drawing.Point(310, 505)
         Me.LCategoria.Name = "LCategoria"
         Me.LCategoria.Size = New System.Drawing.Size(87, 20)
         Me.LCategoria.TabIndex = 37
@@ -168,7 +170,7 @@ Partial Class ModificarProducto
         Me.LStock.AutoSize = True
         Me.LStock.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LStock.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LStock.Location = New System.Drawing.Point(311, 468)
+        Me.LStock.Location = New System.Drawing.Point(310, 444)
         Me.LStock.Name = "LStock"
         Me.LStock.Size = New System.Drawing.Size(55, 20)
         Me.LStock.TabIndex = 36
@@ -179,7 +181,7 @@ Partial Class ModificarProducto
         Me.LCodigo.AutoSize = True
         Me.LCodigo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LCodigo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LCodigo.Location = New System.Drawing.Point(311, 281)
+        Me.LCodigo.Location = New System.Drawing.Point(310, 257)
         Me.LCodigo.Name = "LCodigo"
         Me.LCodigo.Size = New System.Drawing.Size(65, 20)
         Me.LCodigo.TabIndex = 35
@@ -190,7 +192,7 @@ Partial Class ModificarProducto
         Me.LDescripcion.AutoSize = True
         Me.LDescripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LDescripcion.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LDescripcion.Location = New System.Drawing.Point(311, 218)
+        Me.LDescripcion.Location = New System.Drawing.Point(310, 194)
         Me.LDescripcion.Name = "LDescripcion"
         Me.LDescripcion.Size = New System.Drawing.Size(103, 20)
         Me.LDescripcion.TabIndex = 34
@@ -201,7 +203,7 @@ Partial Class ModificarProducto
         Me.LNombre.AutoSize = True
         Me.LNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LNombre.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LNombre.Location = New System.Drawing.Point(311, 160)
+        Me.LNombre.Location = New System.Drawing.Point(310, 136)
         Me.LNombre.Name = "LNombre"
         Me.LNombre.Size = New System.Drawing.Size(76, 20)
         Me.LNombre.TabIndex = 33
@@ -214,7 +216,7 @@ Partial Class ModificarProducto
         'TStockMin
         '
         Me.TStockMin.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TStockMin.Location = New System.Drawing.Point(474, 400)
+        Me.TStockMin.Location = New System.Drawing.Point(473, 376)
         Me.TStockMin.Name = "TStockMin"
         Me.TStockMin.Size = New System.Drawing.Size(388, 22)
         Me.TStockMin.TabIndex = 50
@@ -224,18 +226,42 @@ Partial Class ModificarProducto
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(298, 406)
+        Me.Label3.Location = New System.Drawing.Point(297, 382)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(116, 20)
         Me.Label3.TabIndex = 49
         Me.Label3.Text = "Stock Minimo"
+        '
+        'CBoxEstado
+        '
+        Me.CBoxEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CBoxEstado.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CBoxEstado.FormattingEnabled = True
+        Me.CBoxEstado.Items.AddRange(New Object() {"1", "0"})
+        Me.CBoxEstado.Location = New System.Drawing.Point(473, 562)
+        Me.CBoxEstado.Name = "CBoxEstado"
+        Me.CBoxEstado.Size = New System.Drawing.Size(388, 24)
+        Me.CBoxEstado.TabIndex = 52
+        '
+        'LEstado
+        '
+        Me.LEstado.AutoSize = True
+        Me.LEstado.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LEstado.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.LEstado.Location = New System.Drawing.Point(310, 562)
+        Me.LEstado.Name = "LEstado"
+        Me.LEstado.Size = New System.Drawing.Size(66, 20)
+        Me.LEstado.TabIndex = 51
+        Me.LEstado.Text = "Estado"
         '
         'ModificarProducto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1362, 661)
+        Me.ClientSize = New System.Drawing.Size(1354, 661)
+        Me.Controls.Add(Me.CBoxEstado)
+        Me.Controls.Add(Me.LEstado)
         Me.Controls.Add(Me.TStockMin)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.BModificar)
@@ -283,4 +309,6 @@ Partial Class ModificarProducto
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents TStockMin As TextBox
     Friend WithEvents Label3 As Label
+    Friend WithEvents CBoxEstado As ComboBox
+    Friend WithEvents LEstado As Label
 End Class

@@ -66,6 +66,7 @@
             act.stock_minimo = stockMin
             act.stock = stock
             act.categoria_id = cat
+            act.estado = estado
             ctx.SaveChanges()
             Return True
         Catch ex As Exception

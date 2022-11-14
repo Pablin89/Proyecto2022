@@ -21,6 +21,7 @@ Public Class ModificarEmpleado
                         Me.Close()
                         GestionEmpleados.Show()
                         objempleado.cargarGrid(GestionEmpleados.dgEmpleados)
+                        GestionEmpleados.dgEmpleados.ClearSelection()
 
                     End If
                 Else

@@ -114,7 +114,6 @@ Public Class GestionEmpleados
             TDireccion.Clear()
             TCorreo.Clear()
             MTelefono.Clear()
-            PictureBox1.Image = Nothing
 
         ElseIf MsgBoxResult.Yes = op And RBfemenino.Checked Then
 
@@ -135,17 +134,10 @@ Public Class GestionEmpleados
             TDireccion.Clear()
             TCorreo.Clear()
             MTelefono.Clear()
-            PictureBox1.Image = Nothing
+
         End If
 
     End Sub
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        OpenFileDialog1.InitialDirectory = "D:"
-        OpenFileDialog1.Filter = "Archivos imagenes|*.png|Archivos imagenes|*.jpg"
-        OpenFileDialog1.ShowDialog()
-        PictureBox1.ImageLocation = OpenFileDialog1.FileName
-    End Sub
-
     Private Sub BCancelar_Click(sender As Object, e As EventArgs) Handles BCancelar.Click
         Dim ask As MsgBoxResult
 
@@ -158,7 +150,6 @@ Public Class GestionEmpleados
             TDireccion.Clear()
             TCorreo.Clear()
             MTelefono.Clear()
-            PictureBox1.Image = Nothing
 
         End If
     End Sub
@@ -258,12 +249,18 @@ Public Class GestionEmpleados
 
     Private Sub BEliminar_Click(sender As Object, e As EventArgs) Handles BEliminar.Click
         Dim ask As MsgBoxResult
-        ask = MsgBox("Estas seguro de dar de baja al producto", vbYesNo + vbInformation, "Eliminar")
 
-        If ask = MsgBoxResult.Yes Then
-            emp.baja_empleado(0, dgEmpleados.CurrentRow.Cells(0).Value.ToString)
-            objempleado.cargarGrid(dgEmpleados)
+        If dgEmpleados.CurrentRow.Cells(9).Value = 1 Then
+            ask = MsgBox("¿Estas seguro de dar de baja al empleado?", vbYesNo + vbInformation, "Eliminar")
+
+            If ask = MsgBoxResult.Yes Then
+                emp.baja_empleado(0, dgEmpleados.CurrentRow.Cells(0).Value.ToString)
+                objempleado.cargarGrid(dgEmpleados)
+            End If
+        Else
+            MsgBox("El empleado ya esta dado de baja", vbOKOnly + vbExclamation, "Eliminar")
         End If
+
 
     End Sub
 End Class

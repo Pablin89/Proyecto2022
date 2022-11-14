@@ -39,11 +39,9 @@ Partial Class MisDatos
         Me.LDni = New System.Windows.Forms.Label()
         Me.LNombre = New System.Windows.Forms.Label()
         Me.LApellido = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TTelofono = New System.Windows.Forms.TextBox()
         Me.TGenero = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -222,17 +220,6 @@ Partial Class MisDatos
         Me.LApellido.TabIndex = 32
         Me.LApellido.Text = "Apellido"
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox1.Enabled = False
-        Me.PictureBox1.Location = New System.Drawing.Point(277, 180)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(326, 260)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 48
-        Me.PictureBox1.TabStop = False
-        '
         'TTelofono
         '
         Me.TTelofono.Enabled = False
@@ -259,7 +246,6 @@ Partial Class MisDatos
         Me.ClientSize = New System.Drawing.Size(1354, 733)
         Me.Controls.Add(Me.TTelofono)
         Me.Controls.Add(Me.TGenero)
-        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.DTFecha)
         Me.Controls.Add(Me.TDireccion)
         Me.Controls.Add(Me.TCorreo)
@@ -280,14 +266,12 @@ Partial Class MisDatos
         Me.Text = "MisDatos"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents Panel1 As Panel
     Friend WithEvents LDatos As Label
-    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents DTFecha As DateTimePicker
     Friend WithEvents TDireccion As TextBox
     Friend WithEvents TCorreo As TextBox

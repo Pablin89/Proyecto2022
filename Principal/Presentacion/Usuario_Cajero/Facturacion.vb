@@ -84,7 +84,7 @@
                 MsgBox("La facturacion se realizo con exito", vbOKOnly + vbInformation, "Confirmar Venta")
 
                 dgvCompra.DataSource = Nothing
-                dgvCompra.Rows().Clear()
+                dgvCompra.Rows.Clear()
                 TIdcli.Clear()
                 TNombreCli.Clear()
                 TApellidoCli.Clear()
@@ -249,4 +249,7 @@
         End If
     End Sub
 
+    Private Sub dgvCompra_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCompra.CellContentClick
+
+    End Sub
 End Class
