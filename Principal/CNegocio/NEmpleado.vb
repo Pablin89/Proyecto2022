@@ -47,7 +47,7 @@
     End Sub
 
     Public Sub gridCajero(ByVal perfil As Integer, ByVal grid As DataGridView)
-        Dim ctx As ProyectoEntities8 = New ProyectoEntities8
+        Dim ctx As ProyectoEntities9 = New ProyectoEntities9
 
         Dim querry = (From u In ctx.Usuario Join e In ctx.Empleado On u.empleado_id Equals e.Id_empleado
                       Where u.perfil_id = perfil Select e.Id_empleado, e.dni_empleado, e.nombre_empleado, e.apellido_empleado).ToList

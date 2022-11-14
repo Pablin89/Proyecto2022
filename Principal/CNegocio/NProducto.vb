@@ -23,7 +23,7 @@
         End If
     End Function
     Public Sub cargarGrid(ByVal grid As DataGridView)
-        Dim ctx As ProyectoEntities8 = New ProyectoEntities8
+        Dim ctx As ProyectoEntities9 = New ProyectoEntities9
         Dim querry = (From p In ctx.Producto Join c In ctx.Categoria On p.categoria_id Equals c.Id_categoria
                       Select p.Id_producto, p.nombre, p.descripcion, p.codigo, p.precio, p.stock, p.stock_minimo, c.desc_categoria, p.estado).ToList
 
@@ -42,7 +42,7 @@
 
     End Sub
     Public Sub cargarGrid_facturacion(ByVal grid As DataGridView)
-        Dim ctx As ProyectoEntities8 = New ProyectoEntities8
+        Dim ctx As ProyectoEntities9 = New ProyectoEntities9
         Dim querry = (From p In ctx.Producto Join c In ctx.Categoria On p.categoria_id Equals c.Id_categoria
                       Where p.stock > 0 And p.estado = 1 Select p.Id_producto, p.nombre, p.descripcion, p.codigo, p.precio, p.stock, c.desc_categoria).ToList
 

@@ -21,7 +21,7 @@
     End Function
 
     Public Sub cargarGrid(grid As DataGridView)
-        Dim ctx As ProyectoEntities8 = New ProyectoEntities8
+        Dim ctx As ProyectoEntities9 = New ProyectoEntities9
         Dim querry = (From u In ctx.Usuario Join e In ctx.Empleado On u.empleado_id Equals e.Id_empleado Join p In ctx.Perfil On u.perfil_id Equals p.Id_perfil
                       Select u.Id_usuario, e.nombre_empleado, e.apellido_empleado, u.nombre_usuario, u.contraseña, p.desc_pefil, u.empleado_id)
         grid.DataSource = querry.ToList

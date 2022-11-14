@@ -47,7 +47,7 @@
             op = MsgBox("¿Desea confirmar la Venta?", vbYesNo + vbDefaultButton2 + vbInformation, "Confirmar")
             If op = DialogResult.Yes Then
 
-                Using ctx As New ProyectoEntities8
+                Using ctx As New ProyectoEntities9
                     Dim ultimaFactura As Integer = fac.ultimaFactura()
                     Dim f = ultimaFactura + 1
 
@@ -70,7 +70,6 @@
                         ctx.Detalle.Add(odetalle)
 
                         prod.actualizar_stock(dgvCompra.Item(0, i).Value, dgvCompra.Item(2, i).Value)
-
                         i += 1
 
 
@@ -85,6 +84,7 @@
                 MsgBox("La facturacion se realizo con exito", vbOKOnly + vbInformation, "Confirmar Venta")
 
                 dgvCompra.DataSource = Nothing
+                dgvCompra.Rows().Clear()
                 TIdcli.Clear()
                 TNombreCli.Clear()
                 TApellidoCli.Clear()
@@ -248,4 +248,5 @@
             End If
         End If
     End Sub
+
 End Class

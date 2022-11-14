@@ -22,16 +22,21 @@ Partial Class NumerosDelMes
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.DateHasta = New System.Windows.Forms.DateTimePicker()
+        Me.LHasta = New System.Windows.Forms.Label()
+        Me.DateDesde = New System.Windows.Forms.DateTimePicker()
+        Me.LDesde = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.BBuscar = New System.Windows.Forms.Button()
         Me.DataGridView4 = New System.Windows.Forms.DataGridView()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.DataGridView3 = New System.Windows.Forms.DataGridView()
@@ -40,10 +45,6 @@ Partial Class NumerosDelMes
         Me.LProductomenos = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.LProductomas = New System.Windows.Forms.Label()
-        Me.DateDesde = New System.Windows.Forms.DateTimePicker()
-        Me.LDesde = New System.Windows.Forms.Label()
-        Me.DateHasta = New System.Windows.Forms.DateTimePicker()
-        Me.LHasta = New System.Windows.Forms.Label()
         Me.Panel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -60,7 +61,7 @@ Partial Class NumerosDelMes
         Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Label1.Location = New System.Drawing.Point(0, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(1362, 73)
+        Me.Label1.Size = New System.Drawing.Size(1354, 73)
         Me.Label1.TabIndex = 5
         Me.Label1.Text = "Números del último mes"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -88,7 +89,7 @@ Partial Class NumerosDelMes
         Me.Panel3.Controls.Add(Me.DataGridView1)
         Me.Panel3.Controls.Add(Me.LProductomas)
         Me.Panel3.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Panel3.Location = New System.Drawing.Point(0, 81)
+        Me.Panel3.Location = New System.Drawing.Point(-4, 81)
         Me.Panel3.Margin = New System.Windows.Forms.Padding(8)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(1362, 651)
@@ -97,16 +98,80 @@ Partial Class NumerosDelMes
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Teal
+        Me.Panel1.Controls.Add(Me.TextBox1)
+        Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.DateHasta)
         Me.Panel1.Controls.Add(Me.LHasta)
         Me.Panel1.Controls.Add(Me.DateDesde)
         Me.Panel1.Controls.Add(Me.LDesde)
         Me.Panel1.Controls.Add(Me.Button2)
-        Me.Panel1.Controls.Add(Me.BBuscar)
         Me.Panel1.Location = New System.Drawing.Point(1127, 24)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(234, 599)
         Me.Panel1.TabIndex = 28
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Enabled = False
+        Me.TextBox1.Location = New System.Drawing.Point(58, 453)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(121, 20)
+        Me.TextBox1.TabIndex = 78
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label4.Location = New System.Drawing.Point(54, 386)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(139, 40)
+        Me.Label4.TabIndex = 77
+        Me.Label4.Text = "Total recaudado" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "hasta la fecha" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        '
+        'DateHasta
+        '
+        Me.DateHasta.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateHasta.Location = New System.Drawing.Point(91, 97)
+        Me.DateHasta.MaxDate = New Date(2050, 12, 24, 0, 0, 0, 0)
+        Me.DateHasta.MinDate = New Date(2015, 11, 25, 0, 0, 0, 0)
+        Me.DateHasta.Name = "DateHasta"
+        Me.DateHasta.Size = New System.Drawing.Size(127, 20)
+        Me.DateHasta.TabIndex = 76
+        Me.DateHasta.Value = New Date(2022, 11, 12, 0, 0, 0, 0)
+        '
+        'LHasta
+        '
+        Me.LHasta.AutoSize = True
+        Me.LHasta.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LHasta.ForeColor = System.Drawing.Color.White
+        Me.LHasta.Location = New System.Drawing.Point(25, 97)
+        Me.LHasta.Name = "LHasta"
+        Me.LHasta.Size = New System.Drawing.Size(57, 20)
+        Me.LHasta.TabIndex = 75
+        Me.LHasta.Text = "Hasta"
+        '
+        'DateDesde
+        '
+        Me.DateDesde.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateDesde.Location = New System.Drawing.Point(91, 50)
+        Me.DateDesde.MaxDate = New Date(2050, 12, 31, 0, 0, 0, 0)
+        Me.DateDesde.MinDate = New Date(2015, 11, 24, 0, 0, 0, 0)
+        Me.DateDesde.Name = "DateDesde"
+        Me.DateDesde.Size = New System.Drawing.Size(132, 20)
+        Me.DateDesde.TabIndex = 74
+        Me.DateDesde.Value = New Date(2022, 11, 12, 0, 0, 0, 0)
+        '
+        'LDesde
+        '
+        Me.LDesde.AutoSize = True
+        Me.LDesde.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LDesde.ForeColor = System.Drawing.Color.White
+        Me.LDesde.Location = New System.Drawing.Point(16, 50)
+        Me.LDesde.Name = "LDesde"
+        Me.LDesde.Size = New System.Drawing.Size(61, 20)
+        Me.LDesde.TabIndex = 73
+        Me.LDesde.Text = "Desde"
         '
         'Button2
         '
@@ -125,23 +190,6 @@ Partial Class NumerosDelMes
         Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button2.UseVisualStyleBackColor = False
         '
-        'BBuscar
-        '
-        Me.BBuscar.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.BBuscar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BBuscar.ForeColor = System.Drawing.SystemColors.Control
-        Me.BBuscar.Image = Global.Principal.My.Resources.Resources.Print_icon_icons_com_73705
-        Me.BBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BBuscar.Location = New System.Drawing.Point(34, 515)
-        Me.BBuscar.Name = "BBuscar"
-        Me.BBuscar.Size = New System.Drawing.Size(162, 71)
-        Me.BBuscar.TabIndex = 8
-        Me.BBuscar.Text = "Imprmir Informe"
-        Me.BBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.BBuscar.UseVisualStyleBackColor = False
-        '
         'DataGridView4
         '
         Me.DataGridView4.AllowUserToAddRows = False
@@ -149,14 +197,14 @@ Partial Class NumerosDelMes
         Me.DataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView4.BackgroundColor = System.Drawing.Color.LightCyan
         Me.DataGridView4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView4.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView4.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView4.Location = New System.Drawing.Point(596, 395)
         Me.DataGridView4.Name = "DataGridView4"
@@ -182,14 +230,14 @@ Partial Class NumerosDelMes
         Me.DataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView3.BackgroundColor = System.Drawing.Color.LightCyan
         Me.DataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView3.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView3.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView3.Location = New System.Drawing.Point(46, 395)
         Me.DataGridView3.Name = "DataGridView3"
@@ -215,14 +263,14 @@ Partial Class NumerosDelMes
         Me.DataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.DataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView2.Location = New System.Drawing.Point(594, 57)
         Me.DataGridView2.Name = "DataGridView2"
@@ -248,14 +296,14 @@ Partial Class NumerosDelMes
         Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.LightCyan
         Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(46, 57)
         Me.DataGridView1.Name = "DataGridView1"
@@ -274,55 +322,11 @@ Partial Class NumerosDelMes
         Me.LProductomas.TabIndex = 14
         Me.LProductomas.Text = "Productos más vendidos"
         '
-        'DateDesde
-        '
-        Me.DateDesde.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateDesde.Location = New System.Drawing.Point(91, 50)
-        Me.DateDesde.MaxDate = New Date(2050, 12, 31, 0, 0, 0, 0)
-        Me.DateDesde.MinDate = New Date(2015, 11, 24, 0, 0, 0, 0)
-        Me.DateDesde.Name = "DateDesde"
-        Me.DateDesde.Size = New System.Drawing.Size(132, 20)
-        Me.DateDesde.TabIndex = 74
-        Me.DateDesde.Value = New Date(2022, 11, 12, 0, 0, 0, 0)
-        '
-        'LDesde
-        '
-        Me.LDesde.AutoSize = True
-        Me.LDesde.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LDesde.ForeColor = System.Drawing.Color.White
-        Me.LDesde.Location = New System.Drawing.Point(16, 50)
-        Me.LDesde.Name = "LDesde"
-        Me.LDesde.Size = New System.Drawing.Size(61, 20)
-        Me.LDesde.TabIndex = 73
-        Me.LDesde.Text = "Desde"
-        '
-        'DateHasta
-        '
-        Me.DateHasta.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateHasta.Location = New System.Drawing.Point(91, 97)
-        Me.DateHasta.MaxDate = New Date(2050, 12, 24, 0, 0, 0, 0)
-        Me.DateHasta.MinDate = New Date(2015, 11, 25, 0, 0, 0, 0)
-        Me.DateHasta.Name = "DateHasta"
-        Me.DateHasta.Size = New System.Drawing.Size(127, 20)
-        Me.DateHasta.TabIndex = 76
-        Me.DateHasta.Value = New Date(2022, 11, 12, 0, 0, 0, 0)
-        '
-        'LHasta
-        '
-        Me.LHasta.AutoSize = True
-        Me.LHasta.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LHasta.ForeColor = System.Drawing.Color.White
-        Me.LHasta.Location = New System.Drawing.Point(25, 97)
-        Me.LHasta.Name = "LHasta"
-        Me.LHasta.Size = New System.Drawing.Size(57, 20)
-        Me.LHasta.TabIndex = 75
-        Me.LHasta.Text = "Hasta"
-        '
         'NumerosDelMes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1362, 711)
+        Me.ClientSize = New System.Drawing.Size(1354, 711)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label1)
@@ -345,7 +349,6 @@ Partial Class NumerosDelMes
     Friend WithEvents Label1 As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents BBuscar As Button
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents LProductomas As Label
     Friend WithEvents DataGridView3 As DataGridView
@@ -360,4 +363,6 @@ Partial Class NumerosDelMes
     Friend WithEvents LDesde As Label
     Friend WithEvents DateHasta As DateTimePicker
     Friend WithEvents LHasta As Label
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label4 As Label
 End Class

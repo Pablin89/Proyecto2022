@@ -119,6 +119,7 @@ Partial Class Facturacion
         Me.TIdcli.Name = "TIdcli"
         Me.TIdcli.Size = New System.Drawing.Size(51, 20)
         Me.TIdcli.TabIndex = 39
+        Me.TIdcli.Visible = False
         '
         'BBuscar
         '
@@ -423,6 +424,7 @@ Partial Class Facturacion
         Me.TIdCajero.Name = "TIdCajero"
         Me.TIdCajero.Size = New System.Drawing.Size(51, 20)
         Me.TIdCajero.TabIndex = 18
+        Me.TIdCajero.Visible = False
         '
         'PictureBox1
         '

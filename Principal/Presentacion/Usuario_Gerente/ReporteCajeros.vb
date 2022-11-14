@@ -24,7 +24,7 @@
         If String.IsNullOrEmpty(TId.Text) Or String.IsNullOrEmpty(TCajero.Text) Then
             MsgBox("Completar los campos", vbOKOnly + vbExclamation, "Aplicar Criterio")
         Else
-            Using ctx As New ProyectoEntities8
+            Using ctx As New ProyectoEntities9
                 Dim fechaD, fechaH As Date
                 fechaD = DateDesde.Value
                 fechaH = DateHasta.Value

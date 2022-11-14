@@ -126,30 +126,43 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CDatos\BackUp.vb" />
     <Compile Include="CDatos\Categoria.vb">
-      <DependentUpon>Modelo1.tt</DependentUpon>
+      <DependentUpon>Model0.tt</DependentUpon>
     </Compile>
-    <Compile Include="CDatos\Class1.vb" />
     <Compile Include="CDatos\Cliente.vb">
-      <DependentUpon>Modelo1.tt</DependentUpon>
+      <DependentUpon>Model0.tt</DependentUpon>
     </Compile>
     <Compile Include="CDatos\DCategoria.vb" />
     <Compile Include="CDatos\DCliente.vb" />
     <Compile Include="CDatos\DDetalle.vb" />
     <Compile Include="CDatos\DEmpleado.vb" />
     <Compile Include="CDatos\Detalle.vb">
-      <DependentUpon>Modelo1.tt</DependentUpon>
+      <DependentUpon>Model0.tt</DependentUpon>
     </Compile>
     <Compile Include="CDatos\DFactura.vb" />
     <Compile Include="CDatos\DPerfil.vb" />
     <Compile Include="CDatos\DProducto.vb" />
     <Compile Include="CDatos\DUsuario.vb" />
     <Compile Include="CDatos\Empleado.vb">
-      <DependentUpon>Modelo1.tt</DependentUpon>
+      <DependentUpon>Model0.tt</DependentUpon>
     </Compile>
     <Compile Include="CDatos\Factura.vb">
-      <DependentUpon>Modelo1.tt</DependentUpon>
+      <DependentUpon>Model0.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\Model0.Context.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model0.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\Model0.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model0.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\Model0.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model0.tt</DependentUpon>
     </Compile>
     <Compile Include="CDatos\Modelo1.Context.vb">
       <AutoGen>True</AutoGen>
@@ -167,13 +180,13 @@
       <DependentUpon>Modelo1.tt</DependentUpon>
     </Compile>
     <Compile Include="CDatos\Perfil.vb">
-      <DependentUpon>Modelo1.tt</DependentUpon>
+      <DependentUpon>Model0.tt</DependentUpon>
     </Compile>
     <Compile Include="CDatos\Producto.vb">
-      <DependentUpon>Modelo1.tt</DependentUpon>
+      <DependentUpon>Model0.tt</DependentUpon>
     </Compile>
     <Compile Include="CDatos\Usuario.vb">
-      <DependentUpon>Modelo1.tt</DependentUpon>
+      <DependentUpon>Model0.tt</DependentUpon>
     </Compile>
     <Compile Include="CNegocio\NCategoria.vb" />
     <Compile Include="CNegocio\NCliente.vb" />
@@ -474,6 +487,13 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Modelo1.Designer.vb</LastGenOutput>
     </EntityDeploy>
+    <EntityDeploy Include="CDatos\Model0.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model0.Designer.vb</LastGenOutput>
+    </EntityDeploy>
+    <None Include="CDatos\Model0.edmx.diagram">
+      <DependentUpon>Model0.edmx</DependentUpon>
+    </None>
     <None Include="CDatos\Modelo1.edmx.diagram">
       <DependentUpon>Modelo1.edmx</DependentUpon>
     </None>
@@ -616,6 +636,16 @@
     <None Include="Resources\box_search_product_ean_barcode_icon_148907.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CDatos\Model0.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model0.edmx</DependentUpon>
+      <LastGenOutput>Model0.Context.vb</LastGenOutput>
+    </Content>
+    <Content Include="CDatos\Model0.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model0.edmx</DependentUpon>
+      <LastGenOutput>Model0.vb</LastGenOutput>
+    </Content>
     <Content Include="CDatos\Modelo1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Modelo1.edmx</DependentUpon>
@@ -626,13 +656,7 @@
       <DependentUpon>Modelo1.edmx</DependentUpon>
       <LastGenOutput>Modelo1.vb</LastGenOutput>
     </Content>
-    <Content Include="Proyecto.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Proyecto_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>Proyecto.mdf</DependentUpon>
-    </Content>
+    <None Include="Resources\2422208 %281%29.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

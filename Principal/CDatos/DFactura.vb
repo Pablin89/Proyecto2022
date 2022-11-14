@@ -1,5 +1,5 @@
 ﻿Public Class DFactura
-    Dim ctx As ProyectoEntities8 = New ProyectoEntities8
+    Dim ctx As ProyectoEntities9 = New ProyectoEntities9
 
 
     Function guardar_factura(ByVal ofactura As Factura) As Boolean
@@ -95,4 +95,18 @@
                       Where f.fecha_venta >= fechaD And f.fecha_venta <= fechaH Select f.Nro_factura, e.nombre_empleado, e.apellido_empleado, f.fecha_venta, c.nombre, c.apellido, f.forma_pago).ToList
         grid.DataSource = querry.ToList
     End Sub
+
+    Function recaudado()
+        Dim querry = (From f In ctx.Factura Select f.total).Sum()
+        Dim cantidad As Decimal = querry
+
+        Return cantidad
+    End Function
+    Function recaudado_porfechas(fechaD As Date, fechaH As Date)
+        Dim querry = (From f In ctx.Factura Where f.fecha_venta >= fechaD And f.fecha_venta <= fechaH Select f.total).Sum()
+        Dim cantidad As Decimal = querry
+
+        Return cantidad
+    End Function
 End Class
+

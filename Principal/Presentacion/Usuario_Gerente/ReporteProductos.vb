@@ -12,7 +12,7 @@
     End Sub
 
     Private Sub BBusqueda_Click_1(sender As Object, e As EventArgs) Handles BBusqueda.Click
-        Using ctx As New ProyectoEntities8
+        Using ctx As New ProyectoEntities9
             Dim fechaD, fechaH As Date
 
             fechaD = DateDesde.Value

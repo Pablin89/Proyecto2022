@@ -19,7 +19,7 @@ Partial Public Class Factura
     Public Property id_cliente As Integer
 
     Public Overridable Property Cliente As Cliente
-    Public Overridable Property Empleado As Empleado
     Public Overridable Property Detalle As ICollection(Of Detalle) = New HashSet(Of Detalle)
+    Public Overridable Property Empleado As Empleado
 
 End Class

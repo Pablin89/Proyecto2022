@@ -1,5 +1,5 @@
 ﻿Public Class DDetalle
-    Dim ctx As ProyectoEntities8 = New ProyectoEntities8
+    Dim ctx As ProyectoEntities9 = New ProyectoEntities9
 
     Function guardar_detalle(ByVal odetalle As Detalle) As Boolean
         Try

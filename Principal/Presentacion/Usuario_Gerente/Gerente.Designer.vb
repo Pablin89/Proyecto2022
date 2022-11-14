@@ -159,7 +159,7 @@ Partial Class Gerente
         Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel2.Location = New System.Drawing.Point(0, 739)
+        Me.Panel2.Location = New System.Drawing.Point(0, 731)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Panel2.Size = New System.Drawing.Size(1354, 2)
@@ -181,7 +181,7 @@ Partial Class Gerente
         Me.MenuGerente.Name = "MenuGerente"
         Me.MenuGerente.Padding = New System.Windows.Forms.Padding(6, 10, 6, 10)
         Me.MenuGerente.ShowItemToolTips = True
-        Me.MenuGerente.Size = New System.Drawing.Size(1354, 571)
+        Me.MenuGerente.Size = New System.Drawing.Size(1354, 563)
         Me.MenuGerente.TabIndex = 0
         Me.MenuGerente.Text = " "
         '
@@ -205,7 +205,7 @@ Partial Class Gerente
         Me.ReporteCategoria.AutoSize = False
         Me.ReporteCategoria.BackColor = System.Drawing.Color.LightGreen
         Me.ReporteCategoria.ForeColor = System.Drawing.Color.Black
-        Me.ReporteCategoria.Image = Global.Principal.My.Resources.Resources.female_cashier_avatar_people_icon_142371__2_
+        Me.ReporteCategoria.Image = Global.Principal.My.Resources.Resources._2422208__1_
         Me.ReporteCategoria.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.ReporteCategoria.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ReporteCategoria.Name = "ReporteCategoria"
@@ -246,7 +246,7 @@ Partial Class Gerente
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.ClientSize = New System.Drawing.Size(1354, 741)
+        Me.ClientSize = New System.Drawing.Size(1354, 733)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.MenuGerente)
         Me.Controls.Add(Me.Panel1)

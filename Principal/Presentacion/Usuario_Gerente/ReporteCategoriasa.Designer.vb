@@ -147,7 +147,7 @@ Partial Class ReporteCategorias
         Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Label2.Location = New System.Drawing.Point(0, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(1362, 70)
+        Me.Label2.Size = New System.Drawing.Size(1354, 70)
         Me.Label2.TabIndex = 51
         Me.Label2.Text = "Reportes por productos y categorias"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -158,9 +158,9 @@ Partial Class ReporteCategorias
         Me.LMayores.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LMayores.ForeColor = System.Drawing.Color.White
         Me.LMayores.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.LMayores.Location = New System.Drawing.Point(0, 549)
+        Me.LMayores.Location = New System.Drawing.Point(0, 541)
         Me.LMayores.Name = "LMayores"
-        Me.LMayores.Size = New System.Drawing.Size(1362, 33)
+        Me.LMayores.Size = New System.Drawing.Size(1354, 33)
         Me.LMayores.TabIndex = 63
         Me.LMayores.Text = "Resultados"
         Me.LMayores.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -173,10 +173,10 @@ Partial Class ReporteCategorias
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.Navy
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.DataGridView1.Location = New System.Drawing.Point(0, 582)
+        Me.DataGridView1.Location = New System.Drawing.Point(0, 574)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(1362, 159)
+        Me.DataGridView1.Size = New System.Drawing.Size(1354, 159)
         Me.DataGridView1.TabIndex = 62
         '
         'Label4
@@ -216,7 +216,7 @@ Partial Class ReporteCategorias
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1362, 741)
+        Me.ClientSize = New System.Drawing.Size(1354, 733)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.CheckBox2)
         Me.Controls.Add(Me.ComboBox2)

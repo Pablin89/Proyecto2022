@@ -22,8 +22,8 @@ Partial Class ReporteCajeros
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim ChartArea5 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend5 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
         Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.LDesde = New System.Windows.Forms.Label()
         Me.DateDesde = New System.Windows.Forms.DateTimePicker()
@@ -49,10 +49,10 @@ Partial Class ReporteCajeros
         '
         'Chart1
         '
-        ChartArea5.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea5)
-        Legend5.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend5)
+        ChartArea1.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea1)
+        Legend1.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend1)
         Me.Chart1.Location = New System.Drawing.Point(738, 73)
         Me.Chart1.Name = "Chart1"
         Me.Chart1.Size = New System.Drawing.Size(542, 325)
@@ -120,7 +120,7 @@ Partial Class ReporteCajeros
         Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Label2.Location = New System.Drawing.Point(0, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(1362, 70)
+        Me.Label2.Size = New System.Drawing.Size(1354, 70)
         Me.Label2.TabIndex = 25
         Me.Label2.Text = "Reportes por cajeros"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -133,7 +133,7 @@ Partial Class ReporteCajeros
         Me.dgvEmpleado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvEmpleado.BackgroundColor = System.Drawing.Color.Navy
         Me.dgvEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvEmpleado.Location = New System.Drawing.Point(2, 494)
+        Me.dgvEmpleado.Location = New System.Drawing.Point(-2, 494)
         Me.dgvEmpleado.Name = "dgvEmpleado"
         Me.dgvEmpleado.ReadOnly = True
         Me.dgvEmpleado.Size = New System.Drawing.Size(732, 195)
@@ -145,7 +145,7 @@ Partial Class ReporteCajeros
         Me.LMayores.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LMayores.ForeColor = System.Drawing.Color.White
         Me.LMayores.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.LMayores.Location = New System.Drawing.Point(42, 467)
+        Me.LMayores.Location = New System.Drawing.Point(38, 467)
         Me.LMayores.Name = "LMayores"
         Me.LMayores.Size = New System.Drawing.Size(1320, 24)
         Me.LMayores.TabIndex = 30
@@ -242,7 +242,7 @@ Partial Class ReporteCajeros
         Me.dgvDetalle.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvDetalle.BackgroundColor = System.Drawing.Color.Navy
         Me.dgvDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvDetalle.Location = New System.Drawing.Point(740, 494)
+        Me.dgvDetalle.Location = New System.Drawing.Point(736, 494)
         Me.dgvDetalle.Name = "dgvDetalle"
         Me.dgvDetalle.ReadOnly = True
         Me.dgvDetalle.Size = New System.Drawing.Size(610, 195)
@@ -253,7 +253,7 @@ Partial Class ReporteCajeros
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1362, 741)
+        Me.ClientSize = New System.Drawing.Size(1354, 733)
         Me.Controls.Add(Me.dgvDetalle)
         Me.Controls.Add(Me.TId)
         Me.Controls.Add(Me.TCajero)

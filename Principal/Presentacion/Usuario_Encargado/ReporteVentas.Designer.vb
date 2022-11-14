@@ -22,8 +22,8 @@ Partial Class ReporteVentas
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim ChartArea4 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend4 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
         Me.BDescarga = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
@@ -68,10 +68,10 @@ Partial Class ReporteVentas
         '
         'Chart1
         '
-        ChartArea4.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea4)
-        Legend4.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend4)
+        ChartArea1.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea1)
+        Legend1.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend1)
         Me.Chart1.Location = New System.Drawing.Point(726, 97)
         Me.Chart1.Name = "Chart1"
         Me.Chart1.Size = New System.Drawing.Size(531, 325)
@@ -86,7 +86,7 @@ Partial Class ReporteVentas
         Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Label2.Location = New System.Drawing.Point(0, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(1362, 70)
+        Me.Label2.Size = New System.Drawing.Size(1354, 70)
         Me.Label2.TabIndex = 49
         Me.Label2.Text = "Reportes de ventas"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -215,7 +215,7 @@ Partial Class ReporteVentas
         Me.dgvDetalle.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvDetalle.BackgroundColor = System.Drawing.Color.Navy
         Me.dgvDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvDetalle.Location = New System.Drawing.Point(742, 516)
+        Me.dgvDetalle.Location = New System.Drawing.Point(738, 516)
         Me.dgvDetalle.Name = "dgvDetalle"
         Me.dgvDetalle.ReadOnly = True
         Me.dgvDetalle.Size = New System.Drawing.Size(610, 195)
@@ -227,7 +227,7 @@ Partial Class ReporteVentas
         Me.LMayores.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LMayores.ForeColor = System.Drawing.Color.White
         Me.LMayores.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.LMayores.Location = New System.Drawing.Point(44, 489)
+        Me.LMayores.Location = New System.Drawing.Point(40, 489)
         Me.LMayores.Name = "LMayores"
         Me.LMayores.Size = New System.Drawing.Size(1320, 24)
         Me.LMayores.TabIndex = 77
@@ -242,7 +242,7 @@ Partial Class ReporteVentas
         Me.dgvEmpleado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvEmpleado.BackgroundColor = System.Drawing.Color.Navy
         Me.dgvEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvEmpleado.Location = New System.Drawing.Point(4, 516)
+        Me.dgvEmpleado.Location = New System.Drawing.Point(0, 516)
         Me.dgvEmpleado.Name = "dgvEmpleado"
         Me.dgvEmpleado.ReadOnly = True
         Me.dgvEmpleado.Size = New System.Drawing.Size(732, 195)
@@ -253,7 +253,7 @@ Partial Class ReporteVentas
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1362, 741)
+        Me.ClientSize = New System.Drawing.Size(1354, 733)
         Me.Controls.Add(Me.dgvDetalle)
         Me.Controls.Add(Me.LMayores)
         Me.Controls.Add(Me.dgvEmpleado)
@@ -273,7 +273,9 @@ Partial Class ReporteVentas
         Me.Controls.Add(Me.Chart1)
         Me.Controls.Add(Me.Label2)
         Me.Name = "ReporteVentas"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ReportesVentas"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvDetalle, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvEmpleado, System.ComponentModel.ISupportInitialize).EndInit()

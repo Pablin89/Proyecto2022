@@ -22,11 +22,13 @@
         prod.productos_vendidos(DataGridView1)
         fact.clientes_compras(DataGridView3)
         fact.cajero_ventas(DataGridView4)
+        TextBox1.Text = "$" + "" + fact.recaudado().ToString
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         prod.productos_masVendidos(DateDesde.Value, DateHasta.Value, DataGridView1)
         fact.clientes_masCompras(DateDesde.Value, DateHasta.Value, DataGridView3)
         fact.cajero_masVentas(DateDesde.Value, DateHasta.Value, DataGridView4)
+        TextBox1.Text = "$" + "" + fact.recaudado_porfechas(DateDesde.Value, DateHasta.Value).ToString
     End Sub
 End Class

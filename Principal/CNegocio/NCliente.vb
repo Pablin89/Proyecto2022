@@ -37,6 +37,4 @@
         grid.Columns(8).Visible = False
 
     End Sub
-
-    'select lc.descripcion as 'Localidad', cs.nombre from consorcio cs inner join localidad lc on cs.idlocalidad = lc.idlocalidad;
 End Class

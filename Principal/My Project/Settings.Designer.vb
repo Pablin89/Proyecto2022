@@ -98,6 +98,16 @@ Namespace My
                 Return CType(Me("conexion"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=USER\SQL2;Initial Catalog=Proyecto;Integrated Security=True")>  _
+        Public ReadOnly Property conexion2() As String
+            Get
+                Return CType(Me("conexion2"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 

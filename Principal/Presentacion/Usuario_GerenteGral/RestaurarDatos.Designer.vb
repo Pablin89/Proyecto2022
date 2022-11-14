@@ -41,7 +41,7 @@ Partial Class RestaurarDatos
         Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Label1.Location = New System.Drawing.Point(0, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(1362, 95)
+        Me.Label1.Size = New System.Drawing.Size(1354, 95)
         Me.Label1.TabIndex = 7
         Me.Label1.Text = "Backup Base de Datos"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -57,6 +57,7 @@ Partial Class RestaurarDatos
         '
         'TextBox2
         '
+        Me.TextBox2.Enabled = False
         Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox2.Location = New System.Drawing.Point(520, 328)
         Me.TextBox2.Name = "TextBox2"
@@ -128,7 +129,7 @@ Partial Class RestaurarDatos
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1362, 661)
+        Me.ClientSize = New System.Drawing.Size(1354, 661)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)

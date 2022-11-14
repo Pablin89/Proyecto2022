@@ -17,7 +17,7 @@ Partial Public Class Usuario
     Public Property perfil_id As Integer
     Public Property empleado_id As Integer
 
-    Public Overridable Property Perfil As Perfil
     Public Overridable Property Empleado As Empleado
+    Public Overridable Property Perfil As Perfil
 
 End Class
