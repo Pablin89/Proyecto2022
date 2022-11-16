@@ -216,21 +216,18 @@ Public Class PermisosUsuario
         Dim i As Integer
         i = dgvUsuario.CurrentRow.Index
 
-        ModificarUsuario.TApellido.Text = dgvUsuario.Rows(i).Cells(2).Value.ToString
-        ModificarUsuario.TNombre.Text = dgvUsuario.Rows(i).Cells(1).Value.ToString
-        ModificarUsuario.TUsuario.Text = dgvUsuario.Rows(i).Cells(4).Value.ToString
-        ModificarUsuario.TContraseña.Text = dgvUsuario.Rows(i).Cells(5).Value.ToString
-        ModificarUsuario.TRepcontra.Text = dgvUsuario.Rows(i).Cells(5).Value.ToString
-        ModificarUsuario.CBperfil.SelectedValue = dgvUsuario.Rows(i).Cells(6).Value
+        ModifUsuario.TApellido.Text = dgvUsuario.Rows(i).Cells(2).Value.ToString
+        ModifUsuario.TNombre.Text = dgvUsuario.Rows(i).Cells(1).Value.ToString
+        ModifUsuario.TUsuario.Text = dgvUsuario.Rows(i).Cells(4).Value.ToString
+        ModifUsuario.TContraseña.Text = dgvUsuario.Rows(i).Cells(5).Value.ToString
+        ModifUsuario.TRepcontra.Text = dgvUsuario.Rows(i).Cells(5).Value.ToString
+        ModifUsuario.CBperfil.SelectedValue = dgvUsuario.Rows(i).Cells(6).Value
 
     End Sub
 
     Private Sub BModificar_Click(sender As Object, e As EventArgs) Handles BModificar.Click
-        ModificarUsuario.Show()
+        ModifUsuario.Show()
         BModificar.Enabled = False
     End Sub
 
-    Private Sub dgvEmpleados_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvEmpleados.CellContentClick
-
-    End Sub
 End Class

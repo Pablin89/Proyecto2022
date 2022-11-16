@@ -118,4 +118,8 @@ Public Class EditarEmpleado
         PermisosUsuario.dgvEmpleados.ClearSelection()
 
     End Sub
+
+    Private Sub TContraseña_TextChanged(sender As Object, e As EventArgs) Handles TContraseña.TextChanged
+
+    End Sub
 End Class

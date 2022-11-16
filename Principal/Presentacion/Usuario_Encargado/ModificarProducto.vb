@@ -80,4 +80,5 @@
     Private Sub ModificarProducto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         comboCategoria()
     End Sub
+
 End Class

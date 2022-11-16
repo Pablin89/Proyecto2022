@@ -1,13 +1,10 @@
 ﻿Imports System.ComponentModel
 
-Public Class ModificarUsuario
+Public Class ModifUsuario
     Dim perfiles = New DPerfil
     Dim objusuario = New DUsuario
     Dim us = New NUsuario
 
-    Private Sub ModificarUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        comboPerfil()
-    End Sub
     Private Sub comboPerfil()
         Dim list = perfiles.getPerfiles()
 
@@ -18,6 +15,9 @@ Public Class ModificarUsuario
             CBperfil.DataSource = list
 
         End If
+    End Sub
+    Private Sub ModificarUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        comboPerfil()
     End Sub
     Friend Shared Function contraseñaValida(password As String) As Boolean
 
@@ -77,7 +77,7 @@ Public Class ModificarUsuario
             op = MsgBox("¿Desea guardar los cambios?", vbYesNo + vbDefaultButton2 + vbInformation, "Confirmar")
             If op = DialogResult.Yes Then
 
-                objusuario.modificar_usuario(TUsuario.Text, TContraseña.Text, CBperfil.ValueMember, PermisosUsuario.dgvUsuario.CurrentRow.Cells(6).Value, PermisosUsuario.dgvUsuario.CurrentRow.Cells(0).Value)
+                objusuario.modificar_usuario(TUsuario.Text, TContraseña.Text, CBperfil.SelectedValue, PermisosUsuario.dgvUsuario.CurrentRow.Cells(7).Value, PermisosUsuario.dgvUsuario.CurrentRow.Cells(0).Value)
                 MsgBox("Los cambios se realizaron correctamente", vbOKOnly + vbDefaultButton1 + vbInformation, "Cambios realizados")
                 us.cargarGrid(PermisosUsuario.dgvUsuario)
 
