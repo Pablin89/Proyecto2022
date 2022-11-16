@@ -29,7 +29,7 @@ Public Class EditarEmpleado
 
                 objusuario.agregar_usuario(TUsuario.Text, TContraseña.Text, CBperfil.SelectedValue, PermisosUsuario.dgvEmpleados.CurrentRow.Cells(0).Value)
                     MsgBox("Los cambios se realizaron correctamente", vbOKOnly + vbDefaultButton1 + vbInformation, "Cambios realizados")
-                us.cargarGrid(PermisosUsuario.dgvUsuario)
+                objusuario.cargarGrid(PermisosUsuario.dgvUsuario)
                 TUsuario.Clear()
                 TContraseña.Clear()
                 TRepcontra.Clear()
@@ -112,5 +112,10 @@ Public Class EditarEmpleado
         Else
             ErrorRepContra.SetError(sender, "Las contraseñas deben ser iguales")
         End If
+    End Sub
+
+    Private Sub EditarEmpleado_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        PermisosUsuario.dgvEmpleados.ClearSelection()
+
     End Sub
 End Class

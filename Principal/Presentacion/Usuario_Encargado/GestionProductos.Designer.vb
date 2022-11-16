@@ -40,6 +40,8 @@ Partial Class GestionProductos
         Me.CBprecio = New System.Windows.Forms.CheckBox()
         Me.CBnombre = New System.Windows.Forms.CheckBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.TStockMin = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.BCancelar = New System.Windows.Forms.Button()
         Me.BConfirmar = New System.Windows.Forms.Button()
         Me.CBcategoria = New System.Windows.Forms.ComboBox()
@@ -56,6 +58,7 @@ Partial Class GestionProductos
         Me.LDescripcion = New System.Windows.Forms.Label()
         Me.LNombre = New System.Windows.Forms.Label()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.dgvCategoria = New System.Windows.Forms.DataGridView()
         Me.BCancelarcat = New System.Windows.Forms.Button()
         Me.BConfirmarCat = New System.Windows.Forms.Button()
         Me.TDesc = New System.Windows.Forms.TextBox()
@@ -63,14 +66,13 @@ Partial Class GestionProductos
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
-        Me.TStockMin = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Productos.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.TabPage3.SuspendLayout()
+        CType(Me.dgvCategoria, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Productos
@@ -112,7 +114,7 @@ Partial Class GestionProductos
         Me.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvProductos.Location = New System.Drawing.Point(0, 273)
         Me.dgvProductos.Name = "dgvProductos"
-        Me.dgvProductos.Size = New System.Drawing.Size(1358, 315)
+        Me.dgvProductos.Size = New System.Drawing.Size(1358, 263)
         Me.dgvProductos.TabIndex = 8
         '
         'Panel2
@@ -311,13 +313,30 @@ Partial Class GestionProductos
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Registrar Producto"
         '
+        'TStockMin
+        '
+        Me.TStockMin.Location = New System.Drawing.Point(539, 293)
+        Me.TStockMin.Name = "TStockMin"
+        Me.TStockMin.Size = New System.Drawing.Size(388, 26)
+        Me.TStockMin.TabIndex = 32
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label3.Location = New System.Drawing.Point(363, 299)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(116, 20)
+        Me.Label3.TabIndex = 31
+        Me.Label3.Text = "Stock Minimo"
+        '
         'BCancelar
         '
         Me.BCancelar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BCancelar.Image = Global.Principal.My.Resources.Resources.cancelar
         Me.BCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BCancelar.Location = New System.Drawing.Point(547, 507)
+        Me.BCancelar.Location = New System.Drawing.Point(550, 477)
         Me.BCancelar.Name = "BCancelar"
         Me.BCancelar.Size = New System.Drawing.Size(136, 46)
         Me.BCancelar.TabIndex = 30
@@ -331,7 +350,7 @@ Partial Class GestionProductos
         Me.BConfirmar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BConfirmar.Image = Global.Principal.My.Resources.Resources.iconoguardar__1_
         Me.BConfirmar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BConfirmar.Location = New System.Drawing.Point(756, 507)
+        Me.BConfirmar.Location = New System.Drawing.Point(759, 477)
         Me.BConfirmar.Name = "BConfirmar"
         Me.BConfirmar.Size = New System.Drawing.Size(136, 46)
         Me.BConfirmar.TabIndex = 29
@@ -344,42 +363,42 @@ Partial Class GestionProductos
         Me.CBcategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CBcategoria.FormattingEnabled = True
         Me.CBcategoria.Items.AddRange(New Object() {"1", "2", "3"})
-        Me.CBcategoria.Location = New System.Drawing.Point(540, 436)
+        Me.CBcategoria.Location = New System.Drawing.Point(539, 410)
         Me.CBcategoria.Name = "CBcategoria"
         Me.CBcategoria.Size = New System.Drawing.Size(388, 28)
         Me.CBcategoria.TabIndex = 12
         '
         'TStock
         '
-        Me.TStock.Location = New System.Drawing.Point(540, 380)
+        Me.TStock.Location = New System.Drawing.Point(539, 354)
         Me.TStock.Name = "TStock"
         Me.TStock.Size = New System.Drawing.Size(388, 26)
         Me.TStock.TabIndex = 11
         '
         'TPrecioProd
         '
-        Me.TPrecioProd.Location = New System.Drawing.Point(540, 262)
+        Me.TPrecioProd.Location = New System.Drawing.Point(539, 236)
         Me.TPrecioProd.Name = "TPrecioProd"
         Me.TPrecioProd.Size = New System.Drawing.Size(388, 26)
         Me.TPrecioProd.TabIndex = 10
         '
         'TCodigoProd
         '
-        Me.TCodigoProd.Location = New System.Drawing.Point(540, 205)
+        Me.TCodigoProd.Location = New System.Drawing.Point(539, 179)
         Me.TCodigoProd.Name = "TCodigoProd"
         Me.TCodigoProd.Size = New System.Drawing.Size(388, 26)
         Me.TCodigoProd.TabIndex = 9
         '
         'TDescripcion
         '
-        Me.TDescripcion.Location = New System.Drawing.Point(540, 145)
+        Me.TDescripcion.Location = New System.Drawing.Point(539, 119)
         Me.TDescripcion.Name = "TDescripcion"
         Me.TDescripcion.Size = New System.Drawing.Size(388, 26)
         Me.TDescripcion.TabIndex = 8
         '
         'TNombreProd
         '
-        Me.TNombreProd.Location = New System.Drawing.Point(540, 88)
+        Me.TNombreProd.Location = New System.Drawing.Point(539, 62)
         Me.TNombreProd.Name = "TNombreProd"
         Me.TNombreProd.Size = New System.Drawing.Size(388, 26)
         Me.TNombreProd.TabIndex = 7
@@ -388,7 +407,7 @@ Partial Class GestionProductos
         '
         Me.LDatos.AutoSize = True
         Me.LDatos.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LDatos.Location = New System.Drawing.Point(666, 31)
+        Me.LDatos.Location = New System.Drawing.Point(664, 22)
         Me.LDatos.Name = "LDatos"
         Me.LDatos.Size = New System.Drawing.Size(134, 20)
         Me.LDatos.TabIndex = 6
@@ -398,7 +417,7 @@ Partial Class GestionProductos
         '
         Me.LPrecio.AutoSize = True
         Me.LPrecio.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LPrecio.Location = New System.Drawing.Point(375, 270)
+        Me.LPrecio.Location = New System.Drawing.Point(374, 244)
         Me.LPrecio.Name = "LPrecio"
         Me.LPrecio.Size = New System.Drawing.Size(59, 20)
         Me.LPrecio.TabIndex = 5
@@ -408,7 +427,7 @@ Partial Class GestionProductos
         '
         Me.LCategoria.AutoSize = True
         Me.LCategoria.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LCategoria.Location = New System.Drawing.Point(366, 439)
+        Me.LCategoria.Location = New System.Drawing.Point(365, 413)
         Me.LCategoria.Name = "LCategoria"
         Me.LCategoria.Size = New System.Drawing.Size(87, 20)
         Me.LCategoria.TabIndex = 4
@@ -418,7 +437,7 @@ Partial Class GestionProductos
         '
         Me.LStock.AutoSize = True
         Me.LStock.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LStock.Location = New System.Drawing.Point(377, 383)
+        Me.LStock.Location = New System.Drawing.Point(376, 357)
         Me.LStock.Name = "LStock"
         Me.LStock.Size = New System.Drawing.Size(55, 20)
         Me.LStock.TabIndex = 3
@@ -428,7 +447,7 @@ Partial Class GestionProductos
         '
         Me.LCodigo.AutoSize = True
         Me.LCodigo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LCodigo.Location = New System.Drawing.Point(377, 208)
+        Me.LCodigo.Location = New System.Drawing.Point(376, 182)
         Me.LCodigo.Name = "LCodigo"
         Me.LCodigo.Size = New System.Drawing.Size(65, 20)
         Me.LCodigo.TabIndex = 2
@@ -438,7 +457,7 @@ Partial Class GestionProductos
         '
         Me.LDescripcion.AutoSize = True
         Me.LDescripcion.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LDescripcion.Location = New System.Drawing.Point(377, 148)
+        Me.LDescripcion.Location = New System.Drawing.Point(376, 122)
         Me.LDescripcion.Name = "LDescripcion"
         Me.LDescripcion.Size = New System.Drawing.Size(103, 20)
         Me.LDescripcion.TabIndex = 1
@@ -448,7 +467,7 @@ Partial Class GestionProductos
         '
         Me.LNombre.AutoSize = True
         Me.LNombre.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LNombre.Location = New System.Drawing.Point(377, 94)
+        Me.LNombre.Location = New System.Drawing.Point(376, 68)
         Me.LNombre.Name = "LNombre"
         Me.LNombre.Size = New System.Drawing.Size(76, 20)
         Me.LNombre.TabIndex = 0
@@ -457,6 +476,7 @@ Partial Class GestionProductos
         'TabPage3
         '
         Me.TabPage3.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.TabPage3.Controls.Add(Me.dgvCategoria)
         Me.TabPage3.Controls.Add(Me.BCancelarcat)
         Me.TabPage3.Controls.Add(Me.BConfirmarCat)
         Me.TabPage3.Controls.Add(Me.TDesc)
@@ -469,13 +489,23 @@ Partial Class GestionProductos
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Registrar Categoria"
         '
+        'dgvCategoria
+        '
+        Me.dgvCategoria.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvCategoria.BackgroundColor = System.Drawing.Color.Navy
+        Me.dgvCategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvCategoria.Location = New System.Drawing.Point(0, 346)
+        Me.dgvCategoria.Name = "dgvCategoria"
+        Me.dgvCategoria.Size = New System.Drawing.Size(1362, 195)
+        Me.dgvCategoria.TabIndex = 33
+        '
         'BCancelarcat
         '
         Me.BCancelarcat.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BCancelarcat.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BCancelarcat.Image = Global.Principal.My.Resources.Resources.cancelar
         Me.BCancelarcat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BCancelarcat.Location = New System.Drawing.Point(590, 411)
+        Me.BCancelarcat.Location = New System.Drawing.Point(556, 231)
         Me.BCancelarcat.Name = "BCancelarcat"
         Me.BCancelarcat.Size = New System.Drawing.Size(136, 46)
         Me.BCancelarcat.TabIndex = 32
@@ -489,7 +519,7 @@ Partial Class GestionProductos
         Me.BConfirmarCat.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BConfirmarCat.Image = Global.Principal.My.Resources.Resources.iconoguardar__1_
         Me.BConfirmarCat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BConfirmarCat.Location = New System.Drawing.Point(799, 411)
+        Me.BConfirmarCat.Location = New System.Drawing.Point(765, 231)
         Me.BConfirmarCat.Name = "BConfirmarCat"
         Me.BConfirmarCat.Size = New System.Drawing.Size(136, 46)
         Me.BConfirmarCat.TabIndex = 31
@@ -499,7 +529,7 @@ Partial Class GestionProductos
         '
         'TDesc
         '
-        Me.TDesc.Location = New System.Drawing.Point(576, 219)
+        Me.TDesc.Location = New System.Drawing.Point(546, 159)
         Me.TDesc.Name = "TDesc"
         Me.TDesc.Size = New System.Drawing.Size(388, 26)
         Me.TDesc.TabIndex = 13
@@ -509,7 +539,7 @@ Partial Class GestionProductos
         Me.LDatoscat.AutoSize = True
         Me.LDatoscat.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LDatoscat.ForeColor = System.Drawing.Color.White
-        Me.LDatoscat.Location = New System.Drawing.Point(653, 76)
+        Me.LDatoscat.Location = New System.Drawing.Point(617, 65)
         Me.LDatoscat.Name = "LDatoscat"
         Me.LDatoscat.Size = New System.Drawing.Size(201, 29)
         Me.LDatoscat.TabIndex = 11
@@ -519,7 +549,7 @@ Partial Class GestionProductos
         '
         Me.Label4.AutoSize = True
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(413, 222)
+        Me.Label4.Location = New System.Drawing.Point(383, 162)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(103, 20)
         Me.Label4.TabIndex = 10
@@ -533,7 +563,7 @@ Partial Class GestionProductos
         Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Label2.Location = New System.Drawing.Point(0, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(1354, 73)
+        Me.Label2.Size = New System.Drawing.Size(1362, 73)
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "Gestión de Productos"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -547,28 +577,11 @@ Partial Class GestionProductos
         Me.Button3.Text = "<---Volver al menú principal"
         Me.Button3.UseVisualStyleBackColor = True
         '
-        'TStockMin
-        '
-        Me.TStockMin.Location = New System.Drawing.Point(540, 319)
-        Me.TStockMin.Name = "TStockMin"
-        Me.TStockMin.Size = New System.Drawing.Size(388, 26)
-        Me.TStockMin.TabIndex = 32
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(364, 325)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(116, 20)
-        Me.Label3.TabIndex = 31
-        Me.Label3.Text = "Stock Minimo"
-        '
         'GestionProductos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1354, 733)
+        Me.ClientSize = New System.Drawing.Size(1362, 687)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Productos)
@@ -586,6 +599,7 @@ Partial Class GestionProductos
         Me.TabPage2.PerformLayout()
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage3.PerformLayout()
+        CType(Me.dgvCategoria, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -633,4 +647,5 @@ Partial Class GestionProductos
     Friend WithEvents BEliminar As Button
     Friend WithEvents TStockMin As TextBox
     Friend WithEvents Label3 As Label
+    Friend WithEvents dgvCategoria As DataGridView
 End Class

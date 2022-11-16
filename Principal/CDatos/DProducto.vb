@@ -88,17 +88,23 @@
         End Try
     End Function
 
-    Function existe_producto(ByVal nombre As String, ByVal desc As String, ByVal codigo As Integer)
+    Function existe_producto(ByVal nom As String, ByVal desc As String, ByVal cod As Integer)
         Try
             Dim existe As Boolean
-            Dim querry = (From p In ctx.Producto Where p.nombre = nombre And p.descripcion = desc And p.codigo = codigo Select p).First()
-            If (querry.nombre = nombre And querry.descripcion = desc And querry.codigo = codigo) Then
+            Dim querry = (From p In ctx.Producto Where p.nombre = nom And p.descripcion = desc And p.codigo = cod Select p)
+
+            If querry.Count > 0 Then
                 existe = True
+
             End If
-            Return True
+            Return existe
+
         Catch ex As Exception
             Return False
         End Try
+
+
+
 
     End Function
     Public Sub productos_vendidos(grid As DataGridView)
@@ -125,5 +131,7 @@
         grid.Columns(2).HeaderText = "Stock"
         grid.Columns(3).HeaderText = "Stock Minimo"
     End Sub
+
+
 
 End Class

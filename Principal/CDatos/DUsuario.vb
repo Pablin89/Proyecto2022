@@ -83,5 +83,26 @@
             Return False
         End Try
     End Function
+    Public Sub buscar_nombre(nombre As String, grid As DataGridView)
+        Dim querry = (From u In ctx.Usuario Join e In ctx.Empleado On u.empleado_id Equals e.Id_empleado Join p In ctx.Perfil On u.perfil_id Equals p.Id_perfil
+                      Where e.nombre_empleado.Contains(nombre) Select u.Id_usuario, e.nombre_empleado, e.apellido_empleado, e.dni_empleado, u.nombre_usuario, u.contraseña, p.desc_pefil, u.empleado_id).ToList
+
+        grid.DataSource = querry.ToList
+
+    End Sub
+    Public Sub buscar_apellido(apellido As String, grid As DataGridView)
+        Dim querry = (From u In ctx.Usuario Join e In ctx.Empleado On u.empleado_id Equals e.Id_empleado Join p In ctx.Perfil On u.perfil_id Equals p.Id_perfil
+                      Where e.apellido_empleado.Contains(apellido) Select u.Id_usuario, e.nombre_empleado, e.apellido_empleado, e.dni_empleado, u.nombre_usuario, u.contraseña, p.desc_pefil, u.empleado_id).ToList
+
+        grid.DataSource = querry.ToList
+
+    End Sub
+    Public Sub buscar_dni(dni As String, grid As DataGridView)
+        Dim querry = (From u In ctx.Usuario Join e In ctx.Empleado On u.empleado_id Equals e.Id_empleado Join p In ctx.Perfil On u.perfil_id Equals p.Id_perfil
+                      Where e.dni_empleado.ToString.Contains(dni) Select u.Id_usuario, e.nombre_empleado, e.apellido_empleado, e.dni_empleado, u.nombre_usuario, u.contraseña, p.desc_pefil, u.empleado_id).ToList
+
+        grid.DataSource = querry.ToList
+
+    End Sub
 
 End Class

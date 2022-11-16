@@ -64,8 +64,10 @@
                         With odetalle
                             .cantidad = dgvCompra.Item(2, i).Value
                             .precio = (CDec(dgvCompra.Item(4, i).Value))
-                            .nro_factura = f
-                            .id_producto = dgvCompra.Item(0, i).Value
+                                .nro_factura = f
+                                .id_producto = dgvCompra.Item(0, i).Value
+
+
                         End With
                         ctx.Detalle.Add(odetalle)
 
@@ -84,7 +86,7 @@
                 MsgBox("La facturacion se realizo con exito", vbOKOnly + vbInformation, "Confirmar Venta")
 
                 dgvCompra.DataSource = Nothing
-                dgvCompra.Rows.Clear()
+                tabla.Rows.Clear()
                 TIdcli.Clear()
                 TNombreCli.Clear()
                 TApellidoCli.Clear()
@@ -127,6 +129,7 @@
 
         If ask = DialogResult.Yes Then
             dgvCompra.DataSource = Nothing
+            tabla.Rows.Clear()
             TIdcli.Clear()
             TNombreCli.Clear()
             TApellidoCli.Clear()

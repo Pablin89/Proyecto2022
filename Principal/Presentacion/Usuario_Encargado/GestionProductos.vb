@@ -135,6 +135,8 @@
     Private Sub GestionProductos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         objproducto.cargarGrid(dgvProductos)
         comboCategoria()
+        dgvProductos.ClearSelection()
+        objcategoria.cargarGrid(dgvCategoria)
     End Sub
 
     Private Sub BConfirmarCat_Click(sender As Object, e As EventArgs) Handles BConfirmarCat.Click
@@ -150,6 +152,7 @@
 
                     objcategoria.agregar_categoria(TDesc.Text)
                     MsgBox("La categoria se registro correctamente", vbOKOnly + vbInformation, "Confirmar")
+                    objcategoria.cargarGrid(dgvCategoria)
                 Else
                     MsgBox("La categoria ya existe", vbOKOnly + vbCritical, "Confirmar")
                 End If
@@ -180,6 +183,8 @@
         End If
         Dim i As Integer
         i = dgvProductos.CurrentRow.Index
+        Dim cat As String = dgvProductos.Rows(i).Cells(7).Value
+
 
         ModificarProducto.TNombreProd.Text = dgvProductos.Rows(i).Cells(1).Value.ToString
         ModificarProducto.TDescripcion.Text = dgvProductos.Rows(i).Cells(2).Value.ToString
@@ -188,7 +193,7 @@
         ModificarProducto.TStock.Text = dgvProductos.Rows(i).Cells(5).Value
         ModificarProducto.TStockMin.Text = dgvProductos.Rows(i).Cells(6).Value
         ModificarProducto.CBoxEstado.Text = dgvProductos.Rows(i).Cells(8).Value
-
+        ModificarProducto.CBcategoria.SelectedIndex = ModificarProducto.CBcategoria.FindString(cat)
 
     End Sub
 
@@ -212,6 +217,8 @@
 
     Private Sub BModificar_Click(sender As Object, e As EventArgs) Handles BModificar.Click
         ModificarProducto.Show()
+        BModificar.Enabled = False
+        BEliminar.Enabled = False
     End Sub
 
     Private Sub BEliminar_Click(sender As Object, e As EventArgs) Handles BEliminar.Click
@@ -226,6 +233,7 @@
         Else
             MsgBox("El producto ya esta dado de baja", vbOKOnly + vbExclamation, "Elimniar")
         End If
-
+        BEliminar.Enabled = False
+        BModificar.Enabled = False
     End Sub
 End Class

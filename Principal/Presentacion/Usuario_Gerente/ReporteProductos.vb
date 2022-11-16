@@ -1,5 +1,7 @@
 ﻿Public Class ReporteProductos
     Dim cate = New DCategoria
+    Dim fact = New DFactura
+    Dim det = New DDetalle
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Dim ask As MsgBoxResult
 
@@ -20,40 +22,54 @@
 
             If CheckBox2.Checked = True Then
                 Dim cat As Integer = ComboBox2.SelectedValue
-                Dim q = (From d In ctx.Detalle Join f In ctx.Factura On d.nro_factura Equals f.Nro_factura Join p In ctx.Producto On d.id_producto Equals p.Id_producto
-                         Where p.categoria_id = cat And f.fecha_venta >= fechaD And f.fecha_venta <= fechaH Group d.cantidad By p.nombre Into grupo = Group Select total = grupo.Sum(), prod = nombre Order By total Descending).Take(10)
 
-                DataGridView1.DataSource = q.ToList
-                Dim datos = q.ToList(0)
-                Dim j As Integer
-                Chart1.Series.Clear()
-                Chart1.Series.Add("Datos")
-                Chart1.Series("Datos").ChartType = DataVisualization.Charting.SeriesChartType.Pie
+                If det.existe_datos(ComboBox2.SelectedValue, fechaD, fechaH).Equals(True) Then
+                    Dim q = (From d In ctx.Detalle Join f In ctx.Factura On d.nro_factura Equals f.Nro_factura Join p In ctx.Producto On d.id_producto Equals p.Id_producto
+                             Where p.categoria_id = cat And f.fecha_venta >= fechaD And f.fecha_venta <= fechaH Group d.cantidad By p.nombre Into grupo = Group Select Total = grupo.Sum(), Producto = nombre
+                             Order By Total Descending).Take(10)
 
-                For j = 0 To q.Count - 1
-                    Chart1.Series("Datos").Points.AddXY(q.ToList(j).prod, q.ToList(j).total)
-                    Chart1.Series("Datos").IsValueShownAsLabel = True
-                Next
+                    DataGridView1.DataSource = q.ToList
+                    Dim datos = q.ToList(0)
+                    Dim j As Integer
+                    Chart1.Series.Clear()
+                    Chart1.Series.Add("Datos")
+                    Chart1.Series("Datos").ChartType = DataVisualization.Charting.SeriesChartType.Pie
 
-                Chart1.DataSource = datos
+                    For j = 0 To q.Count - 1
+                        Chart1.Series("Datos").Points.AddXY(q.ToList(j).Producto, q.ToList(j).Total)
+                        Chart1.Series("Datos").IsValueShownAsLabel = True
+                    Next
+
+                    Chart1.DataSource = datos
+                    TTotal.Text = "$" + "" + fact.recaudado_porfechas(DateDesde.Value, DateHasta.Value).ToString
+                Else
+                    MsgBox("No existen resultados", vbOKOnly + vbExclamation, "Aplicar Selección")
+                End If
+
             Else
-                Dim querry = (From d In ctx.Detalle Join f In ctx.Factura On d.nro_factura Equals f.Nro_factura Join p In ctx.Producto On d.id_producto Equals p.Id_producto
-                              Where f.fecha_venta >= fechaD And f.fecha_venta <= fechaH Group d.cantidad By p.nombre Into grupo = Group Select total = grupo.Sum(), prod = nombre Order By total Descending).Take(10)
+                If det.existe_fechas(fechaD, fechaH).Equals(True) Then
+                    Dim querry = (From d In ctx.Detalle Join f In ctx.Factura On d.nro_factura Equals f.Nro_factura Join p In ctx.Producto On d.id_producto Equals p.Id_producto
+                                  Where f.fecha_venta >= fechaD And f.fecha_venta <= fechaH Group d.cantidad By p.nombre Into grupo = Group Select Total = grupo.Sum(), Producto = nombre Order By Total Descending).Take(10)
 
-                DataGridView1.DataSource = querry.ToList
+                    DataGridView1.DataSource = querry.ToList
 
-                Dim i As Integer
-                Dim lista = querry.ToList(0)
-                Chart1.Series.Clear()
-                Chart1.Series.Add("Datos")
-                Chart1.Series("Datos").ChartType = DataVisualization.Charting.SeriesChartType.Pie
+                    Dim i As Integer
+                    Dim lista = querry.ToList(0)
+                    Chart1.Series.Clear()
+                    Chart1.Series.Add("Datos")
+                    Chart1.Series("Datos").ChartType = DataVisualization.Charting.SeriesChartType.Pie
 
-                For i = 0 To querry.Count - 1
-                    Chart1.Series("Datos").Points.AddXY(querry.ToList(i).prod, querry.ToList(i).total)
-                    Chart1.Series("Datos").IsValueShownAsLabel = True
-                Next
+                    For i = 0 To querry.Count - 1
+                        Chart1.Series("Datos").Points.AddXY(querry.ToList(i).Producto, querry.ToList(i).Total)
+                        Chart1.Series("Datos").IsValueShownAsLabel = True
+                    Next
 
-                Chart1.DataSource = lista
+                    Chart1.DataSource = lista
+                    TTotal.Text = "$" + "" + fact.recaudado_porfechas(DateDesde.Value, DateHasta.Value).ToString
+                Else
+                    MsgBox("Introducir nuevas fechas", vbOKOnly + vbExclamation, "Aplicar Criterios")
+                End If
+
             End If
 
 
@@ -82,5 +98,9 @@
 
     Private Sub ReporteProductos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         comboCategoria()
+    End Sub
+
+    Private Sub TTotal_TextChanged(sender As Object, e As EventArgs) Handles TTotal.TextChanged
+
     End Sub
 End Class

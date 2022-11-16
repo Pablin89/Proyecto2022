@@ -79,14 +79,19 @@
     Function existe_empleado(ByVal nombre As String, ByVal ape As String, ByVal dni As Integer)
         Try
             Dim existe As Boolean
-            Dim querry = (From e In ctx.Empleado Where e.nombre_empleado = nombre And e.apellido_empleado = ape And e.dni_empleado = dni Select e).First()
-            If (querry.apellido_empleado = ape And querry.nombre_empleado = nombre And querry.dni_empleado = dni) Then
+            Dim querry = (From e In ctx.Empleado Where e.nombre_empleado = nombre And e.apellido_empleado = ape And e.dni_empleado = dni Select e)
+
+            If querry.Count > 0 Then
                 existe = True
+
             End If
-            Return True
+            Return existe
         Catch ex As Exception
             Return False
         End Try
+
+
+
 
     End Function
 

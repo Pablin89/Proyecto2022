@@ -42,6 +42,8 @@ Partial Class ReporteCajeros
         Me.TCajero = New System.Windows.Forms.TextBox()
         Me.TId = New System.Windows.Forms.TextBox()
         Me.dgvDetalle = New System.Windows.Forms.DataGridView()
+        Me.TTotal = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvEmpleado, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvDetalle, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -248,12 +250,34 @@ Partial Class ReporteCajeros
         Me.dgvDetalle.Size = New System.Drawing.Size(610, 195)
         Me.dgvDetalle.TabIndex = 46
         '
+        'TTotal
+        '
+        Me.TTotal.Enabled = False
+        Me.TTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TTotal.Location = New System.Drawing.Point(1216, 441)
+        Me.TTotal.Name = "TTotal"
+        Me.TTotal.Size = New System.Drawing.Size(126, 22)
+        Me.TTotal.TabIndex = 86
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label4.Location = New System.Drawing.Point(1213, 410)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(129, 16)
+        Me.Label4.TabIndex = 85
+        Me.Label4.Text = "Total Recaudado"
+        '
         'ReporteCajeros
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1354, 733)
+        Me.Controls.Add(Me.TTotal)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.dgvDetalle)
         Me.Controls.Add(Me.TId)
         Me.Controls.Add(Me.TCajero)
@@ -301,4 +325,6 @@ Partial Class ReporteCajeros
     Friend WithEvents TCajero As TextBox
     Friend WithEvents TId As TextBox
     Friend WithEvents dgvDetalle As DataGridView
+    Friend WithEvents TTotal As TextBox
+    Friend WithEvents Label4 As Label
 End Class

@@ -93,7 +93,7 @@ Public Class GestionCliente
             op = MsgBox("¿Desea agregar el nuevo Cliente?", vbYesNo + vbDefaultButton2 + vbInformation, "Confirmar")
             If op = DialogResult.Yes And RBmasculino.Checked Then
 
-                If cli.existe_cliente(TNombre2.Text, TApellido2.Text, TDni2.Text) = False Then
+                If cli.existe_cliente(TNombre2.Text, TApellido2.Text, TDni2.Text).Equals(False) Then
 
                     objCliente.agregar_cliente(TDni2.Text, TNombre2.Text, TApellido2.Text, TDireccion.Text, MTelefono.Text, RBmasculino.Text, TCorreo.Text)
 
@@ -115,10 +115,14 @@ Public Class GestionCliente
                 RBmasculino.Checked = False
 
             ElseIf op = DialogResult.Yes And RBfemenino.Checked Then
-                If (objCliente.agregar_cliente(TDni2.Text, TNombre2.Text, TApellido2.Text, TDireccion.Text, MTelefono.Text, RBfemenino.Text, TCorreo.Text)) Then
-                    MsgBox("El cliente se registro correctamente", vbOKOnly + vbInformation, "Confirmar")
 
+                If cli.existe_cliente(TNombre2.Text, TApellido2.Text, TDni2.Text).Equals(False) Then
+
+                    objCliente.agregar_cliente(TDni2.Text, TNombre2.Text, TApellido2.Text, TDireccion.Text, MTelefono.Text, RBmasculino.Text, TCorreo.Text)
+
+                    MsgBox("El cliente se registro correctamente", vbOKOnly + vbInformation, "Confirmar")
                     objCliente.cargarGrid(dgvCliente)
+
 
                 Else
                     MsgBox("El cliente ya existe", vbOKOnly + vbCritical, "Confirmar")
@@ -229,6 +233,7 @@ Public Class GestionCliente
 
     Private Sub BModificar_Click(sender As Object, e As EventArgs) Handles BModificar.Click
         ModificarCliente.Show()
+        BModificar.Enabled = False
     End Sub
 
 End Class

@@ -22,18 +22,19 @@
 
     Public Sub cargarGrid(grid As DataGridView)
         Dim ctx As ProyectoEntities9 = New ProyectoEntities9
-        Dim querry = (From u In ctx.Usuario Join e In ctx.Empleado On u.empleado_id Equals e.Id_empleado Join p In ctx.Perfil On u.perfil_id Equals p.Id_perfil
-                      Select u.Id_usuario, e.nombre_empleado, e.apellido_empleado, u.nombre_usuario, u.contraseña, p.desc_pefil, u.empleado_id)
+        Dim querry = (From u In ctx.Usuario Join e In ctx.Empleado On u.empleado_id Equals e.Id_empleado Join p In ctx.Perfil On u.perfil_id Equals p.Id_perfil Where e.estado = 1
+                      Select u.Id_usuario, e.nombre_empleado, e.apellido_empleado, e.dni_empleado, u.nombre_usuario, u.contraseña, p.desc_pefil, u.empleado_id)
         grid.DataSource = querry.ToList
 
         grid.Columns(0).HeaderText = ""
         grid.Columns(1).HeaderText = "Nombre Empleado"
         grid.Columns(2).HeaderText = "Apellido Empleado"
-        grid.Columns(3).HeaderText = "Nombre Usuario"
-        grid.Columns(4).HeaderText = "Contraseña"
-        grid.Columns(5).HeaderText = "Perfil"
-        grid.Columns(4).Visible = False
-        grid.Columns(6).Visible = False
+        grid.Columns(3).HeaderText = "DNI"
+        grid.Columns(4).HeaderText = "Nombre Usuario"
+        grid.Columns(5).HeaderText = "Contraseña"
+        grid.Columns(6).HeaderText = "Perfil"
+        grid.Columns(5).Visible = False
+        grid.Columns(7).Visible = False
     End Sub
 
 End Class

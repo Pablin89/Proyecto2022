@@ -21,11 +21,11 @@
     Function existe_categoria(ByVal desc As String)
         Try
             Dim existe As Boolean
-            Dim querry = (From c In ctx.Categoria Where c.desc_categoria = desc Select c).First()
-            If querry.desc_categoria = desc Then
+            Dim querry = (From c In ctx.Categoria Where c.desc_categoria = desc Select c)
+            If querry.Count > 0 Then
                 existe = True
             End If
-            Return True
+            Return existe
         Catch ex As Exception
             Return False
         End Try

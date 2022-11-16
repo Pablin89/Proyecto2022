@@ -26,9 +26,14 @@
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        prod.productos_masVendidos(DateDesde.Value, DateHasta.Value, DataGridView1)
-        fact.clientes_masCompras(DateDesde.Value, DateHasta.Value, DataGridView3)
-        fact.cajero_masVentas(DateDesde.Value, DateHasta.Value, DataGridView4)
-        TextBox1.Text = "$" + "" + fact.recaudado_porfechas(DateDesde.Value, DateHasta.Value).ToString
+        If fact.existe_fecha(DateDesde.Value, DateHasta.Value).Equals(True) Then
+            prod.productos_masVendidos(DateDesde.Value, DateHasta.Value, DataGridView1)
+            fact.clientes_masCompras(DateDesde.Value, DateHasta.Value, DataGridView3)
+            fact.cajero_masVentas(DateDesde.Value, DateHasta.Value, DataGridView4)
+            TextBox1.Text = "$" + "" + fact.recaudado_porfechas(DateDesde.Value, DateHasta.Value).ToString
+        Else
+            MsgBox("Introducir nuevas fechas", vbOKOnly + vbExclamation, "Aplicar Seleccion")
+        End If
+
     End Sub
 End Class

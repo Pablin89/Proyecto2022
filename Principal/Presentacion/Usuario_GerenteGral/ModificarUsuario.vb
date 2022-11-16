@@ -4,6 +4,7 @@ Public Class ModificarUsuario
     Dim perfiles = New DPerfil
     Dim objusuario = New DUsuario
     Dim us = New NUsuario
+
     Private Sub ModificarUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         comboPerfil()
     End Sub
@@ -12,8 +13,8 @@ Public Class ModificarUsuario
 
         If (list.count > 0) Then
             CBperfil.DisplayMember = "desc_pefil"
-            CBperfil.ValueMember = "id_perfil"
-            CBperfil.SelectedValue = "id_perfil"
+            CBperfil.ValueMember = "Id_perfil"
+            CBperfil.SelectedValue = "Id_perfil"
             CBperfil.DataSource = list
 
         End If
@@ -76,7 +77,7 @@ Public Class ModificarUsuario
             op = MsgBox("¿Desea guardar los cambios?", vbYesNo + vbDefaultButton2 + vbInformation, "Confirmar")
             If op = DialogResult.Yes Then
 
-                objusuario.modificar_usuario(TUsuario.Text, TContraseña.Text, CBperfil.SelectedValue, PermisosUsuario.dgvUsuario.CurrentRow.Cells(6).Value, PermisosUsuario.dgvUsuario.CurrentRow.Cells(0).Value)
+                objusuario.modificar_usuario(TUsuario.Text, TContraseña.Text, CBperfil.ValueMember, PermisosUsuario.dgvUsuario.CurrentRow.Cells(6).Value, PermisosUsuario.dgvUsuario.CurrentRow.Cells(0).Value)
                 MsgBox("Los cambios se realizaron correctamente", vbOKOnly + vbDefaultButton1 + vbInformation, "Cambios realizados")
                 us.cargarGrid(PermisosUsuario.dgvUsuario)
 

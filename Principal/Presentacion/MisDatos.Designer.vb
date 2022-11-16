@@ -81,7 +81,7 @@ Partial Class MisDatos
         '
         Me.DTFecha.Enabled = False
         Me.DTFecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DTFecha.Location = New System.Drawing.Point(888, 258)
+        Me.DTFecha.Location = New System.Drawing.Point(288, 431)
         Me.DTFecha.Name = "DTFecha"
         Me.DTFecha.Size = New System.Drawing.Size(276, 22)
         Me.DTFecha.TabIndex = 45
@@ -91,7 +91,7 @@ Partial Class MisDatos
         '
         Me.TDireccion.Enabled = False
         Me.TDireccion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TDireccion.Location = New System.Drawing.Point(888, 498)
+        Me.TDireccion.Location = New System.Drawing.Point(854, 359)
         Me.TDireccion.Name = "TDireccion"
         Me.TDireccion.Size = New System.Drawing.Size(276, 22)
         Me.TDireccion.TabIndex = 44
@@ -100,7 +100,7 @@ Partial Class MisDatos
         '
         Me.TCorreo.Enabled = False
         Me.TCorreo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TCorreo.Location = New System.Drawing.Point(888, 338)
+        Me.TCorreo.Location = New System.Drawing.Point(854, 199)
         Me.TCorreo.Name = "TCorreo"
         Me.TCorreo.Size = New System.Drawing.Size(276, 22)
         Me.TCorreo.TabIndex = 43
@@ -109,7 +109,7 @@ Partial Class MisDatos
         '
         Me.TDni2.Enabled = False
         Me.TDni2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TDni2.Location = New System.Drawing.Point(888, 178)
+        Me.TDni2.Location = New System.Drawing.Point(288, 351)
         Me.TDni2.Name = "TDni2"
         Me.TDni2.Size = New System.Drawing.Size(276, 22)
         Me.TDni2.TabIndex = 42
@@ -118,7 +118,7 @@ Partial Class MisDatos
         '
         Me.TNombre2.Enabled = False
         Me.TNombre2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TNombre2.Location = New System.Drawing.Point(342, 578)
+        Me.TNombre2.Location = New System.Drawing.Point(288, 277)
         Me.TNombre2.Name = "TNombre2"
         Me.TNombre2.Size = New System.Drawing.Size(276, 22)
         Me.TNombre2.TabIndex = 41
@@ -127,7 +127,7 @@ Partial Class MisDatos
         '
         Me.TApellido2.Enabled = False
         Me.TApellido2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TApellido2.Location = New System.Drawing.Point(342, 495)
+        Me.TApellido2.Location = New System.Drawing.Point(288, 209)
         Me.TApellido2.Name = "TApellido2"
         Me.TApellido2.Size = New System.Drawing.Size(276, 22)
         Me.TApellido2.TabIndex = 40
@@ -137,7 +137,7 @@ Partial Class MisDatos
         Me.LDireccion.AutoSize = True
         Me.LDireccion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LDireccion.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LDireccion.Location = New System.Drawing.Point(787, 500)
+        Me.LDireccion.Location = New System.Drawing.Point(753, 361)
         Me.LDireccion.Name = "LDireccion"
         Me.LDireccion.Size = New System.Drawing.Size(84, 20)
         Me.LDireccion.TabIndex = 39
@@ -148,7 +148,7 @@ Partial Class MisDatos
         Me.LTelefono.AutoSize = True
         Me.LTelefono.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LTelefono.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LTelefono.Location = New System.Drawing.Point(792, 420)
+        Me.LTelefono.Location = New System.Drawing.Point(758, 281)
         Me.LTelefono.Name = "LTelefono"
         Me.LTelefono.Size = New System.Drawing.Size(79, 20)
         Me.LTelefono.TabIndex = 38
@@ -159,7 +159,7 @@ Partial Class MisDatos
         Me.LCorreo.AutoSize = True
         Me.LCorreo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LCorreo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LCorreo.Location = New System.Drawing.Point(713, 340)
+        Me.LCorreo.Location = New System.Drawing.Point(679, 201)
         Me.LCorreo.Name = "LCorreo"
         Me.LCorreo.Size = New System.Drawing.Size(158, 20)
         Me.LCorreo.TabIndex = 37
@@ -170,7 +170,7 @@ Partial Class MisDatos
         Me.LGenero.AutoSize = True
         Me.LGenero.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LGenero.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LGenero.Location = New System.Drawing.Point(797, 580)
+        Me.LGenero.Location = New System.Drawing.Point(753, 430)
         Me.LGenero.Name = "LGenero"
         Me.LGenero.Size = New System.Drawing.Size(74, 20)
         Me.LGenero.TabIndex = 36
@@ -181,7 +181,7 @@ Partial Class MisDatos
         Me.LFecha.AutoSize = True
         Me.LFecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LFecha.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LFecha.Location = New System.Drawing.Point(693, 260)
+        Me.LFecha.Location = New System.Drawing.Point(93, 433)
         Me.LFecha.Name = "LFecha"
         Me.LFecha.Size = New System.Drawing.Size(178, 20)
         Me.LFecha.TabIndex = 35
@@ -192,7 +192,7 @@ Partial Class MisDatos
         Me.LDni.AutoSize = True
         Me.LDni.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LDni.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LDni.Location = New System.Drawing.Point(831, 180)
+        Me.LDni.Location = New System.Drawing.Point(231, 353)
         Me.LDni.Name = "LDni"
         Me.LDni.Size = New System.Drawing.Size(40, 20)
         Me.LDni.TabIndex = 34
@@ -203,7 +203,7 @@ Partial Class MisDatos
         Me.LNombre.AutoSize = True
         Me.LNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LNombre.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LNombre.Location = New System.Drawing.Point(255, 580)
+        Me.LNombre.Location = New System.Drawing.Point(199, 277)
         Me.LNombre.Name = "LNombre"
         Me.LNombre.Size = New System.Drawing.Size(71, 20)
         Me.LNombre.TabIndex = 33
@@ -214,7 +214,7 @@ Partial Class MisDatos
         Me.LApellido.AutoSize = True
         Me.LApellido.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LApellido.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LApellido.Location = New System.Drawing.Point(253, 497)
+        Me.LApellido.Location = New System.Drawing.Point(199, 211)
         Me.LApellido.Name = "LApellido"
         Me.LApellido.Size = New System.Drawing.Size(73, 20)
         Me.LApellido.TabIndex = 32
@@ -224,7 +224,7 @@ Partial Class MisDatos
         '
         Me.TTelofono.Enabled = False
         Me.TTelofono.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TTelofono.Location = New System.Drawing.Point(888, 418)
+        Me.TTelofono.Location = New System.Drawing.Point(854, 279)
         Me.TTelofono.Name = "TTelofono"
         Me.TTelofono.Size = New System.Drawing.Size(276, 22)
         Me.TTelofono.TabIndex = 57
@@ -233,7 +233,7 @@ Partial Class MisDatos
         '
         Me.TGenero.Enabled = False
         Me.TGenero.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TGenero.Location = New System.Drawing.Point(888, 578)
+        Me.TGenero.Location = New System.Drawing.Point(854, 428)
         Me.TGenero.Name = "TGenero"
         Me.TGenero.Size = New System.Drawing.Size(276, 22)
         Me.TGenero.TabIndex = 56

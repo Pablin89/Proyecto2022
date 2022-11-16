@@ -22,8 +22,8 @@ Partial Class ReporteCategorias
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
         Me.BDescarga = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BBusqueda = New System.Windows.Forms.Button()
@@ -39,6 +39,8 @@ Partial Class ReporteCategorias
         Me.Label4 = New System.Windows.Forms.Label()
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.TTotal = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -92,7 +94,7 @@ Partial Class ReporteCategorias
         Me.DateHasta.Name = "DateHasta"
         Me.DateHasta.Size = New System.Drawing.Size(127, 20)
         Me.DateHasta.TabIndex = 47
-        Me.DateHasta.Value = New Date(2022, 11, 12, 0, 0, 0, 0)
+        Me.DateHasta.Value = New Date(2022, 11, 15, 0, 0, 0, 0)
         '
         'LHasta
         '
@@ -114,7 +116,7 @@ Partial Class ReporteCategorias
         Me.DateDesde.Name = "DateDesde"
         Me.DateDesde.Size = New System.Drawing.Size(132, 20)
         Me.DateDesde.TabIndex = 45
-        Me.DateDesde.Value = New Date(2022, 11, 12, 0, 0, 0, 0)
+        Me.DateDesde.Value = New Date(2022, 11, 15, 0, 0, 0, 0)
         '
         'LDesde
         '
@@ -129,10 +131,10 @@ Partial Class ReporteCategorias
         '
         'Chart1
         '
-        ChartArea1.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea1)
-        Legend1.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend1)
+        ChartArea2.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea2)
+        Legend2.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend2)
         Me.Chart1.Location = New System.Drawing.Point(734, 119)
         Me.Chart1.Name = "Chart1"
         Me.Chart1.Size = New System.Drawing.Size(531, 325)
@@ -149,7 +151,7 @@ Partial Class ReporteCategorias
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(1354, 70)
         Me.Label2.TabIndex = 51
-        Me.Label2.Text = "Reportes por productos y categorias"
+        Me.Label2.Text = "Reportes por categorias"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LMayores
@@ -182,11 +184,11 @@ Partial Class ReporteCategorias
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(200, 283)
+        Me.Label4.Location = New System.Drawing.Point(167, 284)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(151, 18)
+        Me.Label4.Size = New System.Drawing.Size(162, 20)
         Me.Label4.TabIndex = 69
         Me.Label4.Text = "Seleccionar categoría"
         '
@@ -205,11 +207,32 @@ Partial Class ReporteCategorias
         'ComboBox2
         '
         Me.ComboBox2.Enabled = False
+        Me.ComboBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox2.FormattingEnabled = True
         Me.ComboBox2.Location = New System.Drawing.Point(368, 284)
         Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(271, 21)
+        Me.ComboBox2.Size = New System.Drawing.Size(271, 24)
         Me.ComboBox2.TabIndex = 67
+        '
+        'TTotal
+        '
+        Me.TTotal.Enabled = False
+        Me.TTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TTotal.Location = New System.Drawing.Point(1204, 507)
+        Me.TTotal.Name = "TTotal"
+        Me.TTotal.Size = New System.Drawing.Size(126, 22)
+        Me.TTotal.TabIndex = 86
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label3.Location = New System.Drawing.Point(1201, 476)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(129, 16)
+        Me.Label3.TabIndex = 85
+        Me.Label3.Text = "Total Recaudado"
         '
         'ReporteCategorias
         '
@@ -217,6 +240,8 @@ Partial Class ReporteCategorias
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1354, 733)
+        Me.Controls.Add(Me.TTotal)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.CheckBox2)
         Me.Controls.Add(Me.ComboBox2)
@@ -258,4 +283,6 @@ Partial Class ReporteCategorias
     Friend WithEvents Label4 As Label
     Friend WithEvents CheckBox2 As CheckBox
     Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents TTotal As TextBox
+    Friend WithEvents Label3 As Label
 End Class

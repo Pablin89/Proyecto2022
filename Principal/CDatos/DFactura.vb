@@ -108,5 +108,39 @@
 
         Return cantidad
     End Function
+
+    Function existe_fechas(id As Integer, fechaD As Date, fechaH As Date)
+        Try
+            Dim querry = (From f In ctx.Factura Where f.id_empleado = id And f.fecha_venta >= fechaD And f.fecha_venta <= fechaH
+                          Group f By f.fecha_venta Into grupo = Group Select total = grupo.Count(), fecha = fecha_venta)
+
+            Dim lista = querry.ToList(0)
+
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+
+    End Function
+    Function existe_fecha(fechaD As Date, fechaH As Date)
+        Try
+            Dim querry = (From f In ctx.Factura Where f.fecha_venta >= fechaD And f.fecha_venta <= fechaH
+                          Select f)
+
+            Dim lista = querry.ToList(0)
+
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+
+    End Function
+    Function recaudado_porfechasCajero(id As Integer, fechaD As Date, fechaH As Date)
+        Dim querry = (From f In ctx.Factura Where f.id_empleado = id And f.fecha_venta >= fechaD And f.fecha_venta <= fechaH Select f.total).Sum()
+        Dim cantidad As Decimal = querry
+
+        Return cantidad
+    End Function
+
 End Class
 

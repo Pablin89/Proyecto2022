@@ -57,7 +57,7 @@
         grid.Columns(4).HeaderText = "Nombre Cliente"
         grid.Columns(5).HeaderText = "Apellido Cliente"
         grid.Columns(6).HeaderText = "Forma de Pago"
-        grid.Columns(6).HeaderText = "Total"
+        grid.Columns(7).HeaderText = "Total"
 
     End Sub
 

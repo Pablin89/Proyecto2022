@@ -16,4 +16,14 @@
 
         End If
     End Function
+
+    Public Sub cargarGrid(grid As DataGridView)
+        Dim cat As DCategoria = New DCategoria
+        grid.DataSource = cat.getAll_categorias()
+
+        grid.Columns(0).HeaderText = ""
+        grid.Columns(1).HeaderText = "Categoria"
+        grid.Columns(2).Visible = False
+
+    End Sub
 End Class

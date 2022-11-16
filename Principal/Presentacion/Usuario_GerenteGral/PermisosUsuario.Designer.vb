@@ -34,6 +34,7 @@ Partial Class PermisosUsuario
         Me.Label2 = New System.Windows.Forms.Label()
         Me.dgvEmpleados = New System.Windows.Forms.DataGridView()
         Me.ComboEstado = New System.Windows.Forms.ComboBox()
+        Me.BBuscar = New System.Windows.Forms.Button()
         Me.TDni = New System.Windows.Forms.TextBox()
         Me.TNombre2 = New System.Windows.Forms.TextBox()
         Me.TApellido = New System.Windows.Forms.TextBox()
@@ -42,7 +43,6 @@ Partial Class PermisosUsuario
         Me.CBnombre = New System.Windows.Forms.CheckBox()
         Me.CBapellido = New System.Windows.Forms.CheckBox()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.BBuscar = New System.Windows.Forms.Button()
         CType(Me.ErrorContra, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorRepcontra, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BuscarEmpleado.SuspendLayout()
@@ -175,6 +175,21 @@ Partial Class PermisosUsuario
         Me.ComboEstado.Size = New System.Drawing.Size(302, 28)
         Me.ComboEstado.TabIndex = 21
         '
+        'BBuscar
+        '
+        Me.BBuscar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BBuscar.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.BBuscar.Image = Global.Principal.My.Resources.Resources.buscar
+        Me.BBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BBuscar.Location = New System.Drawing.Point(578, 134)
+        Me.BBuscar.Name = "BBuscar"
+        Me.BBuscar.Size = New System.Drawing.Size(120, 46)
+        Me.BBuscar.TabIndex = 20
+        Me.BBuscar.Text = "Buscar"
+        Me.BBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BBuscar.UseVisualStyleBackColor = True
+        '
         'TDni
         '
         Me.TDni.Enabled = False
@@ -263,21 +278,6 @@ Partial Class PermisosUsuario
         Me.TabControl1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight
         Me.TabControl1.TabIndex = 6
         Me.TabControl1.TabStop = False
-        '
-        'BBuscar
-        '
-        Me.BBuscar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BBuscar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.BBuscar.Image = Global.Principal.My.Resources.Resources.buscar
-        Me.BBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BBuscar.Location = New System.Drawing.Point(578, 134)
-        Me.BBuscar.Name = "BBuscar"
-        Me.BBuscar.Size = New System.Drawing.Size(120, 46)
-        Me.BBuscar.TabIndex = 20
-        Me.BBuscar.Text = "Buscar"
-        Me.BBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.BBuscar.UseVisualStyleBackColor = True
         '
         'PermisosUsuario
         '

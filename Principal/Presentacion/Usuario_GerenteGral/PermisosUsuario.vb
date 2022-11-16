@@ -130,16 +130,19 @@ Public Class PermisosUsuario
 
     Private Sub BEditarEmpleado_Click(sender As Object, e As EventArgs) Handles BEditarEmpleado.Click
         EditarEmpleado.Show()
+        BEditarEmpleado.Enabled = False
     End Sub
 
     Private Sub PermisosUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         objempleado.cargarGrid(dgvEmpleados)
         objusuario.cargarGrid(dgvUsuario)
+        dgvEmpleados.CurrentRow.Selected = False
+        dgvUsuario.CurrentRow.Selected = False
     End Sub
 
     Private Sub DataGridView1_Click(sender As Object, e As EventArgs) Handles dgvEmpleados.Click
 
-        If dgvEmpleados.CurrentRow IsNot Nothing Then
+        If dgvEmpleados.CurrentRow.Selected = True Then
             BEditarEmpleado.Enabled = True
         Else
             BEditarEmpleado.Enabled = False
@@ -188,12 +191,15 @@ Public Class PermisosUsuario
 
         If Not String.IsNullOrEmpty(TNombre2.Text) And CBnombre.Checked = True Then
             emp.buscar_nombre(TNombre2.Text, dgvEmpleados)
+            us.buscar_nombre(TNombre2.Text, dgvUsuario)
 
         ElseIf Not String.IsNullOrEmpty(TApellido.Text) And CBapellido.Checked = True Then
             emp.buscar_apellido(TApellido.Text, dgvEmpleados)
+            us.buscar_apellido(TApellido.Text, dgvUsuario)
 
         ElseIf Not String.IsNullOrEmpty(TDni.Text) And CBdni.Checked = True Then
             emp.buscar_dni(TDni.Text, dgvEmpleados)
+            us.buscar_dni(TDni.Text, dgvUsuario)
         Else
             emp.buscar_estado(ComboEstado.Text, dgvEmpleados)
         End If
@@ -201,26 +207,30 @@ Public Class PermisosUsuario
 
 
     Private Sub dgvUsuario_Click(sender As Object, e As EventArgs) Handles dgvUsuario.Click
-        If dgvEmpleados.CurrentRow IsNot Nothing Then
+        If dgvUsuario.CurrentRow.Selected = True Then
             BModificar.Enabled = True
         Else
             BModificar.Enabled = False
         End If
 
-
         Dim i As Integer
         i = dgvUsuario.CurrentRow.Index
+
         ModificarUsuario.TApellido.Text = dgvUsuario.Rows(i).Cells(2).Value.ToString
         ModificarUsuario.TNombre.Text = dgvUsuario.Rows(i).Cells(1).Value.ToString
-        ModificarUsuario.TUsuario.Text = dgvUsuario.Rows(i).Cells(3).Value.ToString
-        ModificarUsuario.TContraseña.Text = dgvUsuario.Rows(i).Cells(4).Value.ToString
-        ModificarUsuario.TRepcontra.Text = dgvUsuario.Rows(i).Cells(4).Value.ToString
-
-
+        ModificarUsuario.TUsuario.Text = dgvUsuario.Rows(i).Cells(4).Value.ToString
+        ModificarUsuario.TContraseña.Text = dgvUsuario.Rows(i).Cells(5).Value.ToString
+        ModificarUsuario.TRepcontra.Text = dgvUsuario.Rows(i).Cells(5).Value.ToString
+        ModificarUsuario.CBperfil.SelectedValue = dgvUsuario.Rows(i).Cells(6).Value
 
     End Sub
 
     Private Sub BModificar_Click(sender As Object, e As EventArgs) Handles BModificar.Click
         ModificarUsuario.Show()
+        BModificar.Enabled = False
+    End Sub
+
+    Private Sub dgvEmpleados_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvEmpleados.CellContentClick
+
     End Sub
 End Class

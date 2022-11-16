@@ -114,10 +114,12 @@ Public Class GestionEmpleados
             TDireccion.Clear()
             TCorreo.Clear()
             MTelefono.Clear()
+            RBmasculino.Checked = False
 
         ElseIf MsgBoxResult.Yes = op And RBfemenino.Checked Then
 
-            If (objempleado.agregar_empleado(TDni2.Text, TNombre2.Text, TApellido2.Text, RBfemenino.Text, DTfecha.Value, TDireccion.Text, TCorreo.Text, MTelefono.Text, CBoxEstado.Text)) Then
+            If emp.existe_empleado(TNombre2.Text, TApellido2.Text, TDni2.Text) = False Then
+                objempleado.agregar_empleado(CInt(TDni2.Text), TNombre2.Text, TApellido2.Text, RBmasculino.Text, DTfecha.Value, TDireccion.Text, TCorreo.Text, MTelefono.Text, CBoxEstado.Text)
 
                 MsgBox("El empleado se registro correctamente", vbOKOnly + vbInformation, "Confirmar")
                 objempleado.cargarGrid(dgEmpleados)
@@ -128,13 +130,14 @@ Public Class GestionEmpleados
 
             End If
 
+
             TDni2.Clear()
             TNombre2.Clear()
             TApellido2.Clear()
             TDireccion.Clear()
             TCorreo.Clear()
             MTelefono.Clear()
-
+            RBfemenino.Checked = False
         End If
 
     End Sub
@@ -245,6 +248,8 @@ Public Class GestionEmpleados
 
     Private Sub BModificar_Click(sender As Object, e As EventArgs) Handles BModificar.Click
         ModificarEmpleado.Show()
+        BModificar.Enabled = False
+        BEliminar.Enabled = False
     End Sub
 
     Private Sub BEliminar_Click(sender As Object, e As EventArgs) Handles BEliminar.Click
@@ -260,7 +265,8 @@ Public Class GestionEmpleados
         Else
             MsgBox("El empleado ya esta dado de baja", vbOKOnly + vbExclamation, "Eliminar")
         End If
-
+        BEliminar.Enabled = False
+        BModificar.Enabled = False
 
     End Sub
 End Class
