@@ -81,7 +81,7 @@ Partial Class ReporteCajeros
         Me.DateDesde.Name = "DateDesde"
         Me.DateDesde.Size = New System.Drawing.Size(132, 20)
         Me.DateDesde.TabIndex = 15
-        Me.DateDesde.Value = New Date(2022, 11, 12, 0, 0, 0, 0)
+        Me.DateDesde.Value = New Date(2022, 11, 16, 0, 0, 0, 0)
         '
         'LHasta
         '
@@ -103,7 +103,7 @@ Partial Class ReporteCajeros
         Me.DateHasta.Name = "DateHasta"
         Me.DateHasta.Size = New System.Drawing.Size(127, 20)
         Me.DateHasta.TabIndex = 18
-        Me.DateHasta.Value = New Date(2022, 11, 12, 0, 0, 0, 0)
+        Me.DateHasta.Value = New Date(2022, 11, 16, 0, 0, 0, 0)
         '
         'Button1
         '

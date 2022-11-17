@@ -134,7 +134,7 @@ Public Class PermisosUsuario
     End Sub
 
     Private Sub PermisosUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        objempleado.cargarGrid(dgvEmpleados)
+        objempleado.gridEmpleados(dgvEmpleados)
         objusuario.cargarGrid(dgvUsuario)
         dgvEmpleados.CurrentRow.Selected = False
         dgvUsuario.CurrentRow.Selected = False

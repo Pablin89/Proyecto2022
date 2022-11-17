@@ -56,4 +56,23 @@
 
     End Sub
 
+    Public Sub gridEmpleados(grid As DataGridView)
+        Dim ctx As ProyectoEntities9 = New ProyectoEntities9
+        Dim querry = (From e In ctx.Empleado Where e.estado = 1 Select e)
+
+        grid.DataSource = querry.ToList
+        grid.Columns(0).HeaderText = ""
+        grid.Columns(1).HeaderText = "DNI"
+        grid.Columns(2).HeaderText = "Nombre"
+        grid.Columns(3).HeaderText = "Apellido"
+        grid.Columns(4).HeaderText = "Genero"
+        grid.Columns(5).HeaderText = "Fecha de nacimiento"
+        grid.Columns(6).HeaderText = "Dirección"
+        grid.Columns(7).HeaderText = "Correo"
+        grid.Columns(8).HeaderText = "Telefono"
+        grid.Columns(9).HeaderText = "Estado"
+        grid.Columns(10).Visible = False
+        grid.Columns(11).Visible = False
+    End Sub
+
 End Class

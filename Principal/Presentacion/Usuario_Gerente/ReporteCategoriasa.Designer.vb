@@ -22,8 +22,8 @@ Partial Class ReporteCategorias
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
         Me.BDescarga = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BBusqueda = New System.Windows.Forms.Button()
@@ -94,7 +94,7 @@ Partial Class ReporteCategorias
         Me.DateHasta.Name = "DateHasta"
         Me.DateHasta.Size = New System.Drawing.Size(127, 20)
         Me.DateHasta.TabIndex = 47
-        Me.DateHasta.Value = New Date(2022, 11, 15, 0, 0, 0, 0)
+        Me.DateHasta.Value = New Date(2022, 11, 16, 0, 0, 0, 0)
         '
         'LHasta
         '
@@ -116,7 +116,7 @@ Partial Class ReporteCategorias
         Me.DateDesde.Name = "DateDesde"
         Me.DateDesde.Size = New System.Drawing.Size(132, 20)
         Me.DateDesde.TabIndex = 45
-        Me.DateDesde.Value = New Date(2022, 11, 15, 0, 0, 0, 0)
+        Me.DateDesde.Value = New Date(2022, 11, 16, 0, 0, 0, 0)
         '
         'LDesde
         '
@@ -131,10 +131,10 @@ Partial Class ReporteCategorias
         '
         'Chart1
         '
-        ChartArea2.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea2)
-        Legend2.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend2)
+        ChartArea1.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea1)
+        Legend1.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend1)
         Me.Chart1.Location = New System.Drawing.Point(734, 119)
         Me.Chart1.Name = "Chart1"
         Me.Chart1.Size = New System.Drawing.Size(531, 325)

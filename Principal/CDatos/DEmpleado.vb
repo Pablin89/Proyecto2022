@@ -39,6 +39,9 @@
         Try
             Dim act = (From e In ctx.Empleado Where e.Id_empleado = id).Single()
             act.estado = estado
+
+            Dim elim = (From u In ctx.Usuario Where u.empleado_id = id Select u)
+            ctx.Usuario.RemoveRange(elim)
             ctx.SaveChanges()
             Return True
         Catch ex As Exception
