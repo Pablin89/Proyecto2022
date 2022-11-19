@@ -132,6 +132,7 @@
     <Compile Include="CDatos\Cliente.vb">
       <DependentUpon>Model0.tt</DependentUpon>
     </Compile>
+    <Compile Include="CDatos\Conexion.vb" />
     <Compile Include="CDatos\DCategoria.vb" />
     <Compile Include="CDatos\DCliente.vb" />
     <Compile Include="CDatos\DDetalle.vb" />

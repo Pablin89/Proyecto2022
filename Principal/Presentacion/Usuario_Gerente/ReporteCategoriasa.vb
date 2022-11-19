@@ -9,7 +9,7 @@
 
         If ask = MsgBoxResult.Yes Then
             Me.Close()
-            Gerente.Show()
+            Gerentes.Show()
         End If
     End Sub
 

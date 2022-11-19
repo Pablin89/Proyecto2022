@@ -1,7 +1,12 @@
-﻿Public Class NUsuario
+﻿Imports System.Data.SqlClient
+Imports System.IO
+Imports System.Security.Cryptography
+Imports System.Text
+
+Public Class NUsuario
+
     Function agregar_usuario(ByVal nombre As String, ByVal contraseña As String, ByVal perfil As Integer, ByVal empleado As Integer) As Boolean
         Dim ousuarios = New Usuario
-
         With ousuarios
             .nombre_usuario = nombre
             .contraseña = contraseña

@@ -4,14 +4,12 @@
     Dim cat = New DCategoria
     Dim prod = New DProducto
 
-    Private Sub SoloNumeros_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TStock.KeyPress, TPrecioProd.KeyPress, TCodigoProd.KeyPress
-        If (Char.IsNumber(e.KeyChar)) Then
-            e.Handled = False
-        ElseIf (Char.IsControl(e.KeyChar)) Then
-            e.Handled = False
-        Else
+    Private Sub SoloNumeros_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TPrecioProd.KeyPress, TCodigo.KeyPress, TCodigoProd.KeyPress, TStock.KeyPress, TStockMin.KeyPress
+        If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
             e.Handled = True
             MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        Else
+            e.Handled = False
         End If
     End Sub
 

@@ -154,7 +154,7 @@ Partial Class Gerentes
         Me.MenuGerente.BackColor = System.Drawing.Color.Transparent
         Me.MenuGerente.BackgroundImage = Global.Principal.My.Resources.Resources.azulnaranja
         Me.MenuGerente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.MenuGerente.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MenuGerente.Dock = System.Windows.Forms.DockStyle.None
         Me.MenuGerente.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MenuGerente.GripMargin = New System.Windows.Forms.Padding(2)
         Me.MenuGerente.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReportesCajeros, Me.ReporteCategoria, Me.NumerosMes, Me.ReporteMes})
@@ -226,11 +226,13 @@ Partial Class Gerentes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1362, 725)
+        Me.ClientSize = New System.Drawing.Size(1362, 720)
         Me.Controls.Add(Me.MenuGerente)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "Gerentes"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Gerentes"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.Panel3.ResumeLayout(False)

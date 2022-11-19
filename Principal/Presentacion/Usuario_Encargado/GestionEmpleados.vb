@@ -17,30 +17,25 @@ Public Class GestionEmpleados
 
     End Sub
 
-
-    Private Sub SoloNumeros_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TDni2.KeyPress
-        If (Char.IsNumber(e.KeyChar)) Then
-            e.Handled = False
-        ElseIf (Char.IsControl(e.KeyChar)) Then
-            e.Handled = False
-        Else
+    Private Sub SoloNumeros_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TDni.KeyPress, TDni2.KeyPress
+        If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
             e.Handled = True
             MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-        End If
-    End Sub
-    Private Sub SoloLetras_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TApellido2.KeyPress, TNombre2.KeyPress
-        If (Char.IsLetter(e.KeyChar)) Then
-            e.Handled = False
-
-        ElseIf (Char.IsControl(e.KeyChar)) Then
-            e.Handled = False
-
         Else
+            e.Handled = False
+        End If
+    End Sub
+
+    Private Sub SoloLetras_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TApellido.KeyPress, TNombre.KeyPress, TApellido2.KeyPress, TNombre2.KeyPress
+        If Not Char.IsLetter(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
             e.Handled = True
-            MessageBox.Show("Solo se permiten letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("solo se permiten letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        Else
+            e.Handled = False
 
         End If
     End Sub
+
     Private Sub BConfirmar_Click(sender As Object, e As EventArgs) Handles BConfirmar.Click
 
         If String.IsNullOrWhiteSpace(TNombre2.Text) Or String.IsNullOrWhiteSpace(TApellido2.Text) Or Not IsNumeric(TDni2.Text) Or String.IsNullOrWhiteSpace(TCorreo.Text) Or

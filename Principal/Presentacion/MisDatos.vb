@@ -10,7 +10,7 @@ Public Class MisDatos
         If ask = MsgBoxResult.Yes Then
             If Principal.TUsuario.Text = "Gerente" Then
                 Me.Close()
-                Gerente.Show()
+
             ElseIf Principal.TUsuario.Text = "Cajero" Then
                 Me.Close()
                 Cajeros.Show()
@@ -28,7 +28,7 @@ Public Class MisDatos
 
     Private Sub MisDatos_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         If Principal.TUsuario.Text = "Gerente" Then
-            Gerente.Show()
+
         ElseIf Principal.TUsuario.Text = "Cajero" Then
             Cajeros.Show()
         ElseIf Principal.TUsuario.Text = "Encargado" Then

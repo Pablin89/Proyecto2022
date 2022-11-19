@@ -1,5 +1,12 @@
-﻿Public Class DUsuario
+﻿Imports System.Data.SqlClient
+Imports System.IO
+Imports System.Security.Cryptography
+Imports System.Text
+
+Public Class DUsuario
     Dim ctx As ProyectoEntities9 = New ProyectoEntities9
+    Public Resultado As String
+
 
     Function DGuardar_usuario(ByVal ousuario As Usuario) As Boolean
         Try
@@ -104,5 +111,15 @@
         grid.DataSource = querry.ToList
 
     End Sub
+
+    Public Function verificar_usuario(ByVal text As String) As String
+        Dim ue As New UnicodeEncoding
+        Dim ByteSourceText() As Byte = ue.GetBytes(text)
+        Dim mds As New MD5CryptoServiceProvider()
+        Dim ByteHash() As Byte = mds.ComputeHash(ByteSourceText)
+
+        Resultado = Convert.ToBase64String(ByteHash)
+        Return Convert.ToBase64String(ByteHash)
+    End Function
 
 End Class

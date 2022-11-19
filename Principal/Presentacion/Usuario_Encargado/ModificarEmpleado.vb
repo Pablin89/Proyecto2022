@@ -59,27 +59,21 @@ Public Class ModificarEmpleado
             GestionEmpleados.Show()
         End If
     End Sub
-    Private Sub SoloNumeros_KeyPress(sender As Object, e As KeyPressEventArgs) Handles MTelefono.KeyPress, TDni2.KeyPress
-        If (Char.IsNumber(e.KeyChar)) Then
-            e.Handled = False
-        ElseIf (Char.IsControl(e.KeyChar)) Then
-            e.Handled = False
-        Else
+    Private Sub SoloNumeros_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TDni2.KeyPress
+        If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
             e.Handled = True
             MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        Else
+            e.Handled = False
         End If
     End Sub
 
     Private Sub SoloLetras_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TApellido2.KeyPress, TNombre2.KeyPress
-        If (Char.IsLetter(e.KeyChar)) Then
-            e.Handled = False
-
-        ElseIf (Char.IsControl(e.KeyChar)) Then
-            e.Handled = False
-
-        Else
+        If Not Char.IsLetter(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
             e.Handled = True
-            MessageBox.Show("Solo se permiten letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("solo se permiten letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        Else
+            e.Handled = False
 
         End If
     End Sub

@@ -1,6 +1,7 @@
 ﻿Public Class Principal
     Dim us = New DUsuario
     Dim emp = New DEmpleado
+    Dim objUsu = New NUsuario
     Dim ctx As ProyectoEntities8 = New ProyectoEntities8
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick

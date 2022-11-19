@@ -9,12 +9,12 @@
         If ask = MsgBoxResult.Yes Then
 
             Me.Close()
-            Gerente.Show()
+            Gerentes.Show()
         End If
     End Sub
 
     Private Sub ReportesVenta_Closed(sender As Object, e As EventArgs) Handles Me.Closed
-        Gerente.Show()
+        Gerentes.Show()
     End Sub
 
     Private Sub NumerosDelMes_Load(sender As Object, e As EventArgs) Handles MyBase.Load

@@ -9,7 +9,7 @@
 
         If ask = MsgBoxResult.Yes Then
             Me.Close()
-            Gerente.Show()
+            Gerentes.Show()
         End If
     End Sub
 
@@ -18,7 +18,7 @@
     End Sub
 
     Private Sub ReportesSucursalIndividual_Closed(sender As Object, e As EventArgs) Handles Me.Closed
-        Gerente.Show()
+        Gerentes.Show()
     End Sub
 
     Private Sub BBusqueda_Click(sender As Object, e As EventArgs) Handles BBusqueda.Click

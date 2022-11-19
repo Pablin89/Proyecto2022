@@ -2,27 +2,12 @@
     Dim cat = New DCategoria
     Dim prod = New DProducto
     Dim objprod = New NProducto
-    Private Sub SoloNumeros_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TStock.KeyPress, TPrecioProd.KeyPress
-        If (Char.IsNumber(e.KeyChar)) Then
-            e.Handled = False
-        ElseIf (Char.IsControl(e.KeyChar)) Then
-            e.Handled = False
-        Else
+    Private Sub SoloNumeros_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TPrecioProd.KeyPress, TCodigoProd.KeyPress, TStock.KeyPress, TStockMin.KeyPress
+        If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
             e.Handled = True
             MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-        End If
-    End Sub
-    Private Sub SoloLetras_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TNombreProd.KeyPress
-        If (Char.IsLetter(e.KeyChar)) Then
-            e.Handled = False
-
-        ElseIf (Char.IsControl(e.KeyChar)) Then
-            e.Handled = False
-
         Else
-            e.Handled = True
-            MessageBox.Show("Solo se permiten letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-
+            e.Handled = False
         End If
     End Sub
 
