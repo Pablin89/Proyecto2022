@@ -22,8 +22,8 @@ Partial Class ReportesMes
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.BDescarga = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -132,10 +132,10 @@ Partial Class ReportesMes
         '
         'Chart1
         '
-        ChartArea2.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea2)
-        Legend2.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend2)
+        ChartArea1.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea1)
+        Legend1.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend1)
         Me.Chart1.Location = New System.Drawing.Point(671, 95)
         Me.Chart1.Name = "Chart1"
         Me.Chart1.Size = New System.Drawing.Size(531, 325)
@@ -171,7 +171,7 @@ Partial Class ReportesMes
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Label3.Location = New System.Drawing.Point(1221, 404)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(129, 16)
+        Me.Label3.Size = New System.Drawing.Size(131, 16)
         Me.Label3.TabIndex = 83
         Me.Label3.Text = "Total Recaudado"
         '
@@ -195,7 +195,7 @@ Partial Class ReportesMes
         Me.Label5.TabIndex = 85
         Me.Label5.Text = "Resultados"
         '
-        'ReporteProductos
+        'ReportesMes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -215,7 +215,7 @@ Partial Class ReportesMes
         Me.Controls.Add(Me.LDesde)
         Me.Controls.Add(Me.Chart1)
         Me.Controls.Add(Me.Label2)
-        Me.Name = "ReporteProductos"
+        Me.Name = "ReportesMes"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Reporte Mes"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

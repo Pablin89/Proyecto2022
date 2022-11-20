@@ -2,6 +2,7 @@
     Dim cate = New DCategoria
     Dim fact = New DFactura
     Dim det = New DDetalle
+    Dim miform As New GraficosMes
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Dim ask As MsgBoxResult
 
@@ -54,11 +55,17 @@
         End Using
     End Sub
 
-    Private Sub ReporteProductos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+
+    Public Sub Imprimir(ByVal fechaD As Date, ByVal fechaH As Date)
+
+        QuerryMes.ReporteMes(fechaD, fechaH)
+        miform.NombreReporte = "Principal.GraficoMes.rdlc"
+        miform.Show()
 
     End Sub
 
-    Private Sub TTotal_TextChanged(sender As Object, e As EventArgs) Handles TTotal.TextChanged
-
+    Private Sub BDescarga_Click(sender As Object, e As EventArgs) Handles BDescarga.Click
+        Imprimir(DateDesde.Value, DateHasta.Value)
     End Sub
 End Class

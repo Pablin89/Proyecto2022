@@ -1,6 +1,7 @@
 ﻿Public Class NumerosDelMes
     Dim prod = New DProducto
     Dim fact = New DFactura
+    Dim miform As New Numeros
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim ask As MsgBoxResult
 
@@ -34,6 +35,18 @@
         Else
             MsgBox("Introducir nuevas fechas", vbOKOnly + vbExclamation, "Aplicar Seleccion")
         End If
+
+    End Sub
+
+    Private Sub BImprimir_Click(sender As Object, e As EventArgs) Handles BImprimir.Click
+        Imprimir(DateDesde.Value, DateHasta.Value)
+    End Sub
+
+    Public Sub Imprimir(ByVal fechaD As Date, ByVal fechaH As Date)
+
+        QuerryNumeros.ReporteNumeros(fechaD, fechaH)
+        miform.NombreReporte = "Principal.Numeros.rdlc"
+        miform.Show()
 
     End Sub
 End Class

@@ -45,6 +45,7 @@ Partial Class NumerosDelMes
         Me.LProductomenos = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.LProductomas = New System.Windows.Forms.Label()
+        Me.BImprimir = New System.Windows.Forms.Button()
         Me.Panel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -98,6 +99,7 @@ Partial Class NumerosDelMes
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Teal
+        Me.Panel1.Controls.Add(Me.BImprimir)
         Me.Panel1.Controls.Add(Me.TextBox1)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.DateHasta)
@@ -322,6 +324,23 @@ Partial Class NumerosDelMes
         Me.LProductomas.TabIndex = 14
         Me.LProductomas.Text = "Productos más vendidos"
         '
+        'BImprimir
+        '
+        Me.BImprimir.BackColor = System.Drawing.Color.Gainsboro
+        Me.BImprimir.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.BImprimir.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BImprimir.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.BImprimir.Image = Global.Principal.My.Resources.Resources.Print_icon_icons_com_73705
+        Me.BImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BImprimir.Location = New System.Drawing.Point(61, 506)
+        Me.BImprimir.Name = "BImprimir"
+        Me.BImprimir.Size = New System.Drawing.Size(132, 61)
+        Me.BImprimir.TabIndex = 79
+        Me.BImprimir.Text = "Imprimir"
+        Me.BImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BImprimir.UseVisualStyleBackColor = False
+        '
         'NumerosDelMes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -365,4 +384,5 @@ Partial Class NumerosDelMes
     Friend WithEvents LHasta As Label
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label4 As Label
+    Friend WithEvents BImprimir As Button
 End Class

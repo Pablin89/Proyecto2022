@@ -3,6 +3,7 @@
     Dim det = New DDetalle
     Dim fact = New DFactura
     Dim miform As New GraficoProductos
+    Dim form2 As New GraficoProdCat
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim ask As MsgBoxResult
 
@@ -106,13 +107,25 @@
     End Sub
 
     Private Sub BDescarga_Click(sender As Object, e As EventArgs) Handles BDescarga.Click
-        Imprimir(DateDesde.Value, DateHasta.Value)
+        If CheckBox2.Checked = True Then
+            ImprimirCat(ComboBox2.SelectedValue, DateDesde.Value, DateHasta.Value)
+        Else
+            Imprimir(DateDesde.Value, DateHasta.Value)
+        End If
+
     End Sub
     Public Sub Imprimir(ByVal fechaD As Date, ByVal fechaH As Date)
 
         QuerryProductos.ReporteProducto(fechaD, fechaH)
         miform.NombreReporte = "Principal.GraficoProductos.rdlc"
         miform.Show()
+
+    End Sub
+    Public Sub ImprimirCat(ByVal id As Integer, ByVal fechaD As Date, ByVal fechaH As Date)
+
+        QuerryProductos.ReporteProductoCat(id, fechaD, fechaH)
+        form2.NombreReporte = "Principal.GraficoProductosCat.rdlc"
+        form2.Show()
 
     End Sub
 End Class

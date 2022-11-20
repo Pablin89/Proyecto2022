@@ -27,6 +27,7 @@ Partial Class MisVentas
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.DThasta = New System.Windows.Forms.DateTimePicker()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -39,7 +40,6 @@ Partial Class MisVentas
         Me.Button2 = New System.Windows.Forms.Button()
         Me.dgvFactura = New System.Windows.Forms.DataGridView()
         Me.dgvDetalle = New System.Windows.Forms.DataGridView()
-        Me.Button3 = New System.Windows.Forms.Button()
         Me.Panel3.SuspendLayout()
         CType(Me.dgvFactura, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvDetalle, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -89,6 +89,19 @@ Partial Class MisVentas
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(1354, 206)
         Me.Panel3.TabIndex = 13
+        '
+        'Button3
+        '
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.Image = Global.Principal.My.Resources.Resources.Print_icon_icons_com_73705
+        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button3.Location = New System.Drawing.Point(511, 138)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(188, 54)
+        Me.Button3.TabIndex = 22
+        Me.Button3.Text = "Imprimir Factura"
+        Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button3.UseVisualStyleBackColor = True
         '
         'Label4
         '
@@ -239,15 +252,6 @@ Partial Class MisVentas
         Me.dgvDetalle.ReadOnly = True
         Me.dgvDetalle.Size = New System.Drawing.Size(647, 353)
         Me.dgvDetalle.TabIndex = 15
-        '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(506, 169)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 22
-        Me.Button3.Text = "Button3"
-        Me.Button3.UseVisualStyleBackColor = True
         '
         'MisVentas
         '

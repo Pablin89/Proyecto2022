@@ -140,6 +140,8 @@
       <DependentUpon>Model0.tt</DependentUpon>
     </Compile>
     <Compile Include="CDatos\QuerryCajero.vb" />
+    <Compile Include="CDatos\QuerryMes.vb" />
+    <Compile Include="CDatos\QuerryNumeros.vb" />
     <Compile Include="CDatos\QuerryProductos.vb" />
     <Compile Include="CDatos\QuerryReporte.vb" />
     <Compile Include="CDatos\Cliente.vb">
@@ -358,10 +360,21 @@
     <Compile Include="Presentacion\Usuario_GerenteGral\RestaurarDatos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentacion\Usuario_Gerente\DataSet2.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Usuario_Gerente\Gerentes.Designer.vb">
       <DependentUpon>Gerentes.vb</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Usuario_Gerente\Gerentes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_Gerente\GraficoProdCat.Designer.vb">
+      <DependentUpon>GraficoProdCat.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_Gerente\GraficoProdCat.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\Usuario_Gerente\GraficoProductos.Designer.vb">
@@ -370,10 +383,22 @@
     <Compile Include="Presentacion\Usuario_Gerente\GraficoProductos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentacion\Usuario_Gerente\GraficosMes.Designer.vb">
+      <DependentUpon>GraficosMes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_Gerente\GraficosMes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentacion\Usuario_Gerente\GridCajero.Designer.vb">
       <DependentUpon>GridCajero.vb</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Usuario_Gerente\GridCajero.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_Gerente\Numeros.Designer.vb">
+      <DependentUpon>Numeros.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_Gerente\Numeros.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\Usuario_Gerente\ReporteCategoriasa.Designer.vb">
@@ -513,16 +538,28 @@
     <EmbeddedResource Include="Presentacion\Usuario_Gerente\Gerentes.resx">
       <DependentUpon>Gerentes.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Usuario_Gerente\GraficoMes.rdlc" />
+    <EmbeddedResource Include="Presentacion\Usuario_Gerente\GraficoProdCat.resx">
+      <DependentUpon>GraficoProdCat.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Usuario_Gerente\GraficoProductos.rdlc" />
     <EmbeddedResource Include="Presentacion\Usuario_Gerente\GraficoProductos.resx">
       <DependentUpon>GraficoProductos.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Usuario_Gerente\GraficosMes.resx">
+      <DependentUpon>GraficosMes.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Usuario_Gerente\GridCajero.resx">
       <DependentUpon>GridCajero.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Usuario_Gerente\Numeros.rdlc" />
+    <EmbeddedResource Include="Presentacion\Usuario_Gerente\Numeros.resx">
+      <DependentUpon>Numeros.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Usuario_Gerente\NumerosDelMes.resx">
       <DependentUpon>NumerosDelMes.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Usuario_Gerente\GraficoProductosCat.rdlc" />
     <EmbeddedResource Include="Presentacion\Usuario_Gerente\ReporteCategoriasa.resx">
       <DependentUpon>ReporteCategoriasa.vb</DependentUpon>
     </EmbeddedResource>
@@ -583,6 +620,17 @@
     </None>
     <None Include="Presentacion\Usuario_Cajero\DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Presentacion\Usuario_Gerente\DataSet2.xsc">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="Presentacion\Usuario_Gerente\DataSet2.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet2.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Presentacion\Usuario_Gerente\DataSet2.xss">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
     </None>
     <None Include="ProyectoDataSet.xsc">
       <DependentUpon>ProyectoDataSet.xsd</DependentUpon>
