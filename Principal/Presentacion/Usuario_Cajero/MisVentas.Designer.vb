@@ -39,6 +39,7 @@ Partial Class MisVentas
         Me.Button2 = New System.Windows.Forms.Button()
         Me.dgvFactura = New System.Windows.Forms.DataGridView()
         Me.dgvDetalle = New System.Windows.Forms.DataGridView()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.Panel3.SuspendLayout()
         CType(Me.dgvFactura, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvDetalle, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -70,6 +71,7 @@ Partial Class MisVentas
         '
         Me.Panel3.BackColor = System.Drawing.Color.DarkSlateGray
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel3.Controls.Add(Me.Button3)
         Me.Panel3.Controls.Add(Me.Label4)
         Me.Panel3.Controls.Add(Me.DThasta)
         Me.Panel3.Controls.Add(Me.Label7)
@@ -238,6 +240,15 @@ Partial Class MisVentas
         Me.dgvDetalle.Size = New System.Drawing.Size(647, 353)
         Me.dgvDetalle.TabIndex = 15
         '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(506, 169)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(75, 23)
+        Me.Button3.TabIndex = 22
+        Me.Button3.Text = "Button3"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
         'MisVentas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -278,4 +289,5 @@ Partial Class MisVentas
     Friend WithEvents Label6 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents DThasta As DateTimePicker
+    Friend WithEvents Button3 As Button
 End Class

@@ -24,7 +24,7 @@ Partial Class ReporteVentas
     Private Sub InitializeComponent()
         Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
         Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Me.BDescarga = New System.Windows.Forms.Button()
+        Me.BGenerar = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -49,15 +49,15 @@ Partial Class ReporteVentas
         CType(Me.dgvEmpleado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'BDescarga
+        'BGenerar
         '
-        Me.BDescarga.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BDescarga.Location = New System.Drawing.Point(867, 442)
-        Me.BDescarga.Name = "BDescarga"
-        Me.BDescarga.Size = New System.Drawing.Size(219, 28)
-        Me.BDescarga.TabIndex = 55
-        Me.BDescarga.Text = "Descargar Reporte"
-        Me.BDescarga.UseVisualStyleBackColor = True
+        Me.BGenerar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BGenerar.Location = New System.Drawing.Point(867, 442)
+        Me.BGenerar.Name = "BGenerar"
+        Me.BGenerar.Size = New System.Drawing.Size(219, 28)
+        Me.BGenerar.TabIndex = 55
+        Me.BGenerar.Text = "Descargar Reporte"
+        Me.BGenerar.UseVisualStyleBackColor = True
         '
         'Button1
         '
@@ -266,7 +266,7 @@ Partial Class ReporteVentas
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Label4.Location = New System.Drawing.Point(1213, 442)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(129, 16)
+        Me.Label4.Size = New System.Drawing.Size(131, 16)
         Me.Label4.TabIndex = 87
         Me.Label4.Text = "Total Recaudado"
         '
@@ -292,7 +292,7 @@ Partial Class ReporteVentas
         Me.Controls.Add(Me.LHasta)
         Me.Controls.Add(Me.DateDesde)
         Me.Controls.Add(Me.LDesde)
-        Me.Controls.Add(Me.BDescarga)
+        Me.Controls.Add(Me.BGenerar)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Chart1)
         Me.Controls.Add(Me.Label2)
@@ -308,7 +308,7 @@ Partial Class ReporteVentas
 
     End Sub
 
-    Friend WithEvents BDescarga As Button
+    Friend WithEvents BGenerar As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents Chart1 As DataVisualization.Charting.Chart
     Friend WithEvents Label2 As Label

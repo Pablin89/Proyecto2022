@@ -5,6 +5,7 @@
     Dim fac = New DFactura
     Dim cli = New DCliente
     Dim emp = New DEmpleado
+    Dim miform As New Form1
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim ask As MsgBoxResult
 
@@ -51,4 +52,15 @@
         fac.buscar_fecha(empDatos.Id_empleado, DTdesde.Value, DThasta.Value, dgvFactura)
     End Sub
 
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Imprimir(dgvFactura.CurrentRow.Cells(0).Value.ToString)
+    End Sub
+
+    Public Sub Imprimir(ByVal factura As String)
+
+        QuerryReporte.ReporteFactura(factura)
+        miform.NombreReporte = "Principal.Report1.rdlc"
+        miform.Show()
+
+    End Sub
 End Class

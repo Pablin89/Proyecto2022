@@ -230,7 +230,7 @@ Partial Class ReporteCategorias
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Label3.Location = New System.Drawing.Point(1201, 476)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(129, 16)
+        Me.Label3.Size = New System.Drawing.Size(131, 16)
         Me.Label3.TabIndex = 85
         Me.Label3.Text = "Total Recaudado"
         '

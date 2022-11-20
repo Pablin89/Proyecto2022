@@ -2,6 +2,7 @@
     Dim cat = New DCategoria
     Dim det = New DDetalle
     Dim fact = New DFactura
+    Dim miform As New GraficoProductos
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim ask As MsgBoxResult
 
@@ -102,5 +103,16 @@
         Else
             ComboBox2.Enabled = False
         End If
+    End Sub
+
+    Private Sub BDescarga_Click(sender As Object, e As EventArgs) Handles BDescarga.Click
+        Imprimir(DateDesde.Value, DateHasta.Value)
+    End Sub
+    Public Sub Imprimir(ByVal fechaD As Date, ByVal fechaH As Date)
+
+        QuerryProductos.ReporteProducto(fechaD, fechaH)
+        miform.NombreReporte = "Principal.GraficoProductos.rdlc"
+        miform.Show()
+
     End Sub
 End Class

@@ -2,6 +2,7 @@
     Dim emp = New DEmpleado
     Dim det = New DDetalle
     Dim fact = New DFactura
+    Dim miform As New GraficoCajero
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim ask As MsgBoxResult
 
@@ -91,4 +92,28 @@
 
         det.ver_detalle(dgvEmpleado.Rows(i).Cells(3).Value, dgvDetalle)
     End Sub
+
+    Private Sub BDescarga_Click(sender As Object, e As EventArgs) Handles BDescarga.Click
+        If String.IsNullOrEmpty(TId.Text) Then
+            Imprimir(DateDesde.Value, DateHasta.Value)
+        Else
+            ImprimirID(TId.Text, DateDesde.Value, DateHasta.Value)
+        End If
+
+    End Sub
+    Public Sub Imprimir(ByVal fechaD As Date, ByVal fechaH As Date)
+
+        QuerryCajero.ReporteCajero(fechaD, fechaH)
+        miform.NombreReporte = "Principal.GraficoCajero.rdlc"
+        miform.Show()
+
+    End Sub
+    Public Sub ImprimirID(ByVal id As Integer, ByVal fechaD As Date, ByVal fechaH As Date)
+
+        QuerryCajero.ReporteCajeroID(id, fechaD, fechaH)
+        miform.NombreReporte = "Principal.GraficoCajero.rdlc"
+        miform.Show()
+
+    End Sub
+
 End Class
