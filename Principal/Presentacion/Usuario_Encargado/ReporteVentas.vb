@@ -94,15 +94,15 @@
     Public Sub Imprimir(ByVal fechaD As Date, ByVal fechaH As Date)
 
         QuerryCajero.ReporteCajero(fechaD, fechaH)
-        miform.NombreReporte = "Principal.GraficoCajero.rdlc"
-        miform.Show()
+        GraficoCajero.NombreReporte = "Principal.GraficoCajero.rdlc"
+        GraficoCajero.Show()
 
     End Sub
     Public Sub ImprimirID(ByVal id As Integer, ByVal fechaD As Date, ByVal fechaH As Date)
 
         QuerryCajero.ReporteCajeroID(id, fechaD, fechaH)
-        miform.NombreReporte = "Principal.GraficoCajero.rdlc"
-        miform.Show()
+        GraficoCajero.NombreReporte = "Principal.GraficoCajero.rdlc"
+        GraficoCajero.Show()
 
     End Sub
 

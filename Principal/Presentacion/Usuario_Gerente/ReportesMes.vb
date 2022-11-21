@@ -60,8 +60,8 @@
     Public Sub Imprimir(ByVal fechaD As Date, ByVal fechaH As Date)
 
         QuerryMes.ReporteMes(fechaD, fechaH)
-        miform.NombreReporte = "Principal.GraficoMes.rdlc"
-        miform.Show()
+        GraficosMes.NombreReporte = "Principal.GraficoMes.rdlc"
+        GraficosMes.Show()
 
     End Sub
 

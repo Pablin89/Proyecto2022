@@ -117,15 +117,15 @@
     Public Sub Imprimir(ByVal fechaD As Date, ByVal fechaH As Date)
 
         QuerryProductos.ReporteProducto(fechaD, fechaH)
-        miform.NombreReporte = "Principal.GraficoProductos.rdlc"
-        miform.Show()
+        GraficoProductos.NombreReporte = "Principal.GraficoProductos.rdlc"
+        GraficoProductos.Show()
 
     End Sub
     Public Sub ImprimirCat(ByVal id As Integer, ByVal fechaD As Date, ByVal fechaH As Date)
 
         QuerryProductos.ReporteProductoCat(id, fechaD, fechaH)
-        form2.NombreReporte = "Principal.GraficoProductosCat.rdlc"
-        form2.Show()
+        GraficoProdCat.NombreReporte = "Principal.GraficoProductosCat.rdlc"
+        GraficoProdCat.Show()
 
     End Sub
 End Class

@@ -43,4 +43,7 @@ Public Class Form1
         End Try
     End Sub
 
+    Private Sub Form1_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        MisVentas.Show()
+    End Sub
 End Class

@@ -45,8 +45,8 @@
     Public Sub Imprimir(ByVal fechaD As Date, ByVal fechaH As Date)
 
         QuerryNumeros.ReporteNumeros(fechaD, fechaH)
-        miform.NombreReporte = "Principal.Numeros.rdlc"
-        miform.Show()
+        Numeros.NombreReporte = "Principal.Numeros.rdlc"
+        Numeros.Show()
 
     End Sub
 End Class

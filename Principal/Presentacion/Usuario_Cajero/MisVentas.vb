@@ -5,7 +5,7 @@
     Dim fac = New DFactura
     Dim cli = New DCliente
     Dim emp = New DEmpleado
-    Dim miform As New Form1
+    Private miform As Form1
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim ask As MsgBoxResult
 
@@ -59,8 +59,8 @@
     Public Sub Imprimir(ByVal factura As String)
 
         QuerryReporte.ReporteFactura(factura)
-        miform.NombreReporte = "Principal.Report1.rdlc"
-        miform.Show()
+        Form1.NombreReporte = "Principal.Report1.rdlc"
+        Form1.Show()
 
     End Sub
 End Class
