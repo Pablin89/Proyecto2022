@@ -31,6 +31,7 @@ Partial Class GridClientes
         Me.RBdni = New System.Windows.Forms.RadioButton()
         Me.TDni = New System.Windows.Forms.TextBox()
         Me.BBuscar = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         CType(Me.dgvCliente, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -136,12 +137,24 @@ Partial Class GridClientes
         Me.BBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.BBuscar.UseVisualStyleBackColor = True
         '
+        'Button2
+        '
+        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Location = New System.Drawing.Point(12, 484)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(147, 34)
+        Me.Button2.TabIndex = 23
+        Me.Button2.Text = "Registrar Cliente"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'GridClientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(977, 530)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.BBuscar)
         Me.Controls.Add(Me.RBdni)
         Me.Controls.Add(Me.TDni)
@@ -169,4 +182,5 @@ Partial Class GridClientes
     Friend WithEvents RBdni As RadioButton
     Friend WithEvents TDni As TextBox
     Friend WithEvents BBuscar As Button
+    Friend WithEvents Button2 As Button
 End Class

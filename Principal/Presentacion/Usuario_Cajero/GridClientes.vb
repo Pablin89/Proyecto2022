@@ -6,15 +6,21 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim i As Integer
-        i = dgvCliente.CurrentRow.Index
-        Facturacion.TNombreCli.Text = dgvCliente.Rows(i).Cells(2).Value.ToString
-        Facturacion.TApellidoCli.Text = dgvCliente.Rows(i).Cells(3).Value.ToString
-        Facturacion.TDniCli.Text = dgvCliente.Rows(i).Cells(1).Value.ToString
-        Facturacion.TTelefono.Text = dgvCliente.Rows(i).Cells(5).Value.ToString
-        Facturacion.TIdcli.Text = dgvCliente.Rows(i).Cells(0).Value
+        Dim op As MsgBoxResult
+        op = MsgBox("¿Estas seguro de seleccionar al cliente?", vbYesNo + vbInformation, "Seleccionar")
 
-        Me.Close()
+        If op = MsgBoxResult.Yes Then
+            Dim i As Integer
+            i = dgvCliente.CurrentRow.Index
+            Facturacion.TNombreCli.Text = dgvCliente.Rows(i).Cells(2).Value.ToString
+            Facturacion.TApellidoCli.Text = dgvCliente.Rows(i).Cells(3).Value.ToString
+            Facturacion.TDniCli.Text = dgvCliente.Rows(i).Cells(1).Value.ToString
+            Facturacion.TTelefono.Text = dgvCliente.Rows(i).Cells(5).Value.ToString
+            Facturacion.TIdcli.Text = dgvCliente.Rows(i).Cells(0).Value
+
+            Me.Close()
+        End If
+
     End Sub
 
     Private Sub BBuscar_Click(sender As Object, e As EventArgs) Handles BBuscar.Click
@@ -54,5 +60,18 @@
         Else
             TDni.Enabled = False
         End If
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim op As MsgBoxResult
+        op = MsgBox("¿Quieres registrar un cliente?", vbYesNo + vbInformation, "Registrar cliente")
+
+        If op = MsgBoxResult.Yes Then
+            Facturacion.Close()
+            GestionCliente.Show()
+            Me.Close()
+
+        End If
+
     End Sub
 End Class
