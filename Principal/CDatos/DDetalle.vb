@@ -40,7 +40,7 @@
         grid.Columns(0).HeaderText = "Cantidad"
         grid.Columns(1).HeaderText = "Precio"
         grid.Columns(2).HeaderText = "Producto"
-
+        grid.Columns(3).HeaderText = "Categoria"
 
     End Sub
 

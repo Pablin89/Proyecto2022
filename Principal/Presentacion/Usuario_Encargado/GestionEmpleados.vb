@@ -51,7 +51,7 @@ Public Class GestionEmpleados
 
         If MsgBoxResult.Yes = op And RBmasculino.Checked Then
 
-            If emp.existe_empleado(TNombre2.Text, TApellido2.Text, TDni2.Text) = False Then
+            If emp.existe_empleado(TDni2.Text) = False Then
                 objempleado.agregar_empleado(CInt(TDni2.Text), TNombre2.Text, TApellido2.Text, RBmasculino.Text, DTfecha.Value, TDireccion.Text, TCorreo.Text, MTelefono.Text, CBoxEstado.Text)
 
                 MsgBox("El empleado se registro correctamente", vbOKOnly + vbInformation, "Confirmar")

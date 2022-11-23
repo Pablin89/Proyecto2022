@@ -38,7 +38,7 @@
     Private Sub BConfirmar_Click(sender As Object, e As EventArgs) Handles BConfirmar.Click
         Dim op As MsgBoxResult
 
-        If String.IsNullOrWhiteSpace(TDniCli.Text) Or String.IsNullOrWhiteSpace(TCantidad.Text) Or String.IsNullOrWhiteSpace(TNombreCli.Text) Or String.IsNullOrWhiteSpace(TCajero.Text) Or
+        If String.IsNullOrWhiteSpace(TDniCli.Text) Or String.IsNullOrWhiteSpace(TNombreCli.Text) Or String.IsNullOrWhiteSpace(TCajero.Text) Or
             String.IsNullOrWhiteSpace(TTelefono.Text) Or String.IsNullOrWhiteSpace(TApellidoCli.Text) Or IsNothing(dgvCompra) Or String.IsNullOrWhiteSpace(CBForma.Text) Then
 
             MsgBox("Debe completar todos los campos", vbOKOnly + vbDefaultButton1 + vbCritical, "Confirmar")
@@ -161,7 +161,7 @@
     End Sub
 
     Private Sub TProducto_TextChanged(sender As Object, e As EventArgs) Handles TProducto.TextChanged
-        prod.buscar_nombre(TProducto.Text, dgvProductos)
+        prod.buscar_nombreProd(TProducto.Text, dgvProductos)
     End Sub
 
     Private Sub BAgregar_Click(sender As Object, e As EventArgs) Handles BAgregar.Click

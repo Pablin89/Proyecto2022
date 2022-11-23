@@ -46,7 +46,7 @@ Public Class GestionCliente
             op = MsgBox("¿Desea agregar el nuevo Cliente?", vbYesNo + vbDefaultButton2 + vbInformation, "Confirmar")
             If op = DialogResult.Yes And RBmasculino.Checked Then
 
-                If cli.existe_cliente(TNombre2.Text, TApellido2.Text, TDni2.Text).Equals(False) Then
+                If cli.existe_cliente(TDni2.Text).Equals(False) Then
 
                     objCliente.agregar_cliente(TDni2.Text, TNombre2.Text, TApellido2.Text, TDireccion.Text, MTelefono.Text, RBmasculino.Text, TCorreo.Text)
 
@@ -69,7 +69,7 @@ Public Class GestionCliente
 
             ElseIf op = DialogResult.Yes And RBfemenino.Checked Then
 
-                If cli.existe_cliente(TNombre2.Text, TApellido2.Text, TDni2.Text).Equals(False) Then
+                If cli.existe_cliente(TDni2.Text).Equals(False) Then
 
                     objCliente.agregar_cliente(TDni2.Text, TNombre2.Text, TApellido2.Text, TDireccion.Text, MTelefono.Text, RBmasculino.Text, TCorreo.Text)
 

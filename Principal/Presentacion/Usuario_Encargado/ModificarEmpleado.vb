@@ -15,7 +15,9 @@ Public Class ModificarEmpleado
         Else
             op = MsgBox("Desea guardar los cambios?", vbYesNo + vbDefaultButton2 + vbInformation, "Modificar")
             If op = DialogResult.Yes And RBmasculino.Checked = True Then
-                If (emp.modificar_empleado(TDni2.Text, TNombre2.Text, TApellido2.Text, RBmasculino.Text, DTFecha.Value, TDireccion.Text, TCorreo.Text, MTelefono.Text, CBEstado.Text, GestionEmpleados.dgEmpleados.CurrentRow.Cells(0).Value)) Then
+
+                If emp.existe_empleado(TDni2.Text).Equals(False) Then
+                    emp.modificar_empleado(TDni2.Text, TNombre2.Text, TApellido2.Text, RBmasculino.Text, DTFecha.Value, TDireccion.Text, TCorreo.Text, MTelefono.Text, CBEstado.Text, GestionEmpleados.dgEmpleados.CurrentRow.Cells(0).Value)
                     op = MsgBox("Los datos se guardaron correctamente", vbOKOnly + vbInformation, "Modificar")
                     If op = MsgBoxResult.Ok Then
                         Me.Close()
@@ -26,10 +28,12 @@ Public Class ModificarEmpleado
                     End If
                 Else
 
-                    MsgBox("Los datos no se pudieron modificar", vbOKOnly)
+                    MsgBox("Ya existe un empleado con el mismo DNI", vbOKOnly + vbCritical, "Modificar")
                 End If
             ElseIf op = DialogResult.Yes And RBfemenino.Checked = True Then
-                If (emp.modificar_empleado(TDni2.Text, TNombre2.Text, TApellido2.Text, RBfemenino.Text, DTFecha.Value, TDireccion.Text, TCorreo.Text, MTelefono.Text, CBEstado.Text, GestionEmpleados.dgEmpleados.CurrentRow.Cells(0).Value)) Then
+                If emp.existe_empleado(TDni2.Text).Equals(False) Then
+
+                    emp.modificar_empleado(TDni2.Text, TNombre2.Text, TApellido2.Text, RBfemenino.Text, DTFecha.Value, TDireccion.Text, TCorreo.Text, MTelefono.Text, CBEstado.Text, GestionEmpleados.dgEmpleados.CurrentRow.Cells(0).Value)
                     op = MsgBox("Los datos se guardaron correctamente", vbOKOnly + vbInformation, "Modificar")
                     If op = MsgBoxResult.Ok Then
                         Me.Close()
@@ -39,7 +43,7 @@ Public Class ModificarEmpleado
                     End If
                 Else
 
-                    MsgBox("Los datos no se pudieron modificar", vbOKOnly)
+                    MsgBox("Ya existe un empleado con el mismo DNI", vbOKOnly + vbCritical, "Modificar")
                 End If
 
             End If

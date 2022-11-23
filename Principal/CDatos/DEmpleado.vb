@@ -79,10 +79,10 @@
         Return lista
     End Function
 
-    Function existe_empleado(ByVal nombre As String, ByVal ape As String, ByVal dni As Integer)
+    Function existe_empleado(ByVal dni As Integer)
         Try
             Dim existe As Boolean
-            Dim querry = (From e In ctx.Empleado Where e.nombre_empleado = nombre And e.apellido_empleado = ape And e.dni_empleado = dni Select e)
+            Dim querry = (From e In ctx.Empleado Where e.dni_empleado = dni Select e)
 
             If querry.Count > 0 Then
                 existe = True

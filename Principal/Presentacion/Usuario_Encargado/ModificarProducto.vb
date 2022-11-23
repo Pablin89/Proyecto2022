@@ -21,15 +21,19 @@
         Else
             op = MsgBox("¿Desea modificar los datos del producto?", vbYesNo + vbDefaultButton2 + vbInformation, "Modificar")
             If op = DialogResult.Yes Then
-                prod.modificar_producto(TNombreProd.Text, TDescripcion.Text, TCodigoProd.Text, TPrecioProd.Text, TStockMin.Text, TStock.Text, CBcategoria.SelectedValue, CBoxEstado.Text, GestionProductos.dgvProductos.CurrentRow.Cells(0).Value)
-                op = MsgBox("Los datos se guardaron correctamente", vbOKOnly + vbInformation, "Confirmar")
-                If op = MsgBoxResult.Ok Then
-                    Me.Close()
-                    GestionProductos.Show()
-                    objprod.cargarGrid(GestionProductos.dgvProductos)
+                If prod.existe_producto(TCodigoProd.Text) = False Then
+                    prod.modificar_producto(TNombreProd.Text, TDescripcion.Text, TCodigoProd.Text, TPrecioProd.Text, TStockMin.Text, TStock.Text, CBcategoria.SelectedValue, CBoxEstado.Text, GestionProductos.dgvProductos.CurrentRow.Cells(0).Value)
+                    op = MsgBox("Los datos se guardaron correctamente", vbOKOnly + vbInformation, "Confirmar")
+                    If op = MsgBoxResult.Ok Then
+                        Me.Close()
+                        GestionProductos.Show()
+                        objprod.cargarGrid(GestionProductos.dgvProductos)
+
+                    End If
+                Else
+                    MsgBox("Ya exite un producto con ese codigo", vbOKOnly + vbCritical, "Modificar")
 
                 End If
-
 
             End If
 

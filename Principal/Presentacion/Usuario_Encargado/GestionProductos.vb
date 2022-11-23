@@ -24,7 +24,7 @@
             op = MsgBox("¿Desea agregar el nuevo producto?", vbYesNo + vbDefaultButton2 + vbInformation, "Confirmar")
             If op = DialogResult.Yes Then
 
-                If prod.existe_producto(TNombreProd.Text, TDescripcion.Text, TCodigoProd.Text) = False Then
+                If prod.existe_producto(TCodigoProd.Text) = False Then
 
                     objproducto.agregar_producto(TNombreProd.Text, TDescripcion.Text, TCodigoProd.Text, TPrecioProd.Text, TStockMin.Text, TStock.Text, CBcategoria.SelectedValue, 1)
                     MsgBox("El producto se registro correctamente", vbOKOnly + vbInformation, "Confirmar")

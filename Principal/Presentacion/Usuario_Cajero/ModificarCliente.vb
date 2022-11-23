@@ -32,7 +32,9 @@ Public Class ModificarCliente
         Else
             op = MsgBox("¿Desea modificar los datos del Cliente?", vbYesNo + vbDefaultButton2 + vbInformation, "Modificar")
             If op = DialogResult.Yes And RBmasculino.Checked = True Then
-                If (cli.modificar_cliente(TDni2.Text, TNombre2.Text, TApellido2.Text, TDireccion.Text, MTelefono.Text, RBmasculino.Text, TCorreo2.Text, GestionCliente.dgvCliente.CurrentRow.Cells(0).Value)) Then
+                If cli.existe_cliente(TDni2.Text).Equals(False) Then
+
+                    cli.modificar_cliente(TDni2.Text, TNombre2.Text, TApellido2.Text, TDireccion.Text, MTelefono.Text, RBmasculino.Text, TCorreo2.Text, GestionCliente.dgvCliente.CurrentRow.Cells(0).Value)
                     op = MsgBox("Los datos se actualizaron correctamente", vbOKOnly + vbInformation, "Modificar")
                     If op = MsgBoxResult.Ok Then
                         Me.Close()
@@ -40,11 +42,13 @@ Public Class ModificarCliente
                         objcliente.cargarGrid(GestionCliente.dgvCliente)
                     End If
                 Else
-                    MsgBox("Los datos no se pudieron modificar", vbOKOnly + vbCritical, "Modificar")
+                    MsgBox("Ya existe un cliente con ese DNI", vbOKOnly + vbCritical, "Modificar")
                 End If
             ElseIf op = MsgBoxResult.Yes And RBfemenino.Checked = True Then
 
-                If (cli.modificar_cliente(TDni2.Text, TNombre2.Text, TApellido2.Text, TDireccion.Text, MTelefono.Text, RBfemenino.Text, TCorreo2.Text, GestionCliente.dgvCliente.CurrentRow.Cells(0).Value)) Then
+                If cli.existe_cliente(TDni2.Text).Equals(False) Then
+
+                    cli.modificar_cliente(TDni2.Text, TNombre2.Text, TApellido2.Text, TDireccion.Text, MTelefono.Text, RBfemenino.Text, TCorreo2.Text, GestionCliente.dgvCliente.CurrentRow.Cells(0).Value)
                     op = MsgBox("Los datos se actualizaron correctamente", vbOKOnly + vbInformation, "Modificar")
                     If op = MsgBoxResult.Ok Then
                         Me.Close()
@@ -52,7 +56,7 @@ Public Class ModificarCliente
                         objcliente.cargarGrid(GestionCliente.dgvCliente)
                     End If
                 Else
-                    MsgBox("Los datos no se pudieron modificar", vbOKOnly + vbCritical, "Modificar")
+                    MsgBox("Ya existe un cliente con ese DNI", vbOKOnly + vbCritical, "Modificar")
                 End If
 
 

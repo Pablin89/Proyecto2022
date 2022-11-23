@@ -97,10 +97,10 @@
         End Try
     End Function
 
-    Function existe_producto(ByVal nom As String, ByVal desc As String, ByVal cod As Integer)
+    Function existe_producto(ByVal cod As Integer)
         Try
             Dim existe As Boolean
-            Dim querry = (From p In ctx.Producto Where p.nombre = nom And p.descripcion = desc And p.codigo = cod Select p)
+            Dim querry = (From p In ctx.Producto Where p.codigo = cod Select p)
 
             If querry.Count > 0 Then
                 existe = True
@@ -140,7 +140,19 @@
         grid.Columns(2).HeaderText = "Stock"
         grid.Columns(3).HeaderText = "Stock Minimo"
     End Sub
-
+    Public Sub buscar_nombreProd(ByVal nom As String, ByVal grid As DataGridView)
+        Dim querry = (From p In ctx.Producto Join c In ctx.Categoria On p.categoria_id Equals c.Id_categoria
+                      Where p.nombre.Contains(nom) And p.stock > 0 And p.estado = 1 Select p.Id_producto, p.nombre, p.descripcion, p.codigo, p.precio, p.stock, c.desc_categoria).ToList
+        grid.DataSource = querry.ToList
+        grid.Columns(0).HeaderText = ""
+        grid.Columns(1).HeaderText = "Producto"
+        grid.Columns(2).HeaderText = "Descripcion"
+        grid.Columns(3).HeaderText = "Codigo"
+        grid.Columns(4).HeaderText = "Precio"
+        grid.Columns(5).HeaderText = "Stock"
+        grid.Columns(6).HeaderText = "Catgoria"
+    End Sub
 
 
 End Class
+
