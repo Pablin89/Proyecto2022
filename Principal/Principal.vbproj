@@ -246,6 +246,12 @@
     <Compile Include="Presentacion\Usuario_Encargado\GraficoCajero.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentacion\Usuario_Encargado\GraficoVentas.Designer.vb">
+      <DependentUpon>GraficoVentas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Usuario_Encargado\GraficoVentas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentacion\Usuario_Encargado\ReporteVentas.Designer.vb">
       <DependentUpon>ReporteVentas.vb</DependentUpon>
     </Compile>
@@ -477,6 +483,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Usuario_Encargado\GraficoCajero.resx">
       <DependentUpon>GraficoCajero.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Usuario_Encargado\GraficoVentas.resx">
+      <DependentUpon>GraficoVentas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Usuario_Encargado\ReporteVentas.resx">
       <DependentUpon>ReporteVentas.vb</DependentUpon>

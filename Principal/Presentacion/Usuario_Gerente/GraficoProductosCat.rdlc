@@ -85,6 +85,8 @@
                       </ChartDataPointValues>
                       <ChartDataLabel>
                         <Style />
+                        <UseValueAsLabel>true</UseValueAsLabel>
+                        <Visible>true</Visible>
                       </ChartDataLabel>
                       <Style />
                       <ChartMarker>
@@ -395,9 +397,9 @@
               </Style>
             </ChartNoDataMessage>
             <DataSetName>dsProdCat</DataSetName>
-            <Top>2.00766cm</Top>
+            <Top>1.37266cm</Top>
             <Left>1.6637cm</Left>
-            <Height>6.74625cm</Height>
+            <Height>7.77813cm</Height>
             <Width>14.45854cm</Width>
             <Style>
               <Border>

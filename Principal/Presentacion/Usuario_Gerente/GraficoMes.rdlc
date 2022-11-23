@@ -96,6 +96,7 @@
                   <ChartDataPoints>
                     <ChartDataPoint>
                       <ChartDataPointValues>
+                        <X>=Fields!Mes.Value</X>
                         <Y>=Sum(Fields!Total.Value)</Y>
                       </ChartDataPointValues>
                       <ChartDataLabel>

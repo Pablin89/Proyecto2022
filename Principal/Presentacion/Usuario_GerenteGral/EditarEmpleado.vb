@@ -1,5 +1,6 @@
 ﻿Imports System.ComponentModel
 Imports System.Security.Cryptography
+Imports System.Data.SqlClient
 
 Public Class EditarEmpleado
     Dim objusuario = New NUsuario
@@ -7,6 +8,7 @@ Public Class EditarEmpleado
     Dim us = New DUsuario
     Dim usuario As String
     Dim clave As String
+    Dim conexion As SqlConnection
     Private Sub BCancelar_Click(sender As Object, e As EventArgs) Handles BCancelar.Click
         Dim ask As MsgBoxResult
 
@@ -22,6 +24,9 @@ Public Class EditarEmpleado
 
     Private Sub BConfirmar_Click(sender As Object, e As EventArgs) Handles BConfirmar.Click
         Dim op As MsgBoxResult
+
+
+
         If String.IsNullOrWhiteSpace(TUsuario.Text) Or String.IsNullOrWhiteSpace(TRepcontra.Text) Or String.IsNullOrWhiteSpace(TContraseña.Text) Or
             String.IsNullOrWhiteSpace(CBperfil.Text) Or contraseñaValida(TContraseña.Text) = False Or contraseñaIguales(TContraseña.Text, TRepcontra.Text) = False Then
 
@@ -29,7 +34,6 @@ Public Class EditarEmpleado
         Else
             op = MsgBox("¿Desea guardar los cambios?", vbYesNo + vbDefaultButton2 + vbInformation, "Confirmar")
             If op = DialogResult.Yes Then
-
                 objusuario.agregar_usuario(TUsuario.Text, TContraseña.Text, CBperfil.SelectedValue, PermisosUsuario.dgvEmpleados.CurrentRow.Cells(0).Value)
                 MsgBox("Los cambios se realizaron correctamente", vbOKOnly + vbDefaultButton1 + vbInformation, "Cambios realizados")
                 objusuario.cargarGrid(PermisosUsuario.dgvUsuario)
@@ -121,7 +125,25 @@ Public Class EditarEmpleado
         PermisosUsuario.dgvEmpleados.ClearSelection()
 
     End Sub
-    Private Sub TContraseña_TextChanged(sender As Object, e As EventArgs) Handles TContraseña.TextChanged
+    Private Function VerificaExistencia() As Boolean
+        Conexion = New SqlConnection
+        Conexion.ConnectionString = "Data Source=USER\SQL2;Initial Catalog=Proyecto;Integrated Security=True"
+        If Conexion.State = ConnectionState.Closed Then
+            Conexion.Open()
+        End If
 
-    End Sub
+        Dim cmd As New SqlCommand("select * from Usuario where nombre_usuario=@user", conexion)
+        cmd.Parameters.AddWithValue("@user", SqlDbType.Variant).Value = usuario
+
+        Dim da As New SqlDataAdapter(cmd)
+        Dim ds As New DataSet
+        da.Fill(ds)
+        If ds.Tables(0).Rows.Count > 0 Then
+            Return True
+        Else
+            Return False
+        End If
+
+    End Function
+
 End Class
